@@ -1,0 +1,84 @@
+/*====================
+========products======
+======================*/
+
+.categories{
+    border: black ;
+    border-right-style: solid;
+    flex-flow: column;
+    height: 100%;
+}
+
+.categories-element{
+    display: flex;
+    margin: 1rem auto;
+}
+
+.select-option select{
+    padding: 0.4rem 1rem;
+    background-color: rgb(223, 18, 18);
+    border-radius:  0.5rem;    
+    color: hsl(0, 0%, 100%);
+    -webkit-box-shadow: 0px 3px 1px 0px #000000; 
+    box-shadow: 0px 3px 1px 0px #000000;
+}
+
+.select-option option{
+    margin-top: 1rem;
+    padding: 0.2rem 0.5rem;
+    background-color: rgb(255, 255, 255);
+    border-radius:  0.5rem;    
+    color: hsl(0, 0%, 0%);
+    -webkit-box-shadow: 0px 3px 1px 0px #000000; 
+    box-shadow: 0px 3px 1px 0px #000000;
+}
+
+
+.button-text{
+    margin-left: 0.5rem;
+}
+
+.Products{
+    margin: 5rem auto;
+}
+
+.product-element{
+    padding: 1rem;
+    margin: 0.5rem;
+    margin-top: 2rem;
+    background-color: hsla(0, 72%, 52%, 0.137); ;
+}
+
+.product-element:hover{
+    border-style: solid;
+    color:hsl(0, 72%, 52%);
+    padding: 0.2rem;
+    border-width: 0.2rem;
+}
+
+.product-image img{
+    width: 100%;
+}
+
+
+
+.product-price{
+    margin: 1rem ;
+    display: flex;
+    justify-content: center;
+}
+
+.product-price p{
+    font-size: 3rem;
+}
+
+.product-details button{
+    margin-top: 1rem;
+    padding: 0.2rem 0.5rem;
+    background-color: rgb(223, 18, 18);
+    border-radius:  0.5rem;    
+    color: hsl(0, 0%, 100%);
+    -webkit-box-shadow: 0px 3px 1px 0px #000000; 
+    box-shadow: 0px 3px 1px 0px #000000;
+
+}

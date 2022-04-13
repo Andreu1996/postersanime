@@ -1,0 +1,26 @@
+/*====================
+========Header=========
+======================*/
+
+.logotitle{
+    display: flex;
+    justify-content: left;
+}
+
+.logo{
+    width: 10%;
+}
+
+.logo, .title, .menu{
+    margin: auto 0;
+}
+
+.logo img{
+    background: transparent;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}

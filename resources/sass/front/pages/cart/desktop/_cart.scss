@@ -1,0 +1,114 @@
+/*====================
+========cart==========
+======================*/
+
+.desktop-two-columns-aside-cart{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.cart-title{
+    display: flex;
+    justify-content: left
+}
+
+.cart-title-svg{
+    width: 5%;
+    margin: 2rem 0rem;
+}
+
+.cart-products{
+    background-color: $primary-color-light;
+    margin: 2rem 1rem;
+}
+
+.cart-product-element{
+    padding: 1rem 2rem;
+    padding-bottom: 2rem;
+    border: $shadow-color;
+    border-bottom-style: solid;
+}
+
+.cart-product-element-image-description{
+    display: flex;
+}
+
+.cart-product-image{
+    width: 100%;
+    margin-right: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.cart-product-quantiy-number{
+    display: flex;
+    justify-content: left;
+    margin-top: 1rem;
+}
+
+.cart-product-description-element{
+    margin-bottom: 2rem;
+}
+
+.cart-product-text-gift{
+    bottom: 5% ;
+    display: flex;
+}
+
+.cart-procut-price{
+    display: flex;
+    justify-content: right;
+}
+
+.product-name-element{
+    margin: 0.5rem 0rem;
+}
+
+.column-top-decoration{
+    padding-right: 2rem;
+    border: $shadow-color;
+    border-top-style: solid;
+}
+
+.cart-buy-button{
+    margin-right: 2.3rem;
+}
+
+.cart-buy-button button{
+    margin-top: 4rem;
+    padding: 0.5rem 1rem;
+    background-color: $secondary-color;
+    border-radius:  0.5rem;    
+    color: $laberl-box-color;
+    -webkit-box-shadow: $shadow-color;
+    box-shadow: $shadow-color;
+    float: right;
+}
+.recomendations-title{
+    display: flex;
+    justify-content: center;
+    margin: 2rem 1rem;
+}
+
+.cart-recomendation-product{
+    display: flex;
+    margin: 1rem 0rem;
+}
+
+.cart-recomendation-image{
+    width: 30%;
+    margin: 0rem 1rem;
+}
+
+.recomendation-text-element{
+    margin-bottom: 1rem;
+}
+
+.cart-add-button button{
+    padding: 0.1rem 0.5rem;
+    background-color: $secondary-color;
+    border-radius:  0.5rem;    
+    color: $laberl-box-color;
+    -webkit-box-shadow: $shadow-color;
+    box-shadow: $shadow-color;
+}

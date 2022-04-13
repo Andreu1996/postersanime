@@ -1,0 +1,42 @@
+
+<header>    
+
+    <div class="logotitle">
+        <div class="logo">
+            <img src="images/Logo2.png">
+        </div>
+
+        <div class="title">
+            <h1>WallpaperWorld</h1>
+        </div>
+        
+    </div>
+
+    <div class="menu">
+            <div class="menu_element desktop-only">
+                <h3><a href="{{trans('front/layout/pages/index/index')}}" >inicio</a></h3>
+            </div>
+
+            <div class="menu_element desktop-only">
+                <h3><a href="productos.html">productos</a></h3>
+            </div>
+
+            <div class="menu_element desktop-only">
+                <h3>servicios</h3>          
+            </div>
+
+            <div class="menu_element desktop-only">
+                <h3><a href="contacto.html">contacto</a></h3>
+            </div>
+    </div>
+
+    <div class="mobile-only">
+        <nav class="navbar">   
+            <div class="ham" >  
+            <span class="bar1"></span>  
+            <span class="bar2"></span>  
+            <span class="bar3"></span>  
+            </div>  
+        </nav>
+    </div>
+</header>

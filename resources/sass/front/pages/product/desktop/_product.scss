@@ -1,0 +1,96 @@
+/*====================
+========product======
+======================*/
+
+.column-decoration{
+    padding-right: 2rem;
+    border: $secondary-color;
+    border-right-style: solid;
+}
+
+.main-image{
+    display: flex;
+    justify-content: center;
+}
+
+.secundary-image-element{
+    margin: 0.5rem;
+    margin-top: 2rem;
+}
+
+.column-aside-decoration{
+    width: 100%;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.product-description{
+    margin: 2rem;
+}
+
+.product-title{
+    display: flex;
+    justify-content: center;
+}
+
+.product-quantity{
+    margin-top: 5rem;
+}
+
+.product-quantity-text{
+    margin-top: 0.6rem;
+}
+
+.product-quantiy-number{
+    display: flex;
+    justify-content: right;
+    padding: 0.5rem;
+    display: flex;
+}
+
+.product-quantiy-number-element p{
+    color: $shadow-color;
+}
+
+.product-quantiy-number-element-number{
+    border: $shadow-color;
+    border-width: 0.1rem;
+    padding: 0.1rem 4rem;
+    background-color: $laberl-box-color;
+    border-style: solid;
+}
+
+.product-quantiy-number-element-number p{
+    font-style: normal;
+}
+
+.buy{
+    display: flex;
+    justify-content: right;
+}
+.cart{
+    display: flex;
+    justify-content: right;
+    margin-top: 0.4rem;
+}
+
+.cart svg{
+    fill: $secondary-color;
+    width: 40%;
+    height: 40%;
+    margin: 0%;
+}
+
+.buy-button{
+    margin-right: 2.3rem;
+}
+
+.buy-button button{
+    margin-top: 1rem;
+    padding: 0.2rem 0.5rem;
+    background-color: $secondary-color;
+    border-radius:  0.5rem;    
+    color: $laberl-box-color;
+    -webkit-box-shadow: $shadow-color;
+    box-shadow: $shadow-color;
+}

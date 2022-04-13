@@ -1,0 +1,103 @@
+/*======================
+  =======checkout========
+  =======================*/
+
+  .billing-title{
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .checkout-element{
+    margin: 1rem 0rem;
+  }
+
+  .country-options select{
+    margin-top: 0.5rem;
+    width: 100%;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.5rem;
+  }
+
+  .order-price{
+      display: flex;
+      justify-content: center;
+      margin: 2rem auto;
+  }
+
+  td, th{
+      margin: 2rem;
+      padding: 1rem;
+      padding-right: 3rem;
+  }
+
+  .bank-transfer-element{
+      margin-right: 0.2rem;
+  }
+
+  .bank-transfer{
+    display: flex;
+    padding: 1rem 0rem;
+    border-radius: 0.5rem;
+    border: $shadow-color;
+    border-bottom-style: solid;
+    border-top-style: solid;
+  }
+
+  .bank-transfer-simbol svg{
+      fill: rgb(214, 33, 214);
+      width: 70%;
+      height: 70%;
+  }
+
+  .paypla-decoration{
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    border: $shadow-color;
+    border-bottom-style: solid;
+    border-top-style: solid;
+  }
+
+  .paypal{
+      display: flex;
+  }
+
+  .paypal-element{
+      margin-right: 0.5rem;
+  }
+
+.paypal-simbol{
+    margin-left: 0.5rem;
+    width: 60%;
+    height: 60%;
+}
+
+.paypal-simbol svg{
+    fill: $primary-color-light;
+    width: 100%;
+    height: 100%;
+}
+
+.text-purple p{
+    color: rgb(214, 33, 214);
+    text-decoration: underline;
+}
+
+.paypal-card-types{
+    margin-right: 1rem;
+    width: 30%;
+    float: right;
+}
+
+.finish-order-button{
+    margin-top: 3rem;
+}
+
+.finish-order-button button{
+    width: 100%;
+    padding: 0.5rem 0rem;
+    background-color: $secondary-color;
+    border-radius:  0.5rem;    
+    color: $laberl-box-color;
+    -webkit-box-shadow: $shadow-color; 
+    box-shadow: $shadow-color;
+}

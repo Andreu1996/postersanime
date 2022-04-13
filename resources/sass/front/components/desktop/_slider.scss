@@ -1,0 +1,41 @@
+/*====================
+========Slider=========
+======================*/
+
+.slider{
+    padding: 0.2rem;
+    border-radius: 20rem;
+	transition: 0.5s;
+	text-decoration: none;
+    z-index: 5rem;
+    position: 2rem;
+}
+
+.slider-image{
+    position: relative;
+    height: 100%;
+    z-index: 1000rem;
+}
+
+.slider-text-title{
+    position: absolute;
+    z-index: 1003rem;
+    top: 25%;
+    right: 20%;
+    background-color: hsla(0, 0%, 0%, 0.76);
+    padding: 1rem 5rem;
+    border-radius: 1rem;
+}
+
+.slider-text-subtext{
+    position: absolute;
+    z-index: 1003rem;
+    top:35%;
+    right: 20%;
+    background-color: hsla(0, 0%, 0%, 0.76);
+    padding: 0.2rem 2rem;
+    border-radius: 0.5rem;
+}
+
+
+
