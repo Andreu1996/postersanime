@@ -1,0 +1,105 @@
+/*====================
+========Hamburger=====
+======================*/
+
+.menu{
+    left:  0rem;
+  }
+  
+  .ham{  
+    margin-top: 1rem;
+    display:none;  
+    padding:5px;  
+    cursor:pointer;  
+  }  
+  
+  .bar1,.bar2,.bar3{  
+    display:block;
+    z-index: 1005;  
+    width:35px;  
+    height:3px;  
+    margin:5px auto;  
+    background-color:#000000;  
+    transition: 0.4s;  
+  } 
+  
+  .nav-sub{
+    left: 0%;
+    right: 0%;
+    position: fixed;
+    top: -100rem;   
+    z-index: 1002;
+    background-color:hsl(0, 0%, 23%);
+    transition:top 0.3s ease-in; 
+    transition: bottom 0.3 ease-in; 
+  }
+  
+  .nav-change{ 
+    display: flex;
+    z-index: 1002;
+    top: 0%; 
+    bottom: 0%;
+  }  
+  
+  .ham{  
+    display:block;
+    position: fixed; 
+    top: 0rem;
+    right: 0rem; 
+    z-index: 2000;
+  }  
+  
+  .change .bar1 {
+    
+    position: fixed;
+    position: absolute;   
+    transform: rotate(45deg) translate(6px,3px); 
+    z-index: 1005; 
+  }  
+  .change .bar2 { 
+    z-index: 1005;
+    opacity: 0;  
+  }  
+  .change .bar3 {
+    position: absolute;  
+  transform: rotate(-45deg) translate(6px,-3px);  
+  z-index: 1005;
+  }
+
+
+  .menuadmin{
+    position: absolute;
+    display: flex;
+    top: 0rem;
+    width: 100%;
+    background-color: #EBEBEB;
+    z-index: 1001;
+    transition: all 0.5s;
+    border-style: solid;
+  }
+  
+  .menu-element{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
+    padding-left: 3rem;
+  }
+  
+  .menu-element p{
+    text-align: center;
+    color: red;
+    color:#666B85;
+    font-size: 1.5em;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  }
+  
+  .menuhide{
+    position: absolute;
+    top: -100rem;
+  }
+  
+  .menu p{
+    text-align: center;
+  }

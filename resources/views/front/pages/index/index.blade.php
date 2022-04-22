@@ -47,7 +47,7 @@
             <div>
                 <div class="slider">
                     <div class="slider-image">
-                        <img src="images/1.jpg" alt="changeimage" title="chango"/>
+                        <img src="{{Storage::url('1.jpg')}}" alt="">
                         
                         <div class="slider-text-title">
                             <h2>epic wallpaper</h2>
@@ -150,7 +150,7 @@
             
         </main>
 
-        @endsection
+    @endsection
 
         {{-- <footer>
             <div class="footer-element copyright">

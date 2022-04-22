@@ -6,6 +6,4 @@
     <link href="{{mix('front/mobile/css/app.css')}}" rel="stylesheet">
 @endif --}}
 
-<link rel="stylesheet" href="{{mix('front/desktop/css/app.css')}}" >
-
-<link rel="stylesheet" href="{{mix('front/desktop/css/app.css')}}" >
+<link rel="stylesheet" href="{{mix('admin/desktop/css/app.css')}}" >

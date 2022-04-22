@@ -41,3 +41,7 @@ Route::get('/productos', function () {
     return view('front/pages/productos/productos');
 });
 
+Route::get('/admin-panel', function () {
+    return view('admin/pages/admin-panel/admin-panel');
+});
+

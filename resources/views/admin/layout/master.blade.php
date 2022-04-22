@@ -11,13 +11,11 @@
         <meta name="keywords" 	 content="palabras clave, separadas, por comas">
 
 
-        @include('front.layout.partials.styles')
+        @include('admin.layout.partials.styles')
 
     </head>
 
     <body>
-
-        @include('front.layout.partials.header')
         
         <main>
 
@@ -27,13 +25,9 @@
 
         </main>
 
-        <footer>
-            @include('front.layout.partials.footer')
-        </footer>
-
         
             
-        @include("front.layout.partials.scripts")  
+        @include("admin.layout.partials.scripts")  
 
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
         <script>
