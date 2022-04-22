@@ -851,10 +851,9 @@ th.last-column {
 
 .sidetable {
   position: relative;
-  width: 55%;
+  width: 80%;
   right: 0rem;
   background-color: rgb(182, 182, 182);
-  padding: 1rem;
   transition: all 0.3s;
 }
 
@@ -877,4 +876,25 @@ th.last-column {
 .form-element-input input {
   width: 100%;
   border-radius: 5rem;
+}
+
+.text-desapear {
+  display: none;
+  background-color: #00050e;
+}
+
+.sidetable-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1.5rem;
+}
+
+.sidetable-header-element {
+  padding: 1rem;
+}
+
+.sidetable-header-element:hover {
+  background-color: black;
 }

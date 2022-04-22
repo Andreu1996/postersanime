@@ -2226,10 +2226,12 @@ function sideTable() {
   var edit = document.querySelectorAll('.useredit');
   var table = document.querySelector('.sidetablehide');
   var maintable = document.querySelector('.tablefill');
+  var hideelement = document.querySelectorAll('.text-desapear');
   edit.forEach(function (useredit) {
     useredit.addEventListener("click", function () {
       table.classList.toggle("sidetablehide");
       maintable.classList.toggle("maintable");
+      hideelement.classList.toggle("text-desapear");
     });
   });
 }
