@@ -14,11 +14,11 @@
 
     <div class="menu">
             <div class="menu_element desktop-only">
-                <h3><a href="{{trans('front/layout/pages/index/index')}}" >inicio</a></h3>
+                <h3><a href="{{trans('index')}}">inicio</a></h3>
             </div>
 
             <div class="menu_element desktop-only">
-                <h3><a href="productos.html">productos</a></h3>
+                <h3><a href="{{trans('productos')}}">productos</a></h3>
             </div>
 
             <div class="menu_element desktop-only">
@@ -26,7 +26,7 @@
             </div>
 
             <div class="menu_element desktop-only">
-                <h3><a href="contacto.html">contacto</a></h3>
+                <h3><a href="{{trans('contacto')}}">contacto</a></h3>
             </div>
     </div>
 
