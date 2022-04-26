@@ -2187,6 +2187,45 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/admin/desktop/editTabsLocal.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/admin/desktop/editTabsLocal.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "editTabsLocal": () => (/* binding */ editTabsLocal)
+/* harmony export */ });
+function editTabsLocal() {
+  var tabs = document.querySelectorAll(".tab-local");
+  var contents = document.querySelectorAll(".content-local");
+
+  var _loop = function _loop(i) {
+    tabs[i].addEventListener("click", function () {
+      for (var j = 0; j < contents.length; j++) {
+        contents[j].classList.remove("content--active-local");
+      }
+
+      for (var jj = 0; jj < tabs.length; jj++) {
+        tabs[jj].classList.remove("tabs--active-local");
+      }
+
+      contents[i].classList.add("content--active-local");
+      tabs[i].classList.add("tabs--active-local");
+    });
+  };
+
+  for (var i = 0; i < tabs.length; i++) {
+    _loop(i);
+  }
+}
+
+
+
+/***/ }),
+
 /***/ "./resources/js/admin/desktop/hamburger.js":
 /*!*************************************************!*\
   !*** ./resources/js/admin/desktop/hamburger.js ***!
@@ -2211,6 +2250,37 @@ function hamburgerMenu() {
 
 /***/ }),
 
+/***/ "./resources/js/admin/desktop/save.js":
+/*!********************************************!*\
+  !*** ./resources/js/admin/desktop/save.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "saveButton": () => (/* binding */ saveButton)
+/* harmony export */ });
+function saveButton() {
+  var save = document.querySelector('.sidetableHeaderSave');
+  var saveTab = document.querySelector('.save');
+  var cancelButton = document.querySelector('.cancel-button');
+  var cancelSave = document.querySelector('.save');
+  save.addEventListener("click", function () {
+    saveTab.classList.remove("saveHide");
+  });
+  cancelButton.addEventListener("click", function () {
+    saveTab.classList.add("saveHide");
+  });
+  cancelSave.addEventListener("click", function () {
+    saveTab.classList.add("saveHide");
+  });
+}
+
+
+
+/***/ }),
+
 /***/ "./resources/js/admin/desktop/sidetable.js":
 /*!*************************************************!*\
   !*** ./resources/js/admin/desktop/sidetable.js ***!
@@ -2226,14 +2296,52 @@ function sideTable() {
   var edit = document.querySelectorAll('.useredit');
   var table = document.querySelector('.sidetablehide');
   var maintable = document.querySelector('.tablefill');
-  var hideelement = document.querySelectorAll('.text-desapear');
   edit.forEach(function (useredit) {
     useredit.addEventListener("click", function () {
       table.classList.toggle("sidetablehide");
       maintable.classList.toggle("maintable");
-      hideelement.classList.toggle("text-desapear");
+      hideElement.classList.toggle("text-desapear");
     });
   });
+}
+
+
+
+/***/ }),
+
+/***/ "./resources/js/admin/desktop/userEdit.js":
+/*!************************************************!*\
+  !*** ./resources/js/admin/desktop/userEdit.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "userEdit": () => (/* binding */ userEdit)
+/* harmony export */ });
+function userEdit() {
+  var tabs = document.querySelectorAll(".tab");
+  var contents = document.querySelectorAll(".content");
+
+  var _loop = function _loop(i) {
+    tabs[i].addEventListener("click", function () {
+      for (var j = 0; j < contents.length; j++) {
+        contents[j].classList.remove("content--active");
+      }
+
+      for (var jj = 0; jj < tabs.length; jj++) {
+        tabs[jj].classList.remove("tabs--active");
+      }
+
+      contents[i].classList.add("content--active");
+      tabs[i].classList.add("tabs--active");
+    });
+  };
+
+  for (var i = 0; i < tabs.length; i++) {
+    _loop(i);
+  }
 }
 
 
@@ -19736,12 +19844,21 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hamburger_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hamburger.js */ "./resources/js/admin/desktop/hamburger.js");
 /* harmony import */ var _sidetable_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sidetable.js */ "./resources/js/admin/desktop/sidetable.js");
+/* harmony import */ var _userEdit_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./userEdit.js */ "./resources/js/admin/desktop/userEdit.js");
+/* harmony import */ var _editTabsLocal_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editTabsLocal.js */ "./resources/js/admin/desktop/editTabsLocal.js");
+/* harmony import */ var _save_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./save.js */ "./resources/js/admin/desktop/save.js");
 __webpack_require__(/*! ../bootstrap */ "./resources/js/admin/bootstrap.js");
+
+
+
 
 
 
 (0,_hamburger_js__WEBPACK_IMPORTED_MODULE_0__.hamburgerMenu)();
 (0,_sidetable_js__WEBPACK_IMPORTED_MODULE_1__.sideTable)();
+(0,_userEdit_js__WEBPACK_IMPORTED_MODULE_2__.userEdit)();
+(0,_editTabsLocal_js__WEBPACK_IMPORTED_MODULE_3__.editTabsLocal)();
+(0,_save_js__WEBPACK_IMPORTED_MODULE_4__.saveButton)();
 })();
 
 /******/ })()
