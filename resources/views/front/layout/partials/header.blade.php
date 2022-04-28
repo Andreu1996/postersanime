@@ -22,7 +22,7 @@
             </div>
 
             <div class="menu_element desktop-only">
-                <h3><a href="{{trans('admin-panel')}}">servicios</h3>          
+                <h3><a href="{{trans('admin-panel')}}">servicios</a></h3>
             </div>
 
             <div class="menu_element desktop-only">
@@ -30,13 +30,35 @@
             </div>
     </div>
 
-    <div class="mobile-only">
-        <nav class="navbar">   
-            <div class="ham" >  
+    <div class="header-menu-hamburger">
+        <nav class="navbar mobile-only">   
+            <div class="ham">  
             <span class="bar1"></span>  
             <span class="bar2"></span>  
             <span class="bar3"></span>  
             </div>  
         </nav>
     </div>
+    
+
+    <nav class="navbar">
+        <div  class="nav-sub">
+            <div class="menu_element mobile-only">
+                <h3><a href="{{trans('index')}}">inicio</a></h3>
+            </div>
+
+            <div class="menu_element mobile-only">
+                <h3><a href="{{trans('productos')}}">productos</a></h3>
+            </div>
+
+            <div class="menu_element mobile-only">
+                <h3><a href="{{trans('admin-panel')}}">servicios</a></h3>
+            </div>
+
+            <div class="menu_element mobile-only">
+                <h3><a href="{{trans('contacto')}}">contacto</a></h3>
+            </div>
+        </div>
+    </nav>
+
 </header>

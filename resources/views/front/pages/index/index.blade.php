@@ -20,27 +20,6 @@
      @extends('front.layout.master')
 
      @section('content')
-        <nav class="navbar">
-            <div  class="nav-sub">
-                <div class="menu-mobile mobile-only">
-                    <div class="menu_element-mobile">
-                        <h1><a href="index.html">inicio</a></h1>
-                    </div>
-    
-                    <div class="menu_element-mobile">
-                        <h1><a href="productos.html">productos</a></h1>
-                    </div>
-    
-                    <div class="menu_element-mobile">
-                        <h1>servicios</h1>          
-                    </div>
-    
-                    <div class="menu_element-mobile">
-                        <h1><a href="contacto.html">contacto</a></h1>
-                    </div>
-                </div>
-            </div>
-        </nav>
 
         <main>
 
@@ -69,7 +48,7 @@
                 <div class="featured-elements">
                     <div class="featured-element">
                         <div class="featured-element-image">
-                            <a href="https://wall.alphacoders.com/by_category.php?id=3&name=Anime+Fondos+de+pantalla&lang=Spanish"><img src="images/wallpaper.jpg"></a>
+                            <a href="https://wall.alphacoders.com/by_category.php?id=3&name=Anime+Fondos+de+pantalla&lang=Spanish"><img src="{{Storage::url('wallpaper.jpg')}}" alt=""></a>
                         </div>
                         <div class="featured-element-text">
                             <div class="featured-element-text-title">
@@ -85,10 +64,10 @@
                     </div>
                     <div class="featured-element">
                         <div class="featured-element-image">
-                            <a href="https://onepiece.fandom.com/es/wiki/One_Piece_Wiki"><img src="images/onepiece.jpg"></a>
+                            <a href="https://onepiece.fandom.com/es/wiki/One_Piece_Wiki"><img src="{{Storage::url('onepiece.jpg')}}" alt=""></a>
                         </div>
                         <div class="featured-element-title">
-                            <div class="featured-element-text-title">
+                            <div class="featured-element-text-title red-text">
                                 <h5>OnePiece</h5>
                             </div>
                             <div class="featured-element-text-description">
@@ -101,10 +80,10 @@
                     </div>
                     <div class="featured-element">
                         <div class="featured-element-image">
-                            <a href="https://mushokutensei.fandom.com/wiki/Mushoku_Tensei_Wiki"><img src="images/mushokutensei - copia.jpg"></a>
+                            <a href="https://mushokutensei.fandom.com/wiki/Mushoku_Tensei_Wiki"><img src="{{Storage::url('mushokutensei - copia.jpg')}}" alt=""></a>
                         </div>
                         <div class="featured-element-title">
-                            <div class="featured-element-text-title">
+                            <div class="featured-element-text-title red-text">
                                 <h5>Mushoku Tensei</h5>
                             </div>
                             <div class="featured-element-text-description">
@@ -117,10 +96,10 @@
                     </div>
                     <div class="featured-element">
                         <div class="featured-element-image">
-                            <a href="https://mob-psycho-100-espanol.fandom.com/es/wiki/Mob_Psycho_100_Espa%C3%B1ol_Wiki"><img src="images/product-18.jpg"></a>
+                            <a href="https://mob-psycho-100-espanol.fandom.com/es/wiki/Mob_Psycho_100_Espa%C3%B1ol_Wiki"><img src="{{Storage::url('product-18.jpg')}}" alt=""></a>
                         </div>
                         <div class="featured-element-title">
-                            <div class="featured-element-text-title">
+                            <div class="featured-element-text-title red-text">
                                 <h5>Mob Psycho 100</h5>
                             </div>
                             <div class="featured-element-text-description">
@@ -144,7 +123,7 @@
                     </div>
                 </div>
                 <div class="offer-image">
-                    <img src="images/Figure.jpg">
+                    <img src="{{Storage::url('Figure.jpg')}}" alt="">
                 </div>
             </div>
             

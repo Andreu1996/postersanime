@@ -476,20 +476,11 @@ body {
   /* background-image: url("https://s.itl.cat/pngfile/s/29-299907_kimi-no-na-wa-wallpaper-for-iphone-iphone.jpg"); */
 }
 
-header {
-  display: flex;
-  height: 10%;
-  justify-content: space-between;
-  padding: 0 5%;
-  width: 90%;
-  background-color: hsla(0deg, 0%, 81%, 0.589);
-}
-
 main {
   margin: 0 auto;
   position: relative;
   top: 2rem;
-  width: 90%;
+  width: 98%;
 }
 
 footer {
@@ -510,9 +501,9 @@ footer {
 header {
   display: flex;
   justify-content: space-between;
-  padding: 0 5%;
-  width: 90%;
-  z-index: 2000;
+  max-width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: hsla(0deg, 0%, 81%, 0.589);
 }
 header .header-logo {
   display: flex;

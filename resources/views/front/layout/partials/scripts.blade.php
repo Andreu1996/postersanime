@@ -1,0 +1,1 @@
+<script src={{mix('/front/mobile/js/app-mobile.js')}}></script>

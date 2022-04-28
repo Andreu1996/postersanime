@@ -1,17 +1,3 @@
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-img {
-  max-width: 100%;
-}
-
-video {
-  max-width: 100%;
-}
-
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -377,6 +363,20 @@ ol, ul {
   padding-left: 0;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+video {
+  max-width: 100%;
+}
+
 /*====================
 ======Typography======
 ======================*/
@@ -482,15 +482,118 @@ main {
 }
 
 .mobile-only {
-  display: revert;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6, a, p {
+  color: hsl(0deg, 0%, 100%);
+}
+
+h1, h2, h3, h4 {
+  font-family: "Ubuntu";
+}
+
+h5, h6 {
+  font-family: "Ubuntu Condensed";
+}
+
+a, td, p, button {
+  font-family: "Ubuntu";
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 600;
+  text-decoration: none;
+  color: hsl(0deg, 0%, 100%);
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: 600;
+  text-decoration: none;
+  color: hsl(0deg, 0%, 100%);
+}
+
+h4 {
+  font-weight: 600;
+  text-decoration: none;
+  color: hsl(0deg, 0%, 100%);
+}
+
+p {
+  color: hsl(0deg, 0%, 100%);
+  text-align: justify;
+}
+
+h6 {
+  text-align: left;
+}
+
+a {
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  -o-transition: 300ms;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 300ms;
+}
+
+a:focus, a:hover {
+  outline: none;
+  outline-offset: 0;
+  text-decoration: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.red-text p {
+  color: hsl(0deg, 77%, 63%);
+  text-shadow: 3px 1px 2px hsl(0deg, 11%, 4%);
+}
+
+.red-text h2 {
+  color: hsl(0deg, 77%, 63%);
+  text-shadow: 3px 1px 2px hsl(0deg, 11%, 4%);
+}
+
+.red-text h3 {
+  color: hsl(0deg, 77%, 63%);
+  text-shadow: 3px 1px 2px hsl(0deg, 11%, 4%);
+}
+
+.red-text h4 {
+  color: hsl(0deg, 77%, 63%);
+  text-shadow: 3px 1px 2px hsl(0deg, 11%, 4%);
+}
+
+.red-text h5 {
+  color: hsl(0deg, 77%, 63%);
+  text-shadow: 3px 1px 2px hsl(0deg, 11%, 4%);
 }
 
 header {
+  background-color: hsla(0deg, 0%, 81%, 0.589);
+}
+header .logotitle {
+  display: flex;
+  justify-content: left;
+}
+header .logo {
+  width: 100%;
+}
+header .logo, header .title, header .menu {
+  margin: auto 0;
+}
+header .logo img {
+  background: transparent;
+}
+header .menu {
   display: flex;
   justify-content: space-between;
-  margin: 0.2rem 5%;
-  width: 90%;
-  z-index: 2000;
+  width: 40%;
 }
 header .header-logo {
   display: flex;
@@ -547,6 +650,16 @@ header #collapse-button span {
   transition: all 0.6s cubic-bezier(0.81, -0.33, 0.345, 1.375);
   transform: none;
   width: 100%;
+}
+header .nav-sub {
+  display: block;
+  text-align: center;
+}
+header .nav-sub .menu_element {
+  margin-top: 8rem;
+}
+header .nav-sub .menu_element h3 {
+  font-size: 2rem;
 }
 
 footer {
@@ -753,30 +866,40 @@ footer .footer-element p {
 }
 
 .slider {
-  height: 80vh;
+  padding: 0.2rem;
+  border-radius: 20rem;
+  transition: 0.5s;
+  text-decoration: none;
+  z-index: 5rem;
+  position: 2rem;
+}
+
+.slider-image {
+  padding: 0.5rem;
   position: relative;
-  width: 100%;
+  height: 100%;
+  z-index: 1000rem;
 }
-.slider .slider-image {
-  max-height: 80vh;
-  overflow: hidden;
+
+.slider-text-title {
   position: absolute;
-  z-index: 1000;
-  width: 100%;
+  z-index: 1003rem;
+  top: 45%;
+  left: 40%;
+  margin-right: 0.5rem;
+  background-color: hsla(0deg, 0%, 0%, 0.76);
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
 }
-.slider .slider-title {
-  background-color: hsla(0deg, 0%, 0%, 0.5);
-  padding: 1.5rem 1rem;
+
+.slider-text-subtext {
   position: absolute;
-  left: 15%;
-  top: 5vh;
-  z-index: 1001;
-}
-.slider .slider-button {
-  position: absolute;
-  left: 15%;
-  top: 25vh;
-  z-index: 1001;
+  z-index: 1003rem;
+  top: 30%;
+  right: 12%;
+  background-color: hsla(0deg, 0%, 0%, 0.76);
+  padding: 0.2rem 2rem;
+  border-radius: 0.5rem;
 }
 
 .textual-banner {
@@ -798,6 +921,95 @@ footer .footer-element p {
 .textual-banner .textual-banner-image model-viewer {
   height: 10rem;
   width: 20rem;
+}
+
+.menu-mobile {
+  display: block;
+  position: -webkit-sticky;
+  position: sticky;
+  padding: 5rem 40%;
+  z-index: 1002;
+  justify-content: center;
+}
+
+.menu_element-mobile h1 {
+  position: -webkit-sticky;
+  position: sticky;
+  text-align: center;
+  text-shadow: 3px 1px 2px hsl(0deg, 11%, 4%);
+  font-size: 1.5rem;
+  margin-top: 5rem;
+  margin: 5rem 0rem;
+}
+
+.list-item {
+  padding: 1rem 100%;
+  list-style: none;
+}
+
+.nav-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ham {
+  display: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  display: block;
+  z-index: 1005;
+  width: 35px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #ffffff;
+  transition: 0.4s;
+}
+
+.nav-sub {
+  left: 0%;
+  right: 0%;
+  position: fixed;
+  top: -100rem;
+  z-index: 1002;
+  background-color: hsl(0deg, 0%, 23%);
+  transition: top 0.3s ease-in;
+  transition: bottom 0.3 ease-in;
+}
+
+.nav-change {
+  display: flex;
+  z-index: 1002;
+  top: 0%;
+  bottom: 0%;
+}
+
+.ham {
+  display: block;
+  position: fixed;
+  top: 0rem;
+  right: 0rem;
+  z-index: 2000;
+}
+
+.change .bar1 {
+  position: fixed;
+  position: absolute;
+  transform: rotate(45deg) translate(6px, 3px);
+  z-index: 1005;
+}
+
+.change .bar2 {
+  z-index: 1005;
+  opacity: 0;
+}
+
+.change .bar3 {
+  position: absolute;
+  transform: rotate(-45deg) translate(6px, -3px);
+  z-index: 1005;
 }
 
 .cart {

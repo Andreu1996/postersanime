@@ -1,1 +1,1 @@
-require('../mobile/bootstrap');
+require('../mobile/bootstrap.js');

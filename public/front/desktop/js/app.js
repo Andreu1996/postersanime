@@ -2162,7 +2162,7 @@ module.exports = {
   \*******************************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-__webpack_require__(/*! ../mobile/bootstrap */ "./resources/js/front/mobile/bootstrap.js");
+__webpack_require__(/*! ../mobile/bootstrap.js */ "./resources/js/front/mobile/bootstrap.js");
 
 /***/ }),
 
@@ -19435,6 +19435,16 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/front/app-mobile.scss":
+/*!**********************************************!*\
+  !*** ./resources/sass/front/app-mobile.scss ***!
+  \**********************************************/
+/***/ (() => {
+
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: Undefined mixin.\n  ╷\n2 │       @include header-mobile();\r\n  │       ^^^^^^^^^^^^^^^^^^^^^^^^\n  ╵\n  resources\\sass\\front\\layout\\mobile\\_header.scss 2:4  @import\n  resources\\sass\\front\\app-mobile.scss 9:9             root stylesheet\n    at processResult (C:\\Git-Dual\\postersanime\\node_modules\\webpack\\lib\\NormalModule.js:758:19)\n    at C:\\Git-Dual\\postersanime\\node_modules\\webpack\\lib\\NormalModule.js:860:5\n    at C:\\Git-Dual\\postersanime\\node_modules\\loader-runner\\lib\\LoaderRunner.js:400:11\n    at C:\\Git-Dual\\postersanime\\node_modules\\loader-runner\\lib\\LoaderRunner.js:252:18\n    at context.callback (C:\\Git-Dual\\postersanime\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at C:\\Git-Dual\\postersanime\\node_modules\\sass-loader\\dist\\index.js:54:7\n    at Function.call$2 (C:\\Git-Dual\\postersanime\\node_modules\\sass\\sass.dart.js:99827:16)\n    at render_closure1.call$2 (C:\\Git-Dual\\postersanime\\node_modules\\sass\\sass.dart.js:85350:12)\n    at _RootZone.runBinary$3$3 (C:\\Git-Dual\\postersanime\\node_modules\\sass\\sass.dart.js:29726:18)\n    at _FutureListener.handleError$1 (C:\\Git-Dual\\postersanime\\node_modules\\sass\\sass.dart.js:28240:21)");
+
+/***/ }),
+
 /***/ "./node_modules/process/browser.js":
 /*!*****************************************!*\
   !*** ./node_modules/process/browser.js ***!
@@ -19793,7 +19803,8 @@ process.umask = function() { return 0; };
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
 /******/ 	__webpack_require__.O(undefined, ["front/desktop/css/app","admin/desktop/css/app"], () => (__webpack_require__("./resources/js/front/desktop/app.js")))
 /******/ 	__webpack_require__.O(undefined, ["front/desktop/css/app","admin/desktop/css/app"], () => (__webpack_require__("./resources/sass/admin/app.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["front/desktop/css/app","admin/desktop/css/app"], () => (__webpack_require__("./resources/sass/front/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["front/desktop/css/app","admin/desktop/css/app"], () => (__webpack_require__("./resources/sass/front/app.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["front/desktop/css/app","admin/desktop/css/app"], () => (__webpack_require__("./resources/sass/front/app-mobile.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

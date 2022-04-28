@@ -1,32 +1,36 @@
 .slider{
-    height: 80vh;
-    position: relative;
-    width: 100%;
-
-    .slider-image{
-        max-height: 80vh;
-        overflow: hidden;
-        position: absolute;
-        z-index: $z-index-slider-image;
-        width: 100%;
-    }
-
-    .slider-title{
-        background-color: hsla(0, 0%, 0%, 0.5);
-        padding: 1.5rem 1rem;
-        position: absolute;
-        left: 15%;
-        top: 5vh;
-        z-index: $z-index-slider-elements;
-    }
-    
-    .slider-button{
-        position: absolute;
-        left: 15%;
-        top: 25vh;
-        z-index: $z-index-slider-elements;
-    }
+    padding: 0.2rem;
+    border-radius: 20rem;
+	transition: 0.5s;
+	text-decoration: none;
+    z-index: 5rem;
+    position: 2rem;
 }
 
+.slider-image{
+    padding: 0.5rem;
+    position: relative;
+    height: 100%;
+    z-index: 1000rem;
+}
 
+.slider-text-title{
+    position: absolute;
+    z-index: 1003rem;
+    top: 45%;
+    left: 40%;
+    margin-right: 0.5rem;
+    background-color: hsla(0, 0%, 0%, 0.76);
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+}
 
+.slider-text-subtext{
+    position: absolute;
+    z-index: 1003rem;
+    top:30%;
+    right: 12%;
+    background-color: hsla(0, 0%, 0%, 0.76);
+    padding: 0.2rem 2rem;
+    border-radius: 0.5rem;
+}
