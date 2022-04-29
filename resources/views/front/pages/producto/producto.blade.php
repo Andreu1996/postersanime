@@ -93,36 +93,36 @@
                 <div class="column">
                     <div class="column-decoration">
                         <div class="main-image">
-                            <a><img src="images/product-18.jpg"></a>
+                            <a><img src="{{Storage::url('product-18.jpg')}}" alt=""></a>
                         </div>
 
                         <div class="secundary-image">
                             <div class="desktop-five-columns">
                                 <div class="column">
                                     <div class="secundary-image-element">
-                                        <a><img src="images/product-18.jpg"></a>
+                                        <a><img src="{{Storage::url('product-18.jpg')}}" alt=""></a>
                                     </div>
                                 </div>
 
                                 <div class="column">
                                     <div class="secundary-image-element">
-                                        <a><img src="images/product-18.jpg"></a>
+                                        <a><img src="{{Storage::url('product-18.jpg')}}" alt=""></a>
                                     </div>                            </div>
 
                                 <div class="column">
                                     <div class="secundary-image-element">
-                                        <a><img src="images/product-18.jpg"></a>
+                                        <a><img src="{{Storage::url('product-18.jpg')}}" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="column">
                                     <div class="secundary-image-element">
-                                        <a><img src="images/product-18.jpg"></a>
+                                        <a><img src="{{Storage::url('product-18.jpg')}}" alt=""></a>
                                     </div>                           
                                 </div>
 
                                 <div class="column">
                                     <div class="secundary-image-element">
-                                        <a><img src="images/product-18.jpg"></a>
+                                        <a><img src="{{Storage::url('product-18.jpg')}}" alt=""></a>
                                     </div>
                                 </div>
                             </div>
@@ -150,6 +150,30 @@
                                 <p>Poster edicion Mob Psycho 100 papel machetado de calidad superior, capaz de aguantar fuertes golpes y abolladuras. 30cm x 30 cm perfecto para cualquier pared y habitacion. compra ahora este producto y recivelo en menos de una semana.</p>
                             </div>
                         </div>
+
+                        <div class="tabs">
+                            <div class="tab tabActive" data-tab="tab1">
+                                <h3>Descripción1</h3>
+                            </div>
+                            <div class="tab" data-tab="tab2">
+                                <h3>Descripción2</h3>
+                            </div>
+                            <div class="tab" data-tab="tab3">
+                                <h3>Descripción3</h3>
+                            </div>
+                        </div>
+
+                        <div class="tabs-content">
+                            <div class="tabContent tabContentActive" data-tab="tab1">
+                                <p>prueba1</p>
+                            </div>
+                            <div class="tabContent" data-tab="tab2">
+                                <p>prueba2</p>
+                            </div>
+                            <div class="tabContent" data-tab="tab3">
+                                <p>prueba3</p>
+                            </div>
+                        </div>
                         
 
                         <div class="product-description">
@@ -163,15 +187,15 @@
                                     <div class="column">
                                         <div class="product-quantiy-number">
                                             <div class="product-quantiy-number-element">
-                                                <div id="add"><button>+</button></div>
+                                                <div class="plus"><button>+</button></div>
                                             </div>
                                             <div class="product-quantiy-number-element">
                                                 <div class="product-quantiy-number-element-number">
-                                                    <div id="total">0</div>
+                                                    <div class="total">0</div>
                                                 </div>
                                             </div>
                                             <div class="product-quantiy-number-element">
-                                                <div id="substract"><button>-</button></div>
+                                                <div class="minus"><button>-</button></div>
                                             </div>
                                         </div>
                                     </div>
@@ -182,7 +206,7 @@
                     <div class="desktop-on-column">
                         <div class="columns">
                             <div class="buy">
-                                <a class="cart "href="cart.html">
+                                <a class="cart" href="{{trans('cart')}}">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                                     <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                                     </svg>

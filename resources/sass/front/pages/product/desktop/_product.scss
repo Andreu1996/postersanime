@@ -28,6 +28,42 @@
     margin: 2rem;
 }
 
+
+
+.tabs{
+    display: flex;
+    justify-content: space-between;
+}
+
+.tabContent{
+    display: none;
+}
+
+.tabActive{
+    background-color: gray;
+    padding: 2rem;
+}
+
+.tabActive h3{
+    color: white;
+}
+
+.tabContentActive{
+    display: block;
+}
+
+.tabContentActive p{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
 .product-title{
     display: flex;
     justify-content: center;

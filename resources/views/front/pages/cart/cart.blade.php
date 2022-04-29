@@ -105,7 +105,7 @@
                                 <div class="column-main column">
                                     <div class="cart-product-element-image-description">
                                         <div class="cart-product-image">
-                                            <a><img src="images/product-20.jpg"></a>
+                                            <a><img src="{{Storage::url('product-20.jpg')}}" alt=""></a>
                                         </div>
                                         <div class="cart-product-description">
                                             <div class="cart-product-description-element">
@@ -131,15 +131,15 @@
     
                                     <div class="cart-product-quantiy-number">
                                         <div class="product-quantiy-number-element">
-                                            <div id="add1"><button>+</button></div>
+                                            <div class="plus"><button>+</button></div>
                                         </div>
                                         <div class="product-quantiy-number-element">
                                             <div class="product-quantiy-number-element-number">
-                                                <div id="total1">0</div>
+                                                <div class="total">0</div>
                                             </div>
                                         </div>
                                         <div class="product-quantiy-number-element">
-                                            <div id="substract1"><button>-</button></div>
+                                            <div class="minus"><button>-</button></div>
                                         </div>
                                     </div>
                                 </div>
@@ -157,7 +157,7 @@
                                 <div class="column-main column">
                                     <div class="cart-product-element-image-description">
                                         <div class="cart-product-image">
-                                            <a><img src="images/product-18.jpg"></a>
+                                            <a><img src="{{Storage::url('product-18.jpg')}}" alt=""></a>
                                         </div>
                                         <div class="cart-product-description">
                                             <div class="cart-product-description-element">
@@ -183,15 +183,15 @@
     
                                     <div class="cart-product-quantiy-number">
                                         <div class="product-quantiy-number-element">
-                                            <div id="add2"><button>+</button></div>
+                                            <div class="plus"><button>+</button></div>
                                         </div>
                                         <div class="product-quantiy-number-element">
                                             <div class="product-quantiy-number-element-number">
-                                                <div id="total2">0</div>
+                                                <div class="total">0</div>
                                             </div>
                                         </div>
                                         <div class="product-quantiy-number-element">
-                                            <div id="substract2"><button>-</button></div>
+                                            <div class="minus"><button>-</button></div>
                                         </div>
                                     </div>
                                 </div>
@@ -209,7 +209,7 @@
                                 <div class="column-main column">
                                     <div class="cart-product-element-image-description">
                                         <div class="cart-product-image">
-                                            <a><img src="images/product-6.jpg"></a>
+                                            <a><img src="{{Storage::url('product-6.jpg')}}" alt=""></a>
                                         </div>
                                         <div class="cart-product-description">
                                             <div class="cart-product-description-element">
@@ -235,15 +235,15 @@
     
                                     <div class="cart-product-quantiy-number">
                                         <div class="product-quantiy-number-element">
-                                            <div id="add3"><button>+</button></div>
+                                            <div class="plus"><button>+</button></div>
                                         </div>
                                         <div class="product-quantiy-number-element">
                                             <div class="product-quantiy-number-element-number">
-                                                <div id="total3">0</div>
+                                                <div class="total">0</div>
                                             </div>
                                         </div>
                                         <div class="product-quantiy-number-element">
-                                            <div id="substract3"><button>-</button></div>
+                                            <div class="minus"><button>-</button></div>
                                         </div>
                                     </div>
                                 </div>
@@ -331,7 +331,7 @@
 
                         <div class="cart-recomendation-product">
                             <div class="cart-recomendation-image">
-                                <a><img src="images/product-19.jpg"></a>
+                                <a><img src="{{Storage::url('product-19.jpg')}}" alt=""></a>
                             </div>
 
                             <div class="cart-Recomendation-text">
@@ -352,7 +352,7 @@
 
                         <div class="cart-recomendation-product">
                             <div class="cart-recomendation-image">
-                                <a><img src="images/product-17.jpg"></a>
+                                <a><img src="{{Storage::url('product-17.jpg')}}" alt=""></a>
                             </div>
 
                             <div class="cart-Recomendation-text">
@@ -373,7 +373,7 @@
 
                         <div class="cart-recomendation-product">
                             <div class="cart-recomendation-image">
-                                <a><img src="images/product-15.jpg"></a>
+                                <a><img src="{{Storage::url('product-15.jpg')}}" alt=""></a>
                             </div>
 
                             <div class="cart-Recomendation-text">

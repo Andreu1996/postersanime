@@ -1,0 +1,38 @@
+.featured-title{
+    margin-top: 30rem;
+}
+
+.featured-elements{
+    flex-wrap: wrap;
+}
+
+.featured-element{
+    flex-basis: 100%;
+    margin-top: 2rem;
+}
+
+.offer{
+    flex-wrap: wrap;
+}
+
+.offer-text-description{
+    margin: 1rem auto;
+}
+
+
+.offer-text{
+    margin-top: 0%;
+    padding-top: 0%;
+    width: 100%;
+}
+
+.offer-text-title h1{
+    font-size: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+}
+
+.offer-image{
+    width: 100%;
+}

@@ -161,7 +161,7 @@
                             <div class="column">
                                 <div class="product-element">
                                     <div class="product-image">
-                                        <a><img src="images/product-17.jpg"></a>
+                                        <a><img src="{{Storage::url('product-17.jpg')}}" alt=""></a>
                                     </div>
 
                                     <div class="product-title red-text">
@@ -181,7 +181,7 @@
                             <div class="column">
                                 <div class="product-element">
                                     <div class="product-image">
-                                        <a href="producto.html"><img src="images/product-18.jpg"></a>
+                                        <a href="{{trans('producto')}}"><img src="{{Storage::url('product-18.jpg')}}" alt=""></a>
                                     </div>
 
                                     <div class="product-title red-text">
@@ -201,7 +201,7 @@
                             <div class="column">
                                 <div class="product-element">
                                     <div class="product-image">
-                                        <a><img src="images/product-19.jpg"></a>
+                                        <a><img src="{{Storage::url('product-19.jpg')}}" alt=""></a>
                                     </div>
 
                                     <div class="product-title red-text">
@@ -224,7 +224,7 @@
                             <div class="column">
                                 <div class="product-element">
                                     <div class="product-image">
-                                        <a><img src="images/product-20.jpg"></a>
+                                        <a><img src="{{Storage::url('product-20.jpg')}}" alt=""></a>
                                     </div>
 
                                     <div class="product-title red-text">
@@ -244,7 +244,7 @@
                             <div class="column">
                                 <div class="product-element">
                                     <div class="product-image">
-                                        <a><img src="images/product-1.jpg"></a>
+                                        <a><img src="{{Storage::url('product-1.jpg')}}" alt=""></a>
                                     </div>
 
                                     <div class="product-title red-text">
@@ -264,7 +264,7 @@
                             <div class="column">
                                 <div class="product-element">
                                     <div class="product-image">
-                                        <a><img src="images/product-2.jpg"></a>
+                                        <a><img src="{{Storage::url('product-2.jpg')}}" alt=""></a>
                                     </div>
 
                                     <div class="product-title red-text">
@@ -287,7 +287,7 @@
                             <div class="column">
                                 <div class="product-element ">
                                     <div class="product-image">
-                                        <a><img src="images/product-3.png"></a>
+                                        <a><img src="{{Storage::url('product-3.png')}}" alt=""></a>
                                     </div>
 
                                     <div class="product-title red-text">
@@ -307,7 +307,7 @@
                             <div class="column">
                                 <div class="product-element">
                                     <div class="product-image">
-                                        <a><img src="images/product-4.jpg"></a>
+                                        <a><img src="{{Storage::url('product-4.jpg')}}" alt=""></a>
                                     </div>
 
                                     <div class="product-title red-text">
@@ -327,7 +327,7 @@
                             <div class="column">
                                 <div class="product-element">
                                     <div class="product-image">
-                                        <a><img src="images/product-5.jpg"></a>
+                                        <a><img src="{{Storage::url('product-15.jpg')}}" alt=""></a>
                                     </div>
 
                                     <div class="product-title red-text">
@@ -350,7 +350,7 @@
                             <div class="column">
                                 <div class="product-element">
                                     <div class="product-image">
-                                        <a><img src="images/product-6.jpg"></a>
+                                        <a><img src="{{Storage::url('product-6.jpg')}}" alt=""></a>
                                     </div>
 
                                     <div class="product-title red-text">
@@ -370,7 +370,7 @@
                             <div class="column">
                                 <div class="product-element">
                                     <div class="product-image">
-                                        <a><img src="images/product-7.jpg"></a>
+                                        <a><img src="{{Storage::url('product-7.jpg')}}" alt=""></a>
                                     </div>
 
                                     <div class="product-title red-text">
@@ -390,7 +390,7 @@
                             <div class="column">
                                 <div class="product-element">
                                     <div class="product-image">
-                                        <a><img src="images/product-8.jpg"></a>
+                                        <a><img src="{{Storage::url('product-8.jpg')}}" alt=""></a>
                                     </div>
 
                                     <div class="product-title red-text">
@@ -413,7 +413,7 @@
                             <div class="column">
                                 <div class="product-element">
                                     <div class="product-image">
-                                        <a><img src="images/product-9.jpg"></a>
+                                        <a><img src="{{Storage::url('product-9.jpg')}}" alt=""></a>
                                     </div>
 
                                     <div class="product-title red-text">
@@ -433,7 +433,7 @@
                             <div class="column">
                                 <div class="product-element">
                                     <div class="product-image">
-                                        <a><img src="images/product-10.jpg"></a>
+                                        <a><img src="{{Storage::url('product-10.jpg')}}" alt=""></a>
                                     </div>
 
                                     <div class="product-title red-text">
@@ -453,7 +453,7 @@
                             <div class="column">
                                 <div class="product-element">
                                     <div class="product-image">
-                                        <a><img src="images/product-11.jpg"></a>
+                                        <a><img src="{{Storage::url('product-11.jpg')}}" alt=""></a>
                                     </div>
 
                                     <div class="product-title red-text">

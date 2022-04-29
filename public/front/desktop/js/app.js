@@ -2162,14 +2162,32 @@ module.exports = {
   \*******************************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-__webpack_require__(/*! ../mobile/bootstrap.js */ "./resources/js/front/mobile/bootstrap.js");
+__webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/desktop/bootstrap.js");
+
+var minuses = document.querySelectorAll(".minus");
+var pluses = document.querySelectorAll(".plus");
+var totals = document.querySelectorAll('.total');
+pluses.forEach(function (plus) {
+  plus.addEventListener("click", function () {
+    var total = parseInt(total_element.innerHTML);
+    total_element.innerHTML = totals + 1;
+  });
+});
+minuses.forEach(function (minus) {
+  minus.addEventListener("click", function () {
+    window.alert("minus");
+  });
+}); // import {tabs} from "../mobile/tabs";
+// import {add_substract} from "../mobile/plus-minus.js";
+// tabs ();
+// add_substract();
 
 /***/ }),
 
-/***/ "./resources/js/front/mobile/bootstrap.js":
-/*!************************************************!*\
-  !*** ./resources/js/front/mobile/bootstrap.js ***!
-  \************************************************/
+/***/ "./resources/js/front/desktop/bootstrap.js":
+/*!*************************************************!*\
+  !*** ./resources/js/front/desktop/bootstrap.js ***!
+  \*************************************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
@@ -19439,9 +19457,12 @@ __webpack_require__.r(__webpack_exports__);
 /*!**********************************************!*\
   !*** ./resources/sass/front/app-mobile.scss ***!
   \**********************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: Undefined mixin.\n  ╷\n2 │       @include header-mobile();\r\n  │       ^^^^^^^^^^^^^^^^^^^^^^^^\n  ╵\n  resources\\sass\\front\\layout\\mobile\\_header.scss 2:4  @import\n  resources\\sass\\front\\app-mobile.scss 9:9             root stylesheet\n    at processResult (C:\\Git-Dual\\postersanime\\node_modules\\webpack\\lib\\NormalModule.js:758:19)\n    at C:\\Git-Dual\\postersanime\\node_modules\\webpack\\lib\\NormalModule.js:860:5\n    at C:\\Git-Dual\\postersanime\\node_modules\\loader-runner\\lib\\LoaderRunner.js:400:11\n    at C:\\Git-Dual\\postersanime\\node_modules\\loader-runner\\lib\\LoaderRunner.js:252:18\n    at context.callback (C:\\Git-Dual\\postersanime\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at C:\\Git-Dual\\postersanime\\node_modules\\sass-loader\\dist\\index.js:54:7\n    at Function.call$2 (C:\\Git-Dual\\postersanime\\node_modules\\sass\\sass.dart.js:99827:16)\n    at render_closure1.call$2 (C:\\Git-Dual\\postersanime\\node_modules\\sass\\sass.dart.js:85350:12)\n    at _RootZone.runBinary$3$3 (C:\\Git-Dual\\postersanime\\node_modules\\sass\\sass.dart.js:29726:18)\n    at _FutureListener.handleError$1 (C:\\Git-Dual\\postersanime\\node_modules\\sass\\sass.dart.js:28240:21)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ }),
 
@@ -19750,6 +19771,7 @@ process.umask = function() { return 0; };
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/front/desktop/js/app": 0,
+/******/ 			"front/mobile/css/app-mobile": 0,
 /******/ 			"front/desktop/css/app": 0,
 /******/ 			"admin/desktop/css/app": 0
 /******/ 		};
@@ -19801,10 +19823,10 @@ process.umask = function() { return 0; };
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["front/desktop/css/app","admin/desktop/css/app"], () => (__webpack_require__("./resources/js/front/desktop/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["front/desktop/css/app","admin/desktop/css/app"], () => (__webpack_require__("./resources/sass/admin/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["front/desktop/css/app","admin/desktop/css/app"], () => (__webpack_require__("./resources/sass/front/app.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["front/desktop/css/app","admin/desktop/css/app"], () => (__webpack_require__("./resources/sass/front/app-mobile.scss")))
+/******/ 	__webpack_require__.O(undefined, ["front/mobile/css/app-mobile","front/desktop/css/app","admin/desktop/css/app"], () => (__webpack_require__("./resources/js/front/desktop/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["front/mobile/css/app-mobile","front/desktop/css/app","admin/desktop/css/app"], () => (__webpack_require__("./resources/sass/admin/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["front/mobile/css/app-mobile","front/desktop/css/app","admin/desktop/css/app"], () => (__webpack_require__("./resources/sass/front/app.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["front/mobile/css/app-mobile","front/desktop/css/app","admin/desktop/css/app"], () => (__webpack_require__("./resources/sass/front/app-mobile.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

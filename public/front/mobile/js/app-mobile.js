@@ -2211,6 +2211,114 @@ function hamburgerMenu() {
 
 /***/ }),
 
+/***/ "./resources/js/front/mobile/plus-minus.js":
+/*!*************************************************!*\
+  !*** ./resources/js/front/mobile/plus-minus.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "add_substract": () => (/* binding */ add_substract)
+/* harmony export */ });
+function add_substract() {
+  var minuses = document.querySelectorAll(".minus");
+  var pluses = document.querySelectorAll(".plus");
+  var totals = document.querySelectorAll('.total');
+  pluses.forEach(function (plus) {
+    plus.addEventListener("click", function () {
+      var total = parseInt(total_element.innerHTML);
+      total_element.innerHTML = totals + 1;
+    });
+  });
+  minuses.forEach(function (minus) {
+    minus.addEventListener("click", function () {
+      window.alert("minus");
+    });
+  });
+} // function add_substract () {
+//     let total_element = document.getElementById('total');
+//     function add () {
+//         let total_value = parseInt(total_element.innerHTML);
+//         total_element.innerHTML = total_value + 1;
+//     }
+//     function substract () {
+//         let total_value = parseInt(total_element.innerHTML);
+//         if (total_value == 0) return;
+//         total_element.innerHTML = total_value - 1;
+//     }
+//     document.getElementById('add').addEventListener('click', add);
+//     document.getElementById('substract').addEventListener('click', substract);
+// }
+// function add_substract2 () {
+//     let total_element2 = document.getElementById('total2');
+//     function add2 () {
+//         let total_value2 = parseInt(total_element2.innerHTML);
+//         total_element2.innerHTML = total_value2 + 1;
+//     }
+//     function substract2 () {
+//         let total_value2 = parseInt(total_element2.innerHTML);
+//         if (total_value2 == 0) return;
+//         total_element2.innerHTML = total_value2 - 1;
+//     }
+//     document.getElementById('add2').addEventListener('click', add2);
+//     document.getElementById('substract2').addEventListener('click', substract2);
+// }
+// function add_substract3 () {
+//     let total_element = document.getElementById('total3');
+//     function add () {
+//         let total_value = parseInt(total_element.innerHTML);
+//         total_element.innerHTML = total_value + 1;
+//     }
+//     function substract () {
+//         let total_value = parseInt(total_element.innerHTML);
+//         if (total_value == 0) return;
+//         total_element.innerHTML = total_value - 1;
+//     }
+//     document.getElementById('add3').addEventListener('click', add);
+//     document.getElementById('substract3').addEventListener('click', substract);
+// }
+
+
+ // export {add_substract2} ;
+// export {add_substract3} ;
+
+/***/ }),
+
+/***/ "./resources/js/front/mobile/tabs.js":
+/*!*******************************************!*\
+  !*** ./resources/js/front/mobile/tabs.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "tabs": () => (/* binding */ tabs)
+/* harmony export */ });
+function tabs() {
+  var tabs = document.querySelectorAll('.tab');
+  var tabContents = document.querySelectorAll('.tabContent');
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      tabs.forEach(function (tab) {
+        tab.classList.remove("tabActive");
+      });
+      tab.classList.add("tabActive");
+      tabContents.forEach(function (tabContent) {
+        tabContent.classList.remove("tabContentActive");
+
+        if (tab.dataset.tab == tabContent.dataset.tab) {
+          tabContent.classList.add("tabContentActive");
+        }
+      });
+    });
+  });
+}
+
+/***/ }),
+
 /***/ "./node_modules/lodash/lodash.js":
 /*!***************************************!*\
   !*** ./node_modules/lodash/lodash.js ***!
@@ -19706,10 +19814,31 @@ var __webpack_exports__ = {};
   \*************************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hamburger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hamburger */ "./resources/js/front/mobile/hamburger.js");
-__webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/mobile/bootstrap.js");
+/* harmony import */ var _plus_minus_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./plus-minus.js */ "./resources/js/front/mobile/plus-minus.js");
+/* harmony import */ var _tabs_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tabs.js */ "./resources/js/front/mobile/tabs.js");
+__webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/mobile/bootstrap.js"); // let tabs = document.querySelectorAll('.tab');
+// let tabContent = document.querySelectorAll('.tabContent');
+// let tabContentActive = document.querySelector('.tabContentActive');
+// tabs.forEach(tab => {
+//     tab.addEventListener("click", () => {
+//         // tabContent.classList.toggle("tabContent"); 
+//         tabContent.forEach(tabContent => {
+//             tabContent.classList.add("tabContentActive");
+//             tabContentActive.classList.remove("tabContentActive");
+//         });
+//     });
+// });
 
+
+
+
+ // import {add_substract2} from "./plus-minus.js";
+// import {add_substract3} from "./plus-minus.js";
 
 (0,_hamburger__WEBPACK_IMPORTED_MODULE_0__.hamburgerMenu)();
+(0,_plus_minus_js__WEBPACK_IMPORTED_MODULE_1__.add_substract)();
+(0,_tabs_js__WEBPACK_IMPORTED_MODULE_2__.tabs)(); // add_substract2();
+// add_substract3();
 })();
 
 /******/ })()
