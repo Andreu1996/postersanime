@@ -2220,20 +2220,36 @@ function hamburgerMenu() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "add_substract": () => (/* binding */ add_substract)
+/* harmony export */   "PlusMinus": () => (/* binding */ PlusMinus)
 /* harmony export */ });
-function add_substract() {
-  var minuses = document.getElementById("minus");
-  var pluses = document.getElementById("plus");
-  var total = document.getElementById('total'); // plus.addEventListener("click", () => {
-  //     total.value = (parseInt(total.value) + 1);
-  // });
-  // minus.addEventListener("click", () => {
-  //     if (total.value > 1) {
-  //         total.value = (parseInt(total.value) - 1);
-  //     }
-  // });
-}
+// export function add_substract () {
+//         plus.addEventListener("click", () => {
+//             total.value = (parseInt(total.value) + 1);
+//         });
+//         minus.addEventListener("click", () => {
+//             if (total.value > 1) {
+//                 total.value = (parseInt(total.value) - 1);
+//             }
+//         });
+// }
+var PlusMinus = function PlusMinus() {
+  var plusMinusButtons = document.querySelectorAll(".plus-minus-button");
+  plusMinusButtons.forEach(function (plusMinusButton) {
+    plusMinusButton.addEventListener("click", function () {
+      var plusMinusContainer = plusMinusButton.closest(".plus-minus-container");
+      var plusMinusInput = plusMinusContainer.querySelector(".plus-minus-input");
+      var value = parseInt(plusMinusInput.value);
+
+      if (plusMinusButton.dataset.type == "plus") {
+        value++;
+      } else if (plusMinusButton.dataset.type == "minus" && value > 1) {
+        value--;
+      }
+
+      plusMinusInput.value = value;
+    });
+  });
+};
 
 /***/ }),
 
@@ -19765,16 +19781,18 @@ var __webpack_exports__ = {};
   \*************************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hamburger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hamburger */ "./resources/js/front/mobile/hamburger.js");
-/* harmony import */ var _plus_minus_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./plus-minus.js */ "./resources/js/front/mobile/plus-minus.js");
-/* harmony import */ var _tabs_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tabs.js */ "./resources/js/front/mobile/tabs.js");
+/* harmony import */ var _tabs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tabs.js */ "./resources/js/front/mobile/tabs.js");
+/* harmony import */ var _plus_minus_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./plus-minus.js */ "./resources/js/front/mobile/plus-minus.js");
 __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/mobile/bootstrap.js");
 
+ // import {add_substract} from "./plus-minus.js";
 
 
 
-(0,_hamburger__WEBPACK_IMPORTED_MODULE_0__.hamburgerMenu)();
-(0,_plus_minus_js__WEBPACK_IMPORTED_MODULE_1__.add_substract)();
-(0,_tabs_js__WEBPACK_IMPORTED_MODULE_2__.tabs)();
+(0,_hamburger__WEBPACK_IMPORTED_MODULE_0__.hamburgerMenu)(); // add_substract();
+
+(0,_tabs_js__WEBPACK_IMPORTED_MODULE_1__.tabs)();
+(0,_plus_minus_js__WEBPACK_IMPORTED_MODULE_2__.PlusMinus)();
 })();
 
 /******/ })()
