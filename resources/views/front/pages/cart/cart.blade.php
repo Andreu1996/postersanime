@@ -131,15 +131,15 @@
     
                                     <div class="cart-product-quantiy-number">
                                         <div class="product-quantiy-number-element">
-                                            <div class="plus"><button>+</button></div>
+                                            <div id="plus"><button>+</button></div>
                                         </div>
                                         <div class="product-quantiy-number-element">
                                             <div class="product-quantiy-number-element-number">
-                                                <div class="total">0</div>
+                                                <input id="total" type="number" value="1">
                                             </div>
                                         </div>
                                         <div class="product-quantiy-number-element">
-                                            <div class="minus"><button>-</button></div>
+                                            <div id="minus"><button>-</button></div>
                                         </div>
                                     </div>
                                 </div>
@@ -183,15 +183,15 @@
     
                                     <div class="cart-product-quantiy-number">
                                         <div class="product-quantiy-number-element">
-                                            <div class="plus"><button>+</button></div>
+                                            <div id="plus"><button>+</button></div>
                                         </div>
                                         <div class="product-quantiy-number-element">
                                             <div class="product-quantiy-number-element-number">
-                                                <div class="total">0</div>
+                                                <input id="total" type="number" value="1">
                                             </div>
                                         </div>
                                         <div class="product-quantiy-number-element">
-                                            <div class="minus"><button>-</button></div>
+                                            <div id="minus"><button>-</button></div>
                                         </div>
                                     </div>
                                 </div>
@@ -235,15 +235,15 @@
     
                                     <div class="cart-product-quantiy-number">
                                         <div class="product-quantiy-number-element">
-                                            <div class="plus"><button>+</button></div>
+                                            <div id="plus"><button>+</button></div>
                                         </div>
                                         <div class="product-quantiy-number-element">
                                             <div class="product-quantiy-number-element-number">
-                                                <div class="total">0</div>
+                                                <input id="total" type="number" value="1">
                                             </div>
                                         </div>
                                         <div class="product-quantiy-number-element">
-                                            <div class="minus"><button>-</button></div>
+                                            <div id="minus"><button>-</button></div>
                                         </div>
                                     </div>
                                 </div>

@@ -2160,27 +2160,15 @@ module.exports = {
 /*!*******************************************!*\
   !*** ./resources/js/front/desktop/app.js ***!
   \*******************************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _plus_minus_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./plus-minus.js */ "./resources/js/front/desktop/plus-minus.js");
 __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/desktop/bootstrap.js");
 
-var minuses = document.querySelectorAll(".minus");
-var pluses = document.querySelectorAll(".plus");
-var totals = document.querySelectorAll('.total');
-pluses.forEach(function (plus) {
-  plus.addEventListener("click", function () {
-    var total = parseInt(total_element.innerHTML);
-    total_element.innerHTML = totals + 1;
-  });
-});
-minuses.forEach(function (minus) {
-  minus.addEventListener("click", function () {
-    window.alert("minus");
-  });
-}); // import {tabs} from "../mobile/tabs";
-// import {add_substract} from "../mobile/plus-minus.js";
-// tabs ();
-// add_substract();
+
+(0,_plus_minus_js__WEBPACK_IMPORTED_MODULE_0__.add_substract)();
 
 /***/ }),
 
@@ -2212,6 +2200,33 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/front/desktop/plus-minus.js":
+/*!**************************************************!*\
+  !*** ./resources/js/front/desktop/plus-minus.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "add_substract": () => (/* binding */ add_substract)
+/* harmony export */ });
+function add_substract() {
+  var minuses = document.getElementById("minus");
+  var pluses = document.getElementById("plus");
+  var total = document.getElementById('total'); // plus.addEventListener("click", () => {
+  //     total.value = (parseInt(total.value) + 1);
+  // });
+
+  minus.addEventListener("click", function () {
+    if (total.value > 0) {
+      total.value = parseInt(total.value) - 1;
+    }
+  });
+}
 
 /***/ }),
 
@@ -19722,6 +19737,18 @@ process.umask = function() { return 0; };
 /******/ 				}
 /******/ 			}
 /******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
 /******/ 		};
 /******/ 	})();
 /******/ 	

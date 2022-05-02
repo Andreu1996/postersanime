@@ -841,6 +841,40 @@ footer .footer-element p {
   width: 30rem;
 }
 
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.tabContent {
+  display: none;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.tabActive {
+  background-color: hsla(0deg, 72%, 52%, 0.137);
+  padding: 1rem;
+}
+
+.tabActive h3 {
+  color: white;
+}
+
+.tabContentActive {
+  display: block;
+  background-color: hsla(0deg, 72%, 52%, 0.137);
+  padding: 1rem;
+}
+
+.tabContentActive p {
+  text-align: center;
+}
+
 /*====================
 ========cart==========
 ======================*/
@@ -1192,33 +1226,7 @@ td, th {
   padding: 1rem;
 }
 
-.product-description {
-  margin: 2rem;
-}
-
-.tabs {
-  display: flex;
-  justify-content: space-between;
-}
-
-.tabContent {
-  display: none;
-}
-
-.tabActive {
-  background-color: gray;
-  padding: 2rem;
-}
-
-.tabActive h3 {
-  color: white;
-}
-
-.tabContentActive {
-  display: block;
-}
-
-.tabContentActive p {
+.product-description p {
   text-align: center;
 }
 
@@ -1244,14 +1252,6 @@ td, th {
 
 .product-quantiy-number-element p {
   color: 0px 3px 1px 0px #000000;
-}
-
-.product-quantiy-number-element-number {
-  border: 0px 3px 1px 0px #000000;
-  border-width: 0.1rem;
-  padding: 0.1rem 4rem;
-  background-color: hsl(0deg, 0%, 100%);
-  border-style: solid;
 }
 
 .product-quantiy-number-element-number p {

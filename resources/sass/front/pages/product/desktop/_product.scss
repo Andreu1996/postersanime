@@ -24,45 +24,9 @@
     padding: 1rem;
 }
 
-.product-description{
-    margin: 2rem;
-}
-
-
-
-.tabs{
-    display: flex;
-    justify-content: space-between;
-}
-
-.tabContent{
-    display: none;
-}
-
-.tabActive{
-    background-color: gray;
-    padding: 2rem;
-}
-
-.tabActive h3{
-    color: white;
-}
-
-.tabContentActive{
-    display: block;
-}
-
-.tabContentActive p{
+.product-description p{
     text-align: center;
 }
-
-
-
-
-
-
-
-
 
 .product-title{
     display: flex;
@@ -86,14 +50,6 @@
 
 .product-quantiy-number-element p{
     color: $shadow-color;
-}
-
-.product-quantiy-number-element-number{
-    border: $shadow-color;
-    border-width: 0.1rem;
-    padding: 0.1rem 4rem;
-    background-color: $laberl-box-color;
-    border-style: solid;
 }
 
 .product-quantiy-number-element-number p{

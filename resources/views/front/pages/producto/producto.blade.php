@@ -145,15 +145,11 @@
                             </div>
                         </div>
 
-                        <div class="product-description">
-                            <div class="product-caracteristics">
-                                <p>Poster edicion Mob Psycho 100 papel machetado de calidad superior, capaz de aguantar fuertes golpes y abolladuras. 30cm x 30 cm perfecto para cualquier pared y habitacion. compra ahora este producto y recivelo en menos de una semana.</p>
-                            </div>
-                        </div>
+                        
 
                         <div class="tabs">
                             <div class="tab tabActive" data-tab="tab1">
-                                <h3>Descripción1</h3>
+                                <h3>Descripción</h3>
                             </div>
                             <div class="tab" data-tab="tab2">
                                 <h3>Descripción2</h3>
@@ -165,13 +161,13 @@
 
                         <div class="tabs-content">
                             <div class="tabContent tabContentActive" data-tab="tab1">
-                                <p>prueba1</p>
+                                <p>Poster edicion Mob Psycho 100 papel machetado de calidad superior, capaz de aguantar fuertes golpes y abolladuras. 30cm x 30 cm perfecto para cualquier pared y habitacion. compra ahora este producto y recivelo en menos de una semana.</p>
                             </div>
                             <div class="tabContent" data-tab="tab2">
-                                <p>prueba2</p>
+                                <p>Compra todo lo que quieras con las mejores ofertas y servicios</p>
                             </div>
                             <div class="tabContent" data-tab="tab3">
-                                <p>prueba3</p>
+                                <p>si necesitas ayuda o tiene alguna duda puede contactarnos y le ayudaremos en todo lo que necesite</p>
                             </div>
                         </div>
                         
@@ -187,15 +183,15 @@
                                     <div class="column">
                                         <div class="product-quantiy-number">
                                             <div class="product-quantiy-number-element">
-                                                <div class="plus"><button>+</button></div>
+                                                <div id="plus"><button>+</button></div>
                                             </div>
                                             <div class="product-quantiy-number-element">
                                                 <div class="product-quantiy-number-element-number">
-                                                    <div class="total">0</div>
+                                                    <input id="total" type="number" value="1">
                                                 </div>
                                             </div>
                                             <div class="product-quantiy-number-element">
-                                                <div class="minus"><button>-</button></div>
+                                                <div id="minus"><button>-</button></div>
                                             </div>
                                         </div>
                                     </div>

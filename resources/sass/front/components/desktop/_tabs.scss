@@ -1,0 +1,33 @@
+.tabs{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+
+.tabContent{
+    display: none;
+}
+
+.tab{
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.tabActive{
+    background-color: hsla(0, 72%, 52%, 0.137);
+    padding: 1rem;
+}
+
+.tabActive h3{
+    color: white;
+}
+
+.tabContentActive{
+    display: block;
+   background-color:  hsla(0, 72%, 52%, 0.137);
+   padding: 1rem;
+}
+
+.tabContentActive p{
+    text-align: center;
+}
