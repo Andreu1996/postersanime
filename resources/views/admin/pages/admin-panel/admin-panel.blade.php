@@ -176,179 +176,181 @@
                     </tbody>
                 </table>
     
+                <form>
+                    <div class="sidetable sidetablehide">
 
-                <div class="sidetable sidetablehide">
-
-                    <div class="container">
-
-                        <div class="sidetable-header">
-                            <ul class="container--tabs">
-                                <li class="tab tabs--active">Contacto</li>
-                                <li class="tab">Imagenes</li>
-                                <li class="tab">Seo</li>
-                            </ul>
+                        <div class="container">
     
-                            <div class="sidetable-header-options">
-                                <div class="sidetable-header-element">
-                                    <div class="sidetableHeaderSave">
-                                        <div class="sidetable-header-svg">
-                                            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                                                <path fill="currentColor" d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sidetable-header-element">
-                                    <div class="sidetable-header-clean">
-                                        <div class="sidetable-header-svg">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eraser" viewBox="0 0 16 16">
-                                                <path d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm2.121.707a1 1 0 0 0-1.414 0L4.16 7.547l5.293 5.293 4.633-4.633a1 1 0 0 0 0-1.414l-3.879-3.879zM8.746 13.547 3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sidetable-header-element">
-                                    <div class="sidetable-header-onoff">
-                                        <div class="containerButton">
-                                            <label class="btn-onoff">
-                                                <input type="checkbox" name="name" data-onoff="toggle"><span></span>	
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>                               
-                            </div>
-                        </div>
-                        
-                    
-                        <div class="container--content">
-                            <div class="content content--active">
-                                <div class="sidetableContact">
-                                    <div class="desktop-two-columns">
-            
-                                        <div class="column">
-                                            <div class="category">
-                                                <div class="category-title">
-                                                    <h3>Categoria</h3>
-                                                </div>
-                                                <div class="category-options">
-                                                    <select>
-                                                        <option>categoria1</option>
-                                                        <option>categoria2</option>
-                                                        <option>categoria3</option>
-                                                        <option>categoria4</option>
-                                                        <option>categoria5</option>
-                                                        <option>categoria6</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-            
-                                        <div class="column">
-                                            <div class="name">
-                                                <div class="name-title">
-                                                    <h3>Nombre</h3>
-                                                </div>
-                                                <div class="name-options">
-                                                    <input type="text" placeholder="Nombre">
-                                                </div>
-                                            </div>
-                                        </div>
+                            <div class="sidetable-header">
+                                <ul class="container--tabs">
+                                    <li class="tab tabs--active" data-tab="tab1">Contacto</li>
+                                    <li class="tab" data-tab="tab2">Imagenes</li>
+                                    <li class="tab" data-tab="tab3">Seo</li>
+                                </ul>
         
-                                    </div>
-
-                                    
-                                    <div class="container-local">
-
-                                        <div class="lenguage">
-                                            <ul class="container-tabs-local">
-                                                <li class="tab-local tabs--active-local">Español</li>
-                                                <li class="tab-local">Ingles</li>
-                                                <li class="tab-local">Catalan</li>
-                                            </ul>
+                                <div class="sidetable-header-options">
+                                    <div class="sidetable-header-element">
+                                        <div class="sidetableHeaderSave">
+                                            <div class="sidetable-header-svg">
+                                                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                                    <path fill="currentColor" d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" />
+                                                </svg>
+                                            </div>
                                         </div>
-
-                                        <div class="container--content-local">
-
-                                            <div class="content-local content--active-local">
-                                                <div class="description">
-                                                    <div class="description-title">
-                                                        <h3>Titulo</h3>
-                                                    </div>
-                                                    <div class="description-title-text">
-                                                        <input type="text" placeholder="Titulo">
-                                                    </div>
-                                                    <div class="description-title">
-                                                        <h3>Descripción</h3>
-                                                    </div>
-                                                    <div class="description-info">
-                                                        <textarea placeholder="Descripción"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="content-local">
-                                                <div class="description">
-                                                    <div class="description-title">
-                                                        <h3>Titulo2</h3>
-                                                    </div>
-                                                    <div class="description-title-text">
-                                                        <input type="text" placeholder="Titulo">
-                                                    </div>
-                                                    <div class="description-title">
-                                                        <h3>Descripción</h3>
-                                                    </div>
-                                                    <div class="description-info">
-                                                        <textarea placeholder="Descripción"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="content-local">
-                                                <div class="description">
-                                                    <div class="description-title">
-                                                        <h3>Titulo3</h3>
-                                                    </div>
-                                                    <div class="description-title-text">
-                                                        <input type="text" placeholder="Titulo">
-                                                    </div>
-                                                    <div class="description-title">
-                                                        <h3>Descripción</h3>
-                                                    </div>
-                                                    <div class="description-info">
-                                                        <textarea placeholder="Descripción"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                
                                     </div>
-                                    
-                                    
-                                    
+                                    <div class="sidetable-header-element">
+                                        <div class="sidetable-header-clean">
+                                            <div class="sidetable-header-svg">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eraser" viewBox="0 0 16 16">
+                                                    <path d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm2.121.707a1 1 0 0 0-1.414 0L4.16 7.547l5.293 5.293 4.633-4.633a1 1 0 0 0 0-1.414l-3.879-3.879zM8.746 13.547 3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sidetable-header-element">
+                                        <div class="sidetable-header-onoff">
+                                            <div class="containerButton">
+                                                <label class="btn-onoff">
+                                                    <input type="checkbox" name="visible" id="input-on-off" checked><span></span>	
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>                               
                                 </div>
                             </div>
                             
-                            <div class="content">
-                                Imagenes
+                        
+                            <div class="container--content">
+                                <div class="content content--active" data-tab="tab1">
+                                    <div class="sidetableContact">
+                                        <div class="desktop-two-columns">
+                
+                                            <div class="column">
+                                                <div class="category">
+                                                    <div class="category-title">
+                                                        <h3>Categoria</h3>
+                                                    </div>
+                                                    <div class="category-options">
+                                                        <select>
+                                                            <option>categoria1</option>
+                                                            <option>categoria2</option>
+                                                            <option>categoria3</option>
+                                                            <option>categoria4</option>
+                                                            <option>categoria5</option>
+                                                            <option>categoria6</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                
+                                            <div class="column">
+                                                <div class="name">
+                                                    <div class="name-title">
+                                                        <h3>Nombre</h3>
+                                                    </div>
+                                                    <div class="name-options">
+                                                        <input type="text" placeholder="Nombre">
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                        </div>
+    
+                                        
+                                        <div class="container-local">
+    
+                                            <div class="lenguage">
+                                                <ul class="container-tabs-local">
+                                                    <li class="tab-local tabs--active-local" data-tab="tab1">Español</li>
+                                                    <li class="tab-local" data-tab="tab2">Ingles</li>
+                                                    <li class="tab-local" data-tab="tab3">Catalan</li>
+                                                </ul>
+                                            </div>
+    
+                                            <div class="container--content-local">
+    
+                                                <div class="content-local content--active-local" data-tab="tab1">
+                                                    <div class="description">
+                                                        <div class="description-title">
+                                                            <h3>Titulo</h3>
+                                                        </div>
+                                                        <div class="description-title-text">
+                                                            <input type="text" placeholder="Titulo">
+                                                        </div>
+                                                        <div class="description-title">
+                                                            <h3>Descripción</h3>
+                                                        </div>
+                                                        <div class="description-info">
+                                                            <textarea placeholder="Descripción"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                                <div class="content-local" data-tab="tab2">
+                                                    <div class="description">
+                                                        <div class="description-title">
+                                                            <h3>Titulo2</h3>
+                                                        </div>
+                                                        <div class="description-title-text">
+                                                            <input type="text" placeholder="Titulo">
+                                                        </div>
+                                                        <div class="description-title">
+                                                            <h3>Descripción</h3>
+                                                        </div>
+                                                        <div class="description-info">
+                                                            <textarea placeholder="Descripción"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                                <div class="content-local" data-tab="tab3">
+                                                    <div class="description">
+                                                        <div class="description-title">
+                                                            <h3>Titulo3</h3>
+                                                        </div>
+                                                        <div class="description-title-text">
+                                                            <input type="text" placeholder="Titulo">
+                                                        </div>
+                                                        <div class="description-title">
+                                                            <h3>Descripción</h3>
+                                                        </div>
+                                                        <div class="description-info">
+                                                            <textarea placeholder="Descripción"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
+                                    
+                                        </div>
+                                        
+                                        
+                                        
+                                    </div>
+                                </div>
+                                
+                                <div class="content" data-tab="tab2">
+                                    Imagenes
+                                </div>
+                                <div class="content" data-tab="tab3">
+                                    Contenido
+                                </div>
                             </div>
-                            <div class="content">
-                                Contenido
+    
+                            <div class="save saveHide cancelSave">
+                                <div class="save-button button-decoration">
+                                    <button class="btn-save">Guardar</button>
+                                </div>
+                                <div class="cancel-button button-decoration">
+                                    <button class="btn-save">Cancelar</button>
+                                </div>
                             </div>
+    
                         </div>
-
-                        <div class="save saveHide cancelSave">
-                            <div class="save-button button-decoration">
-                                <button class="btn-save">Guardar</button>
-                            </div>
-                            <div class="cancel-button button-decoration">
-                                <button class="btn-save">Cancelar</button>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div> 
+    
+                    </div> 
+                </form>
+                
 
 
 

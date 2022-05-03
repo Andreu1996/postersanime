@@ -6,9 +6,7 @@ function sideTable(){
     edit.forEach(useredit => {
         useredit.addEventListener("click", () => {
             table.classList.toggle("sidetablehide");
-            maintable.classList.toggle("maintable");
-            hideElement.classList.toggle("text-desapear");
-            
+            maintable.classList.toggle("maintable");            
         });
     });
 }

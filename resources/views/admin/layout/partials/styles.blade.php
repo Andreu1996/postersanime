@@ -1,9 +1,7 @@
-{{-- @if($agent->isDesktop())
-    <link href="{{mix('front/desktop/css/app.css')}}" rel="stylesheet">
+@if($agent->isDesktop())
+    <link href="{{mix('admin/desktop/css/app.css')}}" rel="stylesheet">
 @endif
 
 @if($agent->isMobile())
-    <link href="{{mix('front/mobile/css/app.css')}}" rel="stylesheet">
-@endif --}}
-
-<link rel="stylesheet" href="{{mix('admin/desktop/css/app.css')}}" >
+    <link href="{{mix('admin/mobile/css/app-mobile.css')}}" rel="stylesheet">
+@endif

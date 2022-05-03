@@ -1,3 +1,8 @@
+.plus-minus-container{
+    display: flex;
+    justify-content: left;
+}
+
 .plus-minus-button{
     display: flex;
     height: 30;
@@ -61,3 +66,4 @@
         border-radius: 0 0.5rem 0.5rem 0;
     }
 }
+

@@ -729,6 +729,11 @@ footer .footer-element p {
   text-align: center;
 }
 
+.plus-minus-container {
+  display: flex;
+  justify-content: left;
+}
+
 .plus-minus-button {
   display: flex;
   height: 30;
@@ -875,6 +880,29 @@ footer .footer-element p {
   text-align: center;
 }
 
+.pop-up {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  background-color: hsla(0deg, 72%, 52%, 0.137);
+  padding: 3rem;
+  border-radius: 2rem;
+  gap: 0rem;
+}
+
+.pop-up-cart {
+  justify-content: right;
+  align-items: right;
+  margin-left: 5rem;
+}
+
+.pop-up-cart svg {
+  fill: rgb(223, 18, 18);
+  width: 40%;
+  height: 40%;
+  justify-content: right;
+}
+
 /*====================
 ========cart==========
 ======================*/
@@ -914,11 +942,6 @@ footer .footer-element p {
   width: 100%;
   margin-right: 0.5rem;
   margin-bottom: 1rem;
-}
-
-.plus-minus-container {
-  display: flex;
-  justify-content: left;
 }
 
 .cart-product-description-element {

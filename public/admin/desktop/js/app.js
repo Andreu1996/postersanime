@@ -2187,45 +2187,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/admin/desktop/editTabsLocal.js":
-/*!*****************************************************!*\
-  !*** ./resources/js/admin/desktop/editTabsLocal.js ***!
-  \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "editTabsLocal": () => (/* binding */ editTabsLocal)
-/* harmony export */ });
-function editTabsLocal() {
-  var tabs = document.querySelectorAll(".tab-local");
-  var contents = document.querySelectorAll(".content-local");
-
-  var _loop = function _loop(i) {
-    tabs[i].addEventListener("click", function () {
-      for (var j = 0; j < contents.length; j++) {
-        contents[j].classList.remove("content--active-local");
-      }
-
-      for (var jj = 0; jj < tabs.length; jj++) {
-        tabs[jj].classList.remove("tabs--active-local");
-      }
-
-      contents[i].classList.add("content--active-local");
-      tabs[i].classList.add("tabs--active-local");
-    });
-  };
-
-  for (var i = 0; i < tabs.length; i++) {
-    _loop(i);
-  }
-}
-
-
-
-/***/ }),
-
 /***/ "./resources/js/admin/desktop/hamburger.js":
 /*!*************************************************!*\
   !*** ./resources/js/admin/desktop/hamburger.js ***!
@@ -2300,7 +2261,6 @@ function sideTable() {
     useredit.addEventListener("click", function () {
       table.classList.toggle("sidetablehide");
       maintable.classList.toggle("maintable");
-      hideElement.classList.toggle("text-desapear");
     });
   });
 }
@@ -2309,42 +2269,56 @@ function sideTable() {
 
 /***/ }),
 
-/***/ "./resources/js/admin/desktop/userEdit.js":
-/*!************************************************!*\
-  !*** ./resources/js/admin/desktop/userEdit.js ***!
-  \************************************************/
+/***/ "./resources/js/admin/desktop/tabsAdmin.js":
+/*!*************************************************!*\
+  !*** ./resources/js/admin/desktop/tabsAdmin.js ***!
+  \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "userEdit": () => (/* binding */ userEdit)
+/* harmony export */   "tabsAdmin": () => (/* binding */ tabsAdmin),
+/* harmony export */   "tabsAdminLocal": () => (/* binding */ tabsAdminLocal)
 /* harmony export */ });
-function userEdit() {
-  var tabs = document.querySelectorAll(".tab");
-  var contents = document.querySelectorAll(".content");
+function tabsAdmin() {
+  var tabs = document.querySelectorAll('.tab');
+  var tabContents = document.querySelectorAll('.content');
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      tabs.forEach(function (tab) {
+        tab.classList.remove("tabs--active");
+      });
+      tab.classList.add("tabs--active");
+      tabContents.forEach(function (Content) {
+        Content.classList.remove("content--active");
 
-  var _loop = function _loop(i) {
-    tabs[i].addEventListener("click", function () {
-      for (var j = 0; j < contents.length; j++) {
-        contents[j].classList.remove("content--active");
-      }
-
-      for (var jj = 0; jj < tabs.length; jj++) {
-        tabs[jj].classList.remove("tabs--active");
-      }
-
-      contents[i].classList.add("content--active");
-      tabs[i].classList.add("tabs--active");
+        if (tab.dataset.tab == Content.dataset.tab) {
+          Content.classList.add("content--active");
+        }
+      });
     });
-  };
-
-  for (var i = 0; i < tabs.length; i++) {
-    _loop(i);
-  }
+  });
 }
+function tabsAdminLocal() {
+  var tabsLocal = document.querySelectorAll('.tab-local');
+  var tabContentsLocal = document.querySelectorAll('.content-local');
+  tabsLocal.forEach(function (tabLocal) {
+    tabLocal.addEventListener("click", function () {
+      tabsLocal.forEach(function (tabLocal) {
+        tabLocal.classList.remove("tabs--active-local");
+      });
+      tabLocal.classList.add("tabs--active-local");
+      tabContentsLocal.forEach(function (ContentLocal) {
+        ContentLocal.classList.remove("content--active-local");
 
-
+        if (tabLocal.dataset.tab == ContentLocal.dataset.tab) {
+          ContentLocal.classList.add("content--active-local");
+        }
+      });
+    });
+  });
+}
 
 /***/ }),
 
@@ -19844,9 +19818,8 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hamburger_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hamburger.js */ "./resources/js/admin/desktop/hamburger.js");
 /* harmony import */ var _sidetable_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sidetable.js */ "./resources/js/admin/desktop/sidetable.js");
-/* harmony import */ var _userEdit_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./userEdit.js */ "./resources/js/admin/desktop/userEdit.js");
-/* harmony import */ var _editTabsLocal_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editTabsLocal.js */ "./resources/js/admin/desktop/editTabsLocal.js");
-/* harmony import */ var _save_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./save.js */ "./resources/js/admin/desktop/save.js");
+/* harmony import */ var _save_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./save.js */ "./resources/js/admin/desktop/save.js");
+/* harmony import */ var _tabsAdmin_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tabsAdmin.js */ "./resources/js/admin/desktop/tabsAdmin.js");
 __webpack_require__(/*! ../bootstrap */ "./resources/js/admin/bootstrap.js");
 
 
@@ -19856,9 +19829,9 @@ __webpack_require__(/*! ../bootstrap */ "./resources/js/admin/bootstrap.js");
 
 (0,_hamburger_js__WEBPACK_IMPORTED_MODULE_0__.hamburgerMenu)();
 (0,_sidetable_js__WEBPACK_IMPORTED_MODULE_1__.sideTable)();
-(0,_userEdit_js__WEBPACK_IMPORTED_MODULE_2__.userEdit)();
-(0,_editTabsLocal_js__WEBPACK_IMPORTED_MODULE_3__.editTabsLocal)();
-(0,_save_js__WEBPACK_IMPORTED_MODULE_4__.saveButton)();
+(0,_save_js__WEBPACK_IMPORTED_MODULE_2__.saveButton)();
+(0,_tabsAdmin_js__WEBPACK_IMPORTED_MODULE_3__.tabsAdmin)();
+(0,_tabsAdmin_js__WEBPACK_IMPORTED_MODULE_3__.tabsAdminLocal)();
 })();
 
 /******/ })()
