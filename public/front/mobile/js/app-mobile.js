@@ -2253,6 +2253,37 @@ var PlusMinus = function PlusMinus() {
 
 /***/ }),
 
+/***/ "./resources/js/front/mobile/pop-up-cart.js":
+/*!**************************************************!*\
+  !*** ./resources/js/front/mobile/pop-up-cart.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "popUpCart": () => (/* binding */ popUpCart)
+/* harmony export */ });
+var popUpCart = function popUpCart() {
+  var popUpCartPage = document.querySelector(".pop-up-cart");
+  var cart = document.querySelector(".cart");
+  var save = document.querySelector(".save");
+  cart.addEventListener('click', function () {
+    popUpCartPage.classList.toggle("pop-up-cart-active");
+    setTimeout(function () {
+      popUpCartPage.classList.remove("pop-up-cart-active");
+    }, 5000);
+  });
+  save.addEventListener('click', function () {
+    popUp.classList.toggle("pop-up-cart-active");
+    setTimeout(function () {
+      popUp.classList.remove("pop-up-active");
+    }, 1000);
+  });
+};
+
+/***/ }),
+
 /***/ "./resources/js/front/mobile/tabs.js":
 /*!*******************************************!*\
   !*** ./resources/js/front/mobile/tabs.js ***!
@@ -19783,9 +19814,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hamburger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hamburger */ "./resources/js/front/mobile/hamburger.js");
 /* harmony import */ var _tabs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tabs.js */ "./resources/js/front/mobile/tabs.js");
 /* harmony import */ var _plus_minus_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./plus-minus.js */ "./resources/js/front/mobile/plus-minus.js");
+/* harmony import */ var _pop_up_cart_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pop-up-cart.js */ "./resources/js/front/mobile/pop-up-cart.js");
 __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/mobile/bootstrap.js");
 
  // import {add_substract} from "./plus-minus.js";
+
 
 
 
@@ -19793,6 +19826,7 @@ __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/mobile/bootstrap
 
 (0,_tabs_js__WEBPACK_IMPORTED_MODULE_1__.tabs)();
 (0,_plus_minus_js__WEBPACK_IMPORTED_MODULE_2__.PlusMinus)();
+(0,_pop_up_cart_js__WEBPACK_IMPORTED_MODULE_3__.popUpCart)();
 })();
 
 /******/ })()

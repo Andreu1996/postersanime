@@ -173,7 +173,25 @@
                                 </div>                               
                             </td>
                         </tr>
+
+                        <div class="remove-confirmation">
+                            <div class="remove-confirmation-content">
+                                <div class="remove-confirmation-title">
+                                    <h3>¿Eliminar usuario?</h3>
+                                </div>
+                                <div class="remove-confirmation-buttons">
+                                    <div class="remove-confirmation-delete">
+                                        <button class="remove-confirmation-button">Eliminar</button>
+                                    </div>
+                                    <div class="remove-confirmation-cancel">
+                                        <button class="remove-confirmation-button">Cancelar</button>
+                                    </div>         
+                                </div>
+                            </div>
+                        </div>
                     </tbody>
+
+                    
                 </table>
     
                 <form>
@@ -330,23 +348,111 @@
                                 </div>
                                 
                                 <div class="content" data-tab="tab2">
-                                    Imagenes
+
+                                    <div class="desktop-two-columns">
+                                        <div class="column">
+                                            <div class="image-selector">
+                                                <div class="image-selector-title">
+                                                    <h3>Seleccionar Imagen</h3>
+                                                </div>
+                                                <div class="image-preview-delete">
+                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                                        <path fill="currentColor" d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z" />
+                                                    </svg>
+                                                </div>
+                                                <label class="file-input">
+                                                <div id="image-preview">
+                                                    <svg class="image-preview-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                                    <img class="image-preview-element" id="image-preview-element" src="">
+                                                </div>                                             
+                                                <input type="file" name="image-featured" class="choose-file" accept="image/*" >
+                                            </div>  
+                                        </div> 
+                                        <div class="column">
+                                            <div class="image-selector">
+                                                <div class="image-selector-title">
+                                                    <h3>Seleccionar Imagen</h3>
+                                                </div>
+                                                <div class="image-preview-delete">
+                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                                        <path fill="currentColor" d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z" />
+                                                    </svg>
+                                                </div>
+                                                <label class="file-input">
+                                                <div id="image-preview">
+                                                    <svg class="image-preview-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                                    <img class="image-preview-element" id="image-preview-element" src="">
+    
+                                                </div>                                             
+                                                <input type="file" name="image-featured" class="choose-file" accept="image/*" >
+                                                  
+                                            </div> 
+                                            
+                                        </div> 
+                                    </div>  
+
+
+                                    {{-- <div class="select-document-all">
+
+                                        <div class="select-document">
+                                            <div class="select-document-title">
+                                                <h3>Seleccionar documento</h3>
+                                            </div>
+                                            <div class="select-document-image">
+                                                <input type="file" id="file-input" name="file-input" multiple>
+                                                <label for="file-input">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="select-document">
+                                            <div class="select-document-title">
+                                                <h3>Seleccionar documento</h3>
+                                            </div>
+                                            <label for="file-input">
+                                            <div class="select-document-image">  
+                                                    <div class="select-document-svg">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload">
+                                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line>
+                                                        </svg>
+                                                    </div> 
+                                                    <img class="select-document-image-preview" src="">
+
+                                            </div>
+                                            <input type="file" class="select-document-image-input" name="image-featured" accept="image/*" >
+                                        </div>
+                                    </div> --}}
+                                    
                                 </div>
+
+
                                 <div class="content" data-tab="tab3">
                                     Contenido
                                 </div>
                             </div>
-    
-                            <div class="save saveHide cancelSave">
-                                <div class="save-button button-decoration">
-                                    <button class="btn-save">Guardar</button>
+
+                            <div class="pop-up-save">
+
+                                <div class="pop-up-save-element">
+                                    <a class="pop-up-save-svg">
+                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" />
+                                        </svg>
+                                    </a>   
                                 </div>
-                                <div class="cancel-button button-decoration">
-                                    <button class="btn-save">Cancelar</button>
+        
+                                <div class="pop-up-save-element">
+                                    <div class="pop-up-save-text">
+                                        <p>Usuario guardado con exito</p>
+                                    </div>
                                 </div>
+        
                             </div>
     
                         </div>
+
+                        
     
                     </div> 
                 </form>

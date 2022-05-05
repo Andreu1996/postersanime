@@ -1,0 +1,20 @@
+.remove-confirmation{
+    position: absolute;
+    padding: 13% 39%;
+    top: -100rem;
+    background-color: rgba(0, 0, 0, 0.618);
+}
+
+.remove-confirmation-active{
+    top: 7rem
+}
+
+.remove-confirmation-title{
+    margin-left: 2rem;
+}
+
+.remove-confirmation-buttons{
+    display: flex;
+    gap: 5rem;
+    margin-top: 2rem;
+}

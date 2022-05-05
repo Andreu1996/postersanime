@@ -880,27 +880,30 @@ footer .footer-element p {
   text-align: center;
 }
 
-.pop-up {
+.pop-up-cart {
   display: flex;
   position: absolute;
-  bottom: 0;
+  top: -100rem;
+  right: 0rem;
   background-color: hsla(0deg, 72%, 52%, 0.137);
   padding: 3rem;
   border-radius: 2rem;
-  gap: 0rem;
+  gap: 1rem;
 }
 
-.pop-up-cart {
-  justify-content: right;
-  align-items: right;
-  margin-left: 5rem;
+.pop-up-cart-active {
+  top: 31rem;
+  bottom: 0rem;
+  right: 0rem;
 }
 
-.pop-up-cart svg {
+.pop-up-cart-svg svg {
   fill: rgb(223, 18, 18);
-  width: 40%;
-  height: 40%;
-  justify-content: right;
+  height: 3rem;
+}
+
+.pop-up-cart-text {
+  margin-top: 1rem;
 }
 
 /*====================

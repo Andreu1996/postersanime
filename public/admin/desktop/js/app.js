@@ -2211,6 +2211,68 @@ function hamburgerMenu() {
 
 /***/ }),
 
+/***/ "./resources/js/admin/desktop/removeUser.js":
+/*!**************************************************!*\
+  !*** ./resources/js/admin/desktop/removeUser.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "removeUser": () => (/* binding */ removeUser)
+/* harmony export */ });
+function removeUser() {
+  var remove = document.querySelector('.userdelete');
+  var removeConfirmation = document.querySelector('.remove-confirmation');
+  var removeConfirmationCancel = document.querySelector('.remove-confirmation-cancel');
+  remove.addEventListener("click", function () {
+    removeConfirmation.classList.add("remove-confirmation-active");
+  });
+  removeConfirmationCancel.addEventListener("click", function () {
+    removeConfirmation.classList.remove("remove-confirmation-active");
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/admin/desktop/renderImageUpload.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/admin/desktop/renderImageUpload.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderImageUpload": () => (/* binding */ renderImageUpload)
+/* harmony export */ });
+var renderImageUpload = function renderImageUpload() {
+  var chooseFiles = document.querySelectorAll('.choose-file');
+  var deleteFiles = document.querySelectorAll('.image-preview-delete');
+  chooseFiles.forEach(function (chooseFile) {
+    chooseFile.addEventListener("change", function () {
+      var files = chooseFile.files[0];
+      var fileReader = new FileReader();
+      fileReader.readAsDataURL(files);
+      fileReader.addEventListener("load", function () {
+        chooseFile.closest('.image-selector').querySelector('.image-preview-element').src = fileReader.result;
+        chooseFile.closest('.image-selector').querySelector('.image-preview-svg').classList.add('hidden');
+        chooseFile.closest('.image-selector').querySelector('.image-preview-delete').classList.add('active');
+        deleteFiles.forEach(function (deleteFile) {
+          deleteFile.addEventListener("click", function () {
+            deleteFile.closest('.image-selector').querySelector('.image-preview-element').src = '';
+            deleteFile.closest('.image-selector').querySelector('.image-preview-svg').classList.remove('hidden');
+            deleteFile.closest('.image-selector').querySelector('.image-preview-delete').classList.remove('active');
+          });
+        });
+      });
+    });
+  });
+};
+
+/***/ }),
+
 /***/ "./resources/js/admin/desktop/save.js":
 /*!********************************************!*\
   !*** ./resources/js/admin/desktop/save.js ***!
@@ -2224,18 +2286,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function saveButton() {
   var save = document.querySelector('.sidetableHeaderSave');
-  var saveTab = document.querySelector('.save');
-  var cancelButton = document.querySelector('.cancel-button');
-  var cancelSave = document.querySelector('.save');
-  save.addEventListener("click", function () {
-    saveTab.classList.remove("saveHide");
-  });
-  cancelButton.addEventListener("click", function () {
-    saveTab.classList.add("saveHide");
-  });
-  cancelSave.addEventListener("click", function () {
-    saveTab.classList.add("saveHide");
-  });
+  var saveTab = document.querySelector('.pop-up-save');
+  save.addEventListener('click', function () {
+    saveTab.classList.add("pop-up-save-active");
+    setTimeout(function () {
+      saveTab.classList.remove("pop-up-save-active");
+    }, 5000);
+  }); // let cancelButton = document.querySelector('.cancel-button');
+  // let cancelSave = document.querySelector('.save');
+  //     save.addEventListener("click", () => {
+  //         saveTab.classList.remove("saveHide");
+  //     });
+  //     cancelButton.addEventListener("click", () => {
+  //         saveTab.classList.add("saveHide");
+  //     });
+  //     cancelSave.addEventListener("click", () => {
+  //         saveTab.classList.add("saveHide");
+  //     });
 }
 
 
@@ -19820,7 +19887,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sidetable_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sidetable.js */ "./resources/js/admin/desktop/sidetable.js");
 /* harmony import */ var _save_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./save.js */ "./resources/js/admin/desktop/save.js");
 /* harmony import */ var _tabsAdmin_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tabsAdmin.js */ "./resources/js/admin/desktop/tabsAdmin.js");
+/* harmony import */ var _removeUser_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./removeUser.js */ "./resources/js/admin/desktop/removeUser.js");
+/* harmony import */ var _renderImageUpload_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./renderImageUpload.js */ "./resources/js/admin/desktop/renderImageUpload.js");
 __webpack_require__(/*! ../bootstrap */ "./resources/js/admin/bootstrap.js");
+
+
 
 
 
@@ -19832,6 +19903,8 @@ __webpack_require__(/*! ../bootstrap */ "./resources/js/admin/bootstrap.js");
 (0,_save_js__WEBPACK_IMPORTED_MODULE_2__.saveButton)();
 (0,_tabsAdmin_js__WEBPACK_IMPORTED_MODULE_3__.tabsAdmin)();
 (0,_tabsAdmin_js__WEBPACK_IMPORTED_MODULE_3__.tabsAdminLocal)();
+(0,_removeUser_js__WEBPACK_IMPORTED_MODULE_4__.removeUser)();
+(0,_renderImageUpload_js__WEBPACK_IMPORTED_MODULE_5__.renderImageUpload)();
 })();
 
 /******/ })()

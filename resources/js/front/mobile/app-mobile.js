@@ -5,11 +5,13 @@ import {hamburgerMenu} from "./hamburger";
 import {tabs} from "./tabs.js";
 
 import {PlusMinus} from "./plus-minus.js";
+import {popUpCart} from "./pop-up-cart.js";
+
 
 
 hamburgerMenu();
 // add_substract();
 tabs ();
-
-
 PlusMinus();
+popUpCart();
+

@@ -1,0 +1,19 @@
+.pop-up-save{
+    display: flex;
+    position: absolute;
+    top: -100rem;
+    left: 26rem;
+    background-color: black;
+    padding: 1rem;
+    gap: 1rem;
+
+}
+
+.pop-up-save-active{
+    top: 0.3rem;
+}
+
+.pop-up-save-svg svg{
+    fill: $secondary-color;
+    height: 3rem;
+}

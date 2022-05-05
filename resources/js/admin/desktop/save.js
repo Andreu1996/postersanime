@@ -1,22 +1,34 @@
 function saveButton(){
 
     let save = document.querySelector('.sidetableHeaderSave');
-    let saveTab = document.querySelector('.save');
-    let cancelButton = document.querySelector('.cancel-button');
-    let cancelSave = document.querySelector('.save');
+    let saveTab = document.querySelector('.pop-up-save');
 
 
-        save.addEventListener("click", () => {
-            saveTab.classList.remove("saveHide");
-        });
+    save.addEventListener('click', () => {  
+        saveTab.classList.add("pop-up-save-active");  
+      
 
-        cancelButton.addEventListener("click", () => {
-            saveTab.classList.add("saveHide");
-        });
+      setTimeout(() => {
+        saveTab.classList.remove("pop-up-save-active");
+      }, 5000);
+    });
 
-        cancelSave.addEventListener("click", () => {
-            saveTab.classList.add("saveHide");
-        });
+
+    // let cancelButton = document.querySelector('.cancel-button');
+    // let cancelSave = document.querySelector('.save');
+
+
+    //     save.addEventListener("click", () => {
+    //         saveTab.classList.remove("saveHide");
+    //     });
+
+    //     cancelButton.addEventListener("click", () => {
+    //         saveTab.classList.add("saveHide");
+    //     });
+
+    //     cancelSave.addEventListener("click", () => {
+    //         saveTab.classList.add("saveHide");
+    //     });
 
 }
 
