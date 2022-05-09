@@ -7,6 +7,7 @@ import {tabsAdmin} from "./tabsAdmin.js";
 import {tabsAdminLocal} from "./tabsAdmin.js";
 import {removeUser} from "./removeUser.js";
 import {renderImageUpload} from "./renderImageUpload.js";
+import {ckeditor} from "./ckeditor.js";
 
 hamburgerMenu();
 sideTable();
@@ -15,4 +16,5 @@ tabsAdmin ();
 tabsAdminLocal ();
 removeUser ();
 renderImageUpload();
+ckeditor();
 

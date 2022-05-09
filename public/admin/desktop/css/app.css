@@ -1252,7 +1252,6 @@ th.last-column {
   position: absolute;
   z-index: -1;
   top: 6vh;
-  left: 1vh;
 }
 
 .image-selector {

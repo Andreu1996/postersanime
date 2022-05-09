@@ -299,7 +299,7 @@
                                                             <h3>Descripción</h3>
                                                         </div>
                                                         <div class="description-info">
-                                                            <textarea placeholder="Descripción"></textarea>
+                                                            <textarea name="content" class="ckeditor"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -316,7 +316,7 @@
                                                             <h3>Descripción</h3>
                                                         </div>
                                                         <div class="description-info">
-                                                            <textarea placeholder="Descripción"></textarea>
+                                                            <textarea name="content" class="ckeditor"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -333,7 +333,7 @@
                                                             <h3>Descripción</h3>
                                                         </div>
                                                         <div class="description-info">
-                                                            <textarea placeholder="Descripción"></textarea>
+                                                            <textarea name="content" class="ckeditor"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
