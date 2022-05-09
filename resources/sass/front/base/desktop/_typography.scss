@@ -40,7 +40,7 @@ h4 {
 }
 
 p{
-    color: $fount-color;
+    color: rgb(255, 255, 255);
     text-align: justify;
 }
 
@@ -87,3 +87,5 @@ a:focus, a:hover {
     color:$fount-color-secundary;
     text-shadow: 3px 1px 2px $shadow-color;
 }
+
+

@@ -417,7 +417,7 @@ h4 {
 }
 
 p {
-  color: hsl(0deg, 0%, 100%);
+  color: rgb(255, 255, 255);
   text-align: justify;
 }
 

@@ -299,7 +299,7 @@
                                                             <h3>Descripción</h3>
                                                         </div>
                                                         <div class="description-info">
-                                                            <textarea name="content" class="ckeditor"></textarea>
+                                                            <textarea name="content" class="ckeditor"><p></p></textarea>
                                                         </div>
                                                     </div>
                                                 </div>

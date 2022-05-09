@@ -464,6 +464,10 @@ a:focus, a:hover {
   text-shadow: 3px 1px 2px 0px 3px 1px 0px #000000;
 }
 
+.textarea p {
+  color: rgb(255, 255, 255);
+}
+
 footer {
   margin-top: auto;
   width: 100%;
@@ -1300,4 +1304,12 @@ th.last-column {
 
 #image-preview img {
   width: 100%;
+}
+
+.ck-editor__editable {
+  min-height: 10rem;
+}
+
+.ck-editor__editable p {
+  color: black;
 }
