@@ -26,7 +26,7 @@
             </div>
 
             <div class="menu_element desktop-only">
-                <h3><a href="{{trans('contacto')}}">contacto</a></h3>
+                <h3><a href="{{trans('checkout')}}">contacto</a></h3>
             </div>
     </div>
 

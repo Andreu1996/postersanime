@@ -1,6 +1,23 @@
+.product-quantity{
+    margin-top: 1rem;
+    margin-left: 5rem;
+
+    .product-quantity-text{
+        margin-left: 3rem;
+    }
+
+    .plus-minus-container{
+        display: flex;
+    }
+
+}
+
+
+
 .plus-minus-button{
     display: flex;
     height: 30;
+
 
     .plus-minus-input{
         width: 15%;

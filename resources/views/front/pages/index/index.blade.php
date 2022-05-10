@@ -51,7 +51,7 @@
                             <a href="https://wall.alphacoders.com/by_category.php?id=3&name=Anime+Fondos+de+pantalla&lang=Spanish"><img src="{{Storage::url('wallpaper.jpg')}}" alt=""></a>
                         </div>
                         <div class="featured-element-text">
-                            <div class="featured-element-text-title">
+                            <div class="featured-element-text-title red-text">
                                 <h5>wallpapers</h5>
                             </div>
                             <div class="featured-element-text-description">

@@ -130,7 +130,9 @@
                     <div class="desktop-two-columns-aside mobile-one-column-inline">
 
                         <div class="column-main column">
-                            <h2>Mostrando 15 productos de 100</h2>
+                            <div class="products-title">
+                                <h2>Mostrando 15 productos de 100</h2>
+                            </div>
                         </div>
 
                         <div class="column-aside column">

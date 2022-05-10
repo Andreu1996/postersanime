@@ -1,99 +1,68 @@
-.contact{
-    margin: 0 auto;
-    width: 90%;
+.top-text{
+    margin: 3rem 0rem;
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom-style: solid;
 
-    
-    .contact-title{
-        margin: 5vh 0;
+    border-bottom-width: 0.2rem;
 
-        h2{
-            font-size: 1.5rem;
-            font-weight: 600;
-            text-align: center;
-        }
-    }
 
-    .contact-info{
-        width: 100%;
-
-        .contact-info-option{
-            margin-bottom: 2rem;
-
-            .contact-info-description{
-                margin-bottom: 2rem;
-
-                p{
-                    font-size: 1.5rem;
-                }   
-            }
-
-            .contact-info-option-icon{
-                display: inline;
-                margin-right: 1rem;
-
-                svg{
-                    height: 1.5rem;
-                    width: 1.5rem;
-
-                    path{
-                        fill:$secondary-color;
-                    }
-                }
-            }
-
-            .contact-info-option-text{
-                display: inline;
-
-                span{
-                    color: hsl(0, 0%, 100%);
-                    font-size: 1rem;
-                }
-            }
-        }
-
-        .contact-form-element{
-            margin-bottom: 1rem;
-
-            .contact-form-element-label{
-                margin-bottom: 0.5rem;
-                width: 100%;
-
-                label{
-                    color: hsl(0, 0%, 100%);
-                }
-            }
-
-            .contact-form-element-input{
-                width: 100%;
-
-                input{
-                    padding: 0.2rem 2%;
-                    width: 96%;
-                }
-
-                &:focus{
-                    outline: 0;
-                }
-
-                textarea{
-                    height: 20vh;
-                    padding: 0.2rem 2%;
-                    width: 98%;
-                }
-
-                &:focus{
-                    outline: 0;
-                }
-            }
-
-            .contact-form-element-button{
-                margin: 0 auto;
-                width: max-content;
-            }
-        }
-        
-    }
 }
+
+.form-text{
+    text-align: center;
+}
+
+.contact-info{
+    text-align: center;
+    margin: 2rem 0rem;
+}
+
+.contact-info svg{
+    height: 100%;
+    width: 10%;
+    fill: $secondary-color;
+}
+
+.contact-text p{
+    text-align: center;
+}
+
+.form-contact{
+    border-top-style: solid;
+    border-top-width: 0.2rem;
+    margin-top: 5rem;
+    padding-top: 2rem;
+}
+
+.form-element{
+    text-align: center;
+    margin: 2rem 0rem;
+}
+
+.form-element-label{
+    color: white;
+}
+
+.form-element-input input{
+    height: 1.5rem;
+    width: 90%;
+}
+
+.form-element-input textarea{
+    height: 6rem;
+    width: 90%;
+}
+
+.form-element-button button{
+    padding: 0.4rem 1rem;
+    background-color: rgb(223, 18, 18);
+    border-radius:  0.5rem;    
+    color: hsl(0, 0%, 100%);
+    -webkit-box-shadow: 0px 3px 1px 0px #000000; 
+    box-shadow: 0px 3px 1px 0px #000000;
+}
+
 
 
 

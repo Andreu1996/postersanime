@@ -97,7 +97,7 @@
                         </div>
 
                         <div class="secundary-image">
-                            <div class="desktop-five-columns">
+                            <div class="desktop-five-columns mobile-five-columns">
                                 <div class="column">
                                     <div class="secundary-image-element">
                                         <a><img src="{{Storage::url('product-18.jpg')}}" alt=""></a>
@@ -146,30 +146,46 @@
                         </div>
 
                         
-
-                        <div class="tabs">
-                            <div class="tab tabActive" data-tab="tab1">
-                                <h3>Descripción</h3>
+                        <div class="desktop-only">
+                            <div class="tabs">
+                                <div class="tab tabActive" data-tab="tab1">
+                                    <h3>Descripción</h3>
+                                </div>
+                                <div class="tab" data-tab="tab2">
+                                    <h3>Descripción2</h3>
+                                </div>
+                                <div class="tab" data-tab="tab3">
+                                    <h3>Descripción3</h3>
+                                </div>
                             </div>
-                            <div class="tab" data-tab="tab2">
-                                <h3>Descripción2</h3>
-                            </div>
-                            <div class="tab" data-tab="tab3">
-                                <h3>Descripción3</h3>
+    
+                            <div class="tabs-content">
+                                <div class="tabContent tabContentActive" data-tab="tab1">
+                                    <p>Poster edicion Mob Psycho 100 papel machetado de calidad superior, capaz de aguantar fuertes golpes y abolladuras. 30cm x 30 cm perfecto para cualquier pared y habitacion. compra ahora este producto y recivelo en menos de una semana.</p>
+                                </div>
+                                <div class="tabContent" data-tab="tab2">
+                                    <p>Compra todo lo que quieras con las mejores ofertas y servicios</p>
+                                </div>
+                                <div class="tabContent" data-tab="tab3">
+                                    <p>si necesitas ayuda o tiene alguna duda puede contactarnos y le ayudaremos en todo lo que necesite</p>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="tabs-content">
+                        <div class="mobile-only">
+                            <div class="product-description-select">
+                                <select>
+                                    <option value="">Descripción1</option>
+                                    <option value="">Descripción2</option>
+                                    <option value="">Descripción3</option>
+                                </select>
+                            </div>
+
                             <div class="tabContent tabContentActive" data-tab="tab1">
                                 <p>Poster edicion Mob Psycho 100 papel machetado de calidad superior, capaz de aguantar fuertes golpes y abolladuras. 30cm x 30 cm perfecto para cualquier pared y habitacion. compra ahora este producto y recivelo en menos de una semana.</p>
                             </div>
-                            <div class="tabContent" data-tab="tab2">
-                                <p>Compra todo lo que quieras con las mejores ofertas y servicios</p>
-                            </div>
-                            <div class="tabContent" data-tab="tab3">
-                                <p>si necesitas ayuda o tiene alguna duda puede contactarnos y le ayudaremos en todo lo que necesite</p>
-                            </div>
                         </div>
+                        
                         
 
                         <div class="product-description">

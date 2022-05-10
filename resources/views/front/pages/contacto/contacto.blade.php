@@ -146,7 +146,7 @@
                 </div>
 
                 <div class="column">
-                    <form action="/action_page.php">
+                    <form class="form-contact" action="/action_page.php">
 
                         <div class="desktop-two-columns mobile-one-column">
                             <div class="column">

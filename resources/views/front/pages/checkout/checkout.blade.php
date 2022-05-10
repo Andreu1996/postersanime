@@ -299,9 +299,11 @@
                                             </div>
                                         </div>
                                         
-                                        <div class="bank-transfer-element"><div class="bank-transfer-simbol">
-                                            <p>Direct bank tranfer</p>
-                                        </div></div>
+                                        <div class="bank-transfer-element">
+                                            <div class="bank-transfer-simbol">
+                                                <p>Direct bank tranfer</p>
+                                            </div>
+                                        </div>
                                         
                                     </div>
                                 </div>
@@ -350,7 +352,7 @@
                                 <div class="column">
                                     <div class="checkout-element">
                                         <div class="paypal-card-types">
-                                            <a><img src="images/paypal.jpg"></a>
+                                            <a><img src="{{Storage::url('paypal.jpg')}}"></a>
                                         </div>
                                     </div>
                                     

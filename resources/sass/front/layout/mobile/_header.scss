@@ -5,11 +5,11 @@ header{
 	.logotitle{
 		display: flex;
 		justify-content: left;
+		width: 88%;
+		padding: 1rem 0rem ;
 	}
 	
-	.logo{
-		width: 100%;
-	}
+
 	
 	.logo, .title, .menu{
 		margin: auto 0;
@@ -17,6 +17,7 @@ header{
 	
 	.logo img{
 		background: transparent;
+		width: 100%;
 	}
 	
 	.menu{

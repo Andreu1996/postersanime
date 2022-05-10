@@ -273,7 +273,7 @@
             
                             </div>
                             <div class="column">
-                                <div class="desktop-two-columns">
+                                <div class="desktop-two-columns mobile-two-columns">
                                     <div class="column">
                                         <div class="product-name-element">
                                             <p>precio productos</p>
