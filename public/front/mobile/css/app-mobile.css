@@ -1524,7 +1524,7 @@ td p {
   background-color: hsla(0deg, 0%, 81%, 0.589);
   box-shadow: 0px 5px 6px 2px #000000;
   border-radius: 1rem;
-  z-index: 999rem;
+  z-index: 800rem;
 }
 
 .answerActive p {

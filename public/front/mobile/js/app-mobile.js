@@ -2190,11 +2190,7 @@ function FAQS() {
           arrow.classList.add("arrowActive");
         } else {
           arrow.classList.remove("arrowActive");
-        } // arrow.classList.remove("arrowActive");
-        // if (question.dataset.answer == arrow.dataset.answer){
-        //     arrow.classList.add("arrowActive");
-        // }
-
+        }
       });
     });
   });
