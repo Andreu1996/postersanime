@@ -192,10 +192,10 @@
  }
 
  .sidetable{
-    position: relative;
     width: 100%;
     background-color: rgb(182, 182, 182);
     transition: all 0.3s;
+    mergin-left: 2rem;
 
     }
 
@@ -210,10 +210,6 @@
   margin-top: 2rem;
   border-bottom-style: solid;
 }
-
-
-
-
 
 
 /*======================
@@ -550,4 +546,8 @@ position: absolute;
 
 .cancel-button button{
   background-color: rgb(177, 29, 29);
+}
+
+.mobile-hide{
+  display: none;
 }
