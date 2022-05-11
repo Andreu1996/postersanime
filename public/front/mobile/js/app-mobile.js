@@ -2156,6 +2156,52 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/front/mobile/FAQS.js":
+/*!*******************************************!*\
+  !*** ./resources/js/front/mobile/FAQS.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "FAQS": () => (/* binding */ FAQS)
+/* harmony export */ });
+function FAQS() {
+  console.log("FAQS");
+  var questions = document.querySelectorAll(".question-title");
+  var answers = document.querySelectorAll(".question-content");
+  var arrows = document.querySelectorAll(".question-title-icon");
+  questions.forEach(function (question) {
+    question.addEventListener("click", function () {
+      answers.forEach(function (answer) {
+        if (answer.classList.contains("answerActive")) {
+          answer.classList.remove("answerActive");
+        } else if (question.dataset.answer == answer.dataset.answer) {
+          answer.classList.add("answerActive");
+        } else {
+          answer.classList.remove("answerActive");
+        }
+      });
+      arrows.forEach(function (arrow) {
+        if (arrow.classList.contains("arrowActive")) {
+          arrow.classList.remove("arrowActive");
+        } else if (question.dataset.answer == arrow.dataset.answer) {
+          arrow.classList.add("arrowActive");
+        } else {
+          arrow.classList.remove("arrowActive");
+        } // arrow.classList.remove("arrowActive");
+        // if (question.dataset.answer == arrow.dataset.answer){
+        //     arrow.classList.add("arrowActive");
+        // }
+
+      });
+    });
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/front/mobile/bootstrap.js":
 /*!************************************************!*\
   !*** ./resources/js/front/mobile/bootstrap.js ***!
@@ -2264,22 +2310,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "popUpCart": () => (/* binding */ popUpCart)
 /* harmony export */ });
-var popUpCart = function popUpCart() {
-  var popUpCartPage = document.querySelector(".pop-up-cart");
-  var cart = document.querySelector(".cart");
-  var save = document.querySelector(".save");
-  cart.addEventListener('click', function () {
-    popUpCartPage.classList.toggle("pop-up-cart-active");
-    setTimeout(function () {
-      popUpCartPage.classList.remove("pop-up-cart-active");
-    }, 5000);
-  });
-  save.addEventListener('click', function () {
-    popUp.classList.toggle("pop-up-cart-active");
-    setTimeout(function () {
-      popUp.classList.remove("pop-up-active");
-    }, 1000);
-  });
+var popUpCart = function popUpCart() {// let popUpCartPage = document.querySelector(".pop-up-cart");
+  // let cart = document.querySelector(".cart");
+  // let save = document.querySelector(".save");
+  // cart.addEventListener('click', () => {  
+  //     popUpCartPage.classList.toggle("pop-up-cart-active");  
+  //   setTimeout(() => {
+  //     popUpCartPage.classList.remove("pop-up-cart-active");
+  //   }, 5000);
+  // });
+  // save.addEventListener('click', () => {  
+  //     popUp.classList.toggle("pop-up-cart-active");  
+  //   setTimeout(() => {
+  //     popUp.classList.remove("pop-up-active");
+  //   }, 1000);
+  // });
 };
 
 /***/ }),
@@ -19815,9 +19860,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tabs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tabs.js */ "./resources/js/front/mobile/tabs.js");
 /* harmony import */ var _plus_minus_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./plus-minus.js */ "./resources/js/front/mobile/plus-minus.js");
 /* harmony import */ var _pop_up_cart_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pop-up-cart.js */ "./resources/js/front/mobile/pop-up-cart.js");
+/* harmony import */ var _FAQS_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FAQS.js */ "./resources/js/front/mobile/FAQS.js");
 __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/mobile/bootstrap.js");
 
  // import {add_substract} from "./plus-minus.js";
+
 
 
 
@@ -19827,6 +19874,7 @@ __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/mobile/bootstrap
 (0,_tabs_js__WEBPACK_IMPORTED_MODULE_1__.tabs)();
 (0,_plus_minus_js__WEBPACK_IMPORTED_MODULE_2__.PlusMinus)();
 (0,_pop_up_cart_js__WEBPACK_IMPORTED_MODULE_3__.popUpCart)();
+(0,_FAQS_js__WEBPACK_IMPORTED_MODULE_4__.FAQS)();
 })();
 
 /******/ })()

@@ -1,0 +1,68 @@
+.image-selector input[type=file] {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    top:6vh;
+}
+
+.image-selector {
+    width: 20%;
+    cursor: pointer;
+}
+
+.image-selector{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.542);
+    margin-left: 0.5em;
+    margin-bottom: 0.5em;
+    border-radius: 1em;
+    overflow: hidden;    
+    margin-left: 2em;
+    
+}
+
+.image-selector-title{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.image-preview-delete{
+    display: none;
+    position: absolute;
+    top: 6rem;
+    margin-left: 12em;
+
+    &.active{
+        display: block;
+    }
+
+}
+
+
+.image-preview-svg{
+    color: white;
+    width: 15rem;
+    height: 15rem;
+}
+
+.image-preview-svg {
+
+    &.hidden {
+ 
+        display: none;
+    
+    }
+}
+
+#image-preview{
+    cursor: pointer; 
+}
+
+#image-preview img{
+    width: 100%;
+}
+
+
+
+
+

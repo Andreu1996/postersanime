@@ -464,6 +464,10 @@ a:focus, a:hover {
   text-shadow: 3px 1px 2px 0px 3px 1px 0px #000000;
 }
 
+.textarea p {
+  color: rgb(255, 255, 255);
+}
+
 body {
   background-color: hsl(0deg, 0%, 17%);
   display: flex;
@@ -602,4 +606,739 @@ footer .footer-element p {
 }
 .mobile-one-column .column {
   width: 100%;
+}
+
+.ck-editor__editable {
+  min-height: 10rem;
+}
+
+.ck-editor__editable p {
+  color: black;
+}
+
+/*====================
+========Hamburger=====
+======================*/
+.menu {
+  left: 0rem;
+}
+
+.ham {
+  margin-top: 1rem;
+  display: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  display: block;
+  z-index: 1005;
+  width: 35px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #000000;
+  transition: 0.4s;
+}
+
+.nav-sub {
+  left: 0%;
+  right: 0%;
+  position: fixed;
+  top: -100rem;
+  z-index: 1002;
+  background-color: hsl(0deg, 0%, 23%);
+  transition: top 0.3s ease-in;
+  transition: bottom 0.3 ease-in;
+}
+
+.nav-change {
+  display: flex;
+  z-index: 1002;
+  top: 0%;
+  bottom: 0%;
+}
+
+.ham {
+  display: block;
+  position: fixed;
+  top: 0rem;
+  right: 0rem;
+  z-index: 2000;
+}
+
+.change .bar1 {
+  position: fixed;
+  position: absolute;
+  transform: rotate(45deg) translate(6px, 3px);
+  z-index: 1005;
+}
+
+.change .bar2 {
+  z-index: 1005;
+  opacity: 0;
+}
+
+.change .bar3 {
+  position: absolute;
+  transform: rotate(-45deg) translate(6px, -3px);
+  z-index: 1005;
+}
+
+.menuadmin {
+  position: absolute;
+  display: flex;
+  top: 0rem;
+  width: 100%;
+  background-color: #EBEBEB;
+  z-index: 1001;
+  transition: all 0.5s;
+  border-style: solid;
+}
+
+.menu-element {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+  padding-left: 3rem;
+}
+
+.menu-element p {
+  text-align: center;
+  color: red;
+  color: #666B85;
+  font-size: 1.5em;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.menuhide {
+  position: absolute;
+  top: -100rem;
+}
+
+.menu p {
+  text-align: center;
+}
+
+.pop-up-save {
+  display: flex;
+  position: absolute;
+  top: -100rem;
+  left: 26rem;
+  background-color: black;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.pop-up-save-active {
+  top: 0.3rem;
+}
+
+.pop-up-save-svg svg {
+  fill: rgb(223, 18, 18);
+  height: 3rem;
+}
+
+.remove-confirmation {
+  position: absolute;
+  padding: 13% 39%;
+  top: -100rem;
+  background-color: rgba(0, 0, 0, 0.618);
+}
+
+.remove-confirmation-active {
+  top: 7rem;
+}
+
+.remove-confirmation-title {
+  margin-left: 2rem;
+}
+
+.remove-confirmation-buttons {
+  display: flex;
+  gap: 5rem;
+  margin-top: 2rem;
+}
+
+.image-selector input[type=file] {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+  top: 6vh;
+}
+
+.image-selector {
+  width: 20%;
+  cursor: pointer;
+}
+
+.image-selector {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.542);
+  margin-left: 0.5em;
+  margin-bottom: 0.5em;
+  border-radius: 1em;
+  overflow: hidden;
+  margin-left: 2em;
+}
+
+.image-selector-title {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.image-preview-delete {
+  display: none;
+  position: absolute;
+  top: 6rem;
+  margin-left: 12em;
+}
+.image-preview-delete.active {
+  display: block;
+}
+
+.image-preview-svg {
+  color: white;
+  width: 15rem;
+  height: 15rem;
+}
+
+.image-preview-svg.hidden {
+  display: none;
+}
+
+#image-preview {
+  cursor: pointer;
+}
+
+#image-preview img {
+  width: 100%;
+}
+
+/*====================
+  ========Body==========
+  ======================*/
+.table-title {
+  background-color: gray;
+  padding: 5rem;
+  display: block;
+  margin-bottom: 2rem;
+  padding: 0px;
+  width: 100%;
+}
+
+.table-title h3 {
+  padding: 1rem;
+  font-size: 30px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Roboto", helvetica, arial, sans-serif;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  text-align: center;
+  fill: hwb(241 0% 42%);
+}
+
+/*** Table Styles **/
+.tables {
+  display: flex;
+  margin: auto;
+  width: 95%;
+}
+
+.tablefill {
+  background: white;
+  border-radius: 3px;
+  border-collapse: collapse;
+  height: 320px;
+  margin: 0rem;
+  max-width: 100%;
+  padding: 5px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.1s;
+}
+
+.maintable td {
+  padding: 10px;
+  text-align: left;
+  vertical-align: middle;
+  font-size: 0.8em;
+}
+
+.maintable th {
+  padding: 10px;
+  text-align: left;
+  vertical-align: middle;
+  font-size: 1em;
+}
+
+.maintable svg {
+  width: 1rem;
+}
+
+th {
+  color: #D5DDE5;
+  background: #1b1e24;
+  border-bottom: 4px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  font-size: 23px;
+  font-weight: 100;
+  padding: 24px;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align: middle;
+}
+
+th:first-child {
+  border-top-left-radius: 3px;
+}
+
+th:last-child {
+  border-top-right-radius: 3px;
+  border-right: none;
+}
+
+tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom: 1px solid #C1C3D1;
+  color: #666B85;
+  font-size: 16px;
+  font-weight: normal;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+tr:hover td {
+  background: #4E5066;
+  color: #FFFFFF;
+  border-top: 1px solid #22262e;
+}
+
+tr:first-child {
+  border-top: none;
+}
+
+tr:last-child {
+  border-bottom: none;
+}
+
+tr:nth-child(odd) td {
+  background: #EBEBEB;
+}
+
+tr:nth-child(odd):hover td {
+  background: #4E5066;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius: 3px;
+}
+
+tr:last-child td:last-child {
+  border-bottom-right-radius: 3px;
+}
+
+td {
+  background: #FFFFFF;
+  padding: 20px;
+  text-align: center;
+  font-weight: 300;
+  font-size: 18px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;
+}
+
+td.first-column {
+  width: 5%;
+}
+
+td:last-child {
+  border-right: 0px;
+}
+
+th.text-left {
+  text-align: left;
+}
+
+th.text-center {
+  text-align: center;
+}
+
+th.text-right {
+  text-align: right;
+}
+
+td.text-left {
+  text-align: left;
+}
+
+td.text-center {
+  text-align: center;
+}
+
+td.text-right {
+  text-align: right;
+}
+
+th.first-column {
+  width: 10%;
+}
+
+th.last-column {
+  width: 0.5%;
+}
+
+.maintable {
+  width: 20%;
+  margin-right: 2rem;
+}
+.maintable .column-hide {
+  display: none;
+}
+
+.user {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.sidetable {
+  position: relative;
+  width: 100%;
+  background-color: rgb(182, 182, 182);
+  transition: all 0.3s;
+}
+
+.sidetablehide {
+  position: absolute;
+  right: -150rem;
+  transition: all 0.5s;
+}
+
+.form-element-label {
+  margin: 1rem auto;
+  margin-top: 2rem;
+  border-bottom-style: solid;
+}
+
+/*======================
+  ========TAP===========
+  ======================*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 100%;
+  min-height: 100%;
+}
+
+.container--tabs {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 40%;
+}
+.container--tabs .tab {
+  min-height: 2em;
+  padding: 1em;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  transition: background-color 0.25s;
+}
+.container--tabs .tab:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+  transition: background-color 0.25s;
+  color: white;
+}
+.container--tabs .tabs--active {
+  background-color: rgb(182, 182, 182);
+  color: black;
+  pointer-events: none;
+}
+
+.tab-local {
+  min-height: 2em;
+  padding: 1em;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  transition: background-color 0.25s;
+}
+
+.content {
+  display: none;
+  padding: 3em;
+  text-align: center;
+}
+
+.content--active {
+  display: block;
+  margin: auto;
+}
+
+.tabs--active-local {
+  background-color: rgb(182, 182, 182);
+  color: black;
+  pointer-events: none;
+}
+
+.content-local {
+  display: none;
+  padding: 3em;
+  text-align: center;
+}
+
+.content--active-local {
+  display: block;
+  margin: auto;
+}
+
+/*====================
+========OnOff=========
+======================*/
+/*Start | On-Off Button Design*/
+.btn-onoff {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn-onoff input {
+  display: block;
+  position: absolute;
+  opacity: 0;
+}
+
+.btn-onoff span {
+  position: relative;
+  display: block;
+  width: 80px;
+  height: 34px;
+  border-radius: 40px;
+  background: #ccc;
+  border: 1px solid #ccc;
+  transition: 400ms;
+}
+
+.btn-onoff input:checked ~ span {
+  border: 1px solid #4CAF50;
+  background: #4CAF50;
+}
+
+.btn-onoff input ~ span:before {
+  content: "Off";
+  display: block;
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  right: 0px;
+  font-size: 14px;
+  font-family: "Arial";
+  font-weight: bold;
+  line-height: 34px;
+  color: #444;
+  padding: 0px 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 500ms;
+}
+
+.btn-onoff input:checked ~ span:before {
+  content: "On";
+  right: 28px;
+  color: #fff;
+}
+
+.btn-onoff input ~ span:after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  top: 4px;
+  left: 4px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 400ms;
+}
+
+.btn-onoff:hover input ~ span:after {
+  transform: scale(0.9);
+}
+
+.btn-onoff input:checked ~ span:after {
+  content: "";
+  left: 51px;
+}
+
+/*End | On-Off Button Design*/
+/*======================
+  ========SideTable=====
+  ======================*/
+.sidetable {
+  display: block;
+  position: absolute;
+}
+
+.sidetable-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1.5rem;
+  border-bottom-width: 0.2rem;
+  border-bottom-style: solid;
+  border-bottom-color: hsl(0deg, 0%, 0%);
+}
+
+.sidetable-header-elements {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.sidetable-header-windows, .sidetable-header-options {
+  display: flex;
+}
+
+.sidetable-header-element {
+  display: flex;
+  padding: 1rem;
+}
+
+.sidetable-header-Images h3 {
+  color: red;
+}
+
+.sidetable-header-svg {
+  width: 1.5rem;
+  margin-top: 0.3rem;
+}
+
+.sidetable-header-svg svg {
+  width: 100%;
+  height: 100%;
+}
+
+.sidetable-header-onoff {
+  display: flex;
+}
+
+.category-options select {
+  margin-top: 0.5rem;
+  width: 95%;
+  height: 90%;
+  padding: 0.1rem;
+}
+
+.name-options input {
+  margin-top: 0.5rem;
+  width: 90%;
+  height: 90%;
+  padding: 0.1rem;
+}
+
+.lenguage {
+  margin: 3rem 0rem;
+  margin-left: 0rem;
+  width: 100%;
+}
+
+.container-tabs-local {
+  width: 100%;
+  display: flex;
+}
+
+.line {
+  border: solid;
+  border-width: 0.1rem;
+  margin-top: 1rem;
+  color: #00050e;
+}
+
+.description {
+  border-top: solid;
+  border-width: 0.3rem;
+  border-color: hsl(0deg, 0%, 0%);
+  margin-bottom: 1rem;
+}
+
+.description-title {
+  margin-top: 1rem;
+}
+
+.description-title h3 {
+  color: #00050e;
+}
+
+.name-title h3 {
+  color: #00050e;
+}
+
+.category-title h3 {
+  color: #00050e;
+}
+
+.description-title-text {
+  margin-top: 1rem;
+}
+
+.description-title-text input {
+  padding: 0.1rem;
+  width: 90%;
+  height: 90%;
+}
+
+.description-info textarea {
+  margin-top: 0.5rem;
+  width: 90%;
+  height: 100%;
+  padding-bottom: 5rem;
+}
+
+.save {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: auto;
+  justify-content: center;
+  z-index: 1005;
+  right: 0rem;
+  top: 0rem;
+  align-items: center;
+  background-color: rgba(0, 5, 14, 0.5254901961);
+  gap: 15rem;
+  transition: all 0.5s;
+}
+
+.saveHide {
+  position: absolute;
+  top: -150rem;
+  transition: all 0.5s;
+}
+
+.button-decoration button {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  background-color: #4CAF50;
+}
+
+.save-button button {
+  background-color: rgb(111, 160, 233);
+}
+
+.cancel-button button {
+  background-color: rgb(177, 29, 29);
 }

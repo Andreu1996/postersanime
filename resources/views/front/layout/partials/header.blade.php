@@ -28,6 +28,10 @@
             <div class="menu_element desktop-only">
                 <h3><a href="{{trans('checkout')}}">contacto</a></h3>
             </div>
+
+            <div class="menu_element desktop-only">
+                <h3><a href="{{trans('FAQS')}}">preguntas</a></h3>
+            </div>
     </div>
 
     <div class="header-menu-hamburger">
@@ -57,6 +61,10 @@
 
             <div class="menu_element mobile-only">
                 <h3><a href="{{trans('contacto')}}">contacto</a></h3>
+            </div>
+
+            <div class="menu_element mobile-only">
+                <h3><a href="{{trans('FAQS')}}">preguntas</a></h3>
             </div>
         </div>
     </nav>

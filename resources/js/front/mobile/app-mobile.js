@@ -6,6 +6,7 @@ import {tabs} from "./tabs.js";
 
 import {PlusMinus} from "./plus-minus.js";
 import {popUpCart} from "./pop-up-cart.js";
+import {FAQS} from "./FAQS.js";
 
 
 
@@ -14,4 +15,6 @@ hamburgerMenu();
 tabs ();
 PlusMinus();
 popUpCart();
+FAQS();
+
 

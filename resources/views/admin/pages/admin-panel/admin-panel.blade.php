@@ -60,8 +60,8 @@
                         <tr>
                             <th class="text-center first-column">User ID</th>
                             <th class="text-center">User Name</th>
-                            <th class="text-center column-hide">Mail</th>
-                            <th class="text-center column-hide">Movile</th>
+                            <th class="text-center column-hide mobile-hide">Mail</th>
+                            <th class="text-center column-hide mobile-hide">Movile</th>
                             <th class="text-center last-column">more</th>
                         </tr>
                     </thead>
@@ -71,8 +71,8 @@
                         <tr>
                             <td class="text-center">001</td>
                             <td class="text-left">JoanKilito_19</td>
-                            <td class="text-left column-hide">Joan.Kilo@gmail.com</td>
-                            <td class="text-left column-hide">688523114</td>
+                            <td class="text-left column-hide mobile-hide">Joan.Kilo@gmail.com</td>
+                            <td class="text-left column-hide mobile-hide">688523114</td>
                             
                             <td>
                                 <div class="user">
@@ -92,8 +92,8 @@
                         <tr>
                             <td class="text-center">002</td>
                             <td class="text-left">ToniiGar</td>
-                            <td class="text-left column-hide">toniigar@gmail.com</td>
-                            <td class="text-left column-hide">633549721</td>
+                            <td class="text-left column-hide mobile-hide">toniigar@gmail.com</td>
+                            <td class="text-left column-hide mobile-hide">633549721</td>
                             <td>
                                 <div class="user">
                                     <div class="useredit">
@@ -113,8 +113,8 @@
                         <tr>
                             <td class="text-center">003</td>
                             <td class="text-left">yotajota</td>
-                            <td class="text-left column-hide">jotajota-yota@gmail.com</td>
-                            <td class="text-left column-hide">971548216</td>
+                            <td class="text-left column-hide mobile-hide">jotajota-yota@gmail.com</td>
+                            <td class="text-left column-hide mobile-hide">971548216</td>
                             <td>
                                 <div class="user">
                                     <div class="useredit">
@@ -134,8 +134,8 @@
                         <tr>
                             <td class="text-center">004</td>
                             <td class="text-left">Holly-Spirit-year0</td>
-                            <td class="text-left column-hide">thechrist-god@gmail.com</td>
-                            <td class="text-left column-hide">668264912</td>
+                            <td class="text-left column-hide mobile-hide">thechrist-god@gmail.com</td>
+                            <td class="text-left column-hide mobile-hide">668264912</td>
                             <td>
                                 <div class="user">
                                     <div class="useredit">
@@ -155,8 +155,8 @@
                         <tr>
                             <td class="text-center">005</td>
                             <td class="text-left">mamma.letmedie</td>
-                            <td class="text-left column-hide">sebastianzapaterogonzalez@gmail.com</td>
-                            <td class="text-left column-hide">680264953</td>
+                            <td class="text-left column-hide mobile-hide">sebastianzapaterogonzalez@gmail.com</td>
+                            <td class="text-left column-hide mobile-hide">680264953</td>
                             <td>
                                 <div class="user">
                                     <div class="useredit">
@@ -201,9 +201,9 @@
     
                             <div class="sidetable-header">
                                 <ul class="container--tabs">
-                                    <li class="tab tabs--active" data-tab="tab1">Contacto</li>
-                                    <li class="tab" data-tab="tab2">Imagenes</li>
-                                    <li class="tab" data-tab="tab3">Seo</li>
+                                    <li class="tab tabs--active desktop-only" data-tab="tab1">Contacto</li>
+                                    <li class="tab desktop-only" data-tab="tab2">Imagenes</li>
+                                    <li class="tab desktop-only" data-tab="tab3">Seo</li>
                                 </ul>
         
                                 <div class="sidetable-header-options">
@@ -217,7 +217,7 @@
                                         </div>
                                     </div>
                                     <div class="sidetable-header-element">
-                                        <div class="sidetable-header-clean">
+                                        <div class="sidetable-header-clean ">
                                             <div class="sidetable-header-svg">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eraser" viewBox="0 0 16 16">
                                                     <path d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm2.121.707a1 1 0 0 0-1.414 0L4.16 7.547l5.293 5.293 4.633-4.633a1 1 0 0 0 0-1.414l-3.879-3.879zM8.746 13.547 3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z"/>
@@ -228,7 +228,7 @@
                                     <div class="sidetable-header-element">
                                         <div class="sidetable-header-onoff">
                                             <div class="containerButton">
-                                                <label class="btn-onoff">
+                                                <label class="btn-onoff ">
                                                     <input type="checkbox" name="visible" id="input-on-off" checked><span></span>	
                                                 </label>
                                             </div>

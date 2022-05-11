@@ -468,6 +468,49 @@ a:focus, a:hover {
   color: rgb(255, 255, 255);
 }
 
+body {
+  /* indica el color del fondo */
+  background-color: hsl(0deg, 0%, 17%);
+  display: flex;
+  flex-direction: column;
+  /* Distancia que hay fuera del div */
+  margin: 0em auto;
+  min-height: 100vh;
+  width: 100%;
+  /* background-image: url("https://s.itl.cat/pngfile/s/29-299907_kimi-no-na-wa-wallpaper-for-iphone-iphone.jpg"); */
+}
+
+header {
+  display: flex;
+  height: 10%;
+  justify-content: space-between;
+  padding: 0 5%;
+  width: 90%;
+  background-color: hsla(0deg, 0%, 81%, 0.589);
+}
+
+main {
+  margin: 0 auto;
+  position: relative;
+  top: 2rem;
+  width: 100%;
+}
+
+footer {
+  display: block;
+  margin-top: 5rem;
+  width: 100%;
+  align-items: center;
+}
+
+.desktop-only {
+  display: revert;
+}
+
+.mobile-only {
+  display: none;
+}
+
 footer {
   margin-top: auto;
   width: 100%;

@@ -656,7 +656,7 @@ header .nav-sub {
   text-align: center;
 }
 header .nav-sub .menu_element {
-  margin-top: 8rem;
+  margin-top: 6rem;
 }
 header .nav-sub .menu_element h3 {
   font-size: 2rem;
@@ -1446,4 +1446,88 @@ td p {
   border-radius: 0.5rem;
   color: hsl(0deg, 0%, 100%);
   box-shadow: 0px 3px 1px 0px #000000;
+}
+
+.FAQS-content {
+  max-width: 95%;
+  margin-left: 0.7rem;
+  text-align: center;
+}
+
+.page-title {
+  margin-top: 2rem;
+}
+
+.question {
+  margin-top: 3rem;
+}
+
+.question-title {
+  border-style: solid;
+  border-width: 0.2rem;
+  background-color: hsla(0deg, 0%, 81%, 0.589);
+  box-shadow: 0px 5px 6px 2px #000000;
+  border-radius: 1rem;
+  z-index: 1001rem;
+}
+
+.question-title-text h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.question-title {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  border-bottom-style: solid;
+  border-width: 0.2rem;
+  padding: 0.5rem;
+  border-color: black;
+}
+
+.question-title-icon {
+  transform: rotate(180deg);
+  transition: 0.5s;
+  margin-right: 0.5rem;
+}
+
+.question-title-icon svg {
+  width: 150%;
+  height: 100%;
+  fill: white;
+}
+
+.arrowActive {
+  transform: rotate(0deg);
+  transition: 0.5s;
+}
+
+.question-content {
+  position: absolute;
+  pointer-events: none;
+  margin-top: -4rem;
+  padding: 2rem;
+}
+
+.question-content p {
+  color: rgba(255, 255, 255, 0);
+}
+
+.answerActive {
+  position: static;
+  display: block;
+  margin-top: 0rem;
+  color: rgb(255, 255, 255);
+  transition: 1s;
+  background-color: hsla(0deg, 0%, 81%, 0.589);
+  background-color: hsla(0deg, 0%, 81%, 0.589);
+  box-shadow: 0px 5px 6px 2px #000000;
+  border-radius: 1rem;
+  z-index: 999rem;
+}
+
+.answerActive p {
+  margin-top: 0.5rem;
+  color: rgb(255, 255, 255);
 }

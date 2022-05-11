@@ -2167,8 +2167,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _plus_minus_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./plus-minus.js */ "./resources/js/front/desktop/plus-minus.js");
 __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/desktop/bootstrap.js");
 
+ // import {FAQS} from "../mobile/FAQS.js";
 
-(0,_plus_minus_js__WEBPACK_IMPORTED_MODULE_0__.add_substract)();
+(0,_plus_minus_js__WEBPACK_IMPORTED_MODULE_0__.add_substract)(); // FAQS();
 
 /***/ }),
 
@@ -19455,6 +19456,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/admin/app-mobile.scss":
+/*!**********************************************!*\
+  !*** ./resources/sass/admin/app-mobile.scss ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/sass/front/app.scss":
 /*!***************************************!*\
   !*** ./resources/sass/front/app.scss ***!
@@ -19800,6 +19814,7 @@ process.umask = function() { return 0; };
 /******/ 			"/front/desktop/js/app": 0,
 /******/ 			"front/mobile/css/app-mobile": 0,
 /******/ 			"front/desktop/css/app": 0,
+/******/ 			"admin/mobile/css/app-mobile": 0,
 /******/ 			"admin/desktop/css/app": 0
 /******/ 		};
 /******/ 		
@@ -19850,10 +19865,11 @@ process.umask = function() { return 0; };
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["front/mobile/css/app-mobile","front/desktop/css/app","admin/desktop/css/app"], () => (__webpack_require__("./resources/js/front/desktop/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["front/mobile/css/app-mobile","front/desktop/css/app","admin/desktop/css/app"], () => (__webpack_require__("./resources/sass/admin/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["front/mobile/css/app-mobile","front/desktop/css/app","admin/desktop/css/app"], () => (__webpack_require__("./resources/sass/front/app.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["front/mobile/css/app-mobile","front/desktop/css/app","admin/desktop/css/app"], () => (__webpack_require__("./resources/sass/front/app-mobile.scss")))
+/******/ 	__webpack_require__.O(undefined, ["front/mobile/css/app-mobile","front/desktop/css/app","admin/mobile/css/app-mobile","admin/desktop/css/app"], () => (__webpack_require__("./resources/js/front/desktop/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["front/mobile/css/app-mobile","front/desktop/css/app","admin/mobile/css/app-mobile","admin/desktop/css/app"], () => (__webpack_require__("./resources/sass/admin/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["front/mobile/css/app-mobile","front/desktop/css/app","admin/mobile/css/app-mobile","admin/desktop/css/app"], () => (__webpack_require__("./resources/sass/admin/app-mobile.scss")))
+/******/ 	__webpack_require__.O(undefined, ["front/mobile/css/app-mobile","front/desktop/css/app","admin/mobile/css/app-mobile","admin/desktop/css/app"], () => (__webpack_require__("./resources/sass/front/app.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["front/mobile/css/app-mobile","front/desktop/css/app","admin/mobile/css/app-mobile","admin/desktop/css/app"], () => (__webpack_require__("./resources/sass/front/app-mobile.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
