@@ -2168,28 +2168,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "FAQS": () => (/* binding */ FAQS)
 /* harmony export */ });
 function FAQS() {
-  console.log("FAQS");
   var questions = document.querySelectorAll(".question-title");
   var answers = document.querySelectorAll(".question-content");
   var arrows = document.querySelectorAll(".question-title-icon");
   questions.forEach(function (question) {
     question.addEventListener("click", function () {
       answers.forEach(function (answer) {
-        if (answer.classList.contains("answerActive")) {
-          answer.classList.remove("answerActive");
+        if (answer.classList.contains("active")) {
+          answer.classList.remove("active");
         } else if (question.dataset.answer == answer.dataset.answer) {
-          answer.classList.add("answerActive");
+          answer.classList.add("active");
         } else {
-          answer.classList.remove("answerActive");
+          answer.classList.remove("active");
         }
       });
       arrows.forEach(function (arrow) {
-        if (arrow.classList.contains("arrowActive")) {
-          arrow.classList.remove("arrowActive");
+        if (arrow.classList.contains("active")) {
+          arrow.classList.remove("active");
         } else if (question.dataset.answer == arrow.dataset.answer) {
-          arrow.classList.add("arrowActive");
+          arrow.classList.add("active");
         } else {
-          arrow.classList.remove("arrowActive");
+          arrow.classList.remove("active");
         }
       });
     });
@@ -2306,21 +2305,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "popUpCart": () => (/* binding */ popUpCart)
 /* harmony export */ });
-var popUpCart = function popUpCart() {// let popUpCartPage = document.querySelector(".pop-up-cart");
-  // let cart = document.querySelector(".cart");
-  // let save = document.querySelector(".save");
-  // cart.addEventListener('click', () => {  
-  //     popUpCartPage.classList.toggle("pop-up-cart-active");  
-  //   setTimeout(() => {
-  //     popUpCartPage.classList.remove("pop-up-cart-active");
-  //   }, 5000);
-  // });
-  // save.addEventListener('click', () => {  
-  //     popUp.classList.toggle("pop-up-cart-active");  
-  //   setTimeout(() => {
-  //     popUp.classList.remove("pop-up-active");
-  //   }, 1000);
-  // });
+var popUpCart = function popUpCart() {
+  var popUpCartPage = document.querySelector(".pop-up-cart");
+  var carts = document.querySelectorAll(".cart");
+  var saves = document.querySelectorAll(".save");
+  carts.forEach(function (cart) {
+    cart.addEventListener('click', function () {
+      popUpCartPage.classList.toggle("pop-up-cart-active");
+      setTimeout(function () {
+        popUpCartPage.classList.remove("pop-up-cart-active");
+      }, 5000);
+    });
+  });
+  saves.forEach(function (save) {
+    save.addEventListener('click', function () {
+      popUp.classList.toggle("pop-up-cart-active");
+      setTimeout(function () {
+        popUp.classList.remove("pop-up-active");
+      }, 1000);
+    });
+  });
 };
 
 /***/ }),
@@ -2338,18 +2342,56 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function tabs() {
   var tabs = document.querySelectorAll('.tab');
-  var tabContents = document.querySelectorAll('.tabContent');
+  var tabsContent = document.querySelectorAll('.tabContent');
   tabs.forEach(function (tab) {
     tab.addEventListener("click", function () {
       tabs.forEach(function (tab) {
         tab.classList.remove("tabActive");
       });
       tab.classList.add("tabActive");
-      tabContents.forEach(function (tabContent) {
+      tabsContent.forEach(function (tabContent) {
         tabContent.classList.remove("tabContentActive");
 
         if (tab.dataset.tab == tabContent.dataset.tab) {
           tabContent.classList.add("tabContentActive");
+        }
+      });
+    });
+  }); // tabsSelect.forEach(tabSelect => {
+  //     tabSelect.addEventListener("change", () => {
+  //         tabContents.forEach(tabContent => {
+  //             tabContent.classList.remove("tabContentActive");
+  //             if (tabSelect.dataset.tab == tabContent.dataset.tab){
+  //                 tabContent.classList.add("tabContentActive");
+  //             }
+  //         });
+  //     });
+  // });
+}
+
+/***/ }),
+
+/***/ "./resources/js/front/mobile/tabsMobile.js":
+/*!*************************************************!*\
+  !*** ./resources/js/front/mobile/tabsMobile.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "tabsMobile": () => (/* binding */ tabsMobile)
+/* harmony export */ });
+function tabsMobile() {
+  var selectsRelated = document.querySelectorAll('.select-related');
+  var selectsRelatedOptions = document.querySelectorAll('.select-related-options');
+  selectsRelated.forEach(function (selectRelated) {
+    selectRelated.addEventListener('change', function () {
+      selectsRelatedOptions.forEach(function (selectRelatedOption) {
+        if (selectRelated.value === selectRelatedOption.dataset.related) {
+          selectRelatedOption.classList.add('active');
+        } else {
+          selectRelatedOption.classList.remove('active');
         }
       });
     });
@@ -19854,9 +19896,10 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hamburger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hamburger */ "./resources/js/front/mobile/hamburger.js");
 /* harmony import */ var _tabs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tabs.js */ "./resources/js/front/mobile/tabs.js");
-/* harmony import */ var _plus_minus_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./plus-minus.js */ "./resources/js/front/mobile/plus-minus.js");
-/* harmony import */ var _pop_up_cart_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pop-up-cart.js */ "./resources/js/front/mobile/pop-up-cart.js");
+/* harmony import */ var _tabsMobile_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tabsMobile.js */ "./resources/js/front/mobile/tabsMobile.js");
+/* harmony import */ var _plus_minus_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./plus-minus.js */ "./resources/js/front/mobile/plus-minus.js");
 /* harmony import */ var _FAQS_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FAQS.js */ "./resources/js/front/mobile/FAQS.js");
+/* harmony import */ var _pop_up_cart_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pop-up-cart.js */ "./resources/js/front/mobile/pop-up-cart.js");
 __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/mobile/bootstrap.js");
 
  // import {add_substract} from "./plus-minus.js";
@@ -19865,12 +19908,14 @@ __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/mobile/bootstrap
 
 
 
+
 (0,_hamburger__WEBPACK_IMPORTED_MODULE_0__.hamburgerMenu)(); // add_substract();
 
 (0,_tabs_js__WEBPACK_IMPORTED_MODULE_1__.tabs)();
-(0,_plus_minus_js__WEBPACK_IMPORTED_MODULE_2__.PlusMinus)();
-(0,_pop_up_cart_js__WEBPACK_IMPORTED_MODULE_3__.popUpCart)();
+(0,_tabsMobile_js__WEBPACK_IMPORTED_MODULE_2__.tabsMobile)();
+(0,_plus_minus_js__WEBPACK_IMPORTED_MODULE_3__.PlusMinus)();
 (0,_FAQS_js__WEBPACK_IMPORTED_MODULE_4__.FAQS)();
+(0,_pop_up_cart_js__WEBPACK_IMPORTED_MODULE_5__.popUpCart)();
 })();
 
 /******/ })()

@@ -812,10 +812,10 @@ footer .footer-element p {
 
 .product-quantity {
   margin-top: 1rem;
-  margin-left: 5rem;
+  margin-left: 4rem;
 }
 .product-quantity .product-quantity-text {
-  margin-left: 3rem;
+  margin-left: 4rem;
 }
 .product-quantity .plus-minus-container {
   display: flex;
@@ -874,6 +874,25 @@ footer .footer-element p {
 }
 .plus-minus-button #right button {
   border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.plus-minus-button {
+  display: flex;
+  height: 30;
+  padding: 0.1rem 0.5rem;
+  background-color: rgb(223, 18, 18);
+  border-radius: 0.5rem;
+  color: hsl(0deg, 0%, 100%);
+  box-shadow: 0px 3px 1px 0px #000000;
+  margin: 0rem 0.5rem;
+  cursor: pointer;
+}
+
+.plus-minus-input {
+  margin-top: 0.1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  background-color: white;
 }
 
 .slider {
@@ -986,8 +1005,7 @@ footer .footer-element p {
   top: -100rem;
   z-index: 1002;
   background-color: hsl(0deg, 0%, 23%);
-  transition: top 0.3s ease-in;
-  transition: bottom 0.3 ease-in;
+  transition: top 2s;
 }
 
 .nav-change {
@@ -995,6 +1013,7 @@ footer .footer-element p {
   z-index: 1002;
   top: 0%;
   bottom: 0%;
+  transition: 1s;
 }
 
 .ham {
@@ -1057,30 +1076,33 @@ footer .footer-element p {
   text-align: center;
 }
 
-.pop-up-cart {
-  display: flex;
-  position: absolute;
-  top: -100rem;
-  right: 0rem;
+.select-related-options {
+  display: none;
+}
+
+.select-related-options.active {
+  display: block;
   background-color: hsla(0deg, 72%, 52%, 0.137);
-  padding: 3rem;
+  padding: 1rem;
+}
+
+.pop-up-cart {
+  display: none;
+  position: absolute;
+  background-color: hsla(0deg, 72%, 52%, 0.137);
+  padding: 0.5rem;
   border-radius: 2rem;
   gap: 1rem;
 }
 
 .pop-up-cart-active {
-  top: 31rem;
-  bottom: 0rem;
-  right: 0rem;
+  display: flex;
+  top: 66rem;
+  left: 4.6rem;
 }
 
 .pop-up-cart-svg svg {
-  fill: rgb(223, 18, 18);
-  height: 3rem;
-}
-
-.pop-up-cart-text {
-  margin-top: 1rem;
+  display: none;
 }
 
 .featured-title {
@@ -1273,6 +1295,24 @@ td p {
   text-align: center;
 }
 
+.country-options select {
+  width: 92%;
+  height: 2rem;
+}
+
+.bank-transfer-info {
+  max-width: 90%;
+  margin-left: 1.5rem;
+}
+
+.finish-order-button button {
+  padding: 0.3rem 1rem;
+  background-color: rgb(223, 18, 18);
+  border-radius: 0.5rem;
+  color: hsl(0deg, 0%, 100%);
+  box-shadow: 0px 3px 1px 0px #000000;
+}
+
 .top-text {
   margin: 3rem 0rem;
   text-align: center;
@@ -1375,9 +1415,20 @@ td p {
   fill: rgb(223, 18, 18);
   width: 20%;
   height: 100%;
+  margin-left: 1rem;
+  margin-top: 0.2rem;
 }
 .buy .buy-button {
-  margin-top: 4rem;
+  margin-top: 2rem;
+}
+
+.buy-button button {
+  margin-top: -2rem;
+  padding: 0.5rem 1rem;
+  background-color: rgb(223, 18, 18);
+  border-radius: 0.5rem;
+  color: hsl(0deg, 0%, 100%);
+  box-shadow: 0px 3px 1px 0px #000000;
 }
 
 .copyright {
@@ -1407,6 +1458,7 @@ td p {
   border-radius: 0.5rem;
   color: hsl(0deg, 0%, 100%);
   box-shadow: 0px 3px 1px 0px #000000;
+  width: 60%;
 }
 
 .select-option option {
@@ -1493,8 +1545,8 @@ td p {
 }
 
 .question-title-icon svg {
-  width: 150%;
-  height: 100%;
+  width: 2rem;
+  height: 2rem;
   fill: white;
 }
 

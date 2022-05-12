@@ -30,6 +30,7 @@
     border-bottom-style: solid;
     border-width: 0.3rem;
 }
+
 td p{
     margin: 0.5rem;
 }
@@ -44,4 +45,23 @@ td p{
 
 .paypal-element p{
     text-align: center;
+}
+
+.country-options select{
+    width: 92%;
+    height: 2rem;
+}
+
+.bank-transfer-info{
+    max-width: 90%;
+    margin-left: 1.5rem;
+}
+
+.finish-order-button button{
+    padding: 0.3rem 1rem;
+    background-color: $secondary-color;
+    border-radius:  0.5rem;    
+    color: $laberl-box-color;
+    -webkit-box-shadow: $shadow-color;
+    box-shadow: $shadow-color;
 }

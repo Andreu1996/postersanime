@@ -1,5 +1,8 @@
 export function FAQS () {
 
+    console.log("FAQS");
+    window.alert("FAQS");
+
     let questions = document.querySelectorAll(".question-title");
     let answers = document.querySelectorAll(".question-content");
     let arrows = document.querySelectorAll(".question-title-icon");
@@ -33,7 +36,6 @@ export function FAQS () {
                         } else {
                             arrow.classList.remove("active");
                         }
-                    
                 });
         });
 

@@ -158,7 +158,7 @@
                                     <h3>Descripción3</h3>
                                 </div>
                             </div>
-    
+
                             <div class="tabs-content">
                                 <div class="tabContent tabContentActive" data-tab="tab1">
                                     <p>Poster edicion Mob Psycho 100 papel machetado de calidad superior, capaz de aguantar fuertes golpes y abolladuras. 30cm x 30 cm perfecto para cualquier pared y habitacion. compra ahora este producto y recivelo en menos de una semana.</p>
@@ -174,17 +174,27 @@
 
                         <div class="mobile-only">
                             <div class="product-description-select">
-                                <select>
-                                    <option value="">Descripción1</option>
-                                    <option value="">Descripción2</option>
-                                    <option value="">Descripción3</option>
+                                <select class="product-description-select-options select-related">
+                                    <option value="tab1">Descripción1</option>
+                                    <option value="tab2">Descripción2</option>
+                                    <option value="tab3">Descripción3</option>
                                 </select>
                             </div>
 
-                            <div class="tabContent tabContentActive" data-tab="tab1">
-                                <p>Poster edicion Mob Psycho 100 papel machetado de calidad superior, capaz de aguantar fuertes golpes y abolladuras. 30cm x 30 cm perfecto para cualquier pared y habitacion. compra ahora este producto y recivelo en menos de una semana.</p>
+                            <div class="tabs-content">
+                                <div class="tabContent select-related-options active" data-related="tab1">
+                                    <p>Poster edicion Mob Psycho 100 papel machetado de calidad superior, capaz de aguantar fuertes golpes y abolladuras. 30cm x 30 cm perfecto para cualquier pared y habitacion. compra ahora este producto y recivelo en menos de una semana.</p>
+                                </div>
+                                <div class="tabContent select-related-options" data-related="tab2">
+                                    <p>Compra todo lo que quieras con las mejores ofertas y servicios</p>
+                                </div>
+                                <div class="tabContent select-related-options" data-related="tab3">
+                                    <p>si necesitas ayuda o tiene alguna duda puede contactarnos y le ayudaremos en todo lo que necesite</p>
+                                </div>
                             </div>
                         </div>
+
+                        
                         
                         
 

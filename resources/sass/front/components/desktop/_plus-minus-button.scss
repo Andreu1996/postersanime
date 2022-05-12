@@ -6,6 +6,14 @@
 .plus-minus-button{
     display: flex;
     height: 30;
+    padding: 0.1rem 0.5rem;
+    background-color: $secondary-color;
+    border-radius:  0.5rem;    
+    color: $laberl-box-color;
+    -webkit-box-shadow: $shadow-color;
+    box-shadow: $shadow-color;
+    margin: 0rem 0.5rem;
+    cursor: pointer;
 
     .plus-minus-input{
         width: 15%;
@@ -65,5 +73,13 @@
     #right button{
         border-radius: 0 0.5rem 0.5rem 0;
     }
+}
+
+.plus-minus-input{
+    margin-top: 0.1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    background-color: white;
+    
 }
 

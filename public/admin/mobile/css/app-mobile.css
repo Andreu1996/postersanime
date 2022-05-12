@@ -1007,7 +1007,7 @@ th.last-column {
   width: 100%;
   background-color: rgb(182, 182, 182);
   transition: all 0.3s;
-  mergin-left: 2rem;
+  margin-left: 2rem;
 }
 
 .sidetablehide {

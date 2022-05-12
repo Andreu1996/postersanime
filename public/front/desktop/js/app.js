@@ -2156,6 +2156,49 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/front/desktop/FAQS.js":
+/*!********************************************!*\
+  !*** ./resources/js/front/desktop/FAQS.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "FAQS": () => (/* binding */ FAQS)
+/* harmony export */ });
+function FAQS() {
+  console.log("FAQS");
+  window.alert("FAQS");
+  var questions = document.querySelectorAll(".question-title");
+  var answers = document.querySelectorAll(".question-content");
+  var arrows = document.querySelectorAll(".question-title-icon");
+  questions.forEach(function (question) {
+    question.addEventListener("click", function () {
+      answers.forEach(function (answer) {
+        if (answer.classList.contains("active")) {
+          answer.classList.remove("active");
+        } else if (question.dataset.answer == answer.dataset.answer) {
+          answer.classList.add("active");
+        } else {
+          answer.classList.remove("active");
+        }
+      });
+      arrows.forEach(function (arrow) {
+        if (arrow.classList.contains("active")) {
+          arrow.classList.remove("active");
+        } else if (question.dataset.answer == arrow.dataset.answer) {
+          arrow.classList.add("active");
+        } else {
+          arrow.classList.remove("active");
+        }
+      });
+    });
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/front/desktop/app.js":
 /*!*******************************************!*\
   !*** ./resources/js/front/desktop/app.js ***!
@@ -2165,11 +2208,13 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _plus_minus_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./plus-minus.js */ "./resources/js/front/desktop/plus-minus.js");
+/* harmony import */ var _FAQS_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FAQS.js */ "./resources/js/front/desktop/FAQS.js");
 __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/desktop/bootstrap.js");
 
- // import {FAQS} from "../mobile/FAQS.js";
 
-(0,_plus_minus_js__WEBPACK_IMPORTED_MODULE_0__.add_substract)(); // FAQS();
+
+(0,_plus_minus_js__WEBPACK_IMPORTED_MODULE_0__.add_substract)();
+(0,_FAQS_js__WEBPACK_IMPORTED_MODULE_1__.FAQS)();
 
 /***/ }),
 

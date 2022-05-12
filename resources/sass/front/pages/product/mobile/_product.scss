@@ -41,11 +41,24 @@
         fill: rgb(223, 18, 18);
         width: 20%;
         height: 100%;
+        margin-left: 1rem;
+        margin-top: 0.2rem;
     }
 
     .buy-button{
-        margin-top: 4rem;
+        margin-top: 2rem;
     }
+}
+
+
+.buy-button button{
+    margin-top: -2rem;
+    padding: 0.5rem 1rem;
+    background-color: $secondary-color;
+    border-radius:  0.5rem;    
+    color: $laberl-box-color;
+    -webkit-box-shadow: $shadow-color;
+    box-shadow: $shadow-color;
 }
 
 .copyright{

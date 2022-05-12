@@ -500,46 +500,16 @@ footer {
 
 header {
   display: flex;
-  justify-content: space-between;
   max-width: 100%;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 4rem;
   background-color: hsla(0deg, 0%, 81%, 0.589);
 }
-header .header-logo {
-  display: flex;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-}
-header .header-logo .header-logo-image svg {
-  height: 3rem;
-  width: 3rem;
-}
-header .header-logo .header-logo-image svg path {
-  fill: rgb(223, 18, 18);
-}
-header .header-logo .header-logo-title {
-  margin-left: 1rem;
-}
-header .header-logo .header-logo-title h1 {
-  text-align: left;
-}
-header .header-menu {
-  margin-left: auto;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-}
-header .header-menu ul li {
-  color: hsl(0deg, 0%, 100%);
-  cursor: pointer;
-  display: inline;
-  font-size: 1.5rem;
-  margin: 0 0.5rem;
+header .menu {
+  gap: 1rem;
 }
 
 footer {
-  margin-top: auto;
+  margin-top: 3rem;
   width: 100%;
 }
 footer .footer-element {
@@ -737,6 +707,13 @@ footer .footer-element p {
 .plus-minus-button {
   display: flex;
   height: 30;
+  padding: 0.1rem 0.5rem;
+  background-color: rgb(223, 18, 18);
+  border-radius: 0.5rem;
+  color: hsl(0deg, 0%, 100%);
+  box-shadow: 0px 3px 1px 0px #000000;
+  margin: 0rem 0.5rem;
+  cursor: pointer;
 }
 .plus-minus-button .plus-minus-input {
   width: 15%;
@@ -786,6 +763,13 @@ footer .footer-element p {
 }
 .plus-minus-button #right button {
   border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.plus-minus-input {
+  margin-top: 0.1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  background-color: white;
 }
 
 /*====================
@@ -886,15 +870,14 @@ footer .footer-element p {
   top: -100rem;
   right: 0rem;
   background-color: hsla(0deg, 72%, 52%, 0.137);
-  padding: 3rem;
+  padding: 1rem 2rem;
   border-radius: 2rem;
   gap: 1rem;
 }
 
 .pop-up-cart-active {
-  top: 31rem;
-  bottom: 0rem;
-  right: 0rem;
+  top: 29rem;
+  right: 15rem;
 }
 
 .pop-up-cart-svg svg {
@@ -903,7 +886,7 @@ footer .footer-element p {
 }
 
 .pop-up-cart-text {
-  margin-top: 1rem;
+  margin-top: 0.8rem;
 }
 
 /*====================
@@ -1028,7 +1011,7 @@ footer .footer-element p {
 .country-options select {
   margin-top: 0.5rem;
   width: 100%;
-  padding: 0.3rem 0.5rem;
+  padding: 0.6rem 0.5rem;
   border-radius: 0.5rem;
 }
 
@@ -1286,6 +1269,9 @@ td, th {
 .buy {
   display: flex;
   justify-content: right;
+  margin-top: 2rem;
+  gap: 2rem;
+  right: 0rem;
 }
 
 .cart {
@@ -1297,21 +1283,23 @@ td, th {
 .cart svg {
   fill: rgb(223, 18, 18);
   width: 40%;
-  height: 40%;
+  height: 50%;
   margin: 0%;
+  cursor: pointer;
 }
 
 .buy-button {
-  margin-right: 2.3rem;
+  margin-right: 0rem;
 }
 
 .buy-button button {
   margin-top: 1rem;
-  padding: 0.2rem 0.5rem;
+  padding: 1rem 2rem;
   background-color: rgb(223, 18, 18);
   border-radius: 0.5rem;
   color: hsl(0deg, 0%, 100%);
   box-shadow: 0px 3px 1px 0px #000000;
+  cursor: pointer;
 }
 
 /*====================
@@ -1404,6 +1392,8 @@ td, th {
 }
 
 .question {
+  position: relative;
+  z-index: 1010;
   border-style: solid;
   border-width: 0.2rem;
   margin-top: 5rem;
@@ -1414,11 +1404,14 @@ td, th {
 }
 
 .question:hover {
+  position: relative;
   background-color: rgb(114, 114, 114);
 }
 
 .question-title {
   display: flex;
+  z-index: 1010;
+  position: relative;
   justify-content: space-between;
   cursor: pointer;
   border-bottom-style: solid;
@@ -1433,41 +1426,35 @@ td, th {
 }
 
 .question-title-icon svg {
-  width: 150%;
-  height: 100%;
+  width: 2rem;
+  height: 2rem;
   fill: white;
 }
 
 .question-content p {
   pointer-events: none;
+  position: relative;
   color: rgba(255, 255, 255, 0);
   margin-top: -6rem;
-  padding: 1rem 2rem;
-  transition: 0.5s;
+  padding: 2rem 3rem;
+  transition: 2s;
+  border-radius: 1rem;
 }
 
-.answerActive {
+.question-content.active p {
   display: block;
+  position: relative;
+  z-index: 980;
   color: rgb(255, 255, 255);
   transition: 1s;
-  margin-top: 0rem;
+  margin-top: 1rem;
   color: rgb(255, 255, 255);
-  transition: 1s;
-  background-color: hsla(0deg, 0%, 81%, 0.589);
+  transition: 3s;
   background-color: hsla(0deg, 0%, 81%, 0.589);
   box-shadow: 0px 5px 6px 2px #000000;
-  border-radius: 1rem;
-  z-index: 999rem;
 }
 
-.answerActive p {
-  display: block;
-  color: rgb(255, 255, 255);
-  transition: 1s;
-  margin-top: 0.5rem;
-}
-
-.arrowActive {
-  transform: rotate(0deg);
+.question-title-icon.active {
+  transform: rotate(360deg);
   transition: 0.5s;
 }

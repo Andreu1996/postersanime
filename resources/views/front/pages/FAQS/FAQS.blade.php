@@ -15,7 +15,7 @@
                             <h2>¿Como elimino mi cuenta?</h2>
                         </div>
                         <div class="question-title-icon" data-answer="1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
                                 <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
                             </svg>
                         </div>
@@ -31,7 +31,7 @@
                             <h2>¿Como cancelo una suscripcion?</h2>
                         </div>
                         <div class="question-title-icon" data-answer="2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
                                 <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
                             </svg>
                         </div>
@@ -47,7 +47,7 @@
                             <h2>¿como hago una devolucion?</h2>
                         </div>
                         <div class="question-title-icon" data-answer="3">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
                                 <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
                             </svg>
                         </div>

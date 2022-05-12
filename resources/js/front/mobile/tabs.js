@@ -1,7 +1,8 @@
 export function tabs () {
 
     let tabs = document.querySelectorAll('.tab');
-    let tabContents = document.querySelectorAll('.tabContent');
+    let tabsContent = document.querySelectorAll('.tabContent');
+    
 
     tabs.forEach(tab => {
 
@@ -12,20 +13,34 @@ export function tabs () {
             });
 
             tab.classList.add("tabActive");
-   
-            
 
-            tabContents.forEach(tabContent => {
+                tabsContent.forEach(tabContent => {
 
-                tabContent.classList.remove("tabContentActive");
+                    tabContent.classList.remove("tabContentActive");
 
-                if (tab.dataset.tab == tabContent.dataset.tab){
-                    tabContent.classList.add("tabContentActive");
-                } 
+                    if (tab.dataset.tab == tabContent.dataset.tab){
+                        tabContent.classList.add("tabContentActive");
+                    } 
 
-            });
+                });
 
         });
     });
+
+    // tabsSelect.forEach(tabSelect => {
+        
+    //     tabSelect.addEventListener("change", () => {
+
+    //         tabContents.forEach(tabContent => {
+
+    //             tabContent.classList.remove("tabContentActive");
+
+    //             if (tabSelect.dataset.tab == tabContent.dataset.tab){
+    //                 tabContent.classList.add("tabContentActive");
+    //             }
+
+    //         });
+    //     });
+    // });
 }
 

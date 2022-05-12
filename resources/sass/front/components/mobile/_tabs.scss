@@ -31,3 +31,13 @@
 .tabContentActive p{
     text-align: center;
 }
+
+.select-related-options{
+    display: none;
+}
+
+.select-related-options.active{
+    display: block;
+    background-color: hsla(0, 72%, 52%, 0.137);
+    padding: 1rem;
+}

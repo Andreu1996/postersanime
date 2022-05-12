@@ -13,6 +13,8 @@
 }
 
 .question{
+    position: relative;
+    z-index: 1010;
     border-style: solid;
     border-width: 0.2rem;
     margin-top: 5rem;
@@ -23,11 +25,14 @@
 }
 
 .question:hover{
-    background-color: rgb(114, 114, 114);
+    position: relative;
+    background-color: rgb(114, 114, 114);  
 }
 
 .question-title{
     display: flex;
+    z-index: 1010;
+    position: relative;
     justify-content: space-between;
     cursor: pointer;
     border-bottom-style: solid;
@@ -42,44 +47,40 @@
 }
 
 .question-title-icon svg{
-    width: 150%;
-    height: 100%;
+    width: 2rem;
+    height: 2rem;
     fill: white;
 
 }
 
 .question-content p{
     pointer-events: none;
+    position: relative;
     color: rgba(255, 255, 255, 0);
     margin-top: -6rem;
-    padding: 1rem 2rem;
-    transition: 0.5s;
+    padding: 2rem 3rem;
+    transition: 2s;
+    border-radius: 1rem;
 }
 
-.answerActive{
+
+.question-content.active p{
     display: block;
+    position: relative;
+    z-index: 980;
     color: rgb(255, 255, 255);
     transition: 1s;
-    margin-top: 0rem;
+    margin-top: 1rem;
     color: rgb(255, 255, 255);
-    transition: 1s;
-    background-color: $primary-color-light;
+    transition: 3s;
     background-color: $primary-color-light;
     box-shadow: 0px 5px 6px 2px #000000;
-    border-radius: 1rem;
-    z-index: 999rem;
+    
     
 }
 
-.answerActive p{
-    display: block;
-    color: rgb(255, 255, 255);
-    transition: 1s;
-    margin-top: 0.5rem;
-    
-}
 
-.arrowActive{
-    transform: rotate(0deg);
+.question-title-icon.active{
+    transform: rotate(360deg);
     transition: 0.5s;
 }

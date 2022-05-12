@@ -1,26 +1,19 @@
 .pop-up-cart{
-    display: flex;
+    display: none;
     position: absolute;
-    top: -100rem;
-    right: 0rem;
     background-color: hsla(0, 72%, 52%, 0.137);
-    padding: 3rem;
+    padding: 0.5rem;
     border-radius: 2rem;
     gap: 1rem;
 }
 
 .pop-up-cart-active{
-    background-color: black;
-    bottom: 0rem;
-    right: 0rem;
+    display: flex;
+    top: 66rem;
+    left: 4.6rem;
 }
 
 
 .pop-up-cart-svg svg{
-    fill: $secondary-color;
-    height: 3rem;
-}
-
-.pop-up-cart-text{
-    margin-top: 150rem;
+    display: none;
 }

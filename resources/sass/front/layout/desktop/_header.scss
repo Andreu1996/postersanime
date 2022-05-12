@@ -1,45 +1,16 @@
 header{
     display: flex;
-    justify-content: space-between;
     max-width: 100%;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 4rem;
     background-color: $primary-color-light;
 
-
-    .header-logo{
-        display: flex;
-        width: max-content;
-
-        .header-logo-image svg{
-            height: 3rem;
-            width: 3rem;
-    
-            path{
-                fill:$secondary-color;
-            }
-        }
-
-        .header-logo-title{
-            margin-left: 1rem;
-
-            h1{
-                text-align: left;
-            }
-        }
+    .menu{
+        gap: 1rem;
     }
 
-    .header-menu{
-        margin-left: auto;
-        width: max-content;
-
-        ul li{
-            color: $laberl-box-color;
-            cursor: pointer;
-            display: inline;
-            font-size: 1.5rem;
-            margin: 0 0.5rem;
-        }
-    }
 }
+  
+
+
 
 
