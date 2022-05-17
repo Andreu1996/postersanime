@@ -1410,7 +1410,7 @@ td, th {
 
 .question-title {
   display: flex;
-  z-index: 1010;
+  z-index: 980;
   position: relative;
   justify-content: space-between;
   cursor: pointer;
@@ -1439,12 +1439,13 @@ td, th {
   padding: 2rem 3rem;
   transition: 2s;
   border-radius: 1rem;
+  z-index: 950;
 }
 
 .question-content.active p {
   display: block;
   position: relative;
-  z-index: 980;
+  z-index: 970;
   color: rgb(255, 255, 255);
   transition: 1s;
   margin-top: 1rem;

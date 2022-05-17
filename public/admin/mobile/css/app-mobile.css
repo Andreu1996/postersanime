@@ -1005,6 +1005,7 @@ th.last-column {
 
 .sidetable {
   width: 100%;
+  position: absolute;
   background-color: rgb(182, 182, 182);
   transition: all 0.3s;
   margin-left: 2rem;

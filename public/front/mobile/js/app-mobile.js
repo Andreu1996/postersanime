@@ -2156,10 +2156,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./resources/js/front/mobile/FAQS.js":
-/*!*******************************************!*\
-  !*** ./resources/js/front/mobile/FAQS.js ***!
-  \*******************************************/
+/***/ "./resources/js/front/FAQS.js":
+/*!************************************!*\
+  !*** ./resources/js/front/FAQS.js ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2197,10 +2197,10 @@ function FAQS() {
 
 /***/ }),
 
-/***/ "./resources/js/front/mobile/bootstrap.js":
-/*!************************************************!*\
-  !*** ./resources/js/front/mobile/bootstrap.js ***!
-  \************************************************/
+/***/ "./resources/js/front/bootstrap.js":
+/*!*****************************************!*\
+  !*** ./resources/js/front/bootstrap.js ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
@@ -2228,10 +2228,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/front/mobile/hamburger.js":
-/*!************************************************!*\
-  !*** ./resources/js/front/mobile/hamburger.js ***!
-  \************************************************/
+/***/ "./resources/js/front/hamburger.js":
+/*!*****************************************!*\
+  !*** ./resources/js/front/hamburger.js ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2252,10 +2252,10 @@ function hamburgerMenu() {
 
 /***/ }),
 
-/***/ "./resources/js/front/mobile/plus-minus.js":
-/*!*************************************************!*\
-  !*** ./resources/js/front/mobile/plus-minus.js ***!
-  \*************************************************/
+/***/ "./resources/js/front/plus-minus.js":
+/*!******************************************!*\
+  !*** ./resources/js/front/plus-minus.js ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2294,10 +2294,10 @@ var PlusMinus = function PlusMinus() {
 
 /***/ }),
 
-/***/ "./resources/js/front/mobile/pop-up-cart.js":
-/*!**************************************************!*\
-  !*** ./resources/js/front/mobile/pop-up-cart.js ***!
-  \**************************************************/
+/***/ "./resources/js/front/pop-up-cart.js":
+/*!*******************************************!*\
+  !*** ./resources/js/front/pop-up-cart.js ***!
+  \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2329,10 +2329,10 @@ var popUpCart = function popUpCart() {
 
 /***/ }),
 
-/***/ "./resources/js/front/mobile/tabs.js":
-/*!*******************************************!*\
-  !*** ./resources/js/front/mobile/tabs.js ***!
-  \*******************************************/
+/***/ "./resources/js/front/tabs.js":
+/*!************************************!*\
+  !*** ./resources/js/front/tabs.js ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2371,10 +2371,10 @@ function tabs() {
 
 /***/ }),
 
-/***/ "./resources/js/front/mobile/tabsMobile.js":
-/*!*************************************************!*\
-  !*** ./resources/js/front/mobile/tabsMobile.js ***!
-  \*************************************************/
+/***/ "./resources/js/front/tabsMobile.js":
+/*!******************************************!*\
+  !*** ./resources/js/front/tabsMobile.js ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -19890,27 +19890,25 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-/*!*************************************************!*\
-  !*** ./resources/js/front/mobile/app-mobile.js ***!
-  \*************************************************/
+/*!******************************************!*\
+  !*** ./resources/js/front/app-mobile.js ***!
+  \******************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _hamburger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hamburger */ "./resources/js/front/mobile/hamburger.js");
-/* harmony import */ var _tabs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tabs.js */ "./resources/js/front/mobile/tabs.js");
-/* harmony import */ var _tabsMobile_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tabsMobile.js */ "./resources/js/front/mobile/tabsMobile.js");
-/* harmony import */ var _plus_minus_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./plus-minus.js */ "./resources/js/front/mobile/plus-minus.js");
-/* harmony import */ var _FAQS_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FAQS.js */ "./resources/js/front/mobile/FAQS.js");
-/* harmony import */ var _pop_up_cart_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pop-up-cart.js */ "./resources/js/front/mobile/pop-up-cart.js");
-__webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/mobile/bootstrap.js");
-
- // import {add_substract} from "./plus-minus.js";
+/* harmony import */ var _hamburger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hamburger */ "./resources/js/front/hamburger.js");
+/* harmony import */ var _tabs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tabs.js */ "./resources/js/front/tabs.js");
+/* harmony import */ var _tabsMobile_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tabsMobile.js */ "./resources/js/front/tabsMobile.js");
+/* harmony import */ var _plus_minus_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./plus-minus.js */ "./resources/js/front/plus-minus.js");
+/* harmony import */ var _FAQS_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FAQS.js */ "./resources/js/front/FAQS.js");
+/* harmony import */ var _pop_up_cart_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pop-up-cart.js */ "./resources/js/front/pop-up-cart.js");
+__webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/bootstrap.js");
 
 
 
 
 
 
-(0,_hamburger__WEBPACK_IMPORTED_MODULE_0__.hamburgerMenu)(); // add_substract();
 
+(0,_hamburger__WEBPACK_IMPORTED_MODULE_0__.hamburgerMenu)();
 (0,_tabs_js__WEBPACK_IMPORTED_MODULE_1__.tabs)();
 (0,_tabsMobile_js__WEBPACK_IMPORTED_MODULE_2__.tabsMobile)();
 (0,_plus_minus_js__WEBPACK_IMPORTED_MODULE_3__.PlusMinus)();

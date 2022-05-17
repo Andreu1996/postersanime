@@ -2156,10 +2156,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./resources/js/front/desktop/FAQS.js":
-/*!********************************************!*\
-  !*** ./resources/js/front/desktop/FAQS.js ***!
-  \********************************************/
+/***/ "./resources/js/front/FAQS.js":
+/*!************************************!*\
+  !*** ./resources/js/front/FAQS.js ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2168,8 +2168,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "FAQS": () => (/* binding */ FAQS)
 /* harmony export */ });
 function FAQS() {
-  console.log("FAQS");
-  window.alert("FAQS");
   var questions = document.querySelectorAll(".question-title");
   var answers = document.querySelectorAll(".question-content");
   var arrows = document.querySelectorAll(".question-title-icon");
@@ -2199,29 +2197,38 @@ function FAQS() {
 
 /***/ }),
 
-/***/ "./resources/js/front/desktop/app.js":
-/*!*******************************************!*\
-  !*** ./resources/js/front/desktop/app.js ***!
-  \*******************************************/
+/***/ "./resources/js/front/app.js":
+/*!***********************************!*\
+  !*** ./resources/js/front/app.js ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _plus_minus_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./plus-minus.js */ "./resources/js/front/desktop/plus-minus.js");
-/* harmony import */ var _FAQS_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FAQS.js */ "./resources/js/front/desktop/FAQS.js");
-__webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/desktop/bootstrap.js");
+/* harmony import */ var _tabs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tabs.js */ "./resources/js/front/tabs.js");
+/* harmony import */ var _tabsMobile_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tabsMobile.js */ "./resources/js/front/tabsMobile.js");
+/* harmony import */ var _plus_minus_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./plus-minus.js */ "./resources/js/front/plus-minus.js");
+/* harmony import */ var _FAQS_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FAQS.js */ "./resources/js/front/FAQS.js");
+/* harmony import */ var _pop_up_cart_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pop-up-cart.js */ "./resources/js/front/pop-up-cart.js");
+__webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/bootstrap.js");
 
 
 
-(0,_plus_minus_js__WEBPACK_IMPORTED_MODULE_0__.add_substract)();
-(0,_FAQS_js__WEBPACK_IMPORTED_MODULE_1__.FAQS)();
+
+
+
+(0,_tabs_js__WEBPACK_IMPORTED_MODULE_0__.tabs)();
+(0,_tabsMobile_js__WEBPACK_IMPORTED_MODULE_1__.tabsMobile)();
+(0,_plus_minus_js__WEBPACK_IMPORTED_MODULE_2__.PlusMinus)();
+(0,_FAQS_js__WEBPACK_IMPORTED_MODULE_3__.FAQS)();
+(0,_pop_up_cart_js__WEBPACK_IMPORTED_MODULE_4__.popUpCart)();
 
 /***/ }),
 
-/***/ "./resources/js/front/desktop/bootstrap.js":
-/*!*************************************************!*\
-  !*** ./resources/js/front/desktop/bootstrap.js ***!
-  \*************************************************/
+/***/ "./resources/js/front/bootstrap.js":
+/*!*****************************************!*\
+  !*** ./resources/js/front/bootstrap.js ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
@@ -2249,28 +2256,149 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/front/desktop/plus-minus.js":
-/*!**************************************************!*\
-  !*** ./resources/js/front/desktop/plus-minus.js ***!
-  \**************************************************/
+/***/ "./resources/js/front/plus-minus.js":
+/*!******************************************!*\
+  !*** ./resources/js/front/plus-minus.js ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "add_substract": () => (/* binding */ add_substract)
+/* harmony export */   "PlusMinus": () => (/* binding */ PlusMinus)
 /* harmony export */ });
-function add_substract() {
-  var minuses = document.getElementById("minus");
-  var pluses = document.getElementById("plus");
-  var total = document.getElementById('total'); // plus.addEventListener("click", () => {
-  //     total.value = (parseInt(total.value) + 1);
-  // });
+// export function add_substract () {
+//         plus.addEventListener("click", () => {
+//             total.value = (parseInt(total.value) + 1);
+//         });
+//         minus.addEventListener("click", () => {
+//             if (total.value > 1) {
+//                 total.value = (parseInt(total.value) - 1);
+//             }
+//         });
+// }
+var PlusMinus = function PlusMinus() {
+  var plusMinusButtons = document.querySelectorAll(".plus-minus-button");
+  plusMinusButtons.forEach(function (plusMinusButton) {
+    plusMinusButton.addEventListener("click", function () {
+      var plusMinusContainer = plusMinusButton.closest(".plus-minus-container");
+      var plusMinusInput = plusMinusContainer.querySelector(".plus-minus-input");
+      var value = parseInt(plusMinusInput.value);
 
-  minus.addEventListener("click", function () {
-    if (total.value > 0) {
-      total.value = parseInt(total.value) - 1;
-    }
+      if (plusMinusButton.dataset.type == "plus") {
+        value++;
+      } else if (plusMinusButton.dataset.type == "minus" && value > 1) {
+        value--;
+      }
+
+      plusMinusInput.value = value;
+    });
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/front/pop-up-cart.js":
+/*!*******************************************!*\
+  !*** ./resources/js/front/pop-up-cart.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "popUpCart": () => (/* binding */ popUpCart)
+/* harmony export */ });
+var popUpCart = function popUpCart() {
+  var popUpCartPage = document.querySelector(".pop-up-cart");
+  var carts = document.querySelectorAll(".cart");
+  var saves = document.querySelectorAll(".save");
+  carts.forEach(function (cart) {
+    cart.addEventListener('click', function () {
+      popUpCartPage.classList.toggle("pop-up-cart-active");
+      setTimeout(function () {
+        popUpCartPage.classList.remove("pop-up-cart-active");
+      }, 5000);
+    });
+  });
+  saves.forEach(function (save) {
+    save.addEventListener('click', function () {
+      popUp.classList.toggle("pop-up-cart-active");
+      setTimeout(function () {
+        popUp.classList.remove("pop-up-active");
+      }, 1000);
+    });
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/front/tabs.js":
+/*!************************************!*\
+  !*** ./resources/js/front/tabs.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "tabs": () => (/* binding */ tabs)
+/* harmony export */ });
+function tabs() {
+  var tabs = document.querySelectorAll('.tab');
+  var tabsContent = document.querySelectorAll('.tabContent');
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      tabs.forEach(function (tab) {
+        tab.classList.remove("tabActive");
+      });
+      tab.classList.add("tabActive");
+      tabsContent.forEach(function (tabContent) {
+        tabContent.classList.remove("tabContentActive");
+
+        if (tab.dataset.tab == tabContent.dataset.tab) {
+          tabContent.classList.add("tabContentActive");
+        }
+      });
+    });
+  }); // tabsSelect.forEach(tabSelect => {
+  //     tabSelect.addEventListener("change", () => {
+  //         tabContents.forEach(tabContent => {
+  //             tabContent.classList.remove("tabContentActive");
+  //             if (tabSelect.dataset.tab == tabContent.dataset.tab){
+  //                 tabContent.classList.add("tabContentActive");
+  //             }
+  //         });
+  //     });
+  // });
+}
+
+/***/ }),
+
+/***/ "./resources/js/front/tabsMobile.js":
+/*!******************************************!*\
+  !*** ./resources/js/front/tabsMobile.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "tabsMobile": () => (/* binding */ tabsMobile)
+/* harmony export */ });
+function tabsMobile() {
+  var selectsRelated = document.querySelectorAll('.select-related');
+  var selectsRelatedOptions = document.querySelectorAll('.select-related-options');
+  selectsRelated.forEach(function (selectRelated) {
+    selectRelated.addEventListener('change', function () {
+      selectsRelatedOptions.forEach(function (selectRelatedOption) {
+        if (selectRelated.value === selectRelatedOption.dataset.related) {
+          selectRelatedOption.classList.add('active');
+        } else {
+          selectRelatedOption.classList.remove('active');
+        }
+      });
+    });
   });
 }
 
@@ -19910,7 +20038,7 @@ process.umask = function() { return 0; };
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["front/mobile/css/app-mobile","front/desktop/css/app","admin/mobile/css/app-mobile","admin/desktop/css/app"], () => (__webpack_require__("./resources/js/front/desktop/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["front/mobile/css/app-mobile","front/desktop/css/app","admin/mobile/css/app-mobile","admin/desktop/css/app"], () => (__webpack_require__("./resources/js/front/app.js")))
 /******/ 	__webpack_require__.O(undefined, ["front/mobile/css/app-mobile","front/desktop/css/app","admin/mobile/css/app-mobile","admin/desktop/css/app"], () => (__webpack_require__("./resources/sass/admin/app.scss")))
 /******/ 	__webpack_require__.O(undefined, ["front/mobile/css/app-mobile","front/desktop/css/app","admin/mobile/css/app-mobile","admin/desktop/css/app"], () => (__webpack_require__("./resources/sass/admin/app-mobile.scss")))
 /******/ 	__webpack_require__.O(undefined, ["front/mobile/css/app-mobile","front/desktop/css/app","admin/mobile/css/app-mobile","admin/desktop/css/app"], () => (__webpack_require__("./resources/sass/front/app.scss")))
