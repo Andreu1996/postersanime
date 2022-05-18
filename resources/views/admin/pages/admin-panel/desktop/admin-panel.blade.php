@@ -1,10 +1,4 @@
 
- @extends('admin.layout.master')
-
- @section('content')
-
-        <main>
-
             <div class="menu">
                 <nav class="navbar">   
                     <div class="ham" >  
@@ -16,7 +10,7 @@
             </div>
 
             <div class="table-title">
-                <h3>Panel de Administracion</h3>
+                @include('admin.components.desktop.page-title')
             </div>
 
             <div class="menuadmin menuhide">
@@ -390,39 +384,6 @@
                                             
                                         </div> 
                                     </div>  
-
-
-                                    {{-- <div class="select-document-all">
-
-                                        <div class="select-document">
-                                            <div class="select-document-title">
-                                                <h3>Seleccionar documento</h3>
-                                            </div>
-                                            <div class="select-document-image">
-                                                <input type="file" id="file-input" name="file-input" multiple>
-                                                <label for="file-input">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div class="select-document">
-                                            <div class="select-document-title">
-                                                <h3>Seleccionar documento</h3>
-                                            </div>
-                                            <label for="file-input">
-                                            <div class="select-document-image">  
-                                                    <div class="select-document-svg">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload">
-                                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line>
-                                                        </svg>
-                                                    </div> 
-                                                    <img class="select-document-image-preview" src="">
-
-                                            </div>
-                                            <input type="file" class="select-document-image-input" name="image-featured" accept="image/*" >
-                                        </div>
-                                    </div> --}}
                                     
                                 </div>
 
@@ -456,195 +417,5 @@
     
                     </div> 
                 </form>
-                
-
-
-
-
-                    {{-- <div class="sidetable-header">
-                        <div class="sidetable-header-elements">
-                            <div class="sidetable-header-windows">
-                                <div class="sidetable-header-element">
-                                    <div class="sidetable-header-User">
-                                        <h3>Contacto</h3>
-                                    </div>
-                                </div>
-        
-                                <div class="sidetable-header-element">
-                                    <div class="sidetable-header-Images">
-                                        <h3>Imagenes</h3>
-                                    </div>
-                                </div>
-        
-                                <div class="sidetable-header-element">
-                                    <div class="sidetable-header-Seo">
-                                        <h3>Seo</h3>
-                                    </div>
-                                </div>    
-                            </div>
-                        </div>
-                    
-                        <div class="sidetable-header-elements">
-                            <div class="sidetable-header-options">
-                                <div class="sidetable-header-element">
-                                    <div class="sidetable-header-save">
-                                        <div class="sidetable-header-svg">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
-                                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-                                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sidetable-header-element">
-                                    <div class="sidetable-header-clean">
-                                        <div class="sidetable-header-svg">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eraser" viewBox="0 0 16 16">
-                                                <path d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm2.121.707a1 1 0 0 0-1.414 0L4.16 7.547l5.293 5.293 4.633-4.633a1 1 0 0 0 0-1.414l-3.879-3.879zM8.746 13.547 3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sidetable-header-element">
-                                    <div class="sidetable-header-onoff">
-                                        <div class="sidetable-header-on">
-                                            <p>ON</p>
-                                        </div>
-                                        <div class="sidetable-header-off">
-                                            <p>OFF</p>
-                                        </div>
-                                    </div>
-                                </div>                               
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sidetableContact sidetableContactHide">
-                        <div class="desktop-two-columns">
-
-                            <div class="column">
-                                <div class="category">
-                                    <div class="category-title">
-                                        <h3>Categoria</h3>
-                                    </div>
-                                    <div class="category-options">
-                                        <select>
-                                            <option>categoria1</option>
-                                            <option>categoria2</option>
-                                            <option>categoria3</option>
-                                            <option>categoria4</option>
-                                            <option>categoria5</option>
-                                            <option>categoria6</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="column">
-                                <div class="name">
-                                    <div class="name-title">
-                                        <h3>Nombre</h3>
-                                    </div>
-                                    <div class="name-options">
-                                        <input type="text" placeholder="Nombre">
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        
-                        <div class="description">
-                            <div class="description-title">
-                                <h3>Titulo</h3>
-                            </div>
-                            <div class="description-title-text">
-                                <input type="text" placeholder="Titulo">
-                            </div>
-                            <div class="description-title">
-                                <h3>Descripción</h3>
-                            </div>
-                            <div class="description-info">
-                                <textarea placeholder="Descripción"></textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sidetableImages sidetableImagesHide">
-                        Imagenes pruba
-                    </div>
-
-                    <div class="sidetableSeo sidetableSeoHide">
-                        Seo pruba
-                    </div> --}}
-
-        
-                    
-
-
-
-                    {{-- <div class="form-title">
-                        <h2>Datos</h2>
-                    </div>
-
-                    <div class="form-element">
-                        <div class="form-element-label">
-                            <label for="fname">Nombre</label>
-                        </div>
-                        <div class="form-element-input">
-                            <input type="text" id="fname" name="firstname" placeholder="tu nombre..">
-                        </div>
-                    </div>
-
-
-                    <div class="form-element">
-                        <div class="form-element-label">
-                            <label for="fname">Apellido</label>
-                        </div>
-                        <div class="form-element-input">
-                            <input type="text" id="fname" name="firstname" placeholder="tus apellidos..">
-                        </div>
-                    </div>
-
-                    <div class="form-element">
-                        <div class="form-element-label">
-                            <label for="fname">Correo</label>
-                        </div>
-                        <div class="form-element-input">
-                            <input type="text" id="fname" name="firstname" placeholder="tu correo electronico..">
-                        </div>
-                    </div>
-
-                    <div class="form-element">
-                        <div class="form-element-label">
-                            <label for="fname">Edad</label>
-                        </div>
-                        <div class="form-element-input">
-                            <input type="text" id="fname" name="firstname" placeholder="tu edad..">
-                        </div>
-                    </div>
-
-
-
-                    <div class="form-element">
-                        <div class="form-element-label">
-                            <label for="fname">Direccion</label>
-                        </div>
-                        <div class="form-element-input">
-                            <input type="text" id="fname" name="firstname" placeholder="tu direccion..">
-                        </div>
-                    </div>
-
-
-                    <div class="form-element">
-                        <div class="form-element-label">
-                            <label for="fname">Codigo Postal</label>
-                        </div>
-                        <div class="form-element-input">
-                            <input type="text" id="fname" name="firstname" placeholder="tu codigo postal..">
-                        </div>
-                    </div> --}}
-
+ 
             </div>
-            
-
-        @endsection

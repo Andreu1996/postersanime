@@ -889,6 +889,10 @@ footer .footer-element p {
   margin-top: 0.8rem;
 }
 
+.page-title h1 {
+  text-align: center;
+}
+
 /*====================
 ========cart==========
 ======================*/
@@ -1437,7 +1441,7 @@ td, th {
   color: rgba(255, 255, 255, 0);
   margin-top: -6rem;
   padding: 2rem 3rem;
-  transition: 2s;
+  transition: 1s;
   border-radius: 1rem;
   z-index: 950;
 }
@@ -1450,7 +1454,7 @@ td, th {
   transition: 1s;
   margin-top: 1rem;
   color: rgb(255, 255, 255);
-  transition: 3s;
+  transition: 1s;
   background-color: hsla(0deg, 0%, 81%, 0.589);
   box-shadow: 0px 5px 6px 2px #000000;
 }

@@ -18,15 +18,15 @@ Route::get('/', function () {
 });
 
 Route::get('/cart', function () {
-    return view('front/pages/cart/cart');
+    return view('front/pages/cart/index');
 });
 
 Route::get('/checkout', function () {
-    return view('front/pages/checkout/checkout');
+    return view('front/pages/checkout/index');
 });
 
 Route::get('/contacto', function () {
-    return view('front/pages/contacto/contacto');
+    return view('front/pages/contacto/index');
 });
 
 Route::get('/index', function () {
@@ -34,19 +34,19 @@ Route::get('/index', function () {
 });
 
 Route::get('/producto', function () {
-    return view('front/pages/producto/producto');
+    return view('front/pages/producto/index');
 });
 
 Route::get('/productos', function () {
-    return view('front/pages/productos/productos');
+    return view('front/pages/productos/index');
 });
 
 Route::get('/FAQS', function () {
-    return view('front/pages/FAQS/FAQS');
+    return view('front/pages/FAQS/index');
 });
 
 Route::get('/admin-panel', function () {
-    return view('admin/pages/admin-panel/admin-panel');
+    return view('admin/pages/admin-panel/index');
 });
 
 

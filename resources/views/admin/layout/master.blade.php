@@ -6,8 +6,8 @@
 		<link rel="shortcut icon" href="https://www.youtube.com/s/desktop/12d6b690/img/favicon.ico">
 
 
-        <title>Título</title>
-		<meta name="description" content="descripción de la web, se recomienda 90 caracteres">
+        <title>@yield('title')</title>
+		<meta name="description" content=@yield('description')>
         <meta name="keywords" 	 content="palabras clave, separadas, por comas">
 
 

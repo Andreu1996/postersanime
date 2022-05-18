@@ -2204,10 +2204,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/admin/desktop/ckeditor.js":
-/*!************************************************!*\
-  !*** ./resources/js/admin/desktop/ckeditor.js ***!
-  \************************************************/
+/***/ "./resources/js/admin/ckeditor.js":
+/*!****************************************!*\
+  !*** ./resources/js/admin/ckeditor.js ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2231,10 +2231,10 @@ var ckeditor = function ckeditor() {
 
 /***/ }),
 
-/***/ "./resources/js/admin/desktop/hamburger.js":
-/*!*************************************************!*\
-  !*** ./resources/js/admin/desktop/hamburger.js ***!
-  \*************************************************/
+/***/ "./resources/js/admin/hamburger.js":
+/*!*****************************************!*\
+  !*** ./resources/js/admin/hamburger.js ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2255,10 +2255,10 @@ function hamburgerMenu() {
 
 /***/ }),
 
-/***/ "./resources/js/admin/desktop/removeUser.js":
-/*!**************************************************!*\
-  !*** ./resources/js/admin/desktop/removeUser.js ***!
-  \**************************************************/
+/***/ "./resources/js/admin/removeUser.js":
+/*!******************************************!*\
+  !*** ./resources/js/admin/removeUser.js ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2280,10 +2280,10 @@ function removeUser() {
 
 /***/ }),
 
-/***/ "./resources/js/admin/desktop/renderImageUpload.js":
-/*!*********************************************************!*\
-  !*** ./resources/js/admin/desktop/renderImageUpload.js ***!
-  \*********************************************************/
+/***/ "./resources/js/admin/renderImageUpload.js":
+/*!*************************************************!*\
+  !*** ./resources/js/admin/renderImageUpload.js ***!
+  \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2317,10 +2317,10 @@ var renderImageUpload = function renderImageUpload() {
 
 /***/ }),
 
-/***/ "./resources/js/admin/desktop/save.js":
-/*!********************************************!*\
-  !*** ./resources/js/admin/desktop/save.js ***!
-  \********************************************/
+/***/ "./resources/js/admin/save.js":
+/*!************************************!*\
+  !*** ./resources/js/admin/save.js ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2353,10 +2353,10 @@ function saveButton() {
 
 /***/ }),
 
-/***/ "./resources/js/admin/desktop/sidetable.js":
-/*!*************************************************!*\
-  !*** ./resources/js/admin/desktop/sidetable.js ***!
-  \*************************************************/
+/***/ "./resources/js/admin/sidetable.js":
+/*!*****************************************!*\
+  !*** ./resources/js/admin/sidetable.js ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2380,10 +2380,10 @@ function sideTable() {
 
 /***/ }),
 
-/***/ "./resources/js/admin/desktop/tabsAdmin.js":
-/*!*************************************************!*\
-  !*** ./resources/js/admin/desktop/tabsAdmin.js ***!
-  \*************************************************/
+/***/ "./resources/js/admin/tabsAdmin.js":
+/*!*****************************************!*\
+  !*** ./resources/js/admin/tabsAdmin.js ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -19935,18 +19935,18 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-/*!*******************************************!*\
-  !*** ./resources/js/admin/desktop/app.js ***!
-  \*******************************************/
+/*!***********************************!*\
+  !*** ./resources/js/admin/app.js ***!
+  \***********************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _hamburger_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hamburger.js */ "./resources/js/admin/desktop/hamburger.js");
-/* harmony import */ var _sidetable_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sidetable.js */ "./resources/js/admin/desktop/sidetable.js");
-/* harmony import */ var _save_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./save.js */ "./resources/js/admin/desktop/save.js");
-/* harmony import */ var _tabsAdmin_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tabsAdmin.js */ "./resources/js/admin/desktop/tabsAdmin.js");
-/* harmony import */ var _removeUser_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./removeUser.js */ "./resources/js/admin/desktop/removeUser.js");
-/* harmony import */ var _renderImageUpload_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./renderImageUpload.js */ "./resources/js/admin/desktop/renderImageUpload.js");
-/* harmony import */ var _ckeditor_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ckeditor.js */ "./resources/js/admin/desktop/ckeditor.js");
-__webpack_require__(/*! ../bootstrap */ "./resources/js/admin/bootstrap.js");
+/* harmony import */ var _hamburger_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hamburger.js */ "./resources/js/admin/hamburger.js");
+/* harmony import */ var _sidetable_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sidetable.js */ "./resources/js/admin/sidetable.js");
+/* harmony import */ var _save_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./save.js */ "./resources/js/admin/save.js");
+/* harmony import */ var _tabsAdmin_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tabsAdmin.js */ "./resources/js/admin/tabsAdmin.js");
+/* harmony import */ var _removeUser_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./removeUser.js */ "./resources/js/admin/removeUser.js");
+/* harmony import */ var _renderImageUpload_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./renderImageUpload.js */ "./resources/js/admin/renderImageUpload.js");
+/* harmony import */ var _ckeditor_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ckeditor.js */ "./resources/js/admin/ckeditor.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/admin/bootstrap.js");
 
 
 

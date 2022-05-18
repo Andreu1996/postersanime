@@ -1,21 +1,20 @@
 @extends('front.layout.master')
 
-@section('title') Posters anime @endsection
-@section('description') Posters anime de la pagina web @endsection
+@section('title') Contacto @endsection
+@section('description') Contacto de la pagina web @endsection
 
 @section('content')
 
     @if($agent->isDesktop())
         <div class="page-section">
-            @include('front.pages.index.desktop.index')
+            @include('front.pages.contacto.desktop.contacto')
         </div>
     @endif
 
     @if($agent->isMobile())
         <div class="page-section">
-            @include('front.pages.index.mobile.index')
+            @include('front.pages.contacto.mobile.contacto')
         </div>
-    @endif 
+    @endif
 
 @endsection
-

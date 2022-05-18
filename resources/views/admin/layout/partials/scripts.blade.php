@@ -1,7 +1,11 @@
-@if($agent->isDesktop())
+{{-- @if($agent->isDesktop())
     <script src="{{mix('admin/desktop/js/app.js')}}"></script>
 @endif
 
 @if($agent->isMobile())
     <script src="{{mix('admin/mobile/js/app-mobile.js')}}"></script>
-@endif
+@endif --}}
+
+<script src="{{mix('admin/desktop/js/app.js')}}"></script>
+
+
