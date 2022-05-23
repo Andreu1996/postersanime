@@ -19,7 +19,14 @@
         
         <main>
 
-            <div>
+            @include('admin.layout.partials.header')
+            
+            <div class="call-title">
+                @yield('title')
+            </div>
+
+
+            <div class="call-content">
                 @yield('content')
             </div>
 

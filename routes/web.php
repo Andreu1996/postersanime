@@ -46,7 +46,7 @@ Route::get('/FAQS', function () {
 });
 
 Route::get('/admin-panel', function () {
-    return view('admin/pages/admin-panel/index');
+    return view('admin/pages/faqs/index');
 });
 
 

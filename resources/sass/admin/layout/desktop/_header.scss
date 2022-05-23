@@ -1,3 +1,24 @@
+.page-title-text {
+    position: relative;
+    background-color: gray;
+    padding: 5rem;
+    display: block;
+    padding:0px;
+    width: 100%;
+    z-index: 1050;
+}
 
+ 
+ .page-title-text h1 {
+    padding: 1rem;
+    font-size: 30px;
+    font-weight: 400;
+    font-style:normal;
+    font-family: "Roboto", helvetica, arial, sans-serif;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    text-transform:uppercase;
+    text-align: center;
+    fill: hwb(241 0% 42%);
+ }
 
 

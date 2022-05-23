@@ -492,7 +492,6 @@ header {
 main {
   margin: 0 auto;
   position: relative;
-  top: 2rem;
   width: 100%;
 }
 
@@ -509,6 +508,28 @@ footer {
 
 .mobile-only {
   display: none;
+}
+
+.page-title-text {
+  position: relative;
+  background-color: gray;
+  padding: 5rem;
+  display: block;
+  padding: 0px;
+  width: 100%;
+  z-index: 1050;
+}
+
+.page-title-text h1 {
+  padding: 1rem;
+  font-size: 30px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Roboto", helvetica, arial, sans-serif;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  text-align: center;
+  fill: hwb(241 0% 42%);
 }
 
 footer {
@@ -615,7 +636,7 @@ footer .footer-element p {
 }
 
 .ham {
-  margin-top: 1rem;
+  margin-top: 0rem;
   display: none;
   padding: 5px;
   cursor: pointer;
@@ -651,7 +672,7 @@ footer .footer-element p {
 
 .ham {
   display: block;
-  position: fixed;
+  position: absolute;
   top: 0rem;
   right: 0rem;
   z-index: 2000;
@@ -679,10 +700,12 @@ footer .footer-element p {
   position: absolute;
   display: flex;
   top: 0rem;
+  right: 0rem;
   width: 100%;
+  max-width: 100%;
   background-color: #EBEBEB;
-  z-index: 1001;
-  transition: all 0.5s;
+  z-index: 1100;
+  transition: all 1s;
   border-style: solid;
 }
 
@@ -697,15 +720,22 @@ footer .footer-element p {
 
 .menu-element p {
   text-align: center;
-  color: red;
   color: #666B85;
   font-size: 1.5em;
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .menuhide {
+  display: flex;
   position: absolute;
   top: -100rem;
+  bottom: 1000rem;
+  width: 100%;
+  max-width: 100%;
+  background-color: #c40707;
+  z-index: 1100;
+  transition: all 5s;
+  border-style: solid;
 }
 
 .menu p {
@@ -715,46 +745,33 @@ footer .footer-element p {
 /*====================
   ========Body==========
   ======================*/
-.table-title {
-  background-color: gray;
-  padding: 5rem;
-  display: block;
-  margin-bottom: 2rem;
-  padding: 0px;
-  width: 100%;
-  margin-top: -3rem;
-}
-
-.table-title h3 {
-  padding: 1rem;
-  font-size: 30px;
-  font-weight: 400;
-  font-style: normal;
-  font-family: "Roboto", helvetica, arial, sans-serif;
-  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-  text-transform: uppercase;
-  text-align: center;
-  fill: hwb(241 0% 42%);
-}
-
 /*** Table Styles **/
 .tables {
   display: flex;
-  margin: auto;
-  width: 95%;
+  width: 100%;
 }
 
 .tablefill {
+  width: 95%;
+  height: 95%;
+  margin-left: 2rem;
   background: white;
   border-radius: 3px;
   border-collapse: collapse;
   height: 320px;
-  margin: 0rem;
   max-width: 100%;
-  padding: 5px;
-  width: 100%;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.1s;
+  transition: all 1s;
+}
+
+.maintable {
+  width: 20%;
+  height: 100%;
+  margin-left: 2rem;
+  transition: all 1s;
+}
+.maintable .column-hide {
+  display: none;
 }
 
 .maintable td {
@@ -762,6 +779,7 @@ footer .footer-element p {
   text-align: left;
   vertical-align: middle;
   font-size: 0.8em;
+  transition: all 1s;
 }
 
 .maintable th {
@@ -769,10 +787,12 @@ footer .footer-element p {
   text-align: left;
   vertical-align: middle;
   font-size: 1em;
+  transition: all 1s;
 }
 
 .maintable svg {
   width: 1rem;
+  transition: all 1s;
 }
 
 th {
@@ -786,6 +806,7 @@ th {
   text-align: center;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   vertical-align: middle;
+  transition: all 1s;
 }
 
 th:first-child {
@@ -804,12 +825,12 @@ tr {
   font-size: 16px;
   font-weight: normal;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.1);
+  transition: all 1s;
 }
 
 tr:hover td {
   background: #4E5066;
   color: #FFFFFF;
-  border-top: 1px solid #22262e;
 }
 
 tr:first-child {
@@ -844,6 +865,7 @@ td {
   font-size: 18px;
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
   border-right: 1px solid #C1C3D1;
+  transition: all 1s;
 }
 
 td.first-column {
@@ -886,14 +908,6 @@ th.last-column {
   width: 0.5%;
 }
 
-.maintable {
-  width: 20%;
-  margin-right: 2rem;
-}
-.maintable .column-hide {
-  display: none;
-}
-
 .user {
   display: flex;
   justify-content: center;
@@ -902,16 +916,18 @@ th.last-column {
 
 .sidetable {
   position: relative;
+  top: 6rem;
   width: 74%;
   right: 1rem;
   background-color: rgb(182, 182, 182);
-  transition: all 0.3s;
+  transition: all 1s;
+  border-radius: 0.5rem;
 }
 
 .sidetablehide {
   position: absolute;
-  right: -150%;
-  transition: all 0.5s;
+  right: -150rem;
+  transition: all 1s;
 }
 
 .form-element-label {
@@ -929,178 +945,19 @@ th.last-column {
   border-radius: 5rem;
 }
 
-.text-desapear {
-  display: none;
-  background-color: #00050e;
-}
-
-/*======================
-  ========TAP===========
-  ======================*/
-* {
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  max-width: 100%;
-  min-height: 100%;
-}
-
-.container--tabs {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: stretch;
-  width: 40%;
-}
-.container--tabs .tab {
-  min-height: 2em;
-  padding: 1em;
-  box-sizing: border-box;
-  width: 100%;
-  text-align: center;
-  cursor: pointer;
-  background-color: black;
-  color: white;
-  transition: background-color 0.25s;
-}
-.container--tabs .tab:hover {
-  background-color: rgba(0, 0, 0, 0.25);
-  transition: background-color 0.25s;
-  color: white;
-}
-.container--tabs .tabs--active {
-  background-color: rgb(182, 182, 182);
-  color: black;
-  pointer-events: none;
-}
-
-.tab-local {
-  min-height: 2em;
-  padding: 1em;
-  box-sizing: border-box;
-  width: 100%;
-  text-align: center;
-  cursor: pointer;
-  background-color: black;
-  color: white;
-  transition: background-color 0.25s;
-}
-
-.content {
-  display: none;
-  padding: 3em;
-  text-align: center;
-}
-
-.content--active {
-  display: block;
-  margin: auto;
-}
-
-.tabs--active-local {
-  background-color: rgb(182, 182, 182);
-  color: black;
-  pointer-events: none;
-}
-
-.content-local {
-  display: none;
-  padding: 3em;
-  text-align: center;
-}
-
-.content--active-local {
-  display: block;
-  margin: auto;
-}
-
-/*====================
-========OnOff=========
-======================*/
-/*Start | On-Off Button Design*/
-.btn-onoff {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.btn-onoff input {
-  display: block;
-  position: absolute;
-  opacity: 0;
-}
-
-.btn-onoff span {
-  position: relative;
-  display: block;
-  width: 80px;
-  height: 34px;
-  border-radius: 40px;
-  background: #ccc;
-  border: 1px solid #ccc;
-  transition: 400ms;
-}
-
-.btn-onoff input:checked ~ span {
-  border: 1px solid #4CAF50;
-  background: #4CAF50;
-}
-
-.btn-onoff input ~ span:before {
-  content: "Off";
-  display: block;
-  width: 34px;
-  height: 34px;
-  position: absolute;
-  right: 0px;
-  font-size: 14px;
-  font-family: "Arial";
-  font-weight: bold;
-  line-height: 34px;
-  color: #444;
-  padding: 0px 8px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: 500ms;
-}
-
-.btn-onoff input:checked ~ span:before {
-  content: "On";
-  right: 28px;
-  color: #fff;
-}
-
-.btn-onoff input ~ span:after {
-  content: "";
-  position: absolute;
-  width: 26px;
-  height: 26px;
-  top: 4px;
-  left: 4px;
-  background: #fff;
-  border-radius: 50%;
-  transition: 400ms;
-}
-
-.btn-onoff:hover input ~ span:after {
-  transform: scale(0.9);
-}
-
-.btn-onoff input:checked ~ span:after {
-  content: "";
-  left: 51px;
-}
-
-/*End | On-Off Button Design*/
 /*======================
   ========SideTable=====
   ======================*/
 .sidetable {
   display: block;
-  position: absolute;
+  position: fixed;
+  margin-top: 2.5rem;
+  transition: 1s;
+}
+
+.sidetable-down-up {
+  margin-top: 7.5rem;
+  transition: 1s;
 }
 
 .sidetable-header {
@@ -1263,6 +1120,7 @@ th.last-column {
   background-color: black;
   padding: 1rem;
   gap: 1rem;
+  border-radius: 1rem;
 }
 
 .pop-up-save-active {
@@ -1282,7 +1140,8 @@ th.last-column {
 }
 
 .remove-confirmation-active {
-  top: 7rem;
+  top: 6rem;
+  left: 2rem;
 }
 
 .remove-confirmation-title {
@@ -1356,4 +1215,225 @@ th.last-column {
 
 .ck-editor__editable p {
   color: black;
+}
+
+/*======================
+  ========TAP===========
+  ======================*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 100%;
+  min-height: 100%;
+}
+
+.container--tabs {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 40%;
+  margin-left: 0.5rem;
+}
+.container--tabs .tab {
+  min-height: 2em;
+  padding: 1em;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  transition: background-color 0.25s;
+}
+.container--tabs .tab:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+  transition: background-color 0.25s;
+  color: white;
+}
+.container--tabs .tabs--active {
+  background-color: rgb(182, 182, 182);
+  color: black;
+  pointer-events: none;
+}
+
+.tab-local {
+  min-height: 2em;
+  padding: 1em;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  transition: background-color 0.25s;
+}
+
+.content {
+  display: none;
+  padding: 3em;
+  text-align: center;
+}
+
+.content--active {
+  display: block;
+  margin: auto;
+}
+
+.tabs--active-local {
+  background-color: rgb(182, 182, 182);
+  color: black;
+  pointer-events: none;
+}
+
+.content-local {
+  display: none;
+  padding: 3em;
+  text-align: center;
+}
+
+.content--active-local {
+  display: block;
+  margin: auto;
+}
+
+/*====================
+  ========OnOff=========
+  ======================*/
+/*Start | On-Off Button Design*/
+.btn-onoff {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn-onoff input {
+  display: block;
+  position: absolute;
+  opacity: 0;
+}
+
+.btn-onoff span {
+  position: relative;
+  display: block;
+  width: 80px;
+  height: 34px;
+  border-radius: 40px;
+  border: 1px solid #911d22;
+  background: #911d22;
+  transition: 400ms;
+}
+
+.btn-onoff input:checked ~ span {
+  border: 1px solid #4CAF50;
+  background: #4CAF50;
+}
+
+.btn-onoff input ~ span:before {
+  content: "Off";
+  display: block;
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  right: 0px;
+  font-size: 14px;
+  font-family: "Arial";
+  font-weight: bold;
+  line-height: 34px;
+  color: #fff;
+  padding: 0px 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 500ms;
+}
+
+.btn-onoff input:checked ~ span:before {
+  content: "On";
+  right: 28px;
+  color: #fff;
+}
+
+.btn-onoff input ~ span:after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  top: 4px;
+  left: 4px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 400ms;
+}
+
+.btn-onoff:hover input ~ span:after {
+  transform: scale(0.9);
+}
+
+.btn-onoff input:checked ~ span:after {
+  content: "";
+  left: 51px;
+}
+
+/*End | On-Off Button Design*/
+.sidetabe-header-close-svg svg {
+  width: 2rem;
+  height: 2rem;
+  fill: rgb(0, 0, 0);
+}
+
+.dropdown-menu {
+  position: relative;
+  top: 0rem;
+  padding-top: 0rem;
+  background-color: rgb(187, 187, 187);
+  margin-bottom: 2rem;
+  transition: all 1s;
+}
+
+.filter-svg-active {
+  padding-top: 5rem;
+  transition: all 1s;
+}
+
+.dropdown-menu-svg {
+  padding-left: 38.5rem;
+  padding-right: 50rem;
+}
+
+.filter-svg {
+  transition: all 1s;
+}
+
+.dropdown-menu-svg svg {
+  margin-top: 0.5rem;
+  width: 100%;
+  height: 100%;
+}
+
+.dropdown-menu-content {
+  position: absolute;
+  top: -5rem;
+  transition: all 1s;
+  z-index: 950rem;
+}
+
+.active-filter {
+  position: absolute;
+  top: 0rem;
+  transition: all 1s;
+}
+
+.dropdown-menu-content-header {
+  padding-top: 1rem;
+  margin-left: 36.5rem;
+}
+
+.dropdown-menu-content-categories {
+  margin: 1rem 0rem;
+  padding: 0rem 2rem;
+  margin-left: 35rem;
 }

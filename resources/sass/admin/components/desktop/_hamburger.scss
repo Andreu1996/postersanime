@@ -7,7 +7,7 @@
   }
   
   .ham{  
-    margin-top: 1rem;
+    margin-top: 0rem;
     display:none;  
     padding:5px;  
     cursor:pointer;  
@@ -43,7 +43,7 @@
   
   .ham{  
     display:block;
-    position: fixed; 
+    position: absolute; 
     top: 0rem;
     right: 0rem; 
     z-index: 2000;
@@ -71,10 +71,12 @@
     position: absolute;
     display: flex;
     top: 0rem;
+    right: 0rem;
     width: 100%;
+    max-width: 100%;
     background-color: #EBEBEB;
-    z-index: 1001;
-    transition: all 0.5s;
+    z-index: 1100;
+    transition: all 1s;
     border-style: solid;
   }
   
@@ -89,15 +91,22 @@
   
   .menu-element p{
     text-align: center;
-    color: red;
     color:#666B85;
     font-size: 1.5em;
     text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
   }
   
   .menuhide{
+    display: flex;
     position: absolute;
     top: -100rem;
+    bottom: 1000rem;
+    width: 100%;
+    max-width: 100%;
+    background-color: #c40707;
+    z-index: 1100;
+    transition: all 5s;
+    border-style: solid;
   }
   
   .menu p{

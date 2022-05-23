@@ -1,0 +1,89 @@
+/*======================
+  ========TAP===========
+  ======================*/
+
+  *{
+    margin: 0;
+    padding: 0;
+  }
+
+  .container{
+    max-width: 100%;
+    min-height: 100%;
+  }
+  
+  .container--tabs{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 40%;
+    margin-left: 0.5rem;
+  
+    .tab{
+      min-height: 2em;
+      padding: 1em;
+      box-sizing: border-box;
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+      background-color:rgb(0, 0, 0);
+      color: white;
+      transition: background-color 0.25s;
+  
+      &:hover{
+        background-color: rgba(0, 0, 0, 0.25);
+        transition: background-color 0.25s;
+        color: white;
+      }
+    }
+  
+    .tabs--active{
+      background-color: rgb(182, 182, 182);
+      color: black;
+      pointer-events: none;
+    }
+  }
+
+  .tab-local{
+    min-height: 2em;
+      padding: 1em;
+      box-sizing: border-box;
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+      background-color: black;
+      color: white;
+      transition: background-color 0.25s;
+  }
+  
+  .content{
+    display: none;
+    padding: 3em;
+  
+    text-align: center;
+  }
+  
+  .content--active{
+    display: block;
+    margin: auto;
+  }
+
+  .tabs--active-local{
+    background-color: rgb(182, 182, 182);
+    color: black;
+    pointer-events: none;
+  }
+
+  .content-local{
+    display: none;
+    padding: 3em;
+  
+    text-align: center;
+  }
+
+  .content--active-local{
+    display: block;
+    margin: auto;
+  }

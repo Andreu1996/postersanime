@@ -2231,6 +2231,53 @@ var ckeditor = function ckeditor() {
 
 /***/ }),
 
+/***/ "./resources/js/admin/closeForm.js":
+/*!*****************************************!*\
+  !*** ./resources/js/admin/closeForm.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "closeForm": () => (/* binding */ closeForm)
+/* harmony export */ });
+var closeForm = function closeForm() {
+  var closeForm = document.querySelector('.sidetable-header-close');
+  var table = document.querySelector('.sidetablehide');
+  var maintable = document.querySelector('.tablefill');
+  closeForm.addEventListener('click', function () {
+    table.classList.add("sidetablehide");
+    maintable.classList.remove("maintable");
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/admin/dropdownMenu.js":
+/*!********************************************!*\
+  !*** ./resources/js/admin/dropdownMenu.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "dropdownMenu": () => (/* binding */ dropdownMenu)
+/* harmony export */ });
+function dropdownMenu() {
+  var dropdownMenu = document.querySelector('.filter-svg');
+  var dropdownMenuContent = document.querySelector('.dropdown-menu-content');
+  var sidetableDownUp = document.querySelector('.sidetable');
+  dropdownMenu.addEventListener("click", function () {
+    dropdownMenuContent.classList.toggle("active-filter");
+    dropdownMenu.classList.toggle("filter-svg-active");
+    sidetableDownUp.classList.toggle("sidetable-down-up");
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/admin/hamburger.js":
 /*!*****************************************!*\
   !*** ./resources/js/admin/hamburger.js ***!
@@ -2370,8 +2417,8 @@ function sideTable() {
   var maintable = document.querySelector('.tablefill');
   edit.forEach(function (useredit) {
     useredit.addEventListener("click", function () {
-      table.classList.toggle("sidetablehide");
-      maintable.classList.toggle("maintable");
+      table.classList.remove("sidetablehide");
+      maintable.classList.add("maintable");
     });
   });
 }
@@ -19946,7 +19993,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _removeUser_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./removeUser.js */ "./resources/js/admin/removeUser.js");
 /* harmony import */ var _renderImageUpload_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./renderImageUpload.js */ "./resources/js/admin/renderImageUpload.js");
 /* harmony import */ var _ckeditor_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ckeditor.js */ "./resources/js/admin/ckeditor.js");
+/* harmony import */ var _closeForm_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./closeForm.js */ "./resources/js/admin/closeForm.js");
+/* harmony import */ var _dropdownMenu_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./dropdownMenu.js */ "./resources/js/admin/dropdownMenu.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/bootstrap.js");
+
+
 
 
 
@@ -19964,6 +20015,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/bootstrap.js");
 (0,_removeUser_js__WEBPACK_IMPORTED_MODULE_4__.removeUser)();
 (0,_renderImageUpload_js__WEBPACK_IMPORTED_MODULE_5__.renderImageUpload)();
 (0,_ckeditor_js__WEBPACK_IMPORTED_MODULE_6__.ckeditor)();
+(0,_closeForm_js__WEBPACK_IMPORTED_MODULE_7__.closeForm)();
+(0,_dropdownMenu_js__WEBPACK_IMPORTED_MODULE_8__.dropdownMenu)();
 })();
 
 /******/ })()
