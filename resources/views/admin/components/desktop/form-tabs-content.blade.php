@@ -28,7 +28,7 @@
                             <h3>Nombre</h3>
                         </div>
                         <div class="name-options">
-                            <input type="text" placeholder="Nombre">
+                            <input name="content" type="text" placeholder="Nombre">
                         </div>
                     </div>
                 </div>
@@ -54,13 +54,14 @@
                                 <h3>Titulo</h3>
                             </div>
                             <div class="description-title-text">
-                                <input type="text" placeholder="Titulo">
+                                <input name="content" type="text" placeholder="Titulo">
                             </div>
                             <div class="description-title">
                                 <h3>Descripción</h3>
                             </div>
                             <div class="description-info">
-                                <textarea name="content" class="ckeditor"><p></p></textarea>
+                                <textarea name="content" class="ckeditor">
+                                </textarea>
                             </div>
                         </div>
                     </div>
@@ -71,7 +72,7 @@
                                 <h3>Titulo2</h3>
                             </div>
                             <div class="description-title-text">
-                                <input type="text" placeholder="Titulo">
+                                <input name="content" type="text" placeholder="Titulo">
                             </div>
                             <div class="description-title">
                                 <h3>Descripción</h3>
@@ -88,7 +89,7 @@
                                 <h3>Titulo3</h3>
                             </div>
                             <div class="description-title-text">
-                                <input type="text" placeholder="Titulo">
+                                <input name="content" type="text" placeholder="Titulo">
                             </div>
                             <div class="description-title">
                                 <h3>Descripción</h3>
