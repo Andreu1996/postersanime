@@ -5,6 +5,10 @@ export let renderForm = () => {
     let createButton = document.querySelector('.create-button');
     let forms = document.querySelectorAll('.admin-form');
 
+    document.addEventListener("loadForm",( event =>{
+        formContainer.innerHTML = event.detail.form;
+    }));
+
     document.addEventListener("renderFormModules",( event =>{
         renderForm();
     }), {once: true});
@@ -53,6 +57,7 @@ export let renderForm = () => {
                 .then(json => {
 
                     formContainer.innerHTML = json.form;
+                    document.querySelector('.sidetable').classList.remove("sidetablehide");
 
                     /*
                         Cuando hacemos un innerHTML se pierden todos los eventos de javascript, por lo que tenemos que
@@ -72,6 +77,9 @@ export let renderForm = () => {
             };
     
             sendCreateRequest();
+
+
+
         });
     }
 
@@ -88,7 +96,7 @@ export let renderForm = () => {
                 
                 let data = new FormData(form);
                 let url = form.action;
-                
+
                 for (var pair of data.entries()) {
                     console.log(pair[0]+ ', ' + pair[1]); 
                 }
@@ -133,6 +141,7 @@ export let renderForm = () => {
                     .then(json => {
 
                         formContainer.innerHTML = json.form;
+                        document.querySelector('.sidetable').classList.remove("sidetablehide");
 
                         document.dispatchEvent(new CustomEvent('loadTable', {
                             detail: {

@@ -2261,12 +2261,17 @@ var ckeditor = function ckeditor() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "closeForm": () => (/* binding */ closeForm)
+/* harmony export */   "renderCloseForm": () => (/* binding */ renderCloseForm)
 /* harmony export */ });
-var closeForm = function closeForm() {
-  var closeForm = document.querySelector('.sidetable-header-close');
-  var table = document.querySelector('.sidetablehide');
+var renderCloseForm = function renderCloseForm() {
+  var closeForm = document.querySelector('.sidetabe-header-close-svg');
+  var table = document.querySelector('.sidetable');
   var maintable = document.querySelector('.tablefill');
+  document.addEventListener("renderFormModules", function (event) {
+    renderCloseForm();
+  }, {
+    once: true
+  });
   closeForm.addEventListener('click', function () {
     table.classList.add("sidetablehide");
     maintable.classList.remove("maintable");
@@ -2337,6 +2342,9 @@ var renderForm = function renderForm() {
   var storeButton = document.querySelector('.store-button');
   var createButton = document.querySelector('.create-button');
   var forms = document.querySelectorAll('.admin-form');
+  document.addEventListener("loadForm", function (event) {
+    formContainer.innerHTML = event.detail.form;
+  });
   document.addEventListener("renderFormModules", function (event) {
     renderForm();
   }, {
@@ -2371,6 +2379,7 @@ var renderForm = function renderForm() {
                     return response.json();
                   }).then(function (json) {
                     formContainer.innerHTML = json.form;
+                    document.querySelector('.sidetable').classList.remove("sidetablehide");
                     /*
                         Cuando hacemos un innerHTML se pierden todos los eventos de javascript, por lo que tenemos que
                         volver a asignar los eventos a los elementos que hemos creado. Para ello vamos a hacer un evento 
@@ -2480,6 +2489,7 @@ var renderForm = function renderForm() {
                       return response.json();
                     }).then(function (json) {
                       formContainer.innerHTML = json.form;
+                      document.querySelector('.sidetable').classList.remove("sidetablehide");
                       document.dispatchEvent(new CustomEvent('loadTable', {
                         detail: {
                           table: json.table
@@ -2557,6 +2567,64 @@ function hamburgerMenu() {
 }
 
 
+
+/***/ }),
+
+/***/ "./resources/js/admin/newForm.js":
+/*!***************************************!*\
+  !*** ./resources/js/admin/newForm.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "newForm": () => (/* binding */ newForm)
+/* harmony export */ });
+function newForm() {
+  var newForm = document.querySelector('.new-form');
+  var table = document.querySelector('.sidetablehide');
+  var maintable = document.querySelector('.tablefill');
+  document.addEventListener("renderFormModules", function (event) {
+    newForm();
+  }, {
+    once: true
+  });
+  newForm.addEventListener('click', function () {
+    table.classList.remove("sidetablehide");
+    maintable.classList.add("maintable");
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/admin/removeUser.js":
+/*!******************************************!*\
+  !*** ./resources/js/admin/removeUser.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "removeUser": () => (/* binding */ removeUser)
+/* harmony export */ });
+function removeUser() {
+  var remove = document.querySelector('.remove-button');
+  var removeConfirmation = document.querySelector('.remove-confirmation');
+  var removeConfirmationCancel = document.querySelector('.remove-confirmation-cancel');
+  document.addEventListener("renderFormModules", function (event) {
+    removeUser();
+  }, {
+    once: true
+  });
+  remove.addEventListener("click", function () {
+    removeConfirmation.classList.add("remove-confirmation-active");
+  });
+  removeConfirmationCancel.addEventListener("click", function () {
+    removeConfirmation.classList.remove("remove-confirmation-active");
+  });
+}
 
 /***/ }),
 
@@ -2645,7 +2713,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "sideTable": () => (/* binding */ sideTable)
 /* harmony export */ });
 function sideTable() {
-  var edit = document.querySelectorAll('.useredit');
+  var edit = document.querySelectorAll('.edit-button');
   var table = document.querySelector('.sidetablehide');
   var maintable = document.querySelector('.tablefill');
   edit.forEach(function (useredit) {
@@ -2680,9 +2748,9 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 var renderTable = function renderTable() {
-  var tableContainer = document.querySelector(".table-container");
-  var editButtons = document.querySelectorAll(".useredit");
-  var deleteButtons = document.querySelectorAll(".userdelete");
+  var tableContainer = document.querySelector(".table");
+  var editButtons = document.querySelectorAll(".edit-button");
+  var deleteButtons = document.querySelectorAll(".remove-button");
   document.addEventListener("loadTable", function (event) {
     tableContainer.innerHTML = event.detail.table;
   });
@@ -2720,6 +2788,7 @@ var renderTable = function renderTable() {
                           form: json.form
                         }
                       }));
+                      document.querySelector('.sidetable').classList.remove("sidetablehide");
                       document.dispatchEvent(new CustomEvent('renderFormModules'));
                     })["catch"](function (error) {
                       if (error.status == '500') {
@@ -2768,12 +2837,16 @@ var renderTable = function renderTable() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "tabsAdmin": () => (/* binding */ tabsAdmin),
-/* harmony export */   "tabsAdminLocal": () => (/* binding */ tabsAdminLocal)
+/* harmony export */   "tabsAdmin": () => (/* binding */ tabsAdmin)
 /* harmony export */ });
 function tabsAdmin() {
   var tabs = document.querySelectorAll('.tab');
   var tabContents = document.querySelectorAll('.content');
+  document.addEventListener("renderFormModules", function (event) {
+    tabsAdmin();
+  }, {
+    once: true
+  });
   tabs.forEach(function (tab) {
     tab.addEventListener("click", function () {
       tabs.forEach(function (tab) {
@@ -2785,25 +2858,6 @@ function tabsAdmin() {
 
         if (tab.dataset.tab == Content.dataset.tab) {
           Content.classList.add("content--active");
-        }
-      });
-    });
-  });
-}
-function tabsAdminLocal() {
-  var tabsLocal = document.querySelectorAll('.tab-local');
-  var tabContentsLocal = document.querySelectorAll('.content-local');
-  tabsLocal.forEach(function (tabLocal) {
-    tabLocal.addEventListener("click", function () {
-      tabsLocal.forEach(function (tabLocal) {
-        tabLocal.classList.remove("tabs--active-local");
-      });
-      tabLocal.classList.add("tabs--active-local");
-      tabContentsLocal.forEach(function (ContentLocal) {
-        ContentLocal.classList.remove("content--active-local");
-
-        if (tabLocal.dataset.tab == ContentLocal.dataset.tab) {
-          ContentLocal.classList.add("content--active-local");
         }
       });
     });
@@ -21086,19 +21140,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sidetable_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sidetable.js */ "./resources/js/admin/sidetable.js");
 /* harmony import */ var _save_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./save.js */ "./resources/js/admin/save.js");
 /* harmony import */ var _tabsAdmin_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tabsAdmin.js */ "./resources/js/admin/tabsAdmin.js");
-/* harmony import */ var _renderImageUpload_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./renderImageUpload.js */ "./resources/js/admin/renderImageUpload.js");
-/* harmony import */ var _ckeditor_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ckeditor.js */ "./resources/js/admin/ckeditor.js");
-/* harmony import */ var _closeForm_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./closeForm.js */ "./resources/js/admin/closeForm.js");
-/* harmony import */ var _dropdownMenu_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./dropdownMenu.js */ "./resources/js/admin/dropdownMenu.js");
-/* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./form.js */ "./resources/js/admin/form.js");
-/* harmony import */ var _table_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./table.js */ "./resources/js/admin/table.js");
+/* harmony import */ var _removeUser_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./removeUser.js */ "./resources/js/admin/removeUser.js");
+/* harmony import */ var _renderImageUpload_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./renderImageUpload.js */ "./resources/js/admin/renderImageUpload.js");
+/* harmony import */ var _ckeditor_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ckeditor.js */ "./resources/js/admin/ckeditor.js");
+/* harmony import */ var _closeForm_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./closeForm.js */ "./resources/js/admin/closeForm.js");
+/* harmony import */ var _dropdownMenu_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./dropdownMenu.js */ "./resources/js/admin/dropdownMenu.js");
+/* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./form.js */ "./resources/js/admin/form.js");
+/* harmony import */ var _table_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./table.js */ "./resources/js/admin/table.js");
+/* harmony import */ var _newForm_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./newForm.js */ "./resources/js/admin/newForm.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/bootstrap.js");
 
 
 
 
 
- // import {removeUser} from "./removeUser.js";
+
 
 
 
@@ -21110,14 +21166,14 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/bootstrap.js");
 (0,_sidetable_js__WEBPACK_IMPORTED_MODULE_1__.sideTable)();
 (0,_save_js__WEBPACK_IMPORTED_MODULE_2__.saveButton)();
 (0,_tabsAdmin_js__WEBPACK_IMPORTED_MODULE_3__.tabsAdmin)();
-(0,_tabsAdmin_js__WEBPACK_IMPORTED_MODULE_3__.tabsAdminLocal)(); // removeUser ();
-
-(0,_renderImageUpload_js__WEBPACK_IMPORTED_MODULE_4__.renderImageUpload)();
-(0,_ckeditor_js__WEBPACK_IMPORTED_MODULE_5__.ckeditor)();
-(0,_closeForm_js__WEBPACK_IMPORTED_MODULE_6__.closeForm)();
-(0,_dropdownMenu_js__WEBPACK_IMPORTED_MODULE_7__.dropdownMenu)();
-(0,_form_js__WEBPACK_IMPORTED_MODULE_8__.renderForm)();
-(0,_table_js__WEBPACK_IMPORTED_MODULE_9__.renderTable)();
+(0,_removeUser_js__WEBPACK_IMPORTED_MODULE_4__.removeUser)();
+(0,_renderImageUpload_js__WEBPACK_IMPORTED_MODULE_5__.renderImageUpload)();
+(0,_ckeditor_js__WEBPACK_IMPORTED_MODULE_6__.ckeditor)();
+(0,_closeForm_js__WEBPACK_IMPORTED_MODULE_7__.renderCloseForm)();
+(0,_dropdownMenu_js__WEBPACK_IMPORTED_MODULE_8__.dropdownMenu)();
+(0,_form_js__WEBPACK_IMPORTED_MODULE_9__.renderForm)();
+(0,_table_js__WEBPACK_IMPORTED_MODULE_10__.renderTable)();
+(0,_newForm_js__WEBPACK_IMPORTED_MODULE_11__.newForm)();
 })();
 
 /******/ })()

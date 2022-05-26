@@ -1,8 +1,8 @@
 export let renderTable = () => {
 
-    let tableContainer = document.querySelector(".table-container");
-    let editButtons = document.querySelectorAll(".useredit");
-    let deleteButtons = document.querySelectorAll(".userdelete");
+    let tableContainer = document.querySelector(".table");
+    let editButtons = document.querySelectorAll(".edit-button");
+    let deleteButtons = document.querySelectorAll(".remove-button");
     
     document.addEventListener("loadTable",( event =>{
                 tableContainer.innerHTML = event.detail.table;
@@ -44,6 +44,8 @@ export let renderTable = () => {
                             }
                         }));
 
+                        document.querySelector('.sidetable').classList.remove("sidetablehide");
+                        
                         document.dispatchEvent(new CustomEvent('renderFormModules'));
                     })
                     .catch(error =>  {

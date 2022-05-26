@@ -6,7 +6,6 @@
 		<link rel="shortcut icon" href="https://www.youtube.com/s/desktop/12d6b690/img/favicon.ico">
 
 
-        <title>@yield('title')</title>
 		<meta name="description" content=@yield('description')>
         <meta name="keywords" 	 content="palabras clave, separadas, por comas">
         <meta name="csrf-token" content="{{ csrf_token() }}">

@@ -908,7 +908,7 @@ th.last-column {
   width: 0.5%;
 }
 
-.user {
+.edit-remove-buttons {
   display: flex;
   justify-content: center;
   gap: 1rem;

@@ -1,5 +1,5 @@
 function sideTable(){
-    let edit = document.querySelectorAll('.useredit');
+    let edit = document.querySelectorAll('.edit-button');
     let table = document.querySelector('.sidetablehide');
     let maintable = document.querySelector('.tablefill');
  
