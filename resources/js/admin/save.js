@@ -3,6 +3,10 @@ function saveButton(){
     let save = document.querySelector('.sidetableHeaderSave');
     let saveTab = document.querySelector('.pop-up-save');
 
+    document.addEventListener("renderFormModules",( event =>{
+        saveButton();
+    }), {once: true});
+
 
     save.addEventListener('click', () => {  
         saveTab.classList.add("pop-up-save-active");  

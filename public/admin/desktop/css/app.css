@@ -915,9 +915,9 @@ th.last-column {
 }
 
 .sidetable {
-  position: relative;
-  top: 6rem;
-  width: 74%;
+  position: absolute;
+  top: 8.2rem;
+  width: 70%;
   right: 1rem;
   background-color: rgb(182, 182, 182);
   transition: all 1s;
@@ -948,13 +948,6 @@ th.last-column {
 /*======================
   ========SideTable=====
   ======================*/
-.sidetable {
-  display: block;
-  position: fixed;
-  margin-top: 2.5rem;
-  transition: 1s;
-}
-
 .sidetable-down-up {
   margin-top: 7.5rem;
   transition: 1s;
@@ -1134,14 +1127,20 @@ th.last-column {
 
 .remove-confirmation {
   position: absolute;
-  padding: 13% 39%;
+  padding: 3rem 7rem;
   top: -100rem;
-  background-color: rgba(0, 0, 0, 0.618);
+  background-color: rgb(0, 0, 0);
+  border-radius: 1rem;
+  border-style: solid;
+  border-color: white;
+  box-shadow: 2px 3px 6px 4px #000000;
 }
 
 .remove-confirmation-active {
-  top: 6rem;
-  left: 2rem;
+  position: absolute;
+  top: 20rem;
+  left: 25rem;
+  z-index: 1050;
 }
 
 .remove-confirmation-title {
@@ -1299,6 +1298,20 @@ th.last-column {
 .content--active-local {
   display: block;
   margin: auto;
+}
+
+.form-group {
+  margin: 1.5rem 0rem;
+}
+
+.form-label {
+  margin-bottom: 0.5rem;
+}
+
+.form-input input {
+  width: 80%;
+  padding: 0.5rem 0rem;
+  border-radius: 0.5rem;
 }
 
 /*====================

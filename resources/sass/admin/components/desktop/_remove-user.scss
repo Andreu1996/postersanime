@@ -1,13 +1,20 @@
 .remove-confirmation{
     position: absolute;
-    padding: 13% 39%;
+    padding: 3rem 7rem;
     top: -100rem;
-    background-color: rgba(0, 0, 0, 0.618);
+    background-color: rgb(0, 0, 0);
+    border-radius: 1rem;
+    border-style: solid;
+    border-color: white;
+    box-shadow: 2px 3px 6px 4px #000000;
+    
 }
 
 .remove-confirmation-active{
-    top: 6rem;
-    left: 2rem
+    position: absolute;
+    top: 20rem;
+    left: 25rem;
+    z-index: 1050;
 }
 
 .remove-confirmation-title{

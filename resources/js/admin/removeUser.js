@@ -1,6 +1,6 @@
 export function removeUser () {
   
-    let remove = document.querySelector('.remove-button');
+    let remover = document.querySelectorAll('.remove-button');
     let removeConfirmation = document.querySelector('.remove-confirmation');
     let removeConfirmationCancel = document.querySelector('.remove-confirmation-cancel');
 
@@ -8,6 +8,7 @@ export function removeUser () {
       removeUser();
   }), {once: true}); 
 
+  remover.forEach(remove => {
     remove.addEventListener("click", () => {
       removeConfirmation.classList.add("remove-confirmation-active");
     });
@@ -15,6 +16,7 @@ export function removeUser () {
     removeConfirmationCancel.addEventListener("click", () => {
         removeConfirmation.classList.remove("remove-confirmation-active");
     });
+  });
 }
 
     

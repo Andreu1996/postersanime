@@ -176,9 +176,9 @@
  }
 
  .sidetable{
-    position: relative;
-    top: 6rem;
-    width: 74%;
+    position: absolute;
+    top: 8.2rem;
+    width: 70%;
     right: 1rem;
     background-color: rgb(182, 182, 182);
     transition: all 1s;
@@ -216,12 +216,6 @@
 /*======================
   ========SideTable=====
   ======================*/
-.sidetable{
-display: block;
-position: fixed;
-margin-top: 2.5rem;
-transition: 1s;
-}
 
 .sidetable-down-up{
   margin-top: 7.5rem;

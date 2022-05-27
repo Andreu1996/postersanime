@@ -2583,7 +2583,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function newForm() {
   var newForm = document.querySelector('.new-form');
-  var table = document.querySelector('.sidetablehide');
+  var table = document.querySelector('.sidetable');
   var maintable = document.querySelector('.tablefill');
   document.addEventListener("renderFormModules", function (event) {
     newForm();
@@ -2610,7 +2610,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "removeUser": () => (/* binding */ removeUser)
 /* harmony export */ });
 function removeUser() {
-  var remove = document.querySelector('.remove-button');
+  var remover = document.querySelectorAll('.remove-button');
   var removeConfirmation = document.querySelector('.remove-confirmation');
   var removeConfirmationCancel = document.querySelector('.remove-confirmation-cancel');
   document.addEventListener("renderFormModules", function (event) {
@@ -2618,11 +2618,13 @@ function removeUser() {
   }, {
     once: true
   });
-  remove.addEventListener("click", function () {
-    removeConfirmation.classList.add("remove-confirmation-active");
-  });
-  removeConfirmationCancel.addEventListener("click", function () {
-    removeConfirmation.classList.remove("remove-confirmation-active");
+  remover.forEach(function (remove) {
+    remove.addEventListener("click", function () {
+      removeConfirmation.classList.add("remove-confirmation-active");
+    });
+    removeConfirmationCancel.addEventListener("click", function () {
+      removeConfirmation.classList.remove("remove-confirmation-active");
+    });
   });
 }
 
@@ -2679,6 +2681,11 @@ __webpack_require__.r(__webpack_exports__);
 function saveButton() {
   var save = document.querySelector('.sidetableHeaderSave');
   var saveTab = document.querySelector('.pop-up-save');
+  document.addEventListener("renderFormModules", function (event) {
+    saveButton();
+  }, {
+    once: true
+  });
   save.addEventListener('click', function () {
     saveTab.classList.add("pop-up-save-active");
     setTimeout(function () {
@@ -2714,8 +2721,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function sideTable() {
   var edit = document.querySelectorAll('.edit-button');
-  var table = document.querySelector('.sidetablehide');
+  var table = document.querySelector('.sidetable');
   var maintable = document.querySelector('.tablefill');
+  document.addEventListener("renderFormModules", function (event) {
+    sideTable();
+  }, {
+    once: true
+  });
   edit.forEach(function (useredit) {
     useredit.addEventListener("click", function () {
       table.classList.remove("sidetablehide");
