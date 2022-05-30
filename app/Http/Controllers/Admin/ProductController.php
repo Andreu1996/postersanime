@@ -79,7 +79,7 @@ class ProductController extends Controller
         ]);
     }
 
-    public function edit(product $product)
+    public function edit(Product $product)
     {
         debugbar::info($product);
 

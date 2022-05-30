@@ -20,6 +20,7 @@
         <main>
 
             @include('admin.layout.partials.header')
+            @include('admin.components.desktop.modal_delete')
             
             <div class="call-title">
                 @yield('title')

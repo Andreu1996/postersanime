@@ -9,6 +9,7 @@ export function newForm () {
     }), {once: true});
 
     newForm.addEventListener('click', () => {
+        // window.alert('hola'); 
         table.classList.remove("sidetablehide");
         maintable.classList.add("maintable");
     });

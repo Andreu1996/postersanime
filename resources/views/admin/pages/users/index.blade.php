@@ -2,7 +2,7 @@
 
 @section('title')
     <div class="page-title-text">
-        <h1>Category</h1>
+        <h1>Products</h1>
     </div>
 @endsection
 
@@ -60,20 +60,20 @@
 
     
     <tbody class="table-hover">
-        @if(isset($categorys))
-            @foreach($categorys as $category_element)
+        @if(isset($users))
+            @foreach($users as $user_element)
                 <tr>
-                    <td class="text-center">{{$category_element->id}}</td>
-                    <td class="text-left">{{$category_element->name}}</td>
-                    <td class="text-left">{{$category_element->created_at}}</td>                   
+                    <td class="text-center">{{$user_element->id}}</td>
+                    <td class="text-left">{{$user_element->name}}</td>
+                    <td class="text-left">{{$user_element->created_at}}</td>                   
                     <td>
                         <div class="edit-remove-buttons">
-                            <div class="edit-button" data-url="{{route('categorys_edit', ['category' => $category_element->id])}}">
+                            <div class="edit-button" data-url="{{route('users_edit', ['user' => $user_element->id])}}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                     <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
                                 </svg>
                             </div>
-                            <div class="remove-button" data-url="{{route('categorys_destroy', ['category' => $category_element->id])}}">
+                            <div class="remove-button" data-url="{{route('users_destroy', ['user' => $user_element->id])}}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                                     <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
@@ -110,9 +110,9 @@
 
 @section('form')
 
-    @if(isset($category))
+    @if(isset($user))
 
-        <form class="admin-form" action="{{route("categorys_store")}}">
+        <form class="admin-form" action="{{route("users_store")}}">
 
             <input type="hidden" name="id">
 
@@ -159,7 +159,7 @@
                     
                             <div class="sidetable-header-element">     
                                 <div class="sidetable-header-clean">
-                                    <div class="sidetable-header-svg create-button" data-url="{{route('categorys_create')}}">
+                                    <div class="sidetable-header-svg create-button" data-url="{{route('users_create')}}">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eraser" viewBox="0 0 16 16">
                                             <path d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm2.121.707a1 1 0 0 0-1.414 0L4.16 7.547l5.293 5.293 4.633-4.633a1 1 0 0 0 0-1.414l-3.879-3.879zM8.746 13.547 3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z"/>
                                         </svg>
@@ -197,14 +197,14 @@
                             <div class="content content--active" data-tab="tab1">
                                 <div class="sidetableContact">
                                     
-                                    <div class="desktop-three-columns">
+                                    <div class="desktop-two-columns">
                                         <div class="column">
                                             <div class="form-group">
                                                 <div class="form-label">
                                                     <h3>Nombre</h3>
                                                 </div>
                                                 <div class="form-input">
-                                                    <input name="name" type="text" placeholder="Nombre" value="{{isset($category->name) ? $category->name: ''}}">
+                                                    <input name="name" type="text" placeholder="Nombre" value="{{isset($user->name) ? $user->name: ''}}">
                                                 </div>
                                             </div>
                                         </div>
@@ -214,39 +214,30 @@
                                                     <h3>Titulo</h3>
                                                 </div>
                                                 <div class="form-input">
-                                                    <input name="title" type="text" placeholder="Titulo" value="{{isset($category->title) ? $category->title: ''}}">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="form-group">
-                                                <div class="form-label">
-                                                    <h3>Precio</h3>
-                                                </div>
-                                                <div class="form-input">
-                                                    <input name="price" type="text" placeholder="price" value="{{isset($category->price) ? $category->price: ''}}">
+                                                    <input name="title" type="text" placeholder="Titulo" value="{{isset($user->title) ? $user->title: ''}}">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="desktop-one-column">
+
+                                    <div class="desktop-two-columns">
                                         <div class="column">
                                             <div class="form-group">
                                                 <div class="form-label">
-                                                    <h3>Caracteristicas</h3>
+                                                    <h3>Email</h3>
                                                 </div>
                                                 <div class="form-input">
-                                                    <textarea name="caracteristics" class="ckeditor" value="{{isset($category->caracteristics) ? $category->caracteristics: ''}}"></textarea>
+                                                    <input name="name" type="text" placeholder="Nombre" value="{{isset($user->email) ? $user->email: ''}}">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="column">
                                             <div class="form-group">
                                                 <div class="form-label">
-                                                    <h3>Descripción</h3>
+                                                    <h3>Password</h3>
                                                 </div>
                                                 <div class="form-input">
-                                                    <textarea name="description" class="ckeditor" value="{{isset($category->description) ? $category->description: ''}}"></textarea>
+                                                    <input name="title" type="text" placeholder="Titulo" value="{{isset($user->password) ? $user->password: ''}}">
                                                 </div>
                                             </div>
                                         </div>

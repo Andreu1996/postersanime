@@ -61,14 +61,20 @@ export let renderTable = () => {
         });
     }
 
-    if(deleteButtons){
-
+    if (deleteButtons) {
+ 
+ 
+ 
         deleteButtons.forEach(deleteButton => {
-
-            deleteButton.addEventListener("click", () => {
-
-                
+ 
+            deleteButton.addEventListener('click', () => {
+                document.dispatchEvent(new CustomEvent('openModalDelete', {
+                    detail: {
+                        url: deleteButton.dataset.url,
+                    }
+                }));
             });
         });
     }
+
 };

@@ -63,7 +63,7 @@
                                         <label for="fname">Nombre</label>
                                     </div>
                                     <div class="form-element-input">
-                                        <input type="text" id="fname" name="firstname" placeholder="tu nombre..">
+                                        <input type="text" id="fname" name="firstname" placeholder="tu nombre.." value="{{isset($contact->name) ? $contact->name: ''}}">
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                                         <label for="lname">Telefono</label>
                                     </div>
                                     <div class="form-element-input">
-                                        <input type="tel" id="phone" name="phone" placeholder="tu numero de telefono..">                                    
+                                        <input type="tel" id="phone" name="phone" placeholder="tu numero de telefono.." value="{{isset($contact->mobile) ? $contact->mobile: ''}}">                                    
                                     </div>
                                 </div>
                             </div>
@@ -88,7 +88,7 @@
                                         <label for="lname">Last Name</label>
                                     </div>
                                     <div class="form-element-input">
-                                        <input type="text" id="lname" name="lastname" placeholder="tu apellido..">                                  
+                                        <input type="text" id="lname" name="lastname" placeholder="tu apellido.." value="{{isset($contact->surname) ? $contact->surname: ''}}">                                  
                                     </div>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
                                         <label for="lname">Correo</label>
                                     </div>
                                     <div class="form-element-input">
-                                        <input type="mail" id="mail" name="lastname" placeholder="tu correo electronico..">                                  
+                                        <input type="mail" id="mail" name="lastname" placeholder="tu correo electronico.." value="{{isset($contact->mail) ? $contact->mail: ''}}">                                  
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +113,7 @@
                                     </div>
 
                                     <div class="form-element-input">
-                                        <textarea></textarea>
+                                        <textarea value="{{isset($contact->message) ? $contact->message: ''}}"></textarea>
                                     </div>
                                 </div>
                             </div>

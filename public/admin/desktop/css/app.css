@@ -1136,7 +1136,7 @@ th.last-column {
   box-shadow: 2px 3px 6px 4px #000000;
 }
 
-.remove-confirmation-active {
+.remove-confirmation.active {
   position: absolute;
   top: 20rem;
   left: 25rem;

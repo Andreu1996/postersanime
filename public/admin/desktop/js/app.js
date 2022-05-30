@@ -2280,6 +2280,110 @@ var renderCloseForm = function renderCloseForm() {
 
 /***/ }),
 
+/***/ "./resources/js/admin/deleteButton.js":
+/*!********************************************!*\
+  !*** ./resources/js/admin/deleteButton.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderDeleteButton": () => (/* binding */ renderDeleteButton)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var renderDeleteButton = function renderDeleteButton() {
+  var modalDelete = document.querySelector('.remove-confirmation');
+  var deleteConfirm = document.getElementById('remove-confirmation-delete');
+  var deleteCancel = document.getElementById('remove-confirmation-cancel');
+  document.addEventListener("renderTableModules", function (event) {
+    renderDeleteButton();
+  }, {
+    once: true
+  });
+  document.addEventListener("openModalDelete", function (event) {
+    deleteConfirm.dataset.url = event.detail.url;
+    modalDelete.classList.add('active');
+  }, {
+    once: true
+  });
+  deleteCancel.addEventListener("click", function () {
+    modalDelete.classList.remove('active');
+  });
+  deleteConfirm.addEventListener("click", function () {
+    var url = deleteConfirm.dataset.url;
+
+    var sendDeleteRequest = /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return fetch(url, {
+                  headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content
+                  },
+                  method: 'DELETE'
+                }).then(function (response) {
+                  if (!response.ok) throw response;
+                  return response.json();
+                }).then(function (json) {
+                  if (json.table) {
+                    document.dispatchEvent(new CustomEvent('loadTable', {
+                      detail: {
+                        table: json.table
+                      }
+                    }));
+                  }
+
+                  document.dispatchEvent(new CustomEvent('loadForm', {
+                    detail: {
+                      form: json.form
+                    }
+                  }));
+                  modalDelete.classList.remove('active');
+                  document.dispatchEvent(new CustomEvent('renderFormModules'));
+                  document.dispatchEvent(new CustomEvent('renderTableModules'));
+                })["catch"](function (error) {
+                  if (error.status == '500') {
+                    console.log(error);
+                  }
+
+                  ;
+                });
+
+              case 2:
+                response = _context.sent;
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function sendDeleteRequest() {
+        return _ref.apply(this, arguments);
+      };
+    }();
+
+    sendDeleteRequest();
+  });
+};
+
+/***/ }),
+
 /***/ "./resources/js/admin/dropdownMenu.js":
 /*!********************************************!*\
   !*** ./resources/js/admin/dropdownMenu.js ***!
@@ -2296,6 +2400,7 @@ function dropdownMenu() {
   var dropdownMenuContent = document.querySelector('.dropdown-menu-content');
   var sidetableDownUp = document.querySelector('.sidetable');
   dropdownMenu.addEventListener("click", function () {
+    // window.alert('hola'); 
     dropdownMenuContent.classList.toggle("active-filter");
     dropdownMenu.classList.toggle("filter-svg-active");
     sidetableDownUp.classList.toggle("sidetable-down-up");
@@ -2591,40 +2696,9 @@ function newForm() {
     once: true
   });
   newForm.addEventListener('click', function () {
+    // window.alert('hola'); 
     table.classList.remove("sidetablehide");
     maintable.classList.add("maintable");
-  });
-}
-
-/***/ }),
-
-/***/ "./resources/js/admin/removeUser.js":
-/*!******************************************!*\
-  !*** ./resources/js/admin/removeUser.js ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "removeUser": () => (/* binding */ removeUser)
-/* harmony export */ });
-function removeUser() {
-  var remover = document.querySelectorAll('.remove-button');
-  var removeConfirmation = document.querySelector('.remove-confirmation');
-  var removeConfirmationCancel = document.querySelector('.remove-confirmation-cancel');
-  document.addEventListener("renderFormModules", function (event) {
-    removeUser();
-  }, {
-    once: true
-  });
-  remover.forEach(function (remove) {
-    remove.addEventListener("click", function () {
-      removeConfirmation.classList.add("remove-confirmation-active");
-    });
-    removeConfirmationCancel.addEventListener("click", function () {
-      removeConfirmation.classList.remove("remove-confirmation-active");
-    });
   });
 }
 
@@ -2833,7 +2907,13 @@ var renderTable = function renderTable() {
 
   if (deleteButtons) {
     deleteButtons.forEach(function (deleteButton) {
-      deleteButton.addEventListener("click", function () {});
+      deleteButton.addEventListener('click', function () {
+        document.dispatchEvent(new CustomEvent('openModalDelete', {
+          detail: {
+            url: deleteButton.dataset.url
+          }
+        }));
+      });
     });
   }
 };
@@ -21152,14 +21232,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sidetable_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sidetable.js */ "./resources/js/admin/sidetable.js");
 /* harmony import */ var _save_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./save.js */ "./resources/js/admin/save.js");
 /* harmony import */ var _tabsAdmin_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tabsAdmin.js */ "./resources/js/admin/tabsAdmin.js");
-/* harmony import */ var _removeUser_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./removeUser.js */ "./resources/js/admin/removeUser.js");
-/* harmony import */ var _renderImageUpload_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./renderImageUpload.js */ "./resources/js/admin/renderImageUpload.js");
-/* harmony import */ var _ckeditor_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ckeditor.js */ "./resources/js/admin/ckeditor.js");
-/* harmony import */ var _closeForm_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./closeForm.js */ "./resources/js/admin/closeForm.js");
-/* harmony import */ var _dropdownMenu_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./dropdownMenu.js */ "./resources/js/admin/dropdownMenu.js");
-/* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./form.js */ "./resources/js/admin/form.js");
-/* harmony import */ var _table_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./table.js */ "./resources/js/admin/table.js");
-/* harmony import */ var _newForm_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./newForm.js */ "./resources/js/admin/newForm.js");
+/* harmony import */ var _renderImageUpload_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./renderImageUpload.js */ "./resources/js/admin/renderImageUpload.js");
+/* harmony import */ var _ckeditor_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ckeditor.js */ "./resources/js/admin/ckeditor.js");
+/* harmony import */ var _closeForm_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./closeForm.js */ "./resources/js/admin/closeForm.js");
+/* harmony import */ var _dropdownMenu_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./dropdownMenu.js */ "./resources/js/admin/dropdownMenu.js");
+/* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./form.js */ "./resources/js/admin/form.js");
+/* harmony import */ var _table_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./table.js */ "./resources/js/admin/table.js");
+/* harmony import */ var _newForm_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./newForm.js */ "./resources/js/admin/newForm.js");
+/* harmony import */ var _deleteButton_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./deleteButton.js */ "./resources/js/admin/deleteButton.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/bootstrap.js");
 
 
@@ -21178,14 +21258,14 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/bootstrap.js");
 (0,_sidetable_js__WEBPACK_IMPORTED_MODULE_1__.sideTable)();
 (0,_save_js__WEBPACK_IMPORTED_MODULE_2__.saveButton)();
 (0,_tabsAdmin_js__WEBPACK_IMPORTED_MODULE_3__.tabsAdmin)();
-(0,_removeUser_js__WEBPACK_IMPORTED_MODULE_4__.removeUser)();
-(0,_renderImageUpload_js__WEBPACK_IMPORTED_MODULE_5__.renderImageUpload)();
-(0,_ckeditor_js__WEBPACK_IMPORTED_MODULE_6__.ckeditor)();
-(0,_closeForm_js__WEBPACK_IMPORTED_MODULE_7__.renderCloseForm)();
-(0,_dropdownMenu_js__WEBPACK_IMPORTED_MODULE_8__.dropdownMenu)();
-(0,_form_js__WEBPACK_IMPORTED_MODULE_9__.renderForm)();
-(0,_table_js__WEBPACK_IMPORTED_MODULE_10__.renderTable)();
-(0,_newForm_js__WEBPACK_IMPORTED_MODULE_11__.newForm)();
+(0,_renderImageUpload_js__WEBPACK_IMPORTED_MODULE_4__.renderImageUpload)();
+(0,_ckeditor_js__WEBPACK_IMPORTED_MODULE_5__.ckeditor)();
+(0,_closeForm_js__WEBPACK_IMPORTED_MODULE_6__.renderCloseForm)();
+(0,_dropdownMenu_js__WEBPACK_IMPORTED_MODULE_7__.dropdownMenu)();
+(0,_form_js__WEBPACK_IMPORTED_MODULE_8__.renderForm)();
+(0,_table_js__WEBPACK_IMPORTED_MODULE_9__.renderTable)();
+(0,_newForm_js__WEBPACK_IMPORTED_MODULE_10__.newForm)();
+(0,_deleteButton_js__WEBPACK_IMPORTED_MODULE_11__.renderDeleteButton)();
 })();
 
 /******/ })()

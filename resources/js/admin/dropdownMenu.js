@@ -4,6 +4,7 @@ export function dropdownMenu () {
     let sidetableDownUp = document.querySelector('.sidetable');
 
     dropdownMenu.addEventListener("click", () => {
+        // window.alert('hola'); 
         dropdownMenuContent.classList.toggle("active-filter");
         dropdownMenu.classList.toggle("filter-svg-active");
         sidetableDownUp.classList.toggle("sidetable-down-up");

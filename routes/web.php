@@ -41,6 +41,20 @@ Route::group(['prefix' => 'admin'], function () {
         -- En destroy lo que haremos es borrar un dato de la base de datos 
     */
 
+    Route::resource('product/categories', 'App\Http\Controllers\Admin\ProductCategoryController', [
+        'parameters' => [
+            'categories' => 'product_category', 
+        ],
+        'names' => [
+            'index' => 'product_categories',
+            'create' => 'product_categories_create',
+            'edit' => 'product_categories_edit',
+            'store' => 'product_categories_store',
+            'destroy' => 'product_categories_destroy',
+            'show' => 'product_categories_show',
+        ]
+    ]);
+
     Route::resource('products', 'App\Http\Controllers\Admin\ProductController', [
         'parameters' => [
             'products' => 'product', 
@@ -69,19 +83,34 @@ Route::group(['prefix' => 'admin'], function () {
         ]
     ]);
 
-    Route::resource('product/category', 'App\Http\Controllers\Admin\CategoryController', [
+    Route::resource('users', 'App\Http\Controllers\Admin\UserController', [
         'parameters' => [
-            'ProductCategories' => 'ProductCategory', 
+            'users' => 'user', 
         ],
         'names' => [
-            'index' => 'ProductCategories',
-            'create' => 'ProductCategories_create',
-            'edit' => 'ProductCategories_edit',
-            'store' => 'ProductCategories_store',
-            'destroy' => 'ProductCategories_destroy',
-            'show' => 'ProductCategories_show',
+            'index' => 'users',
+            'create' => 'users_create',
+            'edit' => 'users_edit',
+            'store' => 'users_store',
+            'destroy' => 'users_destroy',
+            'show' => 'users_show',
         ]
     ]);
+
+    Route::resource('products', 'App\Http\Controllers\Front\ContactController', [
+        'parameters' => [
+            'contacts' => 'contact', 
+        ],
+        'names' => [
+            'index' => 'contacts',
+            'create' => 'contacts_create',
+            'edit' => 'contacts_edit',
+            'store' => 'contacts_store',
+            'destroy' => 'contacts_destroy',
+            'show' => 'contacts_show',
+        ]
+    ]);
+
 
 });
 
