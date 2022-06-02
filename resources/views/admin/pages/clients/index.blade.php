@@ -60,20 +60,20 @@
 
     
     <tbody class="table-hover">
-        @if(isset($products))
-            @foreach($products as $product_element)
+        @if(isset($clients))
+            @foreach($clients as $client_element)
                 <tr>
-                    <td class="text-center">{{$product_element->id}}</td>
-                    <td class="text-left">{{$product_element->name}}</td>
-                    <td class="text-left">{{$product_element->created_at}}</td>                   
+                    <td class="text-center">{{$client_element->id}}</td>
+                    <td class="text-left">{{$client_element->name}}</td>
+                    <td class="text-left">{{$client_element->created_at}}</td>                   
                     <td>
                         <div class="edit-remove-buttons">
-                            <div class="edit-button" data-url="{{route('products_edit', ['product' => $product_element->id])}}">
+                            <div class="edit-button" data-url="{{route('clients_edit', ['client' => $client_element->id])}}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                     <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
                                 </svg>
                             </div>
-                            <div class="remove-button" data-url="{{route('products_destroy', ['product' => $product_element->id])}}">
+                            <div class="remove-button" data-url="{{route('clients_destroy', ['client' => $client_element->id])}}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                                     <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
@@ -110,9 +110,9 @@
 
 @section('form')
 
-    @if(isset($product))
+    @if(isset($client))
 
-        <form class="admin-form" action="{{route("products_store")}}">
+        <form class="admin-form" action="{{route("clients_store")}}">
 
             <input type="hidden" name="id">
 
@@ -159,7 +159,7 @@
                     
                             <div class="sidetable-header-element">     
                                 <div class="sidetable-header-clean">
-                                    <div class="sidetable-header-svg create-button" data-url="{{route('products_create')}}">
+                                    <div class="sidetable-header-svg create-button" data-url="{{route('clients_create')}}">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eraser" viewBox="0 0 16 16">
                                             <path d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm2.121.707a1 1 0 0 0-1.414 0L4.16 7.547l5.293 5.293 4.633-4.633a1 1 0 0 0 0-1.414l-3.879-3.879zM8.746 13.547 3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z"/>
                                         </svg>
@@ -190,76 +190,113 @@
                     </div>
                     
 
-                    <div class="user-edit-tabs">
+                    <div class="client-edit-tabs">
 
                         <div class="container--content">
 
                             <div class="content content--active" data-tab="tab1">
                                 <div class="sidetableContact">
-
-                                    <div class="desktop-one-column">
-                                        <div class="columns">
-                                            <div class="category-options">
-                                                <select>
-                                                    <option value="">Categoría</option>
-                                                    {{-- @foreach ($categories as $category)
-                                                        <option value="{{$category->id}}">{{$category->name}}</option>
-                                                    @endforeach --}}
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
                                     
-                                    <div class="desktop-three-columns">
+                                    <div class="desktop-two-columns">
                                         <div class="column">
                                             <div class="form-group">
                                                 <div class="form-label">
                                                     <h3>Nombre</h3>
                                                 </div>
                                                 <div class="form-input">
-                                                    <input name="name" type="text" placeholder="Nombre" value="{{isset($product->name) ? $product->name: ''}}">
+                                                    <input name="name" type="text" placeholder="Nombre" value="{{isset($client->name) ? $client->name: ''}}">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="column">
                                             <div class="form-group">
                                                 <div class="form-label">
-                                                    <h3>Titulo</h3>
+                                                    <h3>Apellido</h3>
                                                 </div>
                                                 <div class="form-input">
-                                                    <input name="title" type="text" placeholder="Titulo" value="{{isset($product->title) ? $product->title: ''}}">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="form-group">
-                                                <div class="form-label">
-                                                    <h3>Precio</h3>
-                                                </div>
-                                                <div class="form-input">
-                                                    <input name="price" type="text" placeholder="price" value="{{isset($product->price) ? $product->price: ''}}">
+                                                    <input name="title" type="text" placeholder="Titulo" value="{{isset($client->lastname) ? $client->lastname: ''}}">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="desktop-one-column">
+
+                                    <div class="desktop-two-columns">
                                         <div class="column">
                                             <div class="form-group">
                                                 <div class="form-label">
-                                                    <h3>Caracteristicas</h3>
+                                                    <h3>Compañia</h3>
                                                 </div>
                                                 <div class="form-input">
-                                                    <textarea name="caracteristics" class="ckeditor" value="{{isset($product->caracteristics) ? $product->caracteristics: ''}}"></textarea>
+                                                    <input name="name" type="text" placeholder="Nombre" value="{{isset($client->company) ? $client->company: ''}}">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="column">
                                             <div class="form-group">
                                                 <div class="form-label">
-                                                    <h3>Descripción</h3>
+                                                    <h3>Pais</h3>
                                                 </div>
                                                 <div class="form-input">
-                                                    <textarea name="description" class="ckeditor" value="{{isset($product->description) ? $product->description: ''}}"></textarea>
+                                                    <input name="title" type="text" placeholder="Titulo" value="{{isset($client->country) ? $client->country: ''}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="desktop-two-columns">
+                                        <div class="column">
+                                            <div class="form-group">
+                                                <div class="form-label">
+                                                    <h3>Calle</h3>
+                                                </div>
+                                                <div class="form-input">
+                                                    <input name="name" type="text" placeholder="Nombre" value="{{isset($client->adress) ? $client->adress: ''}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column">
+                                            <div class="form-group">
+                                                <div class="form-label">
+                                                    <h3>Ciudad</h3>
+                                                </div>
+                                                <div class="form-input">
+                                                    <input name="title" type="text" placeholder="Titulo" value="{{isset($client->city) ? $client->city: ''}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="desktop-two-columns">
+                                        <div class="column">
+                                            <div class="form-group">
+                                                <div class="form-label">
+                                                    <h3>Comunidad</h3>
+                                                </div>
+                                                <div class="form-input">
+                                                    <input name="name" type="text" placeholder="Nombre" value="{{isset($client->state) ? $client->state: ''}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column">
+                                            <div class="form-group">
+                                                <div class="form-label">
+                                                    <h3>Telefono</h3>
+                                                </div>
+                                                <div class="form-input">
+                                                    <input name="title" type="text" placeholder="Titulo" value="{{isset($client->phone) ? $client->phone: ''}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="desktop-one-column">
+                                        <div class="column">
+                                            <div class="form-group">
+                                                <div class="form-label">
+                                                    <h3>Email</h3>
+                                                </div>
+                                                <div class="form-input">
+                                                    <input name="name" type="text" placeholder="Nombre" value="{{isset($client->email) ? $client->email: ''}}">
                                                 </div>
                                             </div>
                                         </div>

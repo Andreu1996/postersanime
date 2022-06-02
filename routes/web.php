@@ -97,19 +97,33 @@ Route::group(['prefix' => 'admin'], function () {
         ]
     ]);
 
-    Route::resource('products', 'App\Http\Controllers\Front\ContactController', [
+    Route::resource('clients', 'App\Http\Controllers\Admin\ClientController', [
         'parameters' => [
-            'contacts' => 'contact', 
+            'clients' => 'client', 
         ],
         'names' => [
-            'index' => 'contacts',
-            'create' => 'contacts_create',
-            'edit' => 'contacts_edit',
-            'store' => 'contacts_store',
-            'destroy' => 'contacts_destroy',
-            'show' => 'contacts_show',
+            'index' => 'clients',
+            'create' => 'clients_create',
+            'edit' => 'clients_edit',
+            'store' => 'clients_store',
+            'destroy' => 'clients_destroy',
+            'show' => 'clients_show',
         ]
     ]);
+
+    // Route::resource('products', 'App\Http\Controllers\Front\ContactController', [
+    //     'parameters' => [
+    //         'contacts' => 'contact', 
+    //     ],
+    //     'names' => [
+    //         'index' => 'contacts',
+    //         'create' => 'contacts_create',
+    //         'edit' => 'contacts_edit',
+    //         'store' => 'contacts_store',
+    //         'destroy' => 'contacts_destroy',
+    //         'show' => 'contacts_show',
+    //     ]
+    // ]);
 
 
 });
@@ -127,7 +141,7 @@ Route::get('/checkout', function () {
 });
 
 Route::get('/contacto', function () {
-    return view('front/pages/contacto/index');
+    return view('front/pages/contactd/index');
 });
 
 Route::get('/index', function () {

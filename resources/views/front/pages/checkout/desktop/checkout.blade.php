@@ -115,19 +115,6 @@
             <div class="column">
                 <div class="checkout-element">
                     <div class="form-element-label">
-                        <label for="lname">ZIP</label>
-                    </div>
-                    <div class="form-element-input">
-                        <input type="text" id="lname" name="lastname" placeholder="tu numero ZIP..">                                  
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="desktop-one-column">
-            <div class="column">
-                <div class="checkout-element">
-                    <div class="form-element-label">
                         <label for="lname">Telefono</label>
                     </div>
                     <div class="form-element-input">
