@@ -60,14 +60,13 @@ class ClientController extends Controller
                 'id' => request('id')],[
                 'name' => request('name'),
                 'lastname' => request('lastname'),
-                'company_name' => request('company_name'),
+                'postal_code' => request('postal_code'),
                 'country' => request('country'),
                 'adress' => request('adress'),
                 'city' => request('city'),
                 'state' => request('state'),
                 'phone' => request('phone'),
                 'email' => request('email'),
-                'visible' => 1,
                 'active' => 1,
         ]);
             

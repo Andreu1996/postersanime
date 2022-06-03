@@ -111,21 +111,6 @@ Route::group(['prefix' => 'admin'], function () {
         ]
     ]);
 
-    // Route::resource('products', 'App\Http\Controllers\Front\ContactController', [
-    //     'parameters' => [
-    //         'contacts' => 'contact', 
-    //     ],
-    //     'names' => [
-    //         'index' => 'contacts',
-    //         'create' => 'contacts_create',
-    //         'edit' => 'contacts_edit',
-    //         'store' => 'contacts_store',
-    //         'destroy' => 'contacts_destroy',
-    //         'show' => 'contacts_show',
-    //     ]
-    // ]);
-
-
 });
 
 Route::get('/', function () {
@@ -140,9 +125,12 @@ Route::get('/checkout', function () {
     return view('front/pages/checkout/index');
 });
 
-Route::get('/contacto', function () {
-    return view('front/pages/contactd/index');
-});
+// Route::get('/contacto', function () {
+//     return view('front/pages/contacto/index');
+// });
+Route::get('/contacto', 'App\Http\Controllers\Front\ContactController@index');
+Route::post('/contacto', 'App\Http\Controllers\Front\ContactController@store')->name('contacts_store');
+
 
 Route::get('/index', function () {
     return view('front/pages/index/index');

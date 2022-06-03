@@ -2,7 +2,7 @@
 
 @section('title')
     <div class="page-title-text">
-        <h1>Products</h1>
+        <h1>CLIENTS</h1>
     </div>
 @endsection
 
@@ -85,25 +85,6 @@
             @endforeach
         @endif
     </tbody>
-        
-     <div class="remove-confirmation">
-            <div class="remove-confirmation-content">
-                <div class="remove-confirmation-title">
-                    <h3>¿Eliminar Campo?</h3>
-                </div>
-                <div class="remove-confirmation-buttons">
-                    <div class="remove-confirmation-delete">
-                        <button class="remove-confirmation-button">Eliminar</button>
-                    </div>
-                    <div class="remove-confirmation-cancel">
-                        <button class="remove-confirmation-button">Cancelar</button>
-                    </div>         
-                </div>
-            </div>
-        </div>
-    </tbody>
-
-    
 </table>
 
 @endsection
@@ -117,7 +98,6 @@
             <input type="hidden" name="id">
 
             <div class="sidetable table-container sidetablehide">
-                {{--  --}}
 
                 <div class="container">
 
@@ -190,171 +170,184 @@
                     </div>
                     
 
-                    <div class="client-edit-tabs">
+                    <div class="user-edit-tabs">
 
-                        <div class="container--content">
+                    <div class="container--content">
 
-                            <div class="content content--active" data-tab="tab1">
-                                <div class="sidetableContact">
-                                    
-                                    <div class="desktop-two-columns">
-                                        <div class="column">
-                                            <div class="form-group">
-                                                <div class="form-label">
-                                                    <h3>Nombre</h3>
-                                                </div>
-                                                <div class="form-input">
-                                                    <input name="name" type="text" placeholder="Nombre" value="{{isset($client->name) ? $client->name: ''}}">
-                                                </div>
+                        <div class="content content--active" data-tab="tab1">
+                            <div class="sidetableContact">
+                                <div class="desktop-two-column">
+
+                                    <div class="column">
+                                        <div class="name">
+                                            <div class="form-label">
+                                                <h3>Nombre</h3>
                                             </div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="form-group">
-                                                <div class="form-label">
-                                                    <h3>Apellido</h3>
-                                                </div>
-                                                <div class="form-input">
-                                                    <input name="title" type="text" placeholder="Titulo" value="{{isset($client->lastname) ? $client->lastname: ''}}">
-                                                </div>
+                                            <div class="form-input">
+                                                <input name="name" type="text" placeholder="name" value="{{isset($client->name) ? $client->name: ''}}">
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="desktop-two-columns">
-                                        <div class="column">
-                                            <div class="form-group">
-                                                <div class="form-label">
-                                                    <h3>Compañia</h3>
-                                                </div>
-                                                <div class="form-input">
-                                                    <input name="name" type="text" placeholder="Nombre" value="{{isset($client->company) ? $client->company: ''}}">
-                                                </div>
+                                    <div class="column">
+                                        <div class="form-group">
+                                            <div class="form-label">
+                                                <h3>Apellidos</h3>
                                             </div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="form-group">
-                                                <div class="form-label">
-                                                    <h3>Pais</h3>
-                                                </div>
-                                                <div class="form-input">
-                                                    <input name="title" type="text" placeholder="Titulo" value="{{isset($client->country) ? $client->country: ''}}">
-                                                </div>
+                                            <div class="form-input">
+                                                <input name="lastname" type="text" placeholder="lastname" value="{{isset($client->lastname) ? $client->lastname: ''}}">
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="desktop-two-columns">
-                                        <div class="column">
-                                            <div class="form-group">
-                                                <div class="form-label">
-                                                    <h3>Calle</h3>
-                                                </div>
-                                                <div class="form-input">
-                                                    <input name="name" type="text" placeholder="Nombre" value="{{isset($client->adress) ? $client->adress: ''}}">
-                                                </div>
+                                </div>
+
+                                <div class="desktop-two-column">
+
+                                    <div class="column">
+                                        <div class="name">
+                                            <div class="form-label">
+                                                <h3>Codigo Postal</h3>
                                             </div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="form-group">
-                                                <div class="form-label">
-                                                    <h3>Ciudad</h3>
-                                                </div>
-                                                <div class="form-input">
-                                                    <input name="title" type="text" placeholder="Titulo" value="{{isset($client->city) ? $client->city: ''}}">
-                                                </div>
+                                            <div class="form-input">
+                                                <input name="postal_code" type="text" placeholder="postal_code" value="{{isset($client->postal_code) ? $client->postal_code: ''}}">
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="desktop-two-columns">
-                                        <div class="column">
-                                            <div class="form-group">
-                                                <div class="form-label">
-                                                    <h3>Comunidad</h3>
-                                                </div>
-                                                <div class="form-input">
-                                                    <input name="name" type="text" placeholder="Nombre" value="{{isset($client->state) ? $client->state: ''}}">
-                                                </div>
+                                    <div class="column">
+                                        <div class="form-group">
+                                            <div class="form-label">
+                                                <h3>Pais</h3>
                                             </div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="form-group">
-                                                <div class="form-label">
-                                                    <h3>Telefono</h3>
-                                                </div>
-                                                <div class="form-input">
-                                                    <input name="title" type="text" placeholder="Titulo" value="{{isset($client->phone) ? $client->phone: ''}}">
-                                                </div>
+                                            <div class="form-input">
+                                                <input name="country" type="text" placeholder="country" value="{{isset($client->country) ? $client->country: ''}}">
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="desktop-one-column">
-                                        <div class="column">
-                                            <div class="form-group">
-                                                <div class="form-label">
-                                                    <h3>Email</h3>
-                                                </div>
-                                                <div class="form-input">
-                                                    <input name="name" type="text" placeholder="Nombre" value="{{isset($client->email) ? $client->email: ''}}">
-                                                </div>
+                                </div>
+
+                                <div class="desktop-two-column">
+
+                                    <div class="column">
+                                        <div class="name">
+                                            <div class="form-label">
+                                                <h3>Direccion</h3>
+                                            </div>
+                                            <div class="form-input">
+                                                <input name="adress" type="text" placeholder="adress" value="{{isset($client->adress) ? $client->adress: ''}}">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column">
+                                        <div class="form-group">
+                                            <div class="form-label">
+                                                <h3>Ciudad</h3>
+                                            </div>
+                                            <div class="form-input">
+                                                <input name="city" type="text" placeholder="city" value="{{isset($client->city) ? $client->city: ''}}">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="desktop-two-column">
+
+                                    <div class="column">
+                                        <div class="name">
+                                            <div class="form-label">
+                                                <h3>Comunidad</h3>
+                                            </div>
+                                            <div class="form-input">
+                                                <input name="state" type="text" placeholder="state" value="{{isset($client->state) ? $client->state: ''}}">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column">
+                                        <div class="form-group">
+                                            <div class="form-label">
+                                                <h3>Telefono</h3>
+                                            </div>
+                                            <div class="form-input">
+                                                <input name="phone" type="text" placeholder="phone" value="{{isset($client->phone) ? $client->phone: ''}}">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="desktop-one-column">
+                                    <div class="column">
+                                        <div class="form-group">
+                                            <div class="form-label">
+                                                <h3>Correo</h3>
+                                            </div>
+                                            <div class="form-input">
+                                                <input name="email" type="text" placeholder="email" value="{{isset($client->email) ? $client->email: ''}}">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="content" data-tab="tab2">
+                               
 
-                                <div class="desktop-two-columns">
-                                    <div class="column">
-                                        <div class="image-selector">
-                                            <div class="image-selector-title">
-                                                <h3>Seleccionar Imagen</h3>
-                                            </div>
-                                            <div class="image-preview-delete">
-                                                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                                                    <path fill="currentColor" d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z" />
-                                                </svg>
-                                            </div>
-                                            <label class="file-input">
-                                            <div id="image-preview">
-                                                <svg class="image-preview-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
-                                                <img class="image-preview-element" id="image-preview-element" src="">
-                                            </div>                                             
-                                            <input type="file" name="image-featured" class="choose-file" accept="image/*" >
-                                        </div>  
-                                    </div> 
-                                    <div class="column">
-                                        <div class="image-selector">
-                                            <div class="image-selector-title">
-                                                <h3>Seleccionar Imagen</h3>
-                                            </div>
-                                            <div class="image-preview-delete">
-                                                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                                                    <path fill="currentColor" d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z" />
-                                                </svg>
-                                            </div>
-                                            <label class="file-input">
-                                            <div id="image-preview">
-                                                <svg class="image-preview-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
-                                                <img class="image-preview-element" id="image-preview-element" src="">
-
-                                            </div>                                             
-                                            <input type="file" name="image-featured" class="choose-file" accept="image/*" >
-                                            
-                                        </div> 
-                                        
-                                    </div> 
-                                </div>  
                                 
                             </div>
-
-
-                            <div class="content" data-tab="tab3">
-                                Contenido
-                            </div>
                         </div>
+                        
+                        <div class="content" data-tab="tab2">
+
+                            <div class="desktop-two-columns">
+                                <div class="column">
+                                    <div class="image-selector">
+                                        <div class="image-selector-title">
+                                            <h3>Seleccionar Imagen</h3>
+                                        </div>
+                                        <div class="image-preview-delete">
+                                            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                                <path fill="currentColor" d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z" />
+                                            </svg>
+                                        </div>
+                                        <label class="file-input">
+                                        <div id="image-preview">
+                                            <svg class="image-preview-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                            <img class="image-preview-element" id="image-preview-element" src="">
+                                        </div>                                             
+                                        <input type="file" name="image-featured" class="choose-file" accept="image/*" >
+                                    </div>  
+                                </div> 
+                                <div class="column">
+                                    <div class="image-selector">
+                                        <div class="image-selector-title">
+                                            <h3>Seleccionar Imagen</h3>
+                                        </div>
+                                        <div class="image-preview-delete">
+                                            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                                <path fill="currentColor" d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z" />
+                                            </svg>
+                                        </div>
+                                        <label class="file-input">
+                                        <div id="image-preview">
+                                            <svg class="image-preview-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                            <img class="image-preview-element" id="image-preview-element" src="">
+
+                                        </div>                                             
+                                        <input type="file" name="image-featured" class="choose-file" accept="image/*" >
+                                        
+                                    </div> 
+                                    
+                                </div> 
+                            </div>  
+                            
+                        </div>
+
+
+                        <div class="content" data-tab="tab3">
+                            Contenido
+                        </div>
+                    </div>
                     </div> 
 
                 </div>

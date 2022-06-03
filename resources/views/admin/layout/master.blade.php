@@ -17,7 +17,7 @@
 
     <body>
         
-        <main>
+        <main id="main">
 
             @include('admin.layout.partials.header')
             @include('admin.components.desktop.modal_delete')

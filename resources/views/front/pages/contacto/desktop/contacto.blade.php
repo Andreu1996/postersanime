@@ -52,9 +52,9 @@
 
 
                 </div>
-
+                
                 <div class="column">
-                    <form class="form-contact" action="/action_page.php">
+                    <form class="front-form form-contact" action="{{route('contacts_store')}}">
 
                         <div class="desktop-two-columns mobile-one-column">
                             <div class="column">
@@ -63,7 +63,7 @@
                                         <label for="fname">Nombre</label>
                                     </div>
                                     <div class="form-element-input">
-                                        <input type="text" id="fname" name="firstname" placeholder="tu nombre.." value="{{isset($contact->name) ? $contact->name: ''}}">
+                                        <input type="text" id="fname" name="name" placeholder="tu nombre.." value="{{isset($contact->name) ? $contact->name: ''}}">
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                                         <label for="lname">Telefono</label>
                                     </div>
                                     <div class="form-element-input">
-                                        <input type="tel" id="phone" name="phone" placeholder="tu numero de telefono.." value="{{isset($contact->mobile) ? $contact->mobile: ''}}">                                    
+                                        <input type="tel" id="phone" name="phone" placeholder="tu numero de telefono.." value="{{isset($contact->phone) ? $contact->phone: ''}}">                                    
                                     </div>
                                 </div>
                             </div>
@@ -88,7 +88,7 @@
                                         <label for="lname">Last Name</label>
                                     </div>
                                     <div class="form-element-input">
-                                        <input type="text" id="lname" name="lastname" placeholder="tu apellido.." value="{{isset($contact->surname) ? $contact->surname: ''}}">                                  
+                                        <input type="text" id="lname" name="lastname" placeholder="tu apellido.." value="{{isset($contact->lastname) ? $contact->lastname: ''}}">                                  
                                     </div>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
                                         <label for="lname">Correo</label>
                                     </div>
                                     <div class="form-element-input">
-                                        <input type="mail" id="mail" name="lastname" placeholder="tu correo electronico.." value="{{isset($contact->mail) ? $contact->mail: ''}}">                                  
+                                        <input type="mail" id="mail" name="email" placeholder="tu correo electronico.." value="{{isset($contact->email) ? $contact->email: ''}}">                                  
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +113,7 @@
                                     </div>
 
                                     <div class="form-element-input">
-                                        <textarea value="{{isset($contact->message) ? $contact->message: ''}}"></textarea>
+                                        <textarea name="text"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -122,7 +122,7 @@
                         <div class="desktop-one-column">
                             <div class="column">
                                 <div class="form-element">
-                                    <div class="form-element-button">
+                                    <div class="form-element-button store-button" data-url="{{route('contacts_store')}}">
                                         <button>Enviar</button>
                                     </div>
                                 </div>
