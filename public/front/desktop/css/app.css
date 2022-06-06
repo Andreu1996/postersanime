@@ -1345,9 +1345,16 @@ td, th {
 
 .Products {
   margin: 5rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 1rem;
+  width: 100%;
 }
-
-.product-element {
+.Products .product-element {
+  width: 25%;
+  border-style: solid;
+  color: hsl(0deg, 0%, 0%);
   padding: 1rem;
   margin: 0.5rem;
   margin-top: 2rem;
@@ -1357,8 +1364,6 @@ td, th {
 .product-element:hover {
   border-style: solid;
   color: hsl(0deg, 72%, 52%);
-  padding: 0.2rem;
-  border-width: 0.2rem;
 }
 
 .product-image img {
@@ -1390,25 +1395,31 @@ td, th {
   text-align: center;
 }
 
+question-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
 .page-title {
   padding: 1rem 10rem;
   margin-bottom: 5rem;
   border-radius: 5rem;
 }
 
-.question {
+.question-item {
   position: relative;
   z-index: 1010;
   border-style: solid;
   border-width: 0.2rem;
-  margin-top: 5rem;
+  margin-top: 3rem;
   padding: 1rem 2rem;
   background-color: hsla(0deg, 0%, 81%, 0.589);
   box-shadow: 0px 5px 6px 2px #000000;
   border-radius: 1rem;
 }
 
-.question:hover {
+.question-item:hover {
   position: relative;
   background-color: rgb(114, 114, 114);
 }

@@ -8,13 +8,15 @@
     @if($agent->isDesktop())
         <div class="page-section">
             @include('front.components.desktop.page-title', ['title' => "FAQS"])
-            @include('front.pages.FAQS.desktop.FAQS')
+            @include('front.pages.faqs.desktop.faqs', ['faqs' => $faqs])
         </div>
     @endif
 
     @if($agent->isMobile())
         <div class="page-section">
-            @include('front.pages.FAQS.mobile.FAQS')
+            @include('front.components.mobile.page-title', ['title' => "FAQS"])
+            @include('front.pages.faqs.desktop.faqs', ['faqs' => $faqs])
+
         </div>
     @endif
 

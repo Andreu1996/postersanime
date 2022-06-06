@@ -41,13 +41,21 @@
 
 .Products{
     margin: 5rem auto;
-}
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 1rem;
+    width: 100%;
 
-.product-element{
-    padding: 1rem;
-    margin: 0.5rem;
-    margin-top: 2rem;
-    background-color: hsla(0, 72%, 52%, 0.137);
+    .product-element{
+        width: 25%;
+        border-style: solid;
+        color:hsl(0, 0%, 0%);
+        padding: 1rem;
+        margin: 0.5rem;
+        margin-top: 2rem;
+        background-color: hsla(0, 72%, 52%, 0.137);
+    }
 }
 
 
@@ -55,8 +63,6 @@
 .product-element:hover{
     border-style: solid;
     color:hsl(0, 72%, 52%);
-    padding: 0.2rem;
-    border-width: 0.2rem;
 }
 
 .product-image img{

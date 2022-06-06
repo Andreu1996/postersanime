@@ -26,7 +26,6 @@ class ContactController extends Controller
         return $view;
     }
 
-   
 
     public function store(ContactRequest $request)
     {            
@@ -41,9 +40,7 @@ class ContactController extends Controller
                 'text' => request('text'),
         ]);
             
-        $view = View::make('front.pages.contacto.index')
-
-        ->renderSections();        
+        $view = View::make('front.pages.contacto.index')->renderSections();        
 
         return response()->json([
             'content' => $view['content'],

@@ -13,8 +13,6 @@ export let renderForm = () => {
                 let data = new FormData(form);
                 let url = form.action;              
         
-               
-    
                 let sendPostRequest = async () => {
                         
                     let response = await fetch(url, {
