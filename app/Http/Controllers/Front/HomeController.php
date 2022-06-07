@@ -13,6 +13,16 @@ class HomeController extends Controller
     {
         $view = View::make('front.pages.index.index');
 
+        if(request()->ajax()) {
+    
+            $sections = $view->renderSections(); 
+
+            return response()->json([
+                'content' => $sections['content'],
+            ]);
+
+        }
+
         return $view;
     }
 

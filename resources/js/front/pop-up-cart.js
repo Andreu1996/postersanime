@@ -4,6 +4,10 @@ export let popUpCart = () => {
     let carts = document.querySelectorAll(".cart");
     let saves = document.querySelectorAll(".save");
 
+    document.addEventListener("renderPopUpCartModule",( event =>{
+      popUpCart();
+  }), {once: true});
+
     carts.forEach(cart => {
         cart.addEventListener('click', () => {  
           popUpCartPage.classList.toggle("pop-up-cart-active");  

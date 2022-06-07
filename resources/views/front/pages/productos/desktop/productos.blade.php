@@ -68,20 +68,20 @@
         <div class="Products">
             @if(isset($products))
                 @foreach($products as $product)
-                    <div class="product-element">
+                    <div class="product-element product-details" data-url="{{route('front_product', ['product' => $product->id])}}">
                         <div class="product-image">
                             <a><img src="{{Storage::url('product-17.jpg')}}" alt=""></a>
                         </div>
 
-                        <div class="product-title red-text" data-product="{{$product->title}}">
+                        <div class="product-title red-text">
                             <h3>{{$product->title}}</h3>
                         </div>
 
-                        <div class="product-price" data-answer="{{$product->title}}">
-                            <p>{{$product->price}}</p>
+                        <div class="product-price">
+                            <p>{{$product->price}} €</p>
                         </div>
 
-                        <div class="product-details" data-answer="{{$product->title}}">
+                        <div class="product-details">
                             <button>Detalles</button>
                         </div>
                     </div>

@@ -15,7 +15,7 @@
     @if($agent->isMobile())
         <div class="page-section">
             @include('front.components.mobile.page-title', ['title' => "FAQS"])
-            @include('front.pages.faqs.desktop.faqs', ['faqs' => $faqs])
+            @include('front.pages.faqs.mobile.faqs', ['faqs' => $faqs])
 
         </div>
     @endif

@@ -3,7 +3,10 @@ export function tabs () {
     let tabs = document.querySelectorAll('.tab');
     let tabsContent = document.querySelectorAll('.tabContent');
     
-
+    document.addEventListener("renderTabsModule",( event =>{
+        tabs();
+    }), {once: true});
+    
     tabs.forEach(tab => {
 
         tab.addEventListener("click", () => {

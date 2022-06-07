@@ -22,7 +22,17 @@ class ContactController extends Controller
     {
 
         $view = View::make('front.pages.contacto.index');
+        
+        if(request()->ajax()) {
+    
+            $sections = $view->renderSections(); 
 
+            return response()->json([
+                'content' => $sections['content'],
+            ]);
+
+        }
+        
         return $view;
     }
 
@@ -42,9 +52,6 @@ class ContactController extends Controller
             
         $view = View::make('front.pages.contacto.index')->renderSections();        
 
-        return response()->json([
-            'content' => $view['content'],
-        ]);
     }
 
     

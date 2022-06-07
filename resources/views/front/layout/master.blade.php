@@ -20,9 +20,9 @@
 
         @include('front.layout.partials.header')
         
-        <main>
+        <main id="main">
 
-            <div id="main">
+            <div>
                 @yield('content')
             </div>
 

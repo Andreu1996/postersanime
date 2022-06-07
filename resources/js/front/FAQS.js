@@ -4,6 +4,10 @@ export function FAQS () {
     let answers = document.querySelectorAll(".question-content");
     let arrows = document.querySelectorAll(".question-title-icon");
 
+    document.addEventListener("renderFaqsModule",( event =>{
+        FAQS();
+    }), {once: true});
+
     questions.forEach(question => {
 
         question.addEventListener("click", () => {

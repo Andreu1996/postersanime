@@ -507,6 +507,9 @@ header {
 header .menu {
   gap: 1rem;
 }
+header .menu .menu_element {
+  cursor: pointer;
+}
 
 footer {
   margin-top: 3rem;

@@ -2182,6 +2182,11 @@ function FAQS() {
   var questions = document.querySelectorAll(".question-title");
   var answers = document.querySelectorAll(".question-content");
   var arrows = document.querySelectorAll(".question-title-icon");
+  document.addEventListener("renderFaqsModule", function (event) {
+    FAQS();
+  }, {
+    once: true
+  });
   questions.forEach(function (question) {
     question.addEventListener("click", function () {
       answers.forEach(function (answer) {
@@ -2218,11 +2223,15 @@ function FAQS() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tabs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tabs.js */ "./resources/js/front/tabs.js");
 /* harmony import */ var _tabsMobile_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tabsMobile.js */ "./resources/js/front/tabsMobile.js");
-/* harmony import */ var _plus_minus_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./plus-minus.js */ "./resources/js/front/plus-minus.js");
+/* harmony import */ var _plusMinus_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./plusMinus.js */ "./resources/js/front/plusMinus.js");
 /* harmony import */ var _FAQS_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FAQS.js */ "./resources/js/front/FAQS.js");
 /* harmony import */ var _pop_up_cart_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pop-up-cart.js */ "./resources/js/front/pop-up-cart.js");
 /* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./form.js */ "./resources/js/front/form.js");
+/* harmony import */ var _products_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./products.js */ "./resources/js/front/products.js");
+/* harmony import */ var _menu_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./menu.js */ "./resources/js/front/menu.js");
 __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/bootstrap.js");
+
+
 
 
 
@@ -2232,10 +2241,12 @@ __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/bootstrap.js");
 
 (0,_tabs_js__WEBPACK_IMPORTED_MODULE_0__.tabs)();
 (0,_tabsMobile_js__WEBPACK_IMPORTED_MODULE_1__.tabsMobile)();
-(0,_plus_minus_js__WEBPACK_IMPORTED_MODULE_2__.PlusMinus)();
+(0,_plusMinus_js__WEBPACK_IMPORTED_MODULE_2__.plusMinus)();
 (0,_FAQS_js__WEBPACK_IMPORTED_MODULE_3__.FAQS)();
 (0,_pop_up_cart_js__WEBPACK_IMPORTED_MODULE_4__.popUpCart)();
 (0,_form_js__WEBPACK_IMPORTED_MODULE_5__.renderForm)();
+(0,_products_js__WEBPACK_IMPORTED_MODULE_6__.renderProduct)();
+(0,_menu_js__WEBPACK_IMPORTED_MODULE_7__.menu)();
 
 /***/ }),
 
@@ -2368,29 +2379,101 @@ var renderForm = function renderForm() {
 
 /***/ }),
 
-/***/ "./resources/js/front/plus-minus.js":
-/*!******************************************!*\
-  !*** ./resources/js/front/plus-minus.js ***!
-  \******************************************/
+/***/ "./resources/js/front/menu.js":
+/*!************************************!*\
+  !*** ./resources/js/front/menu.js ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "PlusMinus": () => (/* binding */ PlusMinus)
+/* harmony export */   "menu": () => (/* binding */ menu)
 /* harmony export */ });
-// export function add_substract () {
-//         plus.addEventListener("click", () => {
-//             total.value = (parseInt(total.value) + 1);
-//         });
-//         minus.addEventListener("click", () => {
-//             if (total.value > 1) {
-//                 total.value = (parseInt(total.value) - 1);
-//             }
-//         });
-// }
-var PlusMinus = function PlusMinus() {
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var menu = function menu() {
+  var mainContent = document.getElementById("main");
+  var menuOptions = document.querySelectorAll('.menu_element');
+  menuOptions.forEach(function (menuOption) {
+    menuOption.addEventListener("click", function () {
+      var url = menuOption.dataset.url;
+
+      var renderSection = /*#__PURE__*/function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+          var response;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  _context.next = 2;
+                  return fetch(url, {
+                    headers: {
+                      'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    method: 'GET'
+                  }).then(function (response) {
+                    if (!response.ok) throw response;
+                    return response.json();
+                  }).then(function (json) {
+                    mainContent.innerHTML = json.content;
+                    document.dispatchEvent(new CustomEvent('renderFaqsModule'));
+                    FAQS();
+                  })["catch"](function (error) {
+                    if (error.status == '500') {
+                      console.log(error);
+                    }
+
+                    ;
+                  });
+
+                case 2:
+                  response = _context.sent;
+
+                case 3:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee);
+        }));
+
+        return function renderSection() {
+          return _ref.apply(this, arguments);
+        };
+      }();
+
+      renderSection();
+    });
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/front/plusMinus.js":
+/*!*****************************************!*\
+  !*** ./resources/js/front/plusMinus.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "plusMinus": () => (/* binding */ plusMinus)
+/* harmony export */ });
+var plusMinus = function plusMinus() {
   var plusMinusButtons = document.querySelectorAll(".plus-minus-button");
+  document.addEventListener("renderPlusMinusModule", function (event) {
+    plusMinus();
+  }, {
+    once: true
+  });
   plusMinusButtons.forEach(function (plusMinusButton) {
     plusMinusButton.addEventListener("click", function () {
       var plusMinusContainer = plusMinusButton.closest(".plus-minus-container");
@@ -2425,6 +2508,11 @@ var popUpCart = function popUpCart() {
   var popUpCartPage = document.querySelector(".pop-up-cart");
   var carts = document.querySelectorAll(".cart");
   var saves = document.querySelectorAll(".save");
+  document.addEventListener("renderPopUpCartModule", function (event) {
+    popUpCart();
+  }, {
+    once: true
+  });
   carts.forEach(function (cart) {
     cart.addEventListener('click', function () {
       popUpCartPage.classList.toggle("pop-up-cart-active");
@@ -2445,6 +2533,89 @@ var popUpCart = function popUpCart() {
 
 /***/ }),
 
+/***/ "./resources/js/front/products.js":
+/*!****************************************!*\
+  !*** ./resources/js/front/products.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderProduct": () => (/* binding */ renderProduct)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _tabs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tabs */ "./resources/js/front/tabs.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+var renderProduct = function renderProduct() {
+  var mainContent = document.getElementById("main");
+  var productButtons = document.querySelectorAll('.product-details');
+  productButtons.forEach(function (productButton) {
+    productButton.addEventListener("click", function () {
+      var url = productButton.dataset.url;
+
+      var renderSection = /*#__PURE__*/function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+          var response;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  _context.next = 2;
+                  return fetch(url, {
+                    headers: {
+                      'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    method: 'GET'
+                  }).then(function (response) {
+                    if (!response.ok) throw response;
+                    return response.json();
+                  }).then(function (json) {
+                    mainContent.innerHTML = json.content;
+                    document.dispatchEvent(new CustomEvent('renderTabsModule'));
+                    (0,_tabs__WEBPACK_IMPORTED_MODULE_1__.tabs)();
+                    document.dispatchEvent(new CustomEvent('renderPlusMinusModule'));
+                    plusMinus();
+                    document.dispatchEvent(new CustomEvent('renderPopUpCartModule'));
+                    popUpCart();
+                  })["catch"](function (error) {
+                    if (error.status == '500') {
+                      console.log(error);
+                    }
+
+                    ;
+                  });
+
+                case 2:
+                  response = _context.sent;
+
+                case 3:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee);
+        }));
+
+        return function renderSection() {
+          return _ref.apply(this, arguments);
+        };
+      }();
+
+      renderSection();
+    });
+  });
+};
+
+/***/ }),
+
 /***/ "./resources/js/front/tabs.js":
 /*!************************************!*\
   !*** ./resources/js/front/tabs.js ***!
@@ -2459,6 +2630,11 @@ __webpack_require__.r(__webpack_exports__);
 function tabs() {
   var tabs = document.querySelectorAll('.tab');
   var tabsContent = document.querySelectorAll('.tabContent');
+  document.addEventListener("renderTabsModule", function (event) {
+    tabs();
+  }, {
+    once: true
+  });
   tabs.forEach(function (tab) {
     tab.addEventListener("click", function () {
       tabs.forEach(function (tab) {

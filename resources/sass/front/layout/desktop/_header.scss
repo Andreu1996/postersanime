@@ -6,6 +6,10 @@ header{
 
     .menu{
         gap: 1rem;
+
+        .menu_element{
+            cursor: pointer;
+        }
     }
 
 }

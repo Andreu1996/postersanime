@@ -2171,6 +2171,11 @@ function FAQS() {
   var questions = document.querySelectorAll(".question-title");
   var answers = document.querySelectorAll(".question-content");
   var arrows = document.querySelectorAll(".question-title-icon");
+  document.addEventListener("renderFaqsModule", function (event) {
+    FAQS();
+  }, {
+    once: true
+  });
   questions.forEach(function (question) {
     question.addEventListener("click", function () {
       answers.forEach(function (answer) {
@@ -2252,29 +2257,24 @@ function hamburgerMenu() {
 
 /***/ }),
 
-/***/ "./resources/js/front/plus-minus.js":
-/*!******************************************!*\
-  !*** ./resources/js/front/plus-minus.js ***!
-  \******************************************/
+/***/ "./resources/js/front/plusMinus.js":
+/*!*****************************************!*\
+  !*** ./resources/js/front/plusMinus.js ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "PlusMinus": () => (/* binding */ PlusMinus)
+/* harmony export */   "plusMinus": () => (/* binding */ plusMinus)
 /* harmony export */ });
-// export function add_substract () {
-//         plus.addEventListener("click", () => {
-//             total.value = (parseInt(total.value) + 1);
-//         });
-//         minus.addEventListener("click", () => {
-//             if (total.value > 1) {
-//                 total.value = (parseInt(total.value) - 1);
-//             }
-//         });
-// }
-var PlusMinus = function PlusMinus() {
+var plusMinus = function plusMinus() {
   var plusMinusButtons = document.querySelectorAll(".plus-minus-button");
+  document.addEventListener("renderPlusMinusModule", function (event) {
+    plusMinus();
+  }, {
+    once: true
+  });
   plusMinusButtons.forEach(function (plusMinusButton) {
     plusMinusButton.addEventListener("click", function () {
       var plusMinusContainer = plusMinusButton.closest(".plus-minus-container");
@@ -2309,6 +2309,11 @@ var popUpCart = function popUpCart() {
   var popUpCartPage = document.querySelector(".pop-up-cart");
   var carts = document.querySelectorAll(".cart");
   var saves = document.querySelectorAll(".save");
+  document.addEventListener("renderPopUpCartModule", function (event) {
+    popUpCart();
+  }, {
+    once: true
+  });
   carts.forEach(function (cart) {
     cart.addEventListener('click', function () {
       popUpCartPage.classList.toggle("pop-up-cart-active");
@@ -2343,6 +2348,11 @@ __webpack_require__.r(__webpack_exports__);
 function tabs() {
   var tabs = document.querySelectorAll('.tab');
   var tabsContent = document.querySelectorAll('.tabContent');
+  document.addEventListener("renderTabsModule", function (event) {
+    tabs();
+  }, {
+    once: true
+  });
   tabs.forEach(function (tab) {
     tab.addEventListener("click", function () {
       tabs.forEach(function (tab) {
@@ -19897,7 +19907,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hamburger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hamburger */ "./resources/js/front/hamburger.js");
 /* harmony import */ var _tabs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tabs.js */ "./resources/js/front/tabs.js");
 /* harmony import */ var _tabsMobile_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tabsMobile.js */ "./resources/js/front/tabsMobile.js");
-/* harmony import */ var _plus_minus_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./plus-minus.js */ "./resources/js/front/plus-minus.js");
+/* harmony import */ var _plusMinus_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./plusMinus.js */ "./resources/js/front/plusMinus.js");
 /* harmony import */ var _FAQS_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FAQS.js */ "./resources/js/front/FAQS.js");
 /* harmony import */ var _pop_up_cart_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pop-up-cart.js */ "./resources/js/front/pop-up-cart.js");
 __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/bootstrap.js");
@@ -19911,7 +19921,7 @@ __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/bootstrap.js");
 (0,_hamburger__WEBPACK_IMPORTED_MODULE_0__.hamburgerMenu)();
 (0,_tabs_js__WEBPACK_IMPORTED_MODULE_1__.tabs)();
 (0,_tabsMobile_js__WEBPACK_IMPORTED_MODULE_2__.tabsMobile)();
-(0,_plus_minus_js__WEBPACK_IMPORTED_MODULE_3__.PlusMinus)();
+(0,_plusMinus_js__WEBPACK_IMPORTED_MODULE_3__.plusMinus)();
 (0,_FAQS_js__WEBPACK_IMPORTED_MODULE_4__.FAQS)();
 (0,_pop_up_cart_js__WEBPACK_IMPORTED_MODULE_5__.popUpCart)();
 })();

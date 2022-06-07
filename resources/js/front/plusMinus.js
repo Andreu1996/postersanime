@@ -1,24 +1,10 @@
-// export function add_substract () {
-
-
-
-
-//         plus.addEventListener("click", () => {
-//             total.value = (parseInt(total.value) + 1);
-//         });
-
-//         minus.addEventListener("click", () => {
-//             if (total.value > 1) {
-//                 total.value = (parseInt(total.value) - 1);
-//             }
-//         });
-
-// }
-
-
-export let PlusMinus = () => {
+export let plusMinus = () => {
 
     let plusMinusButtons = document.querySelectorAll(".plus-minus-button");
+
+    document.addEventListener("renderPlusMinusModule",( event =>{
+        plusMinus();
+    }), {once: true});
 
     plusMinusButtons.forEach(plusMinusButton => {
 

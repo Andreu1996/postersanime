@@ -7,13 +7,13 @@
 
     @if($agent->isDesktop())
         <div class="page-section">
-            @include('front.pages.producto.desktop.producto')
+            @include('front.pages.producto.desktop.producto', ['product' => $product]);
         </div>
     @endif
 
     @if($agent->isMobile())
         <div class="page-section">
-            @include('front.pages.producto.mobile.producto')
+            @include('front.pages.producto.mobile.producto', ['product' => $product]);
         </div>
     @endif
 

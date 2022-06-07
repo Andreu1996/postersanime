@@ -14,23 +14,33 @@
 
     <div class="menu">
             <div class="menu_element desktop-only">
-                <h3><a href="{{trans('index')}}">inicio</a></h3>
+                <div class="menu_element" data-url="{{route('front_index')}}">
+                    <h3>inicio</h3>
+                </div>
             </div>
 
             <div class="menu_element desktop-only">
-                <h3><a href="{{trans('productos')}}">productos</a></h3>
+                <div class="menu_element" data-url="{{route('front_products')}}">
+                    <h3>productos</h3>
+                </div>
             </div>
 
             <div class="menu_element desktop-only">
-                <h3><a href="{{trans('admin-panel')}}">servicios</a></h3>
+                <div class="menu_element">
+                    <h3>servicios</h3>
+                </div>
             </div>
 
             <div class="menu_element desktop-only">
-                <h3><a href="{{trans('contacto')}}">contacto</a></h3>
+                <div class="menu_element" data-url="{{route('front_contact')}}">
+                    <h3>contacto</h3>
+                </div>
             </div>
 
             <div class="menu_element desktop-only">
-                <h3><a href="{{trans('FAQS')}}">preguntas</a></h3>
+                <div class="menu_element" data-url="{{route('front_faqs')}}">
+                    <h3>preguntas</h3>
+                </div>
             </div>
     </div>
 
@@ -48,23 +58,23 @@
     <nav class="navbar">
         <div  class="nav-sub">
             <div class="menu_element mobile-only">
-                <h3><a href="{{trans('index')}}">inicio</a></h3>
+                <h3>inicio</h3>
             </div>
 
             <div class="menu_element mobile-only">
-                <h3><a href="{{trans('productos')}}">productos</a></h3>
+                <h3>productos</h3>
             </div>
 
             <div class="menu_element mobile-only">
-                <h3><a href="{{trans('admin-panel')}}">servicios</a></h3>
+                <h3>servicios</h3>
             </div>
 
             <div class="menu_element mobile-only">
-                <h3><a href="{{trans('contacto')}}">contacto</a></h3>
+                <h3>contacto</h3>
             </div>
 
             <div class="menu_element mobile-only">
-                <h3><a href="{{trans('FAQS')}}">preguntas</a></h3>
+                <h3>preguntas</h3>
             </div>
         </div>
     </nav>
