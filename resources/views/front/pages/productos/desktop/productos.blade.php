@@ -44,24 +44,28 @@
             </div>
 
             <div class="column-aside column">
-                <div class="select-option">
+                <div class="category-options">
                     <select>
-                        <option>destacados</option>
-                        <option>ofertas</option>
-                        <option>de mayor a menor precio</option>
-                        <option>de menor a mayor precio</option>        
+                        <label value="">Categoría</label>
+                        @if(isset($product_categories))
+                            @foreach($product_categories as $category)
+                                <option value="{{$category->id}}">{{$category->name}}</option>
+                            @endforeach
+                        @endif
                     </select>
                 </div>
             </div>
         </div>
         
         <div class="select-option mobile-only">
+            
             <select>
-                <option>Todas las Categorias</option>
-                <option>Shonen Jump</option>
-                <option>Mily Way Ediciones</option>
-                <option>Kioto Animation</option>
-                <option>uffo Table</option>        
+                <label value="">Todas las Categorias</label>  
+                @if(isset($product_categories))
+                    @foreach($product_categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
+                @endif    
             </select>
         </div>
 
@@ -74,11 +78,11 @@
                         </div>
 
                         <div class="product-title red-text">
-                            <h3>{{$product->title}}</h3>
+                            <h3>{{$product->name}}</h3>
                         </div>
 
-                        <div class="product-price">
-                            <p>{{$product->price}} €</p>
+                        <div class="product-price" >
+                            <p>{{$product->price}}€</p>
                         </div>
 
                         <div class="product-details">

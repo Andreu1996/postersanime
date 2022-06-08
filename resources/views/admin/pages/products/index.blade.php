@@ -201,10 +201,15 @@
                                         <div class="columns">
                                             <div class="category-options">
                                                 <select>
-                                                    <option value="">Categoría</option>
-                                                    {{-- @foreach ($categories as $category)
-                                                        <option value="{{$category->id}}">{{$category->name}}</option>
-                                                    @endforeach --}}
+                                                    <label value="">Categoría</label>
+                                                    {{-- con esto estamos llamando a la categoria creada en el controller --}}
+                                                    @if(isset($product_categories))
+                                                    {{-- indicamoes todos los elementos de la tabla y le indicamos cada una por separado --}}
+                                                        @foreach($product_categories as $category)
+                                                        {{-- indicamos que apartados de la tabla por cada elemento queremos que nos elija --}}
+                                                            <option value="{{$category->id}}">{{$category->name}}</option>
+                                                        @endforeach
+                                                    @endif
                                                 </select>
                                             </div>
                                         </div>

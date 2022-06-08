@@ -30,6 +30,9 @@ export let menu = () => {
                         document.dispatchEvent(new CustomEvent('renderFaqsModule'));
                         FAQS();
 
+                        document.dispatchEvent(new CustomEvent('renderProductsModule'));
+                        renderProduct();
+
                     })
 
                     .catch(error =>  {

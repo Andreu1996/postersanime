@@ -8,10 +8,11 @@ class ProductCategory extends Model
 {
     protected $guarded = [];
 
-    protected $table = 'ProductCategories';
+    protected $table = 'product_categories';
 
     public function products()
     {
-        return $this->hasMany(Product::class, 'category_id');
+        // esto es una relacion de uno a muchos, por lo que indicamos el modelo que queremos relacionar
+        return $this->hasMany(Product::class, 'category_id')->where('active', 1);
     }
 }

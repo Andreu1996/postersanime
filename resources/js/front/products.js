@@ -5,6 +5,10 @@ export let renderProduct = () => {
     let mainContent = document.getElementById("main");
     let productButtons = document.querySelectorAll('.product-details');
 
+    document.addEventListener("renderProductsModule",( event =>{
+        renderProduct();
+    }), {once: true});
+
     productButtons.forEach(productButton => {
 
         productButton.addEventListener("click", () => {

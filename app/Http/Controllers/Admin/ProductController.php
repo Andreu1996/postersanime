@@ -5,25 +5,35 @@ namespace App\Http\Controllers\Admin;
 use Debugbar;
 use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Controller;
+
+// esto llama al modelo
 use App\Models\Product;
+
 use App\Http\Requests\Admin\ProductRequest;
 
 class ProductController extends Controller
 {
 
+    // protected es una variable que solo puede ser usada en esta clase, que no se pueda usar en el exterior 
     protected $product;
+
+
+// por cada modelo indicado arriba se instancia en el constructor, para que se pueda usar en el controlador
 
     public function __construct(Product $product)
     {
-        $this->product = $product; 
+        // aqui indicamos un nombre para nuestro modelo
+        $this->product = $product;
     }
     
     public function index()
     {
 
         $view = View::make('admin.pages.products.index')
+        // indicamos un nombre que utilizaremos en el html que indicara el nombre de la tabla que estamos trabajando
                 ->with('product', $this->product)
                 ->with('products', $this->product->where('active', 1)->get());
+
 
         if(request()->ajax()) {
             

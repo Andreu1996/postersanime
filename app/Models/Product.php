@@ -8,10 +8,12 @@ class Product extends Model
 {
     protected $guarded = [];
 
-    // protected $table = 'ProductCategories';
+    // indicamos el nombre de la tabla con la que estamos trabajando
+    protected $table = 'products';
 
     public function category()
     {
-        return $this->belongsTo(ProductCategory::class,);
+        // esto indica a que relacion pertenece este modelo
+        return $this->belongsTo(ProductCategory::class, 'name');
     }
 }

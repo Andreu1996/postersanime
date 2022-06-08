@@ -2425,6 +2425,8 @@ var menu = function menu() {
                     mainContent.innerHTML = json.content;
                     document.dispatchEvent(new CustomEvent('renderFaqsModule'));
                     FAQS();
+                    document.dispatchEvent(new CustomEvent('renderProductsModule'));
+                    renderProduct();
                   })["catch"](function (error) {
                     if (error.status == '500') {
                       console.log(error);
@@ -2557,6 +2559,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 var renderProduct = function renderProduct() {
   var mainContent = document.getElementById("main");
   var productButtons = document.querySelectorAll('.product-details');
+  document.addEventListener("renderProductsModule", function (event) {
+    renderProduct();
+  }, {
+    once: true
+  });
   productButtons.forEach(function (productButton) {
     productButton.addEventListener("click", function () {
       var url = productButton.dataset.url;
