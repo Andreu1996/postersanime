@@ -8,6 +8,7 @@ import {popUpCart} from "./pop-up-cart.js";
 import {renderForm} from "./form.js";
 import {renderProduct} from "./products.js";
 import {menu} from "./menu.js";
+import {renderProductCategory} from "./productCategory.js";
 
 
 
@@ -19,4 +20,5 @@ popUpCart();
 renderForm();
 renderProduct();
 menu();
+renderProductCategory();
 

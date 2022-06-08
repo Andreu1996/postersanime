@@ -2229,7 +2229,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./form.js */ "./resources/js/front/form.js");
 /* harmony import */ var _products_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./products.js */ "./resources/js/front/products.js");
 /* harmony import */ var _menu_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./menu.js */ "./resources/js/front/menu.js");
+/* harmony import */ var _productCategory_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./productCategory.js */ "./resources/js/front/productCategory.js");
 __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/bootstrap.js");
+
 
 
 
@@ -2247,6 +2249,7 @@ __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/bootstrap.js");
 (0,_form_js__WEBPACK_IMPORTED_MODULE_5__.renderForm)();
 (0,_products_js__WEBPACK_IMPORTED_MODULE_6__.renderProduct)();
 (0,_menu_js__WEBPACK_IMPORTED_MODULE_7__.menu)();
+(0,_productCategory_js__WEBPACK_IMPORTED_MODULE_8__.renderProductCategory)();
 
 /***/ }),
 
@@ -2529,6 +2532,31 @@ var popUpCart = function popUpCart() {
       setTimeout(function () {
         popUp.classList.remove("pop-up-active");
       }, 1000);
+    });
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/front/productCategory.js":
+/*!***********************************************!*\
+  !*** ./resources/js/front/productCategory.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderProductCategory": () => (/* binding */ renderProductCategory)
+/* harmony export */ });
+var renderProductCategory = function renderProductCategory() {
+  var mainContent = document.getElementById("main");
+  var categories = document.querySelectorAll('.select-category');
+  categories.forEach(function (category) {
+    category.addEventListener("click", function () {
+      window.alert('category');
+    }, {
+      once: true
     });
   });
 };

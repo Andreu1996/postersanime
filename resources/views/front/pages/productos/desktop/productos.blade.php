@@ -44,7 +44,7 @@
             </div>
 
             <div class="column-aside column">
-                <div class="category-options">
+                <div class="select-category">
                     <select>
                         <label value="">Categoría</label>
                         @if(isset($product_categories))
@@ -57,7 +57,7 @@
             </div>
         </div>
         
-        <div class="select-option mobile-only">
+        <div class="select-category mobile-only">
             
             <select>
                 <label value="">Todas las Categorias</label>  
