@@ -6,9 +6,8 @@ import {plusMinus} from "./plusMinus.js";
 import {FAQS} from "./FAQS.js";
 import {popUpCart} from "./pop-up-cart.js";
 import {renderForm} from "./form.js";
-import {renderProduct} from "./products.js";
+import {renderProducts} from "./products.js";
 import {menu} from "./menu.js";
-import {renderProductCategory} from "./productCategory.js";
 
 
 
@@ -18,7 +17,5 @@ plusMinus();
 FAQS();
 popUpCart();
 renderForm();
-renderProduct();
+renderProducts();
 menu();
-renderProductCategory();
-

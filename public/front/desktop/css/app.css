@@ -1320,9 +1320,21 @@ td, th {
   height: 100%;
 }
 
+.categories-elements {
+  margin: 1rem auto;
+}
+
 .categories-element {
   display: flex;
-  margin: 1rem auto;
+  margin-top: 1rem;
+}
+
+.select-category {
+  color: white;
+  cursor: pointer;
+}
+.select-category:hover h4, .select-category.active h4 {
+  color: hsl(0deg, 72%, 52%);
 }
 
 .select-option select {

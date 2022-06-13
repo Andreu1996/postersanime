@@ -1,7 +1,13 @@
+import { renderProducts } from "./products.js";
+
 export let menu = () => {
 
     let mainContent = document.getElementById("main");
     let menuOptions = document.querySelectorAll('.menu_element');
+
+    document.addEventListener("renderProductsModule",( event =>{
+        renderMenu();
+    }), {once: true});
 
     menuOptions.forEach(menuOption => {
 
@@ -27,11 +33,20 @@ export let menu = () => {
 
                         mainContent.innerHTML = json.content;
 
-                        document.dispatchEvent(new CustomEvent('renderFaqsModule'));
+                        document.dispatchEvent(new CustomEvent("renderProductsModule"));
+                        renderProducts();
+
+                        document.dispatchEvent(new CustomEvent("renderFaqsModule"));
                         FAQS();
 
-                        document.dispatchEvent(new CustomEvent('renderProductsModule'));
-                        renderProduct();
+                        document.dispatchEvent(new CustomEvent('renderPlusMinusModule'));
+                        plusMinus();
+
+                        document.dispatchEvent(new CustomEvent("renderMenuModule"));
+                        renderMenu();
+
+                        document.dispatchEvent(new CustomEvent('renderPopUpModule'));
+                        popUpCart();
 
                     })
 

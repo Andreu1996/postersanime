@@ -10,6 +10,7 @@ export let popUpCart = () => {
 
     carts.forEach(cart => {
         cart.addEventListener('click', () => {  
+          window.alert(cart.dataset.url);
           popUpCartPage.classList.toggle("pop-up-cart-active");  
         
 

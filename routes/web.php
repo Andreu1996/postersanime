@@ -122,7 +122,10 @@ Route::post('/contacto', 'App\Http\Controllers\Front\ContactController@store')->
 
 Route::get('/productos', 'App\Http\Controllers\Front\ProductController@index')->name('front_products');
 Route::get('/productos/{product}', 'App\Http\Controllers\Front\ProductController@show')->name('front_product');
-Route::get('/producto', 'App\Http\Controllers\Front\ProductController@show')->name('front_product');
+Route::get('/productos/filters/{filter}', 'App\Http\Controllers\Front\ProductFilterController@filter')->name('front_products_filter');
+Route::get('/productos/categories/{category}', 'App\Http\Controllers\Front\ProductCategoryController@show')->name('front_products_category');
+
+Route::get('/producto', 'App\Http\Controllers\Front\ProductController@show')->name('front_product_page');
 
 Route::get('/carrito', 'App\Http\Controllers\Front\CartController@index')->name('front_cart');
 Route::get('/caja', 'App\Http\Controllers\Front\CheckoutController@index')->name('front_checkout');

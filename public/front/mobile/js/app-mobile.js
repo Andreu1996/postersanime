@@ -2316,6 +2316,7 @@ var popUpCart = function popUpCart() {
   });
   carts.forEach(function (cart) {
     cart.addEventListener('click', function () {
+      window.alert(cart.dataset.url);
       popUpCartPage.classList.toggle("pop-up-cart-active");
       setTimeout(function () {
         popUpCartPage.classList.remove("pop-up-cart-active");

@@ -5,32 +5,17 @@
                 <h2>Categorias</h2>
             </div>
 
-            <div class="categories-element">
-                <button></button>
-                <div class="button-text red-text">
-                    <h4>Shonen Jump</h4>
-                </div>
-            </div>
-
-            <div class="categories-element">
-                <button></button>
-                <div class="button-text red-text">
-                    <h4>Milky Way Ediciones</h4>
-                </div>
-            </div>
-
-            <div class="categories-element">
-                <button></button>
-                <div class="button-text red-text">
-                    <h4>Kioto Animation</h4>
-                </div>
-            </div>
-
-            <div class="categories-element">
-                <button></button>
-                <div class="button-text red-text">
-                    <h4>Uffo Table</h4>
-                </div>
+            <div class="categories-elements">
+                {{-- esto viene del ViewComposer --}}
+                @if(isset($product_categories))
+                    @foreach($product_categories as $category_element)
+                    <div class="categories-element">
+                        <div class="select-category {{isset($category) && $category->id == $category_element->id ? 'active' : ''}}" data-url="{{route('front_products_category', ['category' => $category_element->id])}}">
+                            <h4>{{$category_element->name}}</h4>
+                        </div>
+                    </div>
+                    @endforeach
+                 @endif
             </div>
         </div>
     </div>
@@ -44,40 +29,27 @@
             </div>
 
             <div class="column-aside column">
-                <div class="select-category">
-                    <select>
-                        <label value="">Categoría</label>
-                        @if(isset($product_categories))
-                            @foreach($product_categories as $category)
-                                <option value="{{$category->id}}">{{$category->name}}</option>
-                            @endforeach
-                        @endif
-                    </select>
-                </div>
+                
+                    <div class="select-category">
+                        <select class="select-filter">
+                            <label>Ordenar por</label>
+                                <option class="desc" value="{{route('front_products_filter', ['filter' => 'price_asc'])}}">mayor a menor</option>
+                                <option value="asc" value="{{route('front_products_filter', ['filter' => 'price_desc'])}}">menor a mayor</option>
+                        </select>
+                    </div>
             </div>
-        </div>
-        
-        <div class="select-category mobile-only">
-            
-            <select>
-                <label value="">Todas las Categorias</label>  
-                @if(isset($product_categories))
-                    @foreach($product_categories as $category)
-                        <option value="{{$category->id}}">{{$category->name}}</option>
-                    @endforeach
-                @endif    
-            </select>
         </div>
 
         <div class="Products">
             @if(isset($products))
                 @foreach($products as $product)
+                    {{-- lo de routees en orden, el alias que le hemos puesto en las rutas a la url que queremos que habra, product es el parametro indicado en routes (productos\product), $category->id indica el id de la tabla --}}
                     <div class="product-element product-details" data-url="{{route('front_product', ['product' => $product->id])}}">
                         <div class="product-image">
-                            <a><img src="{{Storage::url('product-17.jpg')}}" alt=""></a>
+                            <a><img src="{{Storage::url('product-17.jpg')}}"></a>
                         </div>
 
-                        <div class="product-title red-text">
+                        <div class="product-title red-text" value="{{$product->id}}">
                             <h3>{{$product->name}}</h3>
                         </div>
 
