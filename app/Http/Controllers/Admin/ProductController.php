@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 
 // esto llama al modelo
 use App\Models\Product;
+use App\Models\Price;
 
 use App\Http\Requests\Admin\ProductRequest;
 
@@ -20,8 +21,10 @@ class ProductController extends Controller
 
 // por cada modelo indicado arriba se instancia en el constructor, para que se pueda usar en el controlador
 
-    public function __construct(Product $product)
+    public function __construct(Product $product, Price $price)
     {
+        $this->product = $product;
+        $this->price = $price;
         // aqui indicamos un nombre para nuestro modelo
         $this->product = $product;
     }
@@ -70,12 +73,23 @@ class ProductController extends Controller
                 'id' => request('id')],[
                 'name' => request('name'),
                 'title' => request('title'),
+                'category_id' => request('category_id'),
                 'description' => request('description'),
                 'caracteristics' => request('caracteristics'),
-                'price' => request('price'),
-                'category_id' => request('category_id'),
                 'visible' => 1,
                 'active' => 1,
+        ]);
+
+        $this->price->where('product_id', $product->id)->update([
+            'valid' => 0,
+        ]);
+
+        $this->price->create([
+            'product_id' => $product->id,
+            'base_price' => request('price'),
+            'tax_id' => request('tax_id'),
+            'valid' => 1,
+            'active' => 1,
         ]);
             
         $view = View::make('admin.pages.products.index')

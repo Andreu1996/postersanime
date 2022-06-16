@@ -1,5 +1,6 @@
 import { orderBy, update } from "lodash";
 import { tabs } from "./tabs";
+import {addProductToCart} from "./addProductToCart.js";
 
 
 export let renderProducts = () => {
@@ -20,7 +21,6 @@ export let renderProducts = () => {
 
         productButton.addEventListener("click", () => {
             
-
                 let url = productButton.dataset.url;
 
                 // permite una llamada asincronica con el servidor.
@@ -46,16 +46,14 @@ export let renderProducts = () => {
                         mainContent.innerHTML = json.content; 
                         
                         document.dispatchEvent(new CustomEvent('renderProductsModule'));
-                        renderProducts();
                         
                         document.dispatchEvent(new CustomEvent('renderTabsModule'));
-                        tabs();
 
                         document.dispatchEvent(new CustomEvent('renderPlusMinusModule'));
-                        plusMinus();
 
                         document.dispatchEvent(new CustomEvent('renderPopUpCartModule'));
-                        popUpCart();
+
+                        document.dispatchEvent(new CustomEvent('renderAddProductToCartModule'));
 
                     })
 

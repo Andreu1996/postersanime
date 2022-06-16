@@ -2213,6 +2213,88 @@ function FAQS() {
 
 /***/ }),
 
+/***/ "./resources/js/front/addProductToCart.js":
+/*!************************************************!*\
+  !*** ./resources/js/front/addProductToCart.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "addProductToCart": () => (/* binding */ addProductToCart)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var addProductToCart = function addProductToCart() {
+  var mainContent = document.getElementById("main");
+  var addProductToCart = document.querySelector('.add-product-to-cart');
+  document.addEventListener("renderAddProductToCartModule", function (event) {
+    addProductToCart();
+  }, {
+    once: true
+  });
+  addProductToCart.addEventListener("click", function () {
+    window.alert("adios");
+    var url = form.action;
+    var formData = new FormData(form);
+
+    var sendShowRequest = /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return fetch(url, {
+                  headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                  },
+                  method: 'GET'
+                }).then(function (response) {
+                  if (!response.ok) throw response;
+                  return response.json();
+                }).then(function (json) {
+                  mainContent.innerHTML = json.content;
+                  document.dispatchEvent(new CustomEvent('renderAddProductToCartModule'));
+                  addProductToCart();
+                })["catch"](function (error) {
+                  if (error.status == '500') {
+                    console.log(error);
+                  }
+
+                  ;
+                });
+
+              case 2:
+                response = _context.sent;
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function sendShowRequest() {
+        return _ref.apply(this, arguments);
+      };
+    }();
+
+    sendShowRequest();
+  });
+};
+
+/***/ }),
+
 /***/ "./resources/js/front/app.js":
 /*!***********************************!*\
   !*** ./resources/js/front/app.js ***!
@@ -2229,7 +2311,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./form.js */ "./resources/js/front/form.js");
 /* harmony import */ var _products_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./products.js */ "./resources/js/front/products.js");
 /* harmony import */ var _menu_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./menu.js */ "./resources/js/front/menu.js");
+/* harmony import */ var _selectFilter_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./selectFilter.js */ "./resources/js/front/selectFilter.js");
+/* harmony import */ var _addProductToCart_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./addProductToCart.js */ "./resources/js/front/addProductToCart.js");
 __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/bootstrap.js");
+
+
 
 
 
@@ -2247,6 +2333,8 @@ __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/bootstrap.js");
 (0,_form_js__WEBPACK_IMPORTED_MODULE_5__.renderForm)();
 (0,_products_js__WEBPACK_IMPORTED_MODULE_6__.renderProducts)();
 (0,_menu_js__WEBPACK_IMPORTED_MODULE_7__.menu)();
+(0,_selectFilter_js__WEBPACK_IMPORTED_MODULE_8__.renderSelectFilter)();
+(0,_addProductToCart_js__WEBPACK_IMPORTED_MODULE_9__.addProductToCart)();
 
 /***/ }),
 
@@ -2565,11 +2653,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tabs */ "./resources/js/front/tabs.js");
+/* harmony import */ var _addProductToCart_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./addProductToCart.js */ "./resources/js/front/addProductToCart.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 
 
@@ -2610,13 +2700,10 @@ var renderProducts = function renderProducts() {
                     }).then(function (json) {
                       mainContent.innerHTML = json.content;
                       document.dispatchEvent(new CustomEvent('renderProductsModule'));
-                      renderProducts();
                       document.dispatchEvent(new CustomEvent('renderTabsModule'));
-                      (0,_tabs__WEBPACK_IMPORTED_MODULE_2__.tabs)();
                       document.dispatchEvent(new CustomEvent('renderPlusMinusModule'));
-                      plusMinus();
                       document.dispatchEvent(new CustomEvent('renderPopUpCartModule'));
-                      popUpCart();
+                      document.dispatchEvent(new CustomEvent('renderAddProductToCartModule'));
                     })["catch"](function (error) {
                       if (error.status == '500') {
                         console.log(error);
@@ -2762,6 +2849,86 @@ var renderProducts = function renderProducts() {
 
       renderSection();
     });
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/front/selectFilter.js":
+/*!********************************************!*\
+  !*** ./resources/js/front/selectFilter.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderSelectFilter": () => (/* binding */ renderSelectFilter)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var renderSelectFilter = function renderSelectFilter() {
+  var mainContent = document.getElementById("main");
+  var selectFilter = document.querySelector('.select-filter');
+  var filterOption = document.querySelectorAll('.filter-option');
+  document.addEventListener("renderProductModules", function (event) {
+    renderSelectFilter();
+  }, {
+    once: true
+  });
+  selectFilter.addEventListener("change", function () {
+    var url = selectFilter.value;
+
+    var sendShowRequest = /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return fetch(url, {
+                  headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                  },
+                  method: 'GET'
+                }).then(function (response) {
+                  if (!response.ok) throw response;
+                  return response.json();
+                }).then(function (json) {
+                  mainContent.innerHTML = json.content;
+                  document.dispatchEvent(new CustomEvent('renderProductsModules'));
+                })["catch"](function (error) {
+                  if (error.status == '500') {
+                    console.log(error);
+                  }
+
+                  ;
+                });
+
+              case 2:
+                response = _context.sent;
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function sendShowRequest() {
+        return _ref.apply(this, arguments);
+      };
+    }();
+
+    sendShowRequest();
   });
 };
 

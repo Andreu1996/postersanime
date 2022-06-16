@@ -11,8 +11,8 @@ class ProductCategory extends Model
     protected $table = 'product_categories';
 
     public function products()
-    {
-        // esto es una relacion de uno a muchos, por lo que indicamos el modelo que queremos relacionar
-        return $this->hasMany(Product::class, 'category_id')->where('active', 1);
-    }
+        {
+            // esto es una relacion de uno a muchos, por lo que indicamos el modelo que queremos relacionar
+            return $this->hasMany(Product::class, 'category_id')->where('active', 1);
+        }
 }

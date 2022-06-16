@@ -30,5 +30,10 @@ class ViewComposerServiceProvider extends ServiceProvider
             'App\Http\ViewComposers\Admin\ProductCategories'
         );
         // si queremos usar otra variable copiamos lo de arriba y le cambiamos los nombres a las rutas y al ViewComposer
+
+        view()->composer([
+            'admin.pages.products.index'],
+            'App\Http\ViewComposers\Admin\Taxes'
+        );
     }
 }

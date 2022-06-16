@@ -3,6 +3,110 @@
     <div class="column-main">
         <div class="cart-products">
 
+            {{-- <form class="front-form form-contact" action="{{route('contacts_store')}}">
+
+                <div class="desktop-two-columns mobile-one-column">
+                    <div class="column">
+                        <div class="form-element">
+                            <div class="form-element-label">
+                                <label for="fname">Nombre</label>
+                            </div>
+                            <div class="form-element-input">
+                                <input type="text" id="fname" name="name" placeholder="tu nombre.." value="{{isset($contact->name) ? $contact->name: ''}}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="form-element">
+                            <div class="form-element-label">
+                                <label for="lname">Telefono</label>
+                            </div>
+                            <div class="form-element-input">
+                                <input type="tel" id="phone" name="phone" placeholder="tu numero de telefono.." value="{{isset($contact->phone) ? $contact->phone: ''}}">                                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="desktop-two-columns mobile-one-column">
+
+                    <div class="column">
+                        <div class="form-element">
+                            <div class="form-element-label">
+                                <label for="lname">Last Name</label>
+                            </div>
+                            <div class="form-element-input">
+                                <input type="text" id="lname" name="lastname" placeholder="tu apellido.." value="{{isset($contact->lastname) ? $contact->lastname: ''}}">                                  
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="form-element">
+                            <div class="form-element-label">
+                                <label for="lname">Correo</label>
+                            </div>
+                            <div class="form-element-input">
+                                <input type="mail" id="mail" name="email" placeholder="tu correo electronico.." value="{{isset($contact->email) ? $contact->email: ''}}">                                  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="desktop-one-column">
+                    <div class="column">
+                        <div class="form-element">
+                            <div class="form-element-label center mobile-left">
+                                <label for="lname">Mensaje</label>
+                            </div>
+
+                            <div class="form-element-input">
+                                <textarea name="text"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="desktop-one-column">
+                    <div class="column">
+                        <div class="form-element">
+                            <div class="form-element-button store-button" data-url="{{route('contacts_store')}}">
+                                <button>Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form> --}}
+            
+
+
+            @if(isset($carts))
+                @foreach($carts as $cart)
+                    {{-- lo de routees en orden, el alias que le hemos puesto en las rutas a la url que queremos que habra, product es el parametro indicado en routes (productos\product), $category->id indica el id de la tabla --}}
+                    <div class="product-element product-details" data-url="{{route('front_cart_show', ['cart' => $cart->id])}}">
+                        <div class="product-image">
+                            <a><img src="{{Storage::url('product-17.jpg')}}"></a>
+                        </div>
+
+                        <div class="product-title red-text" value="{{$cart->id}}">
+                            <h3>{{$cart->name}}</h3>
+                        </div>
+
+                        <div class="product-price" >
+                            <p>{{$cart->price->first()->base_price}}€</p>
+                        </div>
+
+                        <div class="product-details">
+                            <button>Detalles</button>
+                        </div>
+                    </div>
+                @endforeach
+            @endif
+
+
+
             <div class="cart-product-element">
                 <div class="desktop-two-columns-aside mobile-one-column">
                     <div class="column-main column">

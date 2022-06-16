@@ -30,13 +30,13 @@
 
             <div class="column-aside column">
                 
-                    <div class="select-category">
-                        <select class="select-filter">
-                            <label>Ordenar por</label>
-                                <option class="desc" value="{{route('front_products_filter', ['filter' => 'price_asc'])}}">mayor a menor</option>
-                                <option value="asc" value="{{route('front_products_filter', ['filter' => 'price_desc'])}}">menor a mayor</option>
-                        </select>
-                    </div>
+                <div class="filter-products">
+                    <select id="filter" class="select-filter">
+                        <option> All Products</option>
+                        <option class="filter-option" value="{{route('front_products_filter', ['filter' => 'price_asc'])}}">Low price first</option>
+                        <option class="filter-option" value="{{route('front_products_filter', ['filter' => 'price_desc'])}}">Hight price first</option>                          
+                    </select>                      
+                </div>
             </div>
         </div>
 
@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="product-price" >
-                            <p>{{$product->price}}€</p>
+                            <p>{{$product->price->first()->base_price}}€</p>
                         </div>
 
                         <div class="product-details">

@@ -114,7 +114,7 @@
 
         <form class="admin-form" action="{{route("products_store")}}">
 
-            <input type="hidden" name="id">
+            <input type="hidden" name="id" value="{{isset($product->id) ? $product->id : ''}}">
 
             <div class="sidetable table-container sidetablehide">
                 {{--  --}}
@@ -200,14 +200,14 @@
                                     <div class="desktop-one-column">
                                         <div class="columns">
                                             <div class="category-options">
-                                                <select>
+                                                <select name="category_id">
                                                     <label value="">Categoría</label>
                                                     {{-- con esto estamos llamando a la categoria creada en el controller --}}
                                                     @if(isset($product_categories))
                                                     {{-- indicamoes todos los elementos de la tabla y le indicamos cada una por separado --}}
                                                         @foreach($product_categories as $category)
                                                         {{-- indicamos que apartados de la tabla por cada elemento queremos que nos elija --}}
-                                                            <option value="{{$category->id}}">{{$category->name}}</option>
+                                                            <option value="{{isset($category->id) ? $category->id:''}}">{{$category->name}}</option>
                                                         @endforeach
                                                     @endif
                                                 </select>
@@ -215,7 +215,7 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="desktop-three-columns">
+                                    <div class="desktop-two-columns">
                                         <div class="column">
                                             <div class="form-group">
                                                 <div class="form-label">
@@ -236,14 +236,32 @@
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="desktop-two-columns">
                                         <div class="column">
-                                            <div class="form-group">
-                                                <div class="form-label">
-                                                    <h3>Precio</h3>
-                                                </div>
-                                                <div class="form-input">
-                                                    <input name="price" type="text" placeholder="price" value="{{isset($product->price) ? $product->price: ''}}">
-                                                </div>
+                                            <div class="form-label">
+                                                <label>Precio</label>
+                                            </div>
+                                            <div class="form-input">
+                                                <input type="number" name="price" value="{{isset($product->price->first()->base_price) ? $product->price->first()->base_price : ''}}">
+                                            </div>
+                                        </div>
+                
+                                        <div class="column">
+                                            <div class="form-label">
+                                                <label>IVA</label>
+                                            </div>
+                                            <div class="form-input">
+                                                <select name="tax_id">
+                                                    <option value="" disabled selected>--Selecciona un IVA--</option>
+                
+                                                    @if(isset($taxes))
+                                                        @foreach($taxes as $tax)
+                                                            <option value="{{$tax->id}}" {{ isset($product->price->first()->tax->id)  && $product->price->first()->tax->id == $tax->id ? 'selected' : ''}}>{{$tax->type}}</option>
+                                                        @endforeach
+                                                    @endif
+                                                    
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -254,7 +272,7 @@
                                                     <h3>Caracteristicas</h3>
                                                 </div>
                                                 <div class="form-input">
-                                                    <textarea name="caracteristics" class="ckeditor" value="{{isset($product->caracteristics) ? $product->caracteristics: ''}}"></textarea>
+                                                    <textarea name="caracteristics" class="ckeditor">{{isset($product->caracteristics) ? $product->caracteristics: ''}}</textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -264,7 +282,7 @@
                                                     <h3>Descripción</h3>
                                                 </div>
                                                 <div class="form-input">
-                                                    <textarea name="description" class="ckeditor" value="{{isset($product->description) ? $product->description: ''}}"></textarea>
+                                                    <textarea name="description" class="ckeditor">{{isset($product->description) ? $product->description: ''}}</textarea>
                                                 </div>
                                             </div>
                                         </div>

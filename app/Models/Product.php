@@ -12,8 +12,13 @@ class Product extends Model
     protected $table = 'products';
 
     public function category()
-    {
-        // esto indica a que relacion pertenece este modelo
-        return $this->belongsTo(ProductCategory::class, 'name');
-    }
+        {
+            // esto indica a que relacion pertenece este modelo
+            return $this->belongsTo(ProductCategory::class)->where('active', 1);
+        }
+
+    public function price()
+        {
+            return $this->hasMany(Price::class, 'product_id')->where('valid', 1)->where('active', 1);
+        }
 }
