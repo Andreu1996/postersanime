@@ -2,13 +2,15 @@ export let plusMinus = () => {
 
     let plusMinusButtons = document.querySelectorAll(".plus-minus-button");
 
-    document.addEventListener("renderPlusMinusModule",( event =>{
+    document.addEventListener("renderProductsModule",( event =>{
         plusMinus();
     }), {once: true});
 
     plusMinusButtons.forEach(plusMinusButton => {
 
-        plusMinusButton.addEventListener("click", () => {
+        plusMinusButton.addEventListener("click", (event) => {
+
+            event.preventDefault();
 
             let plusMinusContainer = plusMinusButton.closest(".plus-minus-container");
             let plusMinusInput = plusMinusContainer.querySelector(".plus-minus-input");

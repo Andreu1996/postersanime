@@ -1,10 +1,10 @@
-export function tabs () {
+export let renderTabs = () => { 
 
     let tabs = document.querySelectorAll('.tab');
     let tabsContent = document.querySelectorAll('.tabContent');
     
-    document.addEventListener("renderTabsModule",( event =>{
-        tabs();
+    document.addEventListener("renderProductsModule",( event =>{
+        renderTabs();
     }), {once: true});
     
     tabs.forEach(tab => {
@@ -29,21 +29,5 @@ export function tabs () {
 
         });
     });
-
-    // tabsSelect.forEach(tabSelect => {
-        
-    //     tabSelect.addEventListener("change", () => {
-
-    //         tabContents.forEach(tabContent => {
-
-    //             tabContent.classList.remove("tabContentActive");
-
-    //             if (tabSelect.dataset.tab == tabContent.dataset.tab){
-    //                 tabContent.classList.add("tabContentActive");
-    //             }
-
-    //         });
-    //     });
-    // });
 }
 

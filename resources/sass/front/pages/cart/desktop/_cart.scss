@@ -107,3 +107,36 @@
     box-shadow: $shadow-color;
 }
 
+.cart-titles-elements{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0rem;
+    border-bottom-style: solid;
+    border-bottom-color: $shadow-color;
+    border-width: 0.2rem;
+    padding: 2rem 0rem;
+}
+
+.cart-elements{
+    justify-content: space-between;
+    display: flex;
+    border-bottom-style: solid;
+    border-bottom-color: $shadow-color;
+    border-width: 0.2rem;
+    padding: 2rem 0rem;
+}
+
+.cart-element{
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0rem;
+    color: white;
+}
+
+.total-price-elements{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0rem;
+    padding: 2rem 0rem;
+}
+

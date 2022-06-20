@@ -1,8 +1,3 @@
-import { orderBy, update } from "lodash";
-import { tabs } from "./tabs";
-import {addProductToCart} from "./addProductToCart.js";
-
-
 export let renderProducts = () => {
 
     let mainContent = document.getElementById("main");
@@ -46,15 +41,6 @@ export let renderProducts = () => {
                         mainContent.innerHTML = json.content; 
                         
                         document.dispatchEvent(new CustomEvent('renderProductsModule'));
-                        
-                        document.dispatchEvent(new CustomEvent('renderTabsModule'));
-
-                        document.dispatchEvent(new CustomEvent('renderPlusMinusModule'));
-
-                        document.dispatchEvent(new CustomEvent('renderPopUpCartModule'));
-
-                        document.dispatchEvent(new CustomEvent('renderAddProductToCartModule'));
-
                     })
 
                     .catch(error =>  {

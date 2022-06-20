@@ -2213,88 +2213,6 @@ function FAQS() {
 
 /***/ }),
 
-/***/ "./resources/js/front/addProductToCart.js":
-/*!************************************************!*\
-  !*** ./resources/js/front/addProductToCart.js ***!
-  \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "addProductToCart": () => (/* binding */ addProductToCart)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-var addProductToCart = function addProductToCart() {
-  var mainContent = document.getElementById("main");
-  var addProductToCart = document.querySelector('.add-product-to-cart');
-  document.addEventListener("renderAddProductToCartModule", function (event) {
-    addProductToCart();
-  }, {
-    once: true
-  });
-  addProductToCart.addEventListener("click", function () {
-    window.alert("adios");
-    var url = form.action;
-    var formData = new FormData(form);
-
-    var sendShowRequest = /*#__PURE__*/function () {
-      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        var response;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return fetch(url, {
-                  headers: {
-                    'X-Requested-With': 'XMLHttpRequest'
-                  },
-                  method: 'GET'
-                }).then(function (response) {
-                  if (!response.ok) throw response;
-                  return response.json();
-                }).then(function (json) {
-                  mainContent.innerHTML = json.content;
-                  document.dispatchEvent(new CustomEvent('renderAddProductToCartModule'));
-                  addProductToCart();
-                })["catch"](function (error) {
-                  if (error.status == '500') {
-                    console.log(error);
-                  }
-
-                  ;
-                });
-
-              case 2:
-                response = _context.sent;
-
-              case 3:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee);
-      }));
-
-      return function sendShowRequest() {
-        return _ref.apply(this, arguments);
-      };
-    }();
-
-    sendShowRequest();
-  });
-};
-
-/***/ }),
-
 /***/ "./resources/js/front/app.js":
 /*!***********************************!*\
   !*** ./resources/js/front/app.js ***!
@@ -2304,15 +2222,14 @@ var addProductToCart = function addProductToCart() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tabs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tabs.js */ "./resources/js/front/tabs.js");
-/* harmony import */ var _tabsMobile_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tabsMobile.js */ "./resources/js/front/tabsMobile.js");
-/* harmony import */ var _plusMinus_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./plusMinus.js */ "./resources/js/front/plusMinus.js");
-/* harmony import */ var _FAQS_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FAQS.js */ "./resources/js/front/FAQS.js");
-/* harmony import */ var _pop_up_cart_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pop-up-cart.js */ "./resources/js/front/pop-up-cart.js");
-/* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./form.js */ "./resources/js/front/form.js");
-/* harmony import */ var _products_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./products.js */ "./resources/js/front/products.js");
-/* harmony import */ var _menu_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./menu.js */ "./resources/js/front/menu.js");
-/* harmony import */ var _selectFilter_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./selectFilter.js */ "./resources/js/front/selectFilter.js");
-/* harmony import */ var _addProductToCart_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./addProductToCart.js */ "./resources/js/front/addProductToCart.js");
+/* harmony import */ var _plusMinus_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./plusMinus.js */ "./resources/js/front/plusMinus.js");
+/* harmony import */ var _FAQS_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FAQS.js */ "./resources/js/front/FAQS.js");
+/* harmony import */ var _pop_up_cart_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pop-up-cart.js */ "./resources/js/front/pop-up-cart.js");
+/* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./form.js */ "./resources/js/front/form.js");
+/* harmony import */ var _products_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./products.js */ "./resources/js/front/products.js");
+/* harmony import */ var _menu_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./menu.js */ "./resources/js/front/menu.js");
+/* harmony import */ var _selectFilter_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./selectFilter.js */ "./resources/js/front/selectFilter.js");
+/* harmony import */ var _cart_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./cart.js */ "./resources/js/front/cart.js");
 __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/bootstrap.js");
 
 
@@ -2324,17 +2241,15 @@ __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/bootstrap.js");
 
 
 
-
-(0,_tabs_js__WEBPACK_IMPORTED_MODULE_0__.tabs)();
-(0,_tabsMobile_js__WEBPACK_IMPORTED_MODULE_1__.tabsMobile)();
-(0,_plusMinus_js__WEBPACK_IMPORTED_MODULE_2__.plusMinus)();
-(0,_FAQS_js__WEBPACK_IMPORTED_MODULE_3__.FAQS)();
-(0,_pop_up_cart_js__WEBPACK_IMPORTED_MODULE_4__.popUpCart)();
-(0,_form_js__WEBPACK_IMPORTED_MODULE_5__.renderForm)();
-(0,_products_js__WEBPACK_IMPORTED_MODULE_6__.renderProducts)();
-(0,_menu_js__WEBPACK_IMPORTED_MODULE_7__.menu)();
-(0,_selectFilter_js__WEBPACK_IMPORTED_MODULE_8__.renderSelectFilter)();
-(0,_addProductToCart_js__WEBPACK_IMPORTED_MODULE_9__.addProductToCart)();
+(0,_tabs_js__WEBPACK_IMPORTED_MODULE_0__.renderTabs)();
+(0,_plusMinus_js__WEBPACK_IMPORTED_MODULE_1__.plusMinus)();
+(0,_FAQS_js__WEBPACK_IMPORTED_MODULE_2__.FAQS)();
+(0,_pop_up_cart_js__WEBPACK_IMPORTED_MODULE_3__.popUpCart)();
+(0,_form_js__WEBPACK_IMPORTED_MODULE_4__.renderForm)();
+(0,_products_js__WEBPACK_IMPORTED_MODULE_5__.renderProducts)();
+(0,_menu_js__WEBPACK_IMPORTED_MODULE_6__.menu)();
+(0,_selectFilter_js__WEBPACK_IMPORTED_MODULE_7__.renderSelectFilter)();
+(0,_cart_js__WEBPACK_IMPORTED_MODULE_8__.renderCart)();
 
 /***/ }),
 
@@ -2366,6 +2281,107 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/front/cart.js":
+/*!************************************!*\
+  !*** ./resources/js/front/cart.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderCart": () => (/* binding */ renderCart)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var renderCart = function renderCart() {
+  var mainContent = document.getElementById("main");
+  var addToCart = document.querySelector('.add-product-to-cart');
+  var forms = document.querySelectorAll('.cart-form');
+  var addProducts = document.querySelectorAll('.add-product-cart');
+  var removeProducts = document.querySelectorAll('.remove-product-cart');
+  document.addEventListener("renderProductsModule", function (event) {
+    renderCart();
+  }, {
+    once: true
+  });
+
+  if (addToCart) {
+    addToCart.addEventListener("click", function (event) {
+      //se pone para los botones que hay dentro de un formulario porque envía
+      //donde no queremos
+      event.preventDefault();
+      forms.forEach(function (form) {
+        var data = new FormData(form);
+        var url = form.action;
+
+        var sendPostRequest = /*#__PURE__*/function () {
+          var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+            var response;
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    _context.next = 2;
+                    return fetch(url, {
+                      headers: {
+                        'Accept': 'application/json',
+                        'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content
+                      },
+                      method: 'POST',
+                      body: data
+                    }).then(function (response) {
+                      if (!response.ok) throw response;
+                      return response.json();
+                    }).then(function (json) {
+                      mainContent.innerHTML = json.content;
+                      document.dispatchEvent(new CustomEvent('renderProductsModule'));
+                    })["catch"](function (error) {
+                      if (error.status == '500') {
+                        console.log(error);
+                      }
+
+                      ;
+                    });
+
+                  case 2:
+                    response = _context.sent;
+
+                  case 3:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee);
+          }));
+
+          return function sendPostRequest() {
+            return _ref.apply(this, arguments);
+          };
+        }();
+
+        sendPostRequest();
+      });
+    });
+  }
+
+  if (addProducts) {
+    addProducts.forEach(function (addProduct) {
+      addProduct.addEventListener("click", function () {
+        window.alert("Producto añadido al carrito");
+      });
+    });
+  }
+};
 
 /***/ }),
 
@@ -2492,7 +2508,7 @@ var menu = function menu() {
   var mainContent = document.getElementById("main");
   var menuOptions = document.querySelectorAll('.menu_element');
   document.addEventListener("renderProductsModule", function (event) {
-    renderMenu();
+    menu();
   }, {
     once: true
   });
@@ -2572,13 +2588,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var plusMinus = function plusMinus() {
   var plusMinusButtons = document.querySelectorAll(".plus-minus-button");
-  document.addEventListener("renderPlusMinusModule", function (event) {
+  document.addEventListener("renderProductsModule", function (event) {
     plusMinus();
   }, {
     once: true
   });
   plusMinusButtons.forEach(function (plusMinusButton) {
-    plusMinusButton.addEventListener("click", function () {
+    plusMinusButton.addEventListener("click", function (event) {
+      event.preventDefault();
       var plusMinusContainer = plusMinusButton.closest(".plus-minus-container");
       var plusMinusInput = plusMinusContainer.querySelector(".plus-minus-input");
       var value = parseInt(plusMinusInput.value);
@@ -2650,18 +2667,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tabs */ "./resources/js/front/tabs.js");
-/* harmony import */ var _addProductToCart_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./addProductToCart.js */ "./resources/js/front/addProductToCart.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-
-
 
 var renderProducts = function renderProducts() {
   var mainContent = document.getElementById("main");
@@ -2700,10 +2710,6 @@ var renderProducts = function renderProducts() {
                     }).then(function (json) {
                       mainContent.innerHTML = json.content;
                       document.dispatchEvent(new CustomEvent('renderProductsModule'));
-                      document.dispatchEvent(new CustomEvent('renderTabsModule'));
-                      document.dispatchEvent(new CustomEvent('renderPlusMinusModule'));
-                      document.dispatchEvent(new CustomEvent('renderPopUpCartModule'));
-                      document.dispatchEvent(new CustomEvent('renderAddProductToCartModule'));
                     })["catch"](function (error) {
                       if (error.status == '500') {
                         console.log(error);
@@ -2760,7 +2766,7 @@ var renderProducts = function renderProducts() {
                       document.dispatchEvent(new CustomEvent("renderProductsModule"));
                       renderProducts();
                       document.dispatchEvent(new CustomEvent('renderTabsModule'));
-                      (0,_tabs__WEBPACK_IMPORTED_MODULE_2__.tabs)();
+                      tabs();
                       document.dispatchEvent(new CustomEvent('renderPlusMinusModule'));
                       plusMinus();
                       document.dispatchEvent(new CustomEvent('renderPopUpCartModule'));
@@ -2818,7 +2824,7 @@ var renderProducts = function renderProducts() {
                     document.dispatchEvent(new CustomEvent("renderProductsModule"));
                     renderProducts();
                     document.dispatchEvent(new CustomEvent('renderTabsModule'));
-                    (0,_tabs__WEBPACK_IMPORTED_MODULE_2__.tabs)();
+                    tabs();
                     document.dispatchEvent(new CustomEvent('renderPlusMinusModule'));
                     plusMinus();
                     document.dispatchEvent(new CustomEvent('renderPopUpCartModule'));
@@ -2877,59 +2883,62 @@ var renderSelectFilter = function renderSelectFilter() {
   var mainContent = document.getElementById("main");
   var selectFilter = document.querySelector('.select-filter');
   var filterOption = document.querySelectorAll('.filter-option');
-  document.addEventListener("renderProductModules", function (event) {
+  document.addEventListener("renderProductsModule", function (event) {
     renderSelectFilter();
   }, {
     once: true
   });
-  selectFilter.addEventListener("change", function () {
-    var url = selectFilter.value;
 
-    var sendShowRequest = /*#__PURE__*/function () {
-      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        var response;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return fetch(url, {
-                  headers: {
-                    'X-Requested-With': 'XMLHttpRequest'
-                  },
-                  method: 'GET'
-                }).then(function (response) {
-                  if (!response.ok) throw response;
-                  return response.json();
-                }).then(function (json) {
-                  mainContent.innerHTML = json.content;
-                  document.dispatchEvent(new CustomEvent('renderProductsModules'));
-                })["catch"](function (error) {
-                  if (error.status == '500') {
-                    console.log(error);
-                  }
+  if (selectFilter) {
+    selectFilter.addEventListener("change", function () {
+      var url = selectFilter.value;
 
-                  ;
-                });
+      var sendShowRequest = /*#__PURE__*/function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+          var response;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  _context.next = 2;
+                  return fetch(url, {
+                    headers: {
+                      'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    method: 'GET'
+                  }).then(function (response) {
+                    if (!response.ok) throw response;
+                    return response.json();
+                  }).then(function (json) {
+                    mainContent.innerHTML = json.content;
+                    document.dispatchEvent(new CustomEvent('renderProductsModules'));
+                  })["catch"](function (error) {
+                    if (error.status == '500') {
+                      console.log(error);
+                    }
 
-              case 2:
-                response = _context.sent;
+                    ;
+                  });
 
-              case 3:
-              case "end":
-                return _context.stop();
+                case 2:
+                  response = _context.sent;
+
+                case 3:
+                case "end":
+                  return _context.stop();
+              }
             }
-          }
-        }, _callee);
-      }));
+          }, _callee);
+        }));
 
-      return function sendShowRequest() {
-        return _ref.apply(this, arguments);
-      };
-    }();
+        return function sendShowRequest() {
+          return _ref.apply(this, arguments);
+        };
+      }();
 
-    sendShowRequest();
-  });
+      sendShowRequest();
+    });
+  }
 };
 
 /***/ }),
@@ -2943,13 +2952,13 @@ var renderSelectFilter = function renderSelectFilter() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "tabs": () => (/* binding */ tabs)
+/* harmony export */   "renderTabs": () => (/* binding */ renderTabs)
 /* harmony export */ });
-function tabs() {
+var renderTabs = function renderTabs() {
   var tabs = document.querySelectorAll('.tab');
   var tabsContent = document.querySelectorAll('.tabContent');
-  document.addEventListener("renderTabsModule", function (event) {
-    tabs();
+  document.addEventListener("renderProductsModule", function (event) {
+    renderTabs();
   }, {
     once: true
   });
@@ -2967,46 +2976,8 @@ function tabs() {
         }
       });
     });
-  }); // tabsSelect.forEach(tabSelect => {
-  //     tabSelect.addEventListener("change", () => {
-  //         tabContents.forEach(tabContent => {
-  //             tabContent.classList.remove("tabContentActive");
-  //             if (tabSelect.dataset.tab == tabContent.dataset.tab){
-  //                 tabContent.classList.add("tabContentActive");
-  //             }
-  //         });
-  //     });
-  // });
-}
-
-/***/ }),
-
-/***/ "./resources/js/front/tabsMobile.js":
-/*!******************************************!*\
-  !*** ./resources/js/front/tabsMobile.js ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "tabsMobile": () => (/* binding */ tabsMobile)
-/* harmony export */ });
-function tabsMobile() {
-  var selectsRelated = document.querySelectorAll('.select-related');
-  var selectsRelatedOptions = document.querySelectorAll('.select-related-options');
-  selectsRelated.forEach(function (selectRelated) {
-    selectRelated.addEventListener('change', function () {
-      selectsRelatedOptions.forEach(function (selectRelatedOption) {
-        if (selectRelated.value === selectRelatedOption.dataset.related) {
-          selectRelatedOption.classList.add('active');
-        } else {
-          selectRelatedOption.classList.remove('active');
-        }
-      });
-    });
   });
-}
+};
 
 /***/ }),
 

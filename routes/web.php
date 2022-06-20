@@ -126,12 +126,11 @@ Route::get('/productos/{filter}', 'App\Http\Controllers\Front\ProductController@
 Route::get('/productos/categories/{category}', 'App\Http\Controllers\Front\ProductCategoryController@show')->name('front_products_category');
 
 Route::get('/producto', 'App\Http\Controllers\Front\ProductController@show')->name('front_product_page');
-
-Route::post('/productos', 'App\Http\Controllers\Front\CartController@store')->name('front_cart_store');
-
 Route::get('/carrito', 'App\Http\Controllers\Front\CartController@index')->name('front_cart');
+Route::post('/carrito', 'App\Http\Controllers\Front\CartController@store')->name('front_cart_store');
 Route::get('/checkout', 'App\Http\Controllers\Front\CheckoutController@index')->name('front_checkout');
 
-
+route::get('/carrito', 'App\Http\Controllers\Front\CartController@show')->name('front_cart_plus');
+route::get('/product', 'App\Http\Controllers\Front\ProductController@show')->name('front_cart_minus');
 
 

@@ -1,113 +1,78 @@
+@extends('front.layout.master')   
 
-<div class="desktop-two-columns-aside-cart mobile-one-column">
-    <div class="column-main">
-        <div class="cart-products">
+    @section('content')
 
-            {{-- <form class="front-form form-contact" action="{{route('contacts_store')}}">
-
-                <div class="desktop-two-columns mobile-one-column">
-                    <div class="column">
-                        <div class="form-element">
-                            <div class="form-element-label">
-                                <label for="fname">Nombre</label>
-                            </div>
-                            <div class="form-element-input">
-                                <input type="text" id="fname" name="name" placeholder="tu nombre.." value="{{isset($contact->name) ? $contact->name: ''}}">
-                            </div>
-                        </div>
+        <div class="desktop-one-column mobile-one-column">
+            <div class="column"> 
+                <div class="cart-titles-elements">                       
+                    <div class="cart-titles-element">
+                        <h2>producto</h2>
                     </div>
-
-                    <div class="column">
-                        <div class="form-element">
-                            <div class="form-element-label">
-                                <label for="lname">Telefono</label>
-                            </div>
-                            <div class="form-element-input">
-                                <input type="tel" id="phone" name="phone" placeholder="tu numero de telefono.." value="{{isset($contact->phone) ? $contact->phone: ''}}">                                    
-                            </div>
-                        </div>
+                    <div class="cart-titles-element">
+                        <h2>cantidad</h2>
+                    </div>
+                    <div class="cart-titles-element">
+                        <h2>precio</h2>
+                    </div>
+                    <div class="cart-titles-element">
+                        <h2>precio total</h2>
                     </div>
                 </div>
-                
-                <div class="desktop-two-columns mobile-one-column">
+                @if(isset($carts))                    
+                    @foreach($carts as $cart)
+                        <div class="cart-elements">
+                            <div class="cart-element" data-label="Product"><h3>{{$cart->price->product->title}}<h3></div>
+                            <div class="cart-element" data-label="Quantity">
+                                <div class="plus-minus-container">
+                                    <div class="remove-product-cart">
+                                        <button data-type="plus">-</button>
+                                    </div>
+                                    <div class="plus-minus-container">
+                                        <input  name="quantity" class="plus-minus-input-cart" type="text" value="{{($cart->quantity)}}" data-min="0">
+                                    </div>
+                                    <div class="add-product-cart">
+                                        <button data-type="minus"><span>+</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart-element" data-label="Unit Price">{{$cart->price->base_price}}€</div>
+                            <div class="cart-element">
+                                <input value="{{($cart->quantity)*($cart->price->base_price)}}€" disabled>
+                            </div> 
+                        </div>                                 
+                    @endforeach
 
-                    <div class="column">
-                        <div class="form-element">
-                            <div class="form-element-label">
-                                <label for="lname">Last Name</label>
-                            </div>
-                            <div class="form-element-input">
-                                <input type="text" id="lname" name="lastname" placeholder="tu apellido.." value="{{isset($contact->lastname) ? $contact->lastname: ''}}">                                  
-                            </div>
+                    <div class="total-price-elements">
+                        <div class="add-product-cart">
+                            <h3>Iva</h3>
+                        </div>
+                        <div class="total-price-element">
+                            <p>{{$cart->price->tax->type}}%</p>
+                        </div>
+                        <div class="total-price-element">
+                            <h3>Total of tax</h3>
+                        </div>
+                        <div class="total-price-element">
+                            <p>{{(($cart->quantity)*($cart->price->base_price))*($cart->price->tax->multiplicator)}}</p>
+                        </div>
+                        <div class="total-price-element">
+                            <h3>Total base price</h3>
+                        </div>
+                        <div class="total-price-element">
+                            <input value="{{(($cart->quantity)*($cart->price->base_price))*($cart->price->tax->multiplicator)}}€" disabled>  
                         </div>
                     </div>
+                    
+                @endif
+            </div>
+            <div class="column-aside-cart">
+            </div>
+        </div>
 
-                    <div class="column">
-                        <div class="form-element">
-                            <div class="form-element-label">
-                                <label for="lname">Correo</label>
-                            </div>
-                            <div class="form-element-input">
-                                <input type="mail" id="mail" name="email" placeholder="tu correo electronico.." value="{{isset($contact->email) ? $contact->email: ''}}">                                  
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="desktop-one-column">
-                    <div class="column">
-                        <div class="form-element">
-                            <div class="form-element-label center mobile-left">
-                                <label for="lname">Mensaje</label>
-                            </div>
-
-                            <div class="form-element-input">
-                                <textarea name="text"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="desktop-one-column">
-                    <div class="column">
-                        <div class="form-element">
-                            <div class="form-element-button store-button" data-url="{{route('contacts_store')}}">
-                                <button>Enviar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </form> --}}
-            
+    @endsection
 
 
-            @if(isset($carts))
-                @foreach($carts as $cart)
-                    {{-- lo de routees en orden, el alias que le hemos puesto en las rutas a la url que queremos que habra, product es el parametro indicado en routes (productos\product), $category->id indica el id de la tabla --}}
-                    <div class="product-element product-details" data-url="{{route('front_cart_show', ['cart' => $cart->id])}}">
-                        <div class="product-image">
-                            <a><img src="{{Storage::url('product-17.jpg')}}"></a>
-                        </div>
-
-                        <div class="product-title red-text" value="{{$cart->id}}">
-                            <h3>{{$cart->name}}</h3>
-                        </div>
-
-                        <div class="product-price" >
-                            <p>{{$cart->price->first()->base_price}}€</p>
-                        </div>
-
-                        <div class="product-details">
-                            <button>Detalles</button>
-                        </div>
-                    </div>
-                @endforeach
-            @endif
-
-
-
-            <div class="cart-product-element">
+            {{-- <div class="cart-product-element">
                 <div class="desktop-two-columns-aside mobile-one-column">
                     <div class="column-main column">
                         <div class="cart-product-element-image-description">
@@ -233,8 +198,8 @@
                 </div>
             </div>
 
-        </div>
-        <div class="total-price">
+        </div> --}}
+        {{-- <div class="total-price">
             <div class="desktop-two-columns mobile-one-column">
                 <div class="column">
                     <div class="products">
@@ -373,4 +338,5 @@
         </div>
 
     </div>
-</div>
+</div> --}}
+

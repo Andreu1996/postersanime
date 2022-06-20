@@ -6,7 +6,7 @@ export let menu = () => {
     let menuOptions = document.querySelectorAll('.menu_element');
 
     document.addEventListener("renderProductsModule",( event =>{
-        renderMenu();
+        menu();
     }), {once: true});
 
     menuOptions.forEach(menuOption => {

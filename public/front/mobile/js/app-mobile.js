@@ -2270,13 +2270,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var plusMinus = function plusMinus() {
   var plusMinusButtons = document.querySelectorAll(".plus-minus-button");
-  document.addEventListener("renderPlusMinusModule", function (event) {
+  document.addEventListener("renderProductsModule", function (event) {
     plusMinus();
   }, {
     once: true
   });
   plusMinusButtons.forEach(function (plusMinusButton) {
-    plusMinusButton.addEventListener("click", function () {
+    plusMinusButton.addEventListener("click", function (event) {
+      event.preventDefault();
       var plusMinusContainer = plusMinusButton.closest(".plus-minus-container");
       var plusMinusInput = plusMinusContainer.querySelector(".plus-minus-input");
       var value = parseInt(plusMinusInput.value);
@@ -2332,53 +2333,6 @@ var popUpCart = function popUpCart() {
     });
   });
 };
-
-/***/ }),
-
-/***/ "./resources/js/front/tabs.js":
-/*!************************************!*\
-  !*** ./resources/js/front/tabs.js ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "tabs": () => (/* binding */ tabs)
-/* harmony export */ });
-function tabs() {
-  var tabs = document.querySelectorAll('.tab');
-  var tabsContent = document.querySelectorAll('.tabContent');
-  document.addEventListener("renderTabsModule", function (event) {
-    tabs();
-  }, {
-    once: true
-  });
-  tabs.forEach(function (tab) {
-    tab.addEventListener("click", function () {
-      tabs.forEach(function (tab) {
-        tab.classList.remove("tabActive");
-      });
-      tab.classList.add("tabActive");
-      tabsContent.forEach(function (tabContent) {
-        tabContent.classList.remove("tabContentActive");
-
-        if (tab.dataset.tab == tabContent.dataset.tab) {
-          tabContent.classList.add("tabContentActive");
-        }
-      });
-    });
-  }); // tabsSelect.forEach(tabSelect => {
-  //     tabSelect.addEventListener("change", () => {
-  //         tabContents.forEach(tabContent => {
-  //             tabContent.classList.remove("tabContentActive");
-  //             if (tabSelect.dataset.tab == tabContent.dataset.tab){
-  //                 tabContent.classList.add("tabContentActive");
-  //             }
-  //         });
-  //     });
-  // });
-}
 
 /***/ }),
 
@@ -19906,11 +19860,10 @@ var __webpack_exports__ = {};
   \******************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hamburger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hamburger */ "./resources/js/front/hamburger.js");
-/* harmony import */ var _tabs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tabs.js */ "./resources/js/front/tabs.js");
-/* harmony import */ var _tabsMobile_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tabsMobile.js */ "./resources/js/front/tabsMobile.js");
-/* harmony import */ var _plusMinus_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./plusMinus.js */ "./resources/js/front/plusMinus.js");
-/* harmony import */ var _FAQS_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FAQS.js */ "./resources/js/front/FAQS.js");
-/* harmony import */ var _pop_up_cart_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pop-up-cart.js */ "./resources/js/front/pop-up-cart.js");
+/* harmony import */ var _tabsMobile_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tabsMobile.js */ "./resources/js/front/tabsMobile.js");
+/* harmony import */ var _plusMinus_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./plusMinus.js */ "./resources/js/front/plusMinus.js");
+/* harmony import */ var _FAQS_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FAQS.js */ "./resources/js/front/FAQS.js");
+/* harmony import */ var _pop_up_cart_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pop-up-cart.js */ "./resources/js/front/pop-up-cart.js");
 __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/bootstrap.js");
 
 
@@ -19918,13 +19871,11 @@ __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/bootstrap.js");
 
 
 
-
 (0,_hamburger__WEBPACK_IMPORTED_MODULE_0__.hamburgerMenu)();
-(0,_tabs_js__WEBPACK_IMPORTED_MODULE_1__.tabs)();
-(0,_tabsMobile_js__WEBPACK_IMPORTED_MODULE_2__.tabsMobile)();
-(0,_plusMinus_js__WEBPACK_IMPORTED_MODULE_3__.plusMinus)();
-(0,_FAQS_js__WEBPACK_IMPORTED_MODULE_4__.FAQS)();
-(0,_pop_up_cart_js__WEBPACK_IMPORTED_MODULE_5__.popUpCart)();
+(0,_tabsMobile_js__WEBPACK_IMPORTED_MODULE_1__.tabsMobile)();
+(0,_plusMinus_js__WEBPACK_IMPORTED_MODULE_2__.plusMinus)();
+(0,_FAQS_js__WEBPACK_IMPORTED_MODULE_3__.FAQS)();
+(0,_pop_up_cart_js__WEBPACK_IMPORTED_MODULE_4__.popUpCart)();
 })();
 
 /******/ })()
