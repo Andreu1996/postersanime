@@ -3,8 +3,7 @@ export let renderCart = () => {
     let mainContent = document.getElementById("main");
     let addToCart = document.querySelector('.add-product-to-cart');
     let forms = document.querySelectorAll('.cart-form');
-    let addProducts = document.querySelectorAll('.add-product-cart');
-    let removeProducts = document.querySelectorAll('.remove-product-cart');
+    let plusMinusButtons = document.querySelectorAll(".plus-minus-button-cart");
 
     document.addEventListener("renderProductsModule", (event => {
         renderCart();
@@ -60,14 +59,48 @@ export let renderCart = () => {
         });
     }
     
-    if(addProducts){
+    plusMinusButtons.forEach(plusMinusButton => {
 
-        addProducts.forEach(addProduct => {
+            plusMinusButton.addEventListener("click", (event) => {
 
-            addProduct.addEventListener("click", () => {
-                window.alert("Producto añadido al carrito");
+                    window.alert("Se ha actualizado el carrito");
+                // event.preventDefault();
+
+                // let url = plusMinusButton.dataset.url;
+
+                // let sendCreateRequest = async() => {
+                //     let response = await fetch(url, {
+                //         headers: {
+                //             'X-Requested-With': 'XMLHttpRequest',
+                //         },
+                //         method: 'GET',
+                //     })
+
+                //     .then(response => {
+
+                //             if (!response.ok) throw response;
+
+                //             return response.json();
+
+                //         })
+                //         .then(json => {
+
+                //             mainContent.innerHTML = json.content;
+
+                //             document.dispatchEvent(new CustomEvent('renderProductModules'));
+
+                //         })
+                //         .catch(error => {
+
+                //             if (error.status == '500') {
+                //                 console.log(error);
+                //             };
+                //         });
+                // };
+
+                // sendCreateRequest();
+
             });
 
         });
-    }
 }

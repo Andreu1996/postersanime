@@ -151,13 +151,11 @@
                         <table>
 
                             <tr>
-                                <td><p>productos</p></td>
                                 <td><p>subtotal</p></td>
                             </tr>
 
                             <tr>
-                                <td><p>Mob Psycho 100</p></td>
-                                <td><p>30€</p></td>
+                                {{-- <td><p>{{(($cart->quantity))*($cart->price->base_price)}}</p></td> --}}
                             </tr>
 
                             <tr>

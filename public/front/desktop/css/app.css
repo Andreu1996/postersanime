@@ -775,6 +775,18 @@ footer .footer-element p {
   background-color: white;
 }
 
+.plus-minus-button-cart button {
+  display: flex;
+  height: 30;
+  padding: 0.1rem 0.5rem;
+  background-color: rgb(223, 18, 18);
+  border-radius: 0.5rem;
+  color: hsl(0deg, 0%, 100%);
+  box-shadow: 0px 3px 1px 0px #000000;
+  margin: 0rem 0.5rem;
+  cursor: pointer;
+}
+
 /*====================
 ========Slider=========
 ======================*/
@@ -1019,7 +1031,9 @@ footer .footer-element p {
   border-bottom-style: solid;
   border-bottom-color: 0px 3px 1px 0px #000000;
   border-width: 0.2rem;
-  padding: 2rem 0rem;
+  padding: 2rem 1rem;
+  margin-bottom: 1rem;
+  background-color: gray;
 }
 
 .cart-element {
@@ -1030,10 +1044,29 @@ footer .footer-element p {
 }
 
 .total-price-elements {
+  margin-left: 44.5rem;
+}
+
+.total-price-element {
+  margin: 0.3rem 0rem;
+}
+
+.buy-button {
   display: flex;
-  justify-content: space-between;
-  margin: 1rem 0rem;
-  padding: 2rem 0rem;
+  margin-left: 60rem;
+  margin-top: 1rem;
+}
+
+.buy-button button {
+  display: flex;
+  height: 30;
+  padding: 0.3rem 0.8rem;
+  background-color: rgb(223, 18, 18);
+  border-radius: 0.5rem;
+  color: hsl(0deg, 0%, 100%);
+  box-shadow: 0px 3px 1px 0px #000000;
+  margin: 0rem 0.5rem;
+  cursor: pointer;
 }
 
 /*======================

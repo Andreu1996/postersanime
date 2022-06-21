@@ -83,3 +83,16 @@
     
 }
 
+
+.plus-minus-button-cart button{
+    display: flex;
+    height: 30;
+    padding: 0.1rem 0.5rem;
+    background-color: $secondary-color;
+    border-radius:  0.5rem;    
+    color: $laberl-box-color;
+    -webkit-box-shadow: $shadow-color;
+    box-shadow: $shadow-color;
+    margin: 0rem 0.5rem;
+    cursor: pointer;
+}
