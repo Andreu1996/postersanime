@@ -2231,7 +2231,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _selectFilter_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./selectFilter.js */ "./resources/js/front/selectFilter.js");
 /* harmony import */ var _cart_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./cart.js */ "./resources/js/front/cart.js");
 /* harmony import */ var _buyButton_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./buyButton.js */ "./resources/js/front/buyButton.js");
+/* harmony import */ var _realiceSale_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./realiceSale.js */ "./resources/js/front/realiceSale.js");
 __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/bootstrap.js");
+
 
 
 
@@ -2253,6 +2255,7 @@ __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/bootstrap.js");
 (0,_selectFilter_js__WEBPACK_IMPORTED_MODULE_7__.renderSelectFilter)();
 (0,_cart_js__WEBPACK_IMPORTED_MODULE_8__.renderCart)();
 (0,_buyButton_js__WEBPACK_IMPORTED_MODULE_9__.buyButton)();
+(0,_realiceSale_js__WEBPACK_IMPORTED_MODULE_10__.realiceSale)();
 
 /***/ }),
 
@@ -2460,30 +2463,53 @@ var renderCart = function renderCart() {
 
   plusMinusButtons.forEach(function (plusMinusButton) {
     plusMinusButton.addEventListener("click", function (event) {
-      window.alert("Se ha actualizado el carrito"); // event.preventDefault();
-      // let url = plusMinusButton.dataset.url;
-      // let sendCreateRequest = async() => {
-      //     let response = await fetch(url, {
-      //         headers: {
-      //             'X-Requested-With': 'XMLHttpRequest',
-      //         },
-      //         method: 'GET',
-      //     })
-      //     .then(response => {
-      //             if (!response.ok) throw response;
-      //             return response.json();
-      //         })
-      //         .then(json => {
-      //             mainContent.innerHTML = json.content;
-      //             document.dispatchEvent(new CustomEvent('renderProductModules'));
-      //         })
-      //         .catch(error => {
-      //             if (error.status == '500') {
-      //                 console.log(error);
-      //             };
-      //         });
-      // };
-      // sendCreateRequest();
+      event.preventDefault();
+      var url = plusMinusButton.dataset.url;
+
+      var sendCreateRequest = /*#__PURE__*/function () {
+        var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+          var response;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+            while (1) {
+              switch (_context2.prev = _context2.next) {
+                case 0:
+                  _context2.next = 2;
+                  return fetch(url, {
+                    headers: {
+                      'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    method: 'GET'
+                  }).then(function (response) {
+                    if (!response.ok) throw response;
+                    return response.json();
+                  }).then(function (json) {
+                    mainContent.innerHTML = json.content;
+                    document.dispatchEvent(new CustomEvent('renderProductsModules'));
+                  })["catch"](function (error) {
+                    if (error.status == '500') {
+                      console.log(error);
+                    }
+
+                    ;
+                  });
+
+                case 2:
+                  response = _context2.sent;
+
+                case 3:
+                case "end":
+                  return _context2.stop();
+              }
+            }
+          }, _callee2);
+        }));
+
+        return function sendCreateRequest() {
+          return _ref2.apply(this, arguments);
+        };
+      }();
+
+      sendCreateRequest();
     });
   });
 };
@@ -2956,6 +2982,91 @@ var renderProducts = function renderProducts() {
       renderSection();
     });
   });
+};
+
+/***/ }),
+
+/***/ "./resources/js/front/realiceSale.js":
+/*!*******************************************!*\
+  !*** ./resources/js/front/realiceSale.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "realiceSale": () => (/* binding */ realiceSale)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var realiceSale = function realiceSale() {
+  var mainContent = document.getElementById("main");
+  var realiceSaleButton = document.querySelector('.finish-order-button');
+  document.addEventListener("renderProductsModule", function (event) {
+    realiceSale();
+  }, {
+    once: true
+  });
+
+  if (realiceSaleButton) {
+    realiceSaleButton.addEventListener("click", function () {
+      var url = realiceSaleButton.dataset.url; // permite una llamada asincronica con el servidor.
+
+      var renderSection = /*#__PURE__*/function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+          var response;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  _context.next = 2;
+                  return fetch(url, {
+                    headers: {
+                      'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    // indica el metodo que se va a utilizar indicado en routes.php
+                    method: 'GET'
+                  }) // si la respuesta es correcta, entonces se ejecuta el siguiente codigo
+                  .then(function (response) {
+                    if (!response.ok) throw response;
+                    return response.json();
+                  }).then(function (json) {
+                    mainContent.innerHTML = json.content;
+                    document.dispatchEvent(new CustomEvent('renderProductsModule'));
+                  })["catch"](function (error) {
+                    if (error.status == '500') {
+                      console.log(error);
+                    }
+
+                    ;
+                  });
+
+                case 2:
+                  response = _context.sent;
+
+                case 3:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee);
+        }));
+
+        return function renderSection() {
+          return _ref.apply(this, arguments);
+        };
+      }(); // ejecuta la funcion renderSection
+
+
+      renderSection();
+    });
+  }
 };
 
 /***/ }),

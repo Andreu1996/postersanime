@@ -83,6 +83,20 @@ Route::group(['prefix' => 'admin'], function () {
         ]
     ]);
 
+    Route::resource('sales', 'App\Http\Controllers\Admin\SaleController', [
+        'parameters' => [
+            'sales' => 'sale', 
+        ],
+        'names' => [
+            'index' => 'sales',
+            'create' => 'sales_create',
+            'edit' => 'sales_edit',
+            'store' => 'sales_store',
+            'destroy' => 'sales_destroy',
+            'show' => 'sales_show',
+        ]
+    ]);
+
     Route::resource('users', 'App\Http\Controllers\Admin\UserController', [
         'parameters' => [
             'users' => 'user', 
@@ -129,13 +143,14 @@ Route::get('/producto', 'App\Http\Controllers\Front\ProductController@show')->na
 
 Route::get('/carrito', 'App\Http\Controllers\Front\CartController@index')->name('front_cart');
 Route::post('/carrito', 'App\Http\Controllers\Front\CartController@store')->name('front_cart_store');
-Route::get('cart/plus/{fingerprint}/{price_id}', 'App\Http\Controllers\Front\CartController@pluscart')->name('front_cart_plus');
-Route::get('cart/minus/{fingerprint}/{price_id}', 'App\Http\Controllers\Front\CartController@minuscart')->name('front_cart_minus');
+Route::get('/cart/plus/{fingerprint}/{price_id}', 'App\Http\Controllers\Front\CartController@pluscart')->name('front_cart_plus');
+Route::get('/cart/minus/{fingerprint}/{price_id}', 'App\Http\Controllers\Front\CartController@minuscart')->name('front_cart_minus');
 
 
-Route::get('/checkout', 'App\Http\Controllers\Front\CheckoutController@index')->name('front_checkout');
+Route::get('/checkout/{fingerprint}', 'App\Http\Controllers\Front\CheckoutController@index')->name('front_checkout');
 
-route::get('/carrito', 'App\Http\Controllers\Front\CartController@show')->name('front_cart_plus');
-route::get('/product', 'App\Http\Controllers\Front\ProductController@show')->name('front_cart_minus');
+Route::get('/sale', 'App\Http\Controllers\Front\SaleController@index')->name('front_sale');
+Route::post('/sale', 'App\Http\Controllers\Front\SaleController@post')->name('front_sale_post');
+
 
 

@@ -59,60 +59,58 @@ export let renderProducts = () => {
 
     if (categoryOptions) {
 
-    categoryOptions.forEach(categoryOption => {
+        categoryOptions.forEach(categoryOption => {
 
-        categoryOption.addEventListener("click", () => {
+            categoryOption.addEventListener("click", () => {
 
-            let url = categoryOption.dataset.url;
+                let url = categoryOption.dataset.url;
 
-                let renderSection = async () => {
-                    
-                    let response = await fetch(url, {
-                        headers: {
-                            'X-Requested-With': 'XMLHttpRequest',
-                        },
-                        method: 'GET', 
-                    })
-                    .then(response => {
-                                  
-                        if (!response.ok) throw response;
+                    let renderSection = async () => {
+                        
+                        let response = await fetch(url, {
+                            headers: {
+                                'X-Requested-With': 'XMLHttpRequest',
+                            },
+                            method: 'GET', 
+                        })
+                        .then(response => {
+                                    
+                            if (!response.ok) throw response;
 
-                        return response.json();
-                    })
-                    .then(json => {
+                            return response.json();
+                        })
+                        .then(json => {
 
-                        mainContent.innerHTML = json.content;      
+                            mainContent.innerHTML = json.content;      
 
-                        document.dispatchEvent(new CustomEvent("renderProductsModule"));
-                        renderProducts();
+                            document.dispatchEvent(new CustomEvent("renderProductsModule"));
+                            renderProducts();
 
-                        document.dispatchEvent(new CustomEvent('renderTabsModule'));
-                        tabs();
+                            document.dispatchEvent(new CustomEvent('renderTabsModule'));
+                            tabs();
 
-                        document.dispatchEvent(new CustomEvent('renderPlusMinusModule'));
-                        plusMinus();
+                            document.dispatchEvent(new CustomEvent('renderPlusMinusModule'));
+                            plusMinus();
 
-                        document.dispatchEvent(new CustomEvent('renderPopUpCartModule'));
-                        popUpCart();
+                            document.dispatchEvent(new CustomEvent('renderPopUpCartModule'));
+                            popUpCart();
 
-                    })
+                        })
 
-                    .catch(error =>  {
-        
-                        if(error.status == '500'){
-                            console.log(error);
-                        };
-                    });
-                };
-    
-                renderSection();
-            });
-
-        });
-    }
-
-
+                        .catch(error =>  {
             
+                            if(error.status == '500'){
+                                console.log(error);
+                            };
+                        });
+                    };
+        
+                    renderSection();
+                });
+
+            });
+        }
+
         selectFilterPrices.forEach(selectFilterPrice=> {
                 
             let url = selectFilterPrice.value;
@@ -163,5 +161,5 @@ export let renderProducts = () => {
         });
     });
 
-    }
+}
 

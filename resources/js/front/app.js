@@ -10,6 +10,7 @@ import {menu} from "./menu.js";
 import {renderSelectFilter} from "./selectFilter.js";
 import {renderCart} from "./cart.js";
 import {buyButton} from "./buyButton.js";
+import {realiceSale} from "./realiceSale.js"
 
 
 
@@ -23,3 +24,4 @@ menu();
 renderSelectFilter();
 renderCart();
 buyButton();
+realiceSale();

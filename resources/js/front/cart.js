@@ -12,6 +12,7 @@ export let renderCart = () => {
     if(addToCart){
 
         addToCart.addEventListener("click", (event) => {
+
             //se pone para los botones que hay dentro de un formulario porque envía
             //donde no queremos
         
@@ -19,14 +20,14 @@ export let renderCart = () => {
     
             forms.forEach(form => {
     
-            let data = new FormData(form);
-            let url = form.action;
+                let data = new FormData(form);
+                let url = form.action;
 
-            let sendPostRequest = async() => {
+                let sendPostRequest = async() => {
     
-                //Para llamada POST y DELETE hace falta X-CSRF-TOKEN
-                //Fetch es para realizar llamadas al servidor en Js
-                let response = await fetch(url, {
+                    //Para llamada POST y DELETE hace falta X-CSRF-TOKEN
+                    //Fetch es para realizar llamadas al servidor en Js
+                    let response = await fetch(url, {
                         headers: {
                             'Accept': 'application/json',
                             'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content
@@ -56,51 +57,53 @@ export let renderCart = () => {
 
                 sendPostRequest();
             });
+    
         });
     }
     
     plusMinusButtons.forEach(plusMinusButton => {
 
-            plusMinusButton.addEventListener("click", (event) => {
+        plusMinusButton.addEventListener("click", (event) => {
 
-                    window.alert("Se ha actualizado el carrito");
-                // event.preventDefault();
+            event.preventDefault();
 
-                // let url = plusMinusButton.dataset.url;
+            let url = plusMinusButton.dataset.url;
 
-                // let sendCreateRequest = async() => {
-                //     let response = await fetch(url, {
-                //         headers: {
-                //             'X-Requested-With': 'XMLHttpRequest',
-                //         },
-                //         method: 'GET',
-                //     })
+            let sendCreateRequest = async() => {
 
-                //     .then(response => {
+                let response = await fetch(url, {
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                    },
+                    method: 'GET',
+                })
 
-                //             if (!response.ok) throw response;
+                .then(response => {
 
-                //             return response.json();
+                        if (!response.ok) throw response;
 
-                //         })
-                //         .then(json => {
+                        return response.json();
 
-                //             mainContent.innerHTML = json.content;
+                    })
+                    .then(json => {
 
-                //             document.dispatchEvent(new CustomEvent('renderProductModules'));
+                        mainContent.innerHTML = json.content;
 
-                //         })
-                //         .catch(error => {
+                        document.dispatchEvent(new CustomEvent('renderProductsModules'));
 
-                //             if (error.status == '500') {
-                //                 console.log(error);
-                //             };
-                //         });
-                // };
+                    })
+                    .catch(error => {
 
-                // sendCreateRequest();
+                        if (error.status == '500') {
+                            console.log(error);
+                        };
+                    });
+            };
 
-            });
+            sendCreateRequest();
 
         });
+
+    });
+    
 }

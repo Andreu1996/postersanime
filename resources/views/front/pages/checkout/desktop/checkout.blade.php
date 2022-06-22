@@ -2,140 +2,129 @@
 <div class="desktop-two-columns mobile-one-column">
     <div class="column">
 
-        <div class="billing-title">
-            <h3>datos de facturacion</h3>
-        </div>
+        <form class="front-form" action="{{route("front_sale_post")}}">
+            <div class="billing-title">
+                <h3>datos de facturacion</h3>
+            </div>
+            
+            <div class="desktop-two-columns">
+                <div class="column">
+                    <div class="checkout-element">
+                        <div class="form-element-label">
+                            <label for="lname">Nombre</label>
+                        </div>
+                        <div class="form-element-input">
+                            <input type="text" id="lname" name="name" placeholder="tu apellido..">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="column">
+                    <div class="checkout-element">
+                        <div class="form-element-label">
+                            <label for="lname">Apellido</label>
+                        </div>
+                        <div class="form-element-input">
+                            <input type="text" id="lname" name="lastname" placeholder="tu apellido..">                                  
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="desktop-one-column">
+                <div class="column">
+                    <div class="checkout-element">
+                        <div class="form-element-label">
+                            <label for="lname">Nombre de la compañia (Opcional)</label>
+                        </div>
+                        <div class="form-element-input">
+                            <input type="text" id="lname" placeholder="nombre de la compañia.." >                                  
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="desktop-one-column">
+                <div class="column">
+                    <div class="checkout-element">
+                        <div class="form-element-label">
+                            <label for="lname">Pais/Región</label>
+                        </div>
+                        <div class="form-element-input">
+                            <input type="text" id="lname" name="country" placeholder="nombre de la compañia.." >  
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+    
+            <div class="desktop-one-column">
+                <div class="column">
+                    <div class="checkout-element">
+                        <div class="form-element-label">
+                            <label for="lname">Direccion</label>
+                        </div>
+                        <div class="form-element-input">
+                            <input type="text" id="lname" name="adress" placeholder="Nombre de tu calle..">                                  
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="desktop-one-column">
+                <div class="column">
+                    <div class="checkout-element">
+                        <div class="form-element-label">
+                            <label for="lname">Pueblo/Ciudad</label>
+                        </div>
+                        <div class="form-element-input">
+                            <input type="text" id="lname" name="city" placeholder="Ciudad o pueblo..">                                  
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="desktop-one-column">
+                <div class="column">
+                    <div class="checkout-element">
+                        <div class="form-element-label">
+                            <label for="lname">Comunidad Autonoma</label>
+                        </div>
+                        <div class="form-element-input">
+                            <input type="text" id="lname" name="state" placeholder="Ciudad o pueblo..">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="desktop-one-column">
+                <div class="column">
+                    <div class="checkout-element">
+                        <div class="form-element-label">
+                            <label for="lname">Telefono</label>
+                        </div>
+                        <div class="form-element-input">
+                            <input type="text" id="lname" name="phone" placeholder="tu telefono..">                                  
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="desktop-one-column">
+                <div class="column">
+                    <div class="checkout-element">
+                        <div class="form-element-label">
+                            <label for="lname">Correo Electronico</label>
+                        </div>
+                        <div class="form-element-input">
+                            <input type="text" id="lname" name="email" placeholder="tu correo electronico..">                                  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
         
-        <div class="desktop-two-columns">
-            <div class="column">
-                <div class="checkout-element">
-                    <div class="form-element-label">
-                        <label for="lname">Nombre</label>
-                    </div>
-                    <div class="form-element-input">
-                        <input type="text" id="lname" name="lastname" placeholder="tu apellido..">                                  
-                    </div>
-                </div>
-            </div>
-
-            <div class="column">
-                <div class="checkout-element">
-                    <div class="form-element-label">
-                        <label for="lname">Apellido</label>
-                    </div>
-                    <div class="form-element-input">
-                        <input type="text" id="lname" name="lastname" placeholder="tu apellido..">                                  
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="desktop-one-column">
-            <div class="column">
-                <div class="checkout-element">
-                    <div class="form-element-label">
-                        <label for="lname">Nombre de la compañia (Opcional)</label>
-                    </div>
-                    <div class="form-element-input">
-                        <input type="text" id="lname" name="lastname" placeholder="nombre de la compañia..">                                  
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="desktop-one-column">
-            <div class="column">
-                <div class="checkout-element">
-                    <div class="form-element-label">
-                        <label for="lname">Pais/Región</label>
-                    </div>
-                    <div class="country-options">
-                        <select>
-                            <option>España</option>
-                            <option>Francia</option>
-                            <option>Italia</option>
-                            <option>Portugal</option>
-                            <option>Reino Unido</option>        
-                        </select>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-
-        <div class="desktop-one-column">
-            <div class="column">
-                <div class="checkout-element">
-                    <div class="form-element-label">
-                        <label for="lname">Direccion</label>
-                    </div>
-                    <div class="form-element-input">
-                        <input type="text" id="lname" name="lastname" placeholder="Nombre de tu calle..">                                  
-                    </div>
-                    <div class="form-element-input">
-                        <input type="text" id="lname" name="lastname" placeholder="Apartamento, Piso, Numero.. (opcional)">                                  
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="desktop-one-column">
-            <div class="column">
-                <div class="checkout-element">
-                    <div class="form-element-label">
-                        <label for="lname">Pueblo/Ciudad</label>
-                    </div>
-                    <div class="form-element-input">
-                        <input type="text" id="lname" name="lastname" placeholder="Ciudad o pueblo..">                                  
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="desktop-one-column">
-            <div class="column">
-                <div class="checkout-element">
-                    <div class="form-element-label">
-                        <label for="lname">Comunidad Autonoma</label>
-                    </div>
-                    <div class="country-options">
-                        <select>
-                            <option>Isals Baleares</option>
-                            <option>Madrid</option>
-                            <option>Cataluña</option>
-                            <option>Extremadura</option>
-                            <option>Andalucia</option>        
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="desktop-one-column">
-            <div class="column">
-                <div class="checkout-element">
-                    <div class="form-element-label">
-                        <label for="lname">Telefono</label>
-                    </div>
-                    <div class="form-element-input">
-                        <input type="text" id="lname" name="lastname" placeholder="tu telefono..">                                  
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="desktop-one-column">
-            <div class="column">
-                <div class="checkout-element">
-                    <div class="form-element-label">
-                        <label for="lname">Correo Electronico</label>
-                    </div>
-                    <div class="form-element-input">
-                        <input type="text" id="lname" name="lastname" placeholder="tu correo electronico..">                                  
-                    </div>
-                </div>
-            </div>
-        </div>
 
     </div>
 
@@ -151,16 +140,13 @@
                         <table>
 
                             <tr>
-                                <td><p>subtotal</p></td>
+                                <td><p>Iva</p></td>
+                                <td><p>{{$tax_total}} €</p><td>
                             </tr>
 
                             <tr>
-                                {{-- <td><p>{{(($cart->quantity))*($cart->price->base_price)}}</p></td> --}}
-                            </tr>
-
-                            <tr>
-                                <td><p>Subtotal</p></td>
-                                <td><p>30€</p></td>
+                                <td><p>Base Total</p></td>
+                                <td><p>{{$base_total}} €</p></td>
                             </tr>
 
                             <tr>
@@ -171,7 +157,7 @@
                                 </td>
                                 <td>
                                     <div class="column-top-decoration">
-                                        <p>30€</p>
+                                        <p>{{$total}} €</p>
                                     </div>
                                 </td>
                             </tr>
@@ -268,7 +254,7 @@
             <div class="desktop-one-column">
                 <div class="column">
                     <div class="checkout-element">
-                        <div class="finish-order-button">
+                        <div class="finish-order-button"  data-url="{{route('front_sale')}}">
                             <button>Tramitar Pedido</button>
                         </div>
                     </div>
