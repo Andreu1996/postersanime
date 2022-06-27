@@ -5,16 +5,17 @@ export let renderCart = () => {
     let forms = document.querySelectorAll('.cart-form');
     let plusMinusButtons = document.querySelectorAll(".plus-minus-button-cart");
 
+    document.addEventListener("renderMainModule",( event =>{
+        renderCart();
+    }), {once: true});
+
     document.addEventListener("renderProductsModule", (event => {
         renderCart();
     }), { once: true });
 
-    if(addToCart){
-
+    if (addToCart) {
+    
         addToCart.addEventListener("click", (event) => {
-
-            //se pone para los botones que hay dentro de un formulario porque envía
-            //donde no queremos
         
             event.preventDefault();
     
@@ -25,8 +26,6 @@ export let renderCart = () => {
 
                 let sendPostRequest = async() => {
     
-                    //Para llamada POST y DELETE hace falta X-CSRF-TOKEN
-                    //Fetch es para realizar llamadas al servidor en Js
                     let response = await fetch(url, {
                         headers: {
                             'Accept': 'application/json',
@@ -46,6 +45,7 @@ export let renderCart = () => {
                         mainContent.innerHTML = json.content;
 
                         document.dispatchEvent(new CustomEvent('renderProductsModule'));
+                        
                     })
                     .catch(error => {
 
@@ -60,6 +60,7 @@ export let renderCart = () => {
     
         });
     }
+
     
     plusMinusButtons.forEach(plusMinusButton => {
 
@@ -68,8 +69,9 @@ export let renderCart = () => {
             event.preventDefault();
 
             let url = plusMinusButton.dataset.url;
+            console.log(url);
 
-            let sendCreateRequest = async() => {
+            let sendPostRequest = async() => {
 
                 let response = await fetch(url, {
                     headers: {
@@ -89,7 +91,7 @@ export let renderCart = () => {
 
                         mainContent.innerHTML = json.content;
 
-                        document.dispatchEvent(new CustomEvent('renderProductsModules'));
+                        document.dispatchEvent(new CustomEvent('renderProductsModule'));
 
                     })
                     .catch(error => {
@@ -100,7 +102,7 @@ export let renderCart = () => {
                     });
             };
 
-            sendCreateRequest();
+            sendPostRequest();
 
         });
 

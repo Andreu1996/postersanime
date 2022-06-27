@@ -7,10 +7,10 @@ import {popUpCart} from "./pop-up-cart.js";
 import {renderForm} from "./form.js";
 import {renderProducts} from "./products.js";
 import {menu} from "./menu.js";
-import {renderSelectFilter} from "./selectFilter.js";
 import {renderCart} from "./cart.js";
 import {buyButton} from "./buyButton.js";
-import {realiceSale} from "./realiceSale.js"
+import {Sale} from "./Sale.js"
+import {checkout} from "./checkout.js";
 
 
 
@@ -21,7 +21,7 @@ popUpCart();
 renderForm();
 renderProducts();
 menu();
-renderSelectFilter();
 renderCart();
 buyButton();
-realiceSale();
+Sale();
+checkout();

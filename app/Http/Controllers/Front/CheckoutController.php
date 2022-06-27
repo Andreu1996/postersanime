@@ -10,16 +10,21 @@ use App\Http\Controllers\Controller;
 use App\Models\Cart;
 use App\Models\Sale;
 use App\Models\Client;
+use Request;
 use DB;
 
 class CheckoutController extends Controller
 {
     
     protected $cart;
+    protected $sale;
+    protected $client;
 
-    public function __construct(Cart $cart)
+    public function __construct(Cart $cart, Sale $sale, Client $client)
     {
         $this->cart = $cart;
+        $this->sale = $sale;
+        $this->client = $client;
 
     }
 
@@ -63,8 +68,7 @@ class CheckoutController extends Controller
                 'active' => 1
             ]);
             
-        }  
-
+        }
 
         $carts = $this->cart->select(DB::raw('count(price_id) as quantity'),'price_id')   
             ->groupByRaw('price_id')
@@ -72,26 +76,47 @@ class CheckoutController extends Controller
             ->get();
     }
 
-    public function store(ClientRequest $request)
-    {            
+    public function store(Request $request)       
+    {         
         
+        $client = $this->client->create([
+            'name' => request('name'),
+            'lastname' => request('lastname'),
+            'postal_code' => request('postal_code'),
+            'country' => request('country'),
+            'adress' => request('adress'),
+            'city' => request('city'),
+            'state' => request('state'),
+            'phone' => request('phone'),
+            'email' => request('email'),
+        ]);
 
-        $client = $this->client->updateOrCreate([
-                'id' => request('id')],[
-                'name' => request('name'),
-                'lastname' => request('lastname'),
-                'postalCode' => request('postalCode'), 
-                'country' => request('country'), 
-                'adress' => request('adress'), 
-                'city' => request('city'), 
-                'state' => request('state'), 
-                'phone' => request('phone'), 
-                'email' => request('email'), 
-                'visible' => 1,
-                'active' => 1,
-        ]);    
+        $sale = $this->sale->create([
+            'ticked_number' => 1,        
+            'customer_id' => $client->id,
+            'date_emision' => date('Y-m-d'),
+            'total_price_base' => request('base_total'),
+            'total_price_tax' => request('tax_total'),
+            'total_price' => request('total'),
+            'payment_method_id' => request('payment_method_id'),
+        ]);
 
+        $cart = $this->cart
+        ->where('fingerprint', request('fingerprint'))
+        ->where('sale_id', null)
+        ->where('active', 1)
+        ->update([
+            'sale_id' => $sale->id,
+            'client_id' => $client->id,
+        ]);
+
+        $sections = View::make('front.pages.sale.index')->renderSections();
+
+        return response()->json([
+            'content' => $sections['content'],
+        ]);
     }
+
     
 }
 

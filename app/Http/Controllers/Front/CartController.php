@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Front;
 use Debugbar;
 use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;  
+use Illuminate\Support\Facades\DB;
 use App\Models\Cart;
-use DB;
+use Request;
 
 class CartController extends Controller
 {
@@ -78,7 +78,7 @@ class CartController extends Controller
         ]);
     }
 
-    public function pluscart ($fingerprint, $price_id)
+    public function pluscart($fingerprint, $price_id)
     {
 
         $cart = $this->cart->create([
@@ -116,8 +116,9 @@ class CartController extends Controller
         ]);
     }
 
-    public function removeProduct ($fingerprint, $price_id)
+    public function minuscart($fingerprint, $price_id)
     {
+
 
         $product = $this->cart
             ->where('active',1)

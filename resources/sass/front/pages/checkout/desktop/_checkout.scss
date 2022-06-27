@@ -101,3 +101,16 @@
     -webkit-box-shadow: $shadow-color; 
     box-shadow: $shadow-color;
 }
+
+.payment_method_elements{
+  display: flex;
+  gap: 1rem;
+  color: white;
+  margin-top: 3rem;
+}
+
+.payment_method_element{
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 4rem;
+}

@@ -2182,7 +2182,7 @@ function FAQS() {
   var questions = document.querySelectorAll(".question-title");
   var answers = document.querySelectorAll(".question-content");
   var arrows = document.querySelectorAll(".question-title-icon");
-  document.addEventListener("renderFaqsModule", function (event) {
+  document.addEventListener("renderMainModule", function (event) {
     FAQS();
   }, {
     once: true
@@ -2213,6 +2213,91 @@ function FAQS() {
 
 /***/ }),
 
+/***/ "./resources/js/front/Sale.js":
+/*!************************************!*\
+  !*** ./resources/js/front/Sale.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Sale": () => (/* binding */ Sale)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var Sale = function Sale() {
+  var mainContent = document.getElementById("main");
+  var SaleButton = document.querySelector('.finish-order-button');
+  document.addEventListener("renderProductsModule", function (event) {
+    Sale();
+  }, {
+    once: true
+  });
+
+  if (SaleButton) {
+    SaleButton.addEventListener("click", function () {
+      var url = SaleButton.dataset.url; // permite una llamada asincronica con el servidor.
+
+      var renderSection = /*#__PURE__*/function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+          var response;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  _context.next = 2;
+                  return fetch(url, {
+                    headers: {
+                      'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    // indica el metodo que se va a utilizar indicado en routes.php
+                    method: 'GET'
+                  }) // si la respuesta es correcta, entonces se ejecuta el siguiente codigo
+                  .then(function (response) {
+                    if (!response.ok) throw response;
+                    return response.json();
+                  }).then(function (json) {
+                    mainContent.innerHTML = json.content;
+                    document.dispatchEvent(new CustomEvent('renderProductsModule'));
+                  })["catch"](function (error) {
+                    if (error.status == '500') {
+                      console.log(error);
+                    }
+
+                    ;
+                  });
+
+                case 2:
+                  response = _context.sent;
+
+                case 3:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee);
+        }));
+
+        return function renderSection() {
+          return _ref.apply(this, arguments);
+        };
+      }(); // ejecuta la funcion renderSection
+
+
+      renderSection();
+    });
+  }
+};
+
+/***/ }),
+
 /***/ "./resources/js/front/app.js":
 /*!***********************************!*\
   !*** ./resources/js/front/app.js ***!
@@ -2228,10 +2313,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./form.js */ "./resources/js/front/form.js");
 /* harmony import */ var _products_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./products.js */ "./resources/js/front/products.js");
 /* harmony import */ var _menu_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./menu.js */ "./resources/js/front/menu.js");
-/* harmony import */ var _selectFilter_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./selectFilter.js */ "./resources/js/front/selectFilter.js");
-/* harmony import */ var _cart_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./cart.js */ "./resources/js/front/cart.js");
-/* harmony import */ var _buyButton_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./buyButton.js */ "./resources/js/front/buyButton.js");
-/* harmony import */ var _realiceSale_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./realiceSale.js */ "./resources/js/front/realiceSale.js");
+/* harmony import */ var _cart_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./cart.js */ "./resources/js/front/cart.js");
+/* harmony import */ var _buyButton_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./buyButton.js */ "./resources/js/front/buyButton.js");
+/* harmony import */ var _Sale_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Sale.js */ "./resources/js/front/Sale.js");
+/* harmony import */ var _checkout_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./checkout.js */ "./resources/js/front/checkout.js");
 __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/bootstrap.js");
 
 
@@ -2252,10 +2337,10 @@ __webpack_require__(/*! ./bootstrap.js */ "./resources/js/front/bootstrap.js");
 (0,_form_js__WEBPACK_IMPORTED_MODULE_4__.renderForm)();
 (0,_products_js__WEBPACK_IMPORTED_MODULE_5__.renderProducts)();
 (0,_menu_js__WEBPACK_IMPORTED_MODULE_6__.menu)();
-(0,_selectFilter_js__WEBPACK_IMPORTED_MODULE_7__.renderSelectFilter)();
-(0,_cart_js__WEBPACK_IMPORTED_MODULE_8__.renderCart)();
-(0,_buyButton_js__WEBPACK_IMPORTED_MODULE_9__.buyButton)();
-(0,_realiceSale_js__WEBPACK_IMPORTED_MODULE_10__.realiceSale)();
+(0,_cart_js__WEBPACK_IMPORTED_MODULE_7__.renderCart)();
+(0,_buyButton_js__WEBPACK_IMPORTED_MODULE_8__.buyButton)();
+(0,_Sale_js__WEBPACK_IMPORTED_MODULE_9__.Sale)();
+(0,_checkout_js__WEBPACK_IMPORTED_MODULE_10__.checkout)();
 
 /***/ }),
 
@@ -2396,6 +2481,11 @@ var renderCart = function renderCart() {
   var addToCart = document.querySelector('.add-product-to-cart');
   var forms = document.querySelectorAll('.cart-form');
   var plusMinusButtons = document.querySelectorAll(".plus-minus-button-cart");
+  document.addEventListener("renderMainModule", function (event) {
+    renderCart();
+  }, {
+    once: true
+  });
   document.addEventListener("renderProductsModule", function (event) {
     renderCart();
   }, {
@@ -2404,8 +2494,6 @@ var renderCart = function renderCart() {
 
   if (addToCart) {
     addToCart.addEventListener("click", function (event) {
-      //se pone para los botones que hay dentro de un formulario porque envía
-      //donde no queremos
       event.preventDefault();
       forms.forEach(function (form) {
         var data = new FormData(form);
@@ -2465,8 +2553,9 @@ var renderCart = function renderCart() {
     plusMinusButton.addEventListener("click", function (event) {
       event.preventDefault();
       var url = plusMinusButton.dataset.url;
+      console.log(url);
 
-      var sendCreateRequest = /*#__PURE__*/function () {
+      var sendPostRequest = /*#__PURE__*/function () {
         var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
           var response;
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
@@ -2484,7 +2573,7 @@ var renderCart = function renderCart() {
                     return response.json();
                   }).then(function (json) {
                     mainContent.innerHTML = json.content;
-                    document.dispatchEvent(new CustomEvent('renderProductsModules'));
+                    document.dispatchEvent(new CustomEvent('renderProductsModule'));
                   })["catch"](function (error) {
                     if (error.status == '500') {
                       console.log(error);
@@ -2504,14 +2593,120 @@ var renderCart = function renderCart() {
           }, _callee2);
         }));
 
-        return function sendCreateRequest() {
+        return function sendPostRequest() {
           return _ref2.apply(this, arguments);
         };
       }();
 
-      sendCreateRequest();
+      sendPostRequest();
     });
   });
+};
+
+/***/ }),
+
+/***/ "./resources/js/front/checkout.js":
+/*!****************************************!*\
+  !*** ./resources/js/front/checkout.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "checkout": () => (/* binding */ checkout)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var checkout = function checkout() {
+  //Es la etiqueta main, porque es quien contiene el 'Content'
+  var mainContent = document.getElementById("main");
+  var checkoutButton = document.querySelector('.finish-order-button');
+  var forms = document.querySelectorAll('.front-form');
+  document.addEventListener("renderProductsModule", function (event) {
+    checkout();
+  }, {
+    once: true
+  });
+
+  if (checkoutButton) {
+    checkoutButton.addEventListener("click", function (event) {
+      event.preventDefault();
+      forms.forEach(function (form) {
+        var data = new FormData(form);
+        var url = form.action;
+
+        var sendPostRequest = /*#__PURE__*/function () {
+          var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+            var response;
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    _context.next = 2;
+                    return fetch(url, {
+                      headers: {
+                        'Accept': 'application/json',
+                        'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content
+                      },
+                      method: 'POST',
+                      body: data
+                    }).then(function (response) {
+                      if (!response.ok) throw response;
+                      return response.json();
+                    }).then(function (json) {
+                      mainContent.innerHTML = json.content;
+                      document.dispatchEvent(new CustomEvent('renderProductsModule'));
+                    })["catch"](function (error) {
+                      if (error.status == '422') {
+                        error.json().then(function (jsonError) {
+                          var errors = jsonError.errors;
+                          var errorMessage = '';
+                          Object.keys(errors).forEach(function (key) {
+                            errorMessage += '<li>' + errors[key] + '</li>';
+                          });
+                          document.dispatchEvent(new CustomEvent('message', {
+                            detail: {
+                              message: errorMessage,
+                              type: 'error'
+                            }
+                          }));
+                        });
+                      }
+
+                      if (error.status == '500') {
+                        console.log(error);
+                      }
+
+                      ;
+                    });
+
+                  case 2:
+                    response = _context.sent;
+
+                  case 3:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee);
+          }));
+
+          return function sendPostRequest() {
+            return _ref.apply(this, arguments);
+          };
+        }();
+
+        sendPostRequest();
+      });
+    });
+  }
 };
 
 /***/ }),
@@ -2539,9 +2734,20 @@ var renderForm = function renderForm() {
   var mainContent = document.getElementById("main");
   var storeButton = document.querySelector('.store-button');
   var forms = document.querySelectorAll('.front-form');
+  document.addEventListener("renderMainModule", function (event) {
+    renderForm();
+  }, {
+    once: true
+  });
+  document.addEventListener("renderProductsModule", function (event) {
+    renderForm();
+  }, {
+    once: true
+  });
 
   if (storeButton) {
     storeButton.addEventListener("click", function (event) {
+      event.preventDefault();
       forms.forEach(function (form) {
         var data = new FormData(form);
         var url = form.action;
@@ -2566,6 +2772,7 @@ var renderForm = function renderForm() {
                       return response.json();
                     }).then(function (json) {
                       mainContent.innerHTML = json.content;
+                      document.dispatchEvent(new CustomEvent("renderProductsModule"));
                     })["catch"](function (error) {
                       if (error.status == '422') {
                         error.json().then(function (jsonError) {
@@ -2627,22 +2834,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _products_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./products.js */ "./resources/js/front/products.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-
 var menu = function menu() {
   var mainContent = document.getElementById("main");
   var menuOptions = document.querySelectorAll('.menu_element');
-  document.addEventListener("renderProductsModule", function (event) {
-    menu();
-  }, {
-    once: true
-  });
   menuOptions.forEach(function (menuOption) {
     menuOption.addEventListener("click", function () {
       var url = menuOption.dataset.url;
@@ -2665,16 +2865,7 @@ var menu = function menu() {
                     return response.json();
                   }).then(function (json) {
                     mainContent.innerHTML = json.content;
-                    document.dispatchEvent(new CustomEvent("renderProductsModule"));
-                    (0,_products_js__WEBPACK_IMPORTED_MODULE_1__.renderProducts)();
-                    document.dispatchEvent(new CustomEvent("renderFaqsModule"));
-                    FAQS();
-                    document.dispatchEvent(new CustomEvent('renderPlusMinusModule'));
-                    plusMinus();
-                    document.dispatchEvent(new CustomEvent("renderMenuModule"));
-                    renderMenu();
-                    document.dispatchEvent(new CustomEvent('renderPopUpModule'));
-                    popUpCart();
+                    document.dispatchEvent(new CustomEvent("renderMainModule"));
                   })["catch"](function (error) {
                     if (error.status == '500') {
                       console.log(error);
@@ -2717,24 +2908,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "plusMinus": () => (/* binding */ plusMinus)
 /* harmony export */ });
-var plusMinus = function plusMinus() {// let plusMinusButtons = document.querySelectorAll(".plus-minus-button");
-  // document.addEventListener("renderProductsModule",( event =>{
-  //     plusMinus();
-  // }), {once: true});
-  // plusMinusButtons.forEach(plusMinusButton => {
-  //     plusMinusButton.addEventListener("click", (event) => {
-  //         event.preventDefault();
-  //         let plusMinusContainer = plusMinusButton.closest(".plus-minus-container");
-  //         let plusMinusInput = plusMinusContainer.querySelector(".plus-minus-input");
-  //         let value = parseInt(plusMinusInput.value);
-  //         if(plusMinusButton.dataset.type == "plus") {
-  //             value++;
-  //         } else if (plusMinusButton.dataset.type == "minus" && value > 1) {
-  //             value--;
-  //         }
-  //         plusMinusInput.value = value;
-  //     });
-  // });
+var plusMinus = function plusMinus() {
+  var plusMinusButtons = document.querySelectorAll(".plus-minus-button");
+  document.addEventListener("renderProductsModule", function (event) {
+    plusMinus();
+  }, {
+    once: true
+  });
+  plusMinusButtons.forEach(function (plusMinusButton) {
+    plusMinusButton.addEventListener("click", function (event) {
+      event.preventDefault();
+      var plusMinusContainer = plusMinusButton.closest(".plus-minus-container");
+      var plusMinusInput = plusMinusContainer.querySelector(".plus-minus-input");
+      var value = parseInt(plusMinusInput.value);
+
+      if (plusMinusButton.dataset.type == "plus") {
+        value++;
+      } else if (plusMinusButton.dataset.type == "minus" && value > 1) {
+        value--;
+      }
+
+      plusMinusInput.value = value;
+    });
+  });
 };
 
 /***/ }),
@@ -2754,7 +2950,7 @@ var popUpCart = function popUpCart() {
   var popUpCartPage = document.querySelector(".pop-up-cart");
   var carts = document.querySelectorAll(".cart");
   var saves = document.querySelectorAll(".save");
-  document.addEventListener("renderPopUpCartModule", function (event) {
+  document.addEventListener("renderProductsModule", function (event) {
     popUpCart();
   }, {
     once: true
@@ -2803,7 +2999,12 @@ var renderProducts = function renderProducts() {
   var mainContent = document.getElementById("main");
   var productButtons = document.querySelectorAll('.product-details');
   var categoryOptions = document.querySelectorAll('.select-category');
-  var selectFilterPrices = document.querySelectorAll('.select-filter');
+  var selectFilterPrice = document.querySelector('.select-filter');
+  document.addEventListener("renderMainModule", function (event) {
+    renderProducts();
+  }, {
+    once: true
+  });
   document.addEventListener("renderProductsModule", function (event) {
     renderProducts();
   }, {
@@ -2889,14 +3090,7 @@ var renderProducts = function renderProducts() {
                       return response.json();
                     }).then(function (json) {
                       mainContent.innerHTML = json.content;
-                      document.dispatchEvent(new CustomEvent("renderProductsModule"));
-                      renderProducts();
-                      document.dispatchEvent(new CustomEvent('renderTabsModule'));
-                      tabs();
-                      document.dispatchEvent(new CustomEvent('renderPlusMinusModule'));
-                      plusMinus();
-                      document.dispatchEvent(new CustomEvent('renderPopUpCartModule'));
-                      popUpCart();
+                      document.dispatchEvent(new CustomEvent('renderProductsModule'));
                     })["catch"](function (error) {
                       if (error.status == '500') {
                         console.log(error);
@@ -2926,10 +3120,11 @@ var renderProducts = function renderProducts() {
     });
   }
 
-  selectFilterPrices.forEach(function (selectFilterPrice) {
-    var url = selectFilterPrice.value;
+  if (selectFilterPrice) {
     selectFilterPrice.addEventListener("change", function () {
-      var renderSection = /*#__PURE__*/function () {
+      var url = selectFilterPrice.value;
+
+      var sendFilterRequest = /*#__PURE__*/function () {
         var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
           var response;
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
@@ -2947,14 +3142,7 @@ var renderProducts = function renderProducts() {
                     return response.json();
                   }).then(function (json) {
                     mainContent.innerHTML = json.content;
-                    document.dispatchEvent(new CustomEvent("renderProductsModule"));
-                    renderProducts();
-                    document.dispatchEvent(new CustomEvent('renderTabsModule'));
-                    tabs();
-                    document.dispatchEvent(new CustomEvent('renderPlusMinusModule'));
-                    plusMinus();
-                    document.dispatchEvent(new CustomEvent('renderPopUpCartModule'));
-                    popUpCart();
+                    document.dispatchEvent(new CustomEvent('renderProductsModule'));
                   })["catch"](function (error) {
                     if (error.status == '500') {
                       console.log(error);
@@ -2974,180 +3162,12 @@ var renderProducts = function renderProducts() {
           }, _callee3);
         }));
 
-        return function renderSection() {
+        return function sendFilterRequest() {
           return _ref3.apply(this, arguments);
         };
       }();
 
-      renderSection();
-    });
-  });
-};
-
-/***/ }),
-
-/***/ "./resources/js/front/realiceSale.js":
-/*!*******************************************!*\
-  !*** ./resources/js/front/realiceSale.js ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "realiceSale": () => (/* binding */ realiceSale)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-var realiceSale = function realiceSale() {
-  var mainContent = document.getElementById("main");
-  var realiceSaleButton = document.querySelector('.finish-order-button');
-  document.addEventListener("renderProductsModule", function (event) {
-    realiceSale();
-  }, {
-    once: true
-  });
-
-  if (realiceSaleButton) {
-    realiceSaleButton.addEventListener("click", function () {
-      var url = realiceSaleButton.dataset.url; // permite una llamada asincronica con el servidor.
-
-      var renderSection = /*#__PURE__*/function () {
-        var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-          var response;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
-            while (1) {
-              switch (_context.prev = _context.next) {
-                case 0:
-                  _context.next = 2;
-                  return fetch(url, {
-                    headers: {
-                      'X-Requested-With': 'XMLHttpRequest'
-                    },
-                    // indica el metodo que se va a utilizar indicado en routes.php
-                    method: 'GET'
-                  }) // si la respuesta es correcta, entonces se ejecuta el siguiente codigo
-                  .then(function (response) {
-                    if (!response.ok) throw response;
-                    return response.json();
-                  }).then(function (json) {
-                    mainContent.innerHTML = json.content;
-                    document.dispatchEvent(new CustomEvent('renderProductsModule'));
-                  })["catch"](function (error) {
-                    if (error.status == '500') {
-                      console.log(error);
-                    }
-
-                    ;
-                  });
-
-                case 2:
-                  response = _context.sent;
-
-                case 3:
-                case "end":
-                  return _context.stop();
-              }
-            }
-          }, _callee);
-        }));
-
-        return function renderSection() {
-          return _ref.apply(this, arguments);
-        };
-      }(); // ejecuta la funcion renderSection
-
-
-      renderSection();
-    });
-  }
-};
-
-/***/ }),
-
-/***/ "./resources/js/front/selectFilter.js":
-/*!********************************************!*\
-  !*** ./resources/js/front/selectFilter.js ***!
-  \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "renderSelectFilter": () => (/* binding */ renderSelectFilter)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-var renderSelectFilter = function renderSelectFilter() {
-  var mainContent = document.getElementById("main");
-  var selectFilter = document.querySelector('.select-filter');
-  var filterOption = document.querySelectorAll('.filter-option');
-  document.addEventListener("renderProductsModule", function (event) {
-    renderSelectFilter();
-  }, {
-    once: true
-  });
-
-  if (selectFilter) {
-    selectFilter.addEventListener("change", function () {
-      var url = selectFilter.value;
-
-      var sendShowRequest = /*#__PURE__*/function () {
-        var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-          var response;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
-            while (1) {
-              switch (_context.prev = _context.next) {
-                case 0:
-                  _context.next = 2;
-                  return fetch(url, {
-                    headers: {
-                      'X-Requested-With': 'XMLHttpRequest'
-                    },
-                    method: 'GET'
-                  }).then(function (response) {
-                    if (!response.ok) throw response;
-                    return response.json();
-                  }).then(function (json) {
-                    mainContent.innerHTML = json.content;
-                    document.dispatchEvent(new CustomEvent('renderProductsModules'));
-                  })["catch"](function (error) {
-                    if (error.status == '500') {
-                      console.log(error);
-                    }
-
-                    ;
-                  });
-
-                case 2:
-                  response = _context.sent;
-
-                case 3:
-                case "end":
-                  return _context.stop();
-              }
-            }
-          }, _callee);
-        }));
-
-        return function sendShowRequest() {
-          return _ref.apply(this, arguments);
-        };
-      }();
-
-      sendShowRequest();
+      sendFilterRequest();
     });
   }
 };

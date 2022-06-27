@@ -4,9 +4,20 @@ export let renderForm = () => {
     let storeButton = document.querySelector('.store-button');
     let forms = document.querySelectorAll('.front-form');
 
+    
+    document.addEventListener("renderMainModule",( event =>{
+        renderForm();
+    }), {once: true});
+
+    document.addEventListener("renderProductsModule",( event =>{
+        renderForm();
+    }), {once: true});
+
     if(storeButton){
 
         storeButton.addEventListener("click", (event) => {
+
+            event.preventDefault();
     
             forms.forEach(form => { 
                 
@@ -31,7 +42,8 @@ export let renderForm = () => {
                     })
                     .then(json => {
 
-                        mainContent.innerHTML = json.content;                        
+                        mainContent.innerHTML = json.content;
+                        document.dispatchEvent(new CustomEvent("renderProductsModule"));                    
                         
                     })
                     .catch ( error =>  {

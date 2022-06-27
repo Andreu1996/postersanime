@@ -4,7 +4,7 @@ export function FAQS () {
     let answers = document.querySelectorAll(".question-content");
     let arrows = document.querySelectorAll(".question-title-icon");
 
-    document.addEventListener("renderFaqsModule",( event =>{
+    document.addEventListener("renderMainModule",( event =>{
         FAQS();
     }), {once: true});
 

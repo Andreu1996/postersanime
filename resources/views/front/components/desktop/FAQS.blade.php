@@ -14,7 +14,7 @@
                         </div>
                     </div>
                     <div class="question-content" data-answer="{{$faq->title}}">
-                        <p>{{$faq->description}}</p>
+                        {!!$faq->description!!}
                     </div>
                 </div>
             @endforeach

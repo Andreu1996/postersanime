@@ -109,22 +109,22 @@
                             </div>
                         </div>
                         <div class="column">
-                            <form action="{{route("front_cart_store")}}" id="form" class="cart-form">
-                                <input type="hidden" name="price_id" value="{{isset($product->price->first()->id) ? $product->price->first()->id:''}}">
-                                <div class="plus-minus-component">
-                                    <div class="plus-minus-container">
-                                        <div class="quantity-form-button">
-                                            <button  class="plus-minus-button" data-type="minus">-</button>
-                                        </div>
-                                        <div class="quantity-input">
-                                            <input  name="quantity" class="plus-minus-input" type="text" value="1" data-min="0">
-                                        </div>
-                                        <div class="quantity-form-button">
-                                            <button  class="plus-minus-button" data-type="plus"><span>+</span></button>
-                                        </div>
-                                    </div> 
-                                </div>
-                            </form>
+                            <div class="plus-minus-component">
+                                <form action="{{route("front_cart_store")}}" id="form" class="cart-form">
+                                    <input type="hidden" name="price_id" value="{{isset($product->price->first()->id) ? $product->price->first()->id:''}}">   
+                                        <div class="plus-minus-container">
+                                            <div class="quantity-form-button">
+                                                <button  class="plus-minus-button" data-type="minus">-</button>
+                                            </div>
+                                            <div class="quantity-input">
+                                                <input  name="quantity" class="plus-minus-input" type="text" value="1" data-min="0">
+                                            </div>
+                                            <div class="quantity-form-button">
+                                                <button  class="plus-minus-button" data-type="plus"><span>+</span></button>
+                                            </div>
+                                        </div> 
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

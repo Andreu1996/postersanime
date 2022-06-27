@@ -29,14 +29,14 @@
                                 <div class="column">
                                     <div class="cart-element" data-label="Quantity">
                                         <div class="plus-minus-container">
-                                            <div class="plus-minus-button-cart">
-                                                <button type="button" class="plus-minus-button-cart" data-type="minus" data-url="{{route('front_cart_minus', ['fingerprint' => $fingerprint,'price_id' => $cart->price_id ])}}">-</button>
+                                            <div class="plus-minus-button-cart" data-url="{{route('front_cart_minus', ['fingerprint' => $fingerprint,'price_id' => $cart->price_id ])}}">
+                                                <button type="button">-</button>
                                             </div>
                                             <div class="quantity-container">
                                                 <input class="plus-minus-container" name="quantity" class="plus-minus-button-cart" type="text" value="{{($cart->quantity)}}" data-min="0" disabled='disabled'>
                                             </div>
-                                            <div class="plus-minus-button-cart">
-                                                <button type="button" class="plus-minus-button-cart" data-type="plus" data-url="{{route('front_cart_plus', ['fingerprint' => $fingerprint,'price_id' => $cart->price_id ])}}"><span>+</span></button>
+                                            <div class="plus-minus-button-cart" data-url="{{route('front_cart_plus', ['fingerprint' => $fingerprint,'price_id' => $cart->price_id ])}}">
+                                                <button type="button"><span>+</span></button>
                                             </div>
                                         </div>
                                     </div>
@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="column">
                                     <div class="cart-element">
-                                        <input value="{{($cart->quantity)*($cart->price->base_price)}} €" disabled>
+                                        <input value="{{($cart->quantity)*($cart->price->base_price)}}€" disabled>
                                     </div>
                                 </div>        
                             </div>
@@ -64,7 +64,7 @@
                         </div>
                         <div class="column">
                             <div class="total-price-element">
-                                <p>{{$tax_total}} €</p>
+                                <p>{{$tax_total}}€</p>
                             </div>
                         </div>
                     </div>

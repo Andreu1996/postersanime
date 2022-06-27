@@ -3,8 +3,11 @@ export let renderProducts = () => {
     let mainContent = document.getElementById("main");
     let productButtons = document.querySelectorAll('.product-details');
     let categoryOptions = document.querySelectorAll('.select-category');
-    let selectFilterPrices = document.querySelectorAll('.select-filter');
+    let selectFilterPrice = document.querySelector('.select-filter');
 
+    document.addEventListener("renderMainModule",( event =>{
+        renderProducts();
+    }), {once: true});
 
     document.addEventListener("renderProductsModule",( event =>{
         renderProducts();
@@ -12,9 +15,9 @@ export let renderProducts = () => {
 
     if (productButtons) {
 
-    productButtons.forEach(productButton => {
+        productButtons.forEach(productButton => {
 
-        productButton.addEventListener("click", () => {
+            productButton.addEventListener("click", () => {
             
                 let url = productButton.dataset.url;
 
@@ -65,101 +68,78 @@ export let renderProducts = () => {
 
                 let url = categoryOption.dataset.url;
 
-                    let renderSection = async () => {
-                        
-                        let response = await fetch(url, {
-                            headers: {
-                                'X-Requested-With': 'XMLHttpRequest',
-                            },
-                            method: 'GET', 
-                        })
-                        .then(response => {
-                                    
-                            if (!response.ok) throw response;
+                let renderSection = async () => {
+                    
+                    let response = await fetch(url, {
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                        method: 'GET', 
+                    })
+                    .then(response => {
+                                
+                        if (!response.ok) throw response;
 
-                            return response.json();
-                        })
-                        .then(json => {
+                        return response.json();
+                    })
+                    .then(json => {
 
-                            mainContent.innerHTML = json.content;      
+                        mainContent.innerHTML = json.content;      
 
-                            document.dispatchEvent(new CustomEvent("renderProductsModule"));
-                            renderProducts();
+                        document.dispatchEvent(new CustomEvent('renderProductsModule'));
 
-                            document.dispatchEvent(new CustomEvent('renderTabsModule'));
-                            tabs();
+                    })
 
-                            document.dispatchEvent(new CustomEvent('renderPlusMinusModule'));
-                            plusMinus();
-
-                            document.dispatchEvent(new CustomEvent('renderPopUpCartModule'));
-                            popUpCart();
-
-                        })
-
-                        .catch(error =>  {
-            
-                            if(error.status == '500'){
-                                console.log(error);
-                            };
-                        });
-                    };
+                    .catch(error =>  {
         
-                    renderSection();
-                });
-
+                        if(error.status == '500'){
+                            console.log(error);
+                        };
+                    });
+                };
+    
+                renderSection();
             });
-        }
 
-        selectFilterPrices.forEach(selectFilterPrice=> {
-                
+        });
+    }
+
+    if(selectFilterPrice){
+  
+        selectFilterPrice.addEventListener("change", () => {
+
             let url = selectFilterPrice.value;
 
-            selectFilterPrice.addEventListener("change", () => {
-
-            let renderSection = async () => {
-                
+            let sendFilterRequest = async() => {
+        
                 let response = await fetch(url, {
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest',
-                    },
-                    method: 'GET', 
-                })
-                .then(response => {
-                              
-                    if (!response.ok) throw response;
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                        method: 'GET',
+                    })
+                    .then(response => {
 
-                    return response.json();
-                })
-                .then(json => {
+                        if (!response.ok) throw response;
 
-                    mainContent.innerHTML = json.content;      
+                        return response.json();
+                    })
+                    .then(json => {
 
-                    document.dispatchEvent(new CustomEvent("renderProductsModule"));
-                    renderProducts();
+                        mainContent.innerHTML = json.content;
 
-                    document.dispatchEvent(new CustomEvent('renderTabsModule'));
-                    tabs();
+                        document.dispatchEvent(new CustomEvent('renderProductsModule'));
+                    })
+                    .catch(error => {
 
-                    document.dispatchEvent(new CustomEvent('renderPlusMinusModule'));
-                    plusMinus();
-
-                    document.dispatchEvent(new CustomEvent('renderPopUpCartModule'));
-                    popUpCart();
-
-                })
-
-                .catch(error =>  {
-    
-                    if(error.status == '500'){
-                        console.log(error);
-                    };
-                });
+                        if (error.status == '500') {
+                            console.log(error);
+                        };
+                    });
             };
 
-            renderSection();
+            sendFilterRequest();
         });
-    });
-
+    }
 }
 

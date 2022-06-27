@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 
 // el namespace es necesario para utilizar el use
 use Illuminate\Support\Facades\View;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 
@@ -66,35 +67,34 @@ class ProductController extends Controller
     }
 
     public function filter($filter)
-    {
-        
+	{
+		$products = $this->product
+		->join('prices', 'products.id', '=', 'prices.product_id')
+		->where('products.active', 1)
+		->where('products.visible',1)
+        ->where('prices.active', 1)
+        ->where('prices.valid', 1)
+		->orderBy('prices.base_price', $filter)
+		->get();
 
-        $view = View::make('front.pages.productos.index')
-        ->with('products', $filter);
+		$view = View::make('front.pages.productos.index')
+		->with('products', $products);
 
-        if ($filter == 'price_asc') {
-            $view->with('products', $this->product->where('active', 1)->where('visible', 1)->orderBy('price', 'asc')->get());
-        } elseif ($filter = 'price_desc') {
-            $view->with('products', $this->product->where('active', 1)->where('visible', 1)->orderBy('price', 'desc')->get());
-        } else {
-            $view->with('products', $this->product->where('active', 1)->where('visible', 1)->get());
-        }
-        
-        if(request()->ajax()) {
-    
-            $sections = $view->renderSections(); 
-
-            return response()->json([
-                'content' => $sections['content'],
-            ]);
-
-        }
-            
-        return $view;
-
-        
+		if(request()->ajax()) {
+                
+			$sections = $view->renderSections(); 
+	
+			return response()->json([
+				'content' => $sections['content'],
+			]);
+	
+		}
+		
+		return $view;
     }
+        
+}
 
     
     
-}
+

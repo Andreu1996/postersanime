@@ -1171,6 +1171,19 @@ td, th {
   box-shadow: 0px 3px 1px 0px #000000;
 }
 
+.payment_method_elements {
+  display: flex;
+  gap: 1rem;
+  color: white;
+  margin-top: 3rem;
+}
+
+.payment_method_element {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 4rem;
+}
+
 /*====================
 ========Form==========
 ======================*/

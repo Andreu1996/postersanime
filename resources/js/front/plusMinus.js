@@ -1,32 +1,32 @@
 export let plusMinus = () => {
 
-    // let plusMinusButtons = document.querySelectorAll(".plus-minus-button");
+    let plusMinusButtons = document.querySelectorAll(".plus-minus-button");
 
-    // document.addEventListener("renderProductsModule",( event =>{
-    //     plusMinus();
-    // }), {once: true});
+    document.addEventListener("renderProductsModule",( event =>{
+        plusMinus();
+    }), {once: true});
 
-    // plusMinusButtons.forEach(plusMinusButton => {
+    plusMinusButtons.forEach(plusMinusButton => {
 
-    //     plusMinusButton.addEventListener("click", (event) => {
+        plusMinusButton.addEventListener("click", (event) => {
 
-    //         event.preventDefault();
+            event.preventDefault();
 
-    //         let plusMinusContainer = plusMinusButton.closest(".plus-minus-container");
-    //         let plusMinusInput = plusMinusContainer.querySelector(".plus-minus-input");
-    //         let value = parseInt(plusMinusInput.value);
+            let plusMinusContainer = plusMinusButton.closest(".plus-minus-container");
+            let plusMinusInput = plusMinusContainer.querySelector(".plus-minus-input");
+            let value = parseInt(plusMinusInput.value);
 
-    //         if(plusMinusButton.dataset.type == "plus") {
-    //             value++;
-    //         } else if (plusMinusButton.dataset.type == "minus" && value > 1) {
-    //             value--;
-    //         }
+            if(plusMinusButton.dataset.type == "plus") {
+                value++;
+            } else if (plusMinusButton.dataset.type == "minus" && value > 1) {
+                value--;
+            }
 
-    //         plusMinusInput.value = value;
+            plusMinusInput.value = value;
 
-    //     });
+        });
 
-    // });
+    });
 }
         
 

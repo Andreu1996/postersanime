@@ -32,9 +32,9 @@
                 
                 <div class="filter-products">
                     <select id="filter" class="select-filter">
-                        <option> All Products</option>
-                        <option class="filter-option" value="{{route('front_products_filter', ['filter' => 'price_asc'])}}">Low price first</option>
-                        <option class="filter-option" value="{{route('front_products_filter', ['filter' => 'price_desc'])}}">Hight price first</option>                          
+                        <option {{isset($filter) ? '': 'selected'}} value="">All Products</option>
+                        <option value="{{route('front_products_filter', ['filter'=>'desc'])}}" {{isset($filter) && $filter == 'desc' ? 'selected' : '' }}>De mayor a menor</option>
+                        <option value="{{route('front_products_filter', ['filter'=>'asc'])}}"  {{isset($filter) && $filter == 'asc' ? 'selected' : '' }}>De menor a mayor</option>                          
                     </select>                      
                 </div>
             </div>
@@ -54,7 +54,11 @@
                         </div>
 
                         <div class="product-price" >
-                            <p>{{$product->price->first()->base_price}}€</p>
+                            @if(isset($product->price->first()->base_price))
+                                <h2>{{$product->price->first()->base_price}}</h2> 
+                            @else
+                                <h2>{{$product->base_price}}</h2> 
+                            @endif
                         </div>
 
                         <div class="product-details">

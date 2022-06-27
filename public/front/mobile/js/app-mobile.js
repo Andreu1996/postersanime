@@ -2171,7 +2171,7 @@ function FAQS() {
   var questions = document.querySelectorAll(".question-title");
   var answers = document.querySelectorAll(".question-content");
   var arrows = document.querySelectorAll(".question-title-icon");
-  document.addEventListener("renderFaqsModule", function (event) {
+  document.addEventListener("renderMainModule", function (event) {
     FAQS();
   }, {
     once: true
@@ -2268,24 +2268,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "plusMinus": () => (/* binding */ plusMinus)
 /* harmony export */ });
-var plusMinus = function plusMinus() {// let plusMinusButtons = document.querySelectorAll(".plus-minus-button");
-  // document.addEventListener("renderProductsModule",( event =>{
-  //     plusMinus();
-  // }), {once: true});
-  // plusMinusButtons.forEach(plusMinusButton => {
-  //     plusMinusButton.addEventListener("click", (event) => {
-  //         event.preventDefault();
-  //         let plusMinusContainer = plusMinusButton.closest(".plus-minus-container");
-  //         let plusMinusInput = plusMinusContainer.querySelector(".plus-minus-input");
-  //         let value = parseInt(plusMinusInput.value);
-  //         if(plusMinusButton.dataset.type == "plus") {
-  //             value++;
-  //         } else if (plusMinusButton.dataset.type == "minus" && value > 1) {
-  //             value--;
-  //         }
-  //         plusMinusInput.value = value;
-  //     });
-  // });
+var plusMinus = function plusMinus() {
+  var plusMinusButtons = document.querySelectorAll(".plus-minus-button");
+  document.addEventListener("renderProductsModule", function (event) {
+    plusMinus();
+  }, {
+    once: true
+  });
+  plusMinusButtons.forEach(function (plusMinusButton) {
+    plusMinusButton.addEventListener("click", function (event) {
+      event.preventDefault();
+      var plusMinusContainer = plusMinusButton.closest(".plus-minus-container");
+      var plusMinusInput = plusMinusContainer.querySelector(".plus-minus-input");
+      var value = parseInt(plusMinusInput.value);
+
+      if (plusMinusButton.dataset.type == "plus") {
+        value++;
+      } else if (plusMinusButton.dataset.type == "minus" && value > 1) {
+        value--;
+      }
+
+      plusMinusInput.value = value;
+    });
+  });
 };
 
 /***/ }),
@@ -2305,7 +2310,7 @@ var popUpCart = function popUpCart() {
   var popUpCartPage = document.querySelector(".pop-up-cart");
   var carts = document.querySelectorAll(".cart");
   var saves = document.querySelectorAll(".save");
-  document.addEventListener("renderPopUpCartModule", function (event) {
+  document.addEventListener("renderProductsModule", function (event) {
     popUpCart();
   }, {
     once: true

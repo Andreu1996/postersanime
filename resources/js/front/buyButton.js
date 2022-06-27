@@ -9,15 +9,16 @@ export function buyButton () {
 
     buyButtons.forEach(button => {
 
-    button.addEventListener("click", (event) => {
-        
-      event.preventDefault();
+        button.addEventListener("click", (event) => {
+            
+        event.preventDefault();
 
         let url = button.dataset.url
 
         let renderSection = async () => {
-                   
+                
             let response = await fetch(url, {
+                
                 headers: {
                     'X-Requested-With': 'XMLHttpRequest',
                 },

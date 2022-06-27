@@ -4,7 +4,7 @@ export let popUpCart = () => {
     let carts = document.querySelectorAll(".cart");
     let saves = document.querySelectorAll(".save");
 
-    document.addEventListener("renderPopUpCartModule",( event =>{
+    document.addEventListener("renderProductsModule",( event =>{
       popUpCart();
   }), {once: true});
 

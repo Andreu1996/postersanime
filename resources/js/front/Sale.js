@@ -1,17 +1,17 @@
-export let realiceSale = () => {
+export let Sale = () => {
 
     let mainContent = document.getElementById("main");
-    let realiceSaleButton = document.querySelector('.finish-order-button');
+    let SaleButton = document.querySelector('.finish-order-button');
 
     document.addEventListener("renderProductsModule",( event =>{
-        realiceSale();
+        Sale();
     }), {once: true});
 
-    if(realiceSaleButton){
+    if(SaleButton){
         
-        realiceSaleButton.addEventListener("click", () => {
+        SaleButton.addEventListener("click", () => {
 
-            let url = realiceSaleButton.dataset.url;
+            let url = SaleButton.dataset.url;
     
             // permite una llamada asincronica con el servidor.
             let renderSection = async () => {
