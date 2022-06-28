@@ -4,9 +4,9 @@ export function newForm () {
     let table = document.querySelector('.sidetable');
     let maintable = document.querySelector('.tablefill');
 
-    document.addEventListener("renderFormModules",( event =>{
-        newForm();
-    }), {once: true});
+    // document.addEventListener("renderFormModules",( event =>{
+    //     newForm();
+    // }), {once: true});
 
     newForm.addEventListener('click', () => {
         // window.alert('hola'); 

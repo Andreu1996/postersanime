@@ -176,28 +176,79 @@
 
                         <div class="content content--active" data-tab="tab1">
                             <div class="sidetableContact">
-                                <div class="desktop-one-column">
-
-                                    <div class="column">
-                                        <div class="name">
-                                            <div class="form-label">
-                                                <h3>ticked cliente</h3>
-                                            </div>
-                                            <div class="form-input">
-                                                <input name="name" type="text" placeholder="Nombre" value="{{isset($sale->ticked_number) ? $sale->ticked_number: ''}}">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="form-label">
-                                                <h3>productos comprados</h3>
-                                            </div>
-                                            <div class="form-input">
-                                                <input name="title" type="text" placeholder="Titulo">
-                                            </div>
-                                        </div>
+                                
+                                <div class="sale-form-data">
+                                    <div class="sale-form-title">
+                                        <h3>ticket</h3>
                                     </div>
-
+                                    <div class="sale-form-data">
+                                        {{$sale->ticked_number}}
+                                    </div>
                                 </div>
+
+                                <div class="sale-form-data">
+                                    <div class="sale-form-title">
+                                        <h3>ticket</h3>
+                                    </div>
+                                    <div class="sale-form-data">
+                                        {{$sale->total_price}}€
+                                    </div>
+                                </div>
+
+                                <div class="sale-form-data">
+                                    <div class="sale-form-title">
+                                        <h3>nombre</h3>
+                                    </div>
+                                    <div class="sale-form-data">
+                                        {{$sale->ticked_number}}
+                                    </div>
+                                </div>
+
+                                <div class="sale-form-data">
+                                    <div class="sale-form-title">
+                                        <h3>apellidos</h3>
+                                    </div>
+                                    <div class="sale-form-data">
+                                        {{$sale->ticked_number}}
+                                    </div>
+                                </div>
+
+                                <div class="sale-form-data">
+                                    <div class="sale-form-title">
+                                        <h3>telefono</h3>
+                                    </div>
+                                    <div class="sale-form-data">
+                                        {{$sale->ticked_number}}
+                                    </div>
+                                </div>
+
+                                <div class="sale-form-data">
+                                    <div class="sale-form-title">
+                                        <h3>direccion</h3>
+                                    </div>
+                                    <div class="sale-form-data">
+                                        {{$sale->ticked_number}}
+                                    </div>
+                                </div>
+
+                                <div class="sale-form-data">
+                                    <div class="sale-form-title">
+                                        <h3>productos comprados:</h3>
+                                    </div>
+                                    <div class="sale-form-data">
+                                        {{$sale->ticked_number}}
+                                    </div>
+                                </div>
+                                
+                                {{-- <div class="name">
+                                    <div class="form-label">
+                                        <h3>datos cliente</h3>
+                                    </div>
+                                    <div class="form-input">
+                                        <input name="name" type="text" placeholder="Nombre" value="{{isset($sale->ticked_number) ? $sale->ticked_number: ''}}">
+                                    </div>
+                                </div> --}}
+
                             </div>
                         </div>
                         

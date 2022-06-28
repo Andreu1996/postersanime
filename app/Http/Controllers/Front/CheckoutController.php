@@ -97,7 +97,7 @@ class CheckoutController extends Controller
             $ticked_number += 1;
         }
         else {
-            $ticked_number = date('Ymd') + '0000';
+            $ticked_number = date('Ymd') + '0001';
         }
 
         $sale = $this->sale->create([
@@ -111,12 +111,12 @@ class CheckoutController extends Controller
         ]);
 
         $cart = $this->cart
-        ->where('fingerprint', request('fingerprint'))
-        ->where('sale_id', null)
-        ->where('active', 1)
-        ->update([
-            'sale_id' => $sale->id,
-            'client_id' => $client->id,
+            ->where('fingerprint', request('fingerprint'))
+            ->where('sale_id', null)
+            ->where('active', 1)
+            ->update([
+                'sale_id' => $sale->id,
+                'client_id' => $client->id,
         ]);
 
         $sections = View::make('front.pages.sale.index')->renderSections();
@@ -124,6 +124,17 @@ class CheckoutController extends Controller
         return response()->json([
             'content' => $sections['content'],
         ]);
+    }
+
+    public function edit(sale $sale)
+    {
+
+        $sections = $view->renderSections(); 
+
+        return response()->json([
+            'content' => $sections['content'],
+        ]);
+        
     }
 
     

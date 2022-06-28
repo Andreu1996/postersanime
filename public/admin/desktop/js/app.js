@@ -2689,12 +2689,10 @@ __webpack_require__.r(__webpack_exports__);
 function newForm() {
   var newForm = document.querySelector('.new-form');
   var table = document.querySelector('.sidetable');
-  var maintable = document.querySelector('.tablefill');
-  document.addEventListener("renderFormModules", function (event) {
-    newForm();
-  }, {
-    once: true
-  });
+  var maintable = document.querySelector('.tablefill'); // document.addEventListener("renderFormModules",( event =>{
+  //     newForm();
+  // }), {once: true});
+
   newForm.addEventListener('click', function () {
     // window.alert('hola'); 
     table.classList.remove("sidetablehide");
