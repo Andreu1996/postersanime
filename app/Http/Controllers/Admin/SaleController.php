@@ -98,10 +98,6 @@ class SaleController extends Controller
         return $view;
     }
 
-    public function show(Sale $sale){
-
-    }
-
     public function destroy(Sale $sale)
     {
         $sale->active = 0;
