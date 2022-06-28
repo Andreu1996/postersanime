@@ -91,8 +91,17 @@ class CheckoutController extends Controller
             'email' => request('email'),
         ]);
 
+        $ticked_number = $this->sale->latest()->first()->ticked_number;
+
+        if ($ticked_number == null) {
+            $ticked_number = date('Ymd') . '0001';
+        }
+        else {
+           $ticked_number += 1;
+        }
+
         $sale = $this->sale->create([
-            'ticked_number' => 1,        
+            'ticked_number' => $ticked_number,
             'customer_id' => $client->id,
             'date_emision' => date('Y-m-d'),
             'total_price_base' => request('base_total'),

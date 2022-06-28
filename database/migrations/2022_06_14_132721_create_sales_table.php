@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->decimal('ticked_number');
             $table->decimal('date_emision');
-            $table->integer('payment_method_id');
+            $table->bigInteger('payment_method_id');
             $table->decimal('total_price_base');
             $table->decimal('total_price_tax');
             $table->decimal('total_price');
