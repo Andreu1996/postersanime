@@ -93,11 +93,11 @@ class CheckoutController extends Controller
 
         $ticked_number = $this->sale->latest()->first()->ticked_number;
 
-        if ($ticked_number == null) {
-            $ticked_number = date('Ymd') . '0001';
+        if (str_contains($ticked_number, date('Ymd'))) {
+            $ticked_number += 1;
         }
         else {
-           $ticked_number += 1;
+            $ticked_number = date('Ymd') + '0000';
         }
 
         $sale = $this->sale->create([
